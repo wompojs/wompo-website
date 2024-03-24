@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"outDir": "./dist/",
+		"noImplicitAny": true,
+		"module": "ES2020",
+		"lib": ["es2020", "dom"],
+		"target": "ES2021",
+		"jsx": "react-jsx",
+		"jsxImportSource": "womp",
+		"moduleResolution": "node"
+	},
+	"tsc-alias": {
+		"resolveFullPaths": true,
+		"verbose": false
+	}
+}

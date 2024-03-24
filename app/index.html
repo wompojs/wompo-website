@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Womp Documentation</title>
+		<script type="importmap">
+			{
+				"imports": {
+					"womp": "../node_modules/womp/dist/womp.js",
+					"womp/jsx-runtime": "../node_modules/womp/jsx-runtime.js",
+					"womp-router": "../node_modules/womp-router/dist/womp-router.js"
+				}
+			}
+		</script>
+		<style>
+			html {
+				font-size: 10px;
+			}
+			body {
+				font-size: 1.8rem;
+				margin: 0;
+			}
+			* {
+				line-height: 1.5;
+				box-sizing: border-box;
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+					Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+			}
+		</style>
+	</head>
+	<body>
+		<script type="module">
+			import App from '../dist/app.js';
+		</script>
+		<womp-app></womp-app>
+	</body>
+</html>

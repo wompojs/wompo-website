@@ -1,0 +1,21 @@
+{
+	"author": "Lorenzo Lannino",
+	"license": "ISC",
+	"name": "womp-docs",
+	"description": "Documentation for Womp",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"dev": "concurrently \"tsc -w\" \"tsc-alias -w\"",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"womp": "../womp",
+		"womp-router": "../womp-router"
+	},
+	"devDependencies": {
+		"concurrently": "^8.2.2",
+		"ts-loader": "^9.5.1",
+		"tsc-alias": "^1.8.8"
+	}
+}
