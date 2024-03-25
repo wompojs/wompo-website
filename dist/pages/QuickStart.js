@@ -10,7 +10,7 @@ const content = {
         {
             title: 'Creating a component',
             id: 'creating-a-component',
-            content: (_jsxs(_Fragment, { children: [_jsxs("p", { children: ["Let's start immediately by creating your first component. All you will need to do is just create a function and \"declare\" the component with the function", ' ', _jsx("code", { children: "defineWomp" }), ". This function will have to return the result of the", ' ', _jsx("code", { children: "html" }), " function, which is a template function that will contain your HTML structure."] }), _jsx(Code, { code: `
+            content: (_jsxs(_Fragment, { children: [_jsxs("p", { children: ["Let's start immediately by creating your first component. All you will need to do is just create a function and \"declare\" the component with the helper function", ' ', _jsx("code", { children: "defineWomp" }), ". This function will have to return the result of the", ' ', _jsx("code", { children: "html" }), " function, which is a template function that will contain your HTML structure."] }), _jsx(Code, { code: `
               import { defineWomp, html } from 'womp';
 
               export default function GreetingsComponent() {
@@ -34,7 +34,36 @@ const content = {
               function App() {
                 return html\`<greetings-component></greetings-component>\`;
               }
-            `, lang: "jsx" }), _jsxs("p", { children: ["So to answer the initial question: \"", _jsx("i", { children: "Why did we decide to implement an automatic naming?" }), "\".", _jsx("br", {}), " When using this kind of approach, it's not even important what the component name is. You just know that you want to render a specific component in a specific place. Also, what if, for some reason, you change the name of some components? If you simply typed the names \"statically\", you'd have to change them in the whole application. Hell. That's what happens with the majority of Web-Component libraries out there. With Womp, the app will continue to normally work \u2705 (except for components written directly in the HTML file, of course).", _jsx("br", {}), "When using this approach, you also ", _jsx("b", { children: "import" }), " a component when needed, so you don't have to worry about manually putting script tags into your files so that they work. Developer friendly. Just like React."] })] })),
+            `, lang: "jsx" }), _jsxs("p", { children: ["So going back to the initial question: \"", _jsx("i", { children: "Why did we decide to implement an automatic naming?" }), "\".", _jsx("br", {}), " When using this kind of approach, it's not even important what the component name is. You just know that you want to render a specific component in a specific place. Also, what if, for some reason, you change the name of some components? If you simply typed the names \"statically\", you'd have to change them in the whole application. Hell. That's what happens with the majority of Web-Component libraries out there. With Womp, the app will continue to normally work \u2705 (except for components written directly in the HTML file, of course).", _jsx("br", {}), "When using this approach, you also ", _jsx("b", { children: "import" }), " a component when needed, so you don't have to worry about manually putting script tags into your files so that they work. Developer friendly. Just like React."] })] })),
+        },
+        {
+            title: 'Props',
+            id: 'props',
+            content: (_jsxs(_Fragment, { children: [_jsxs("p", { children: ["What's the purpose of a component if you cannot add parameters so that the component renders dynamic content? No purpose. You can add custom attributes in your component and modify your UI accordingly.", _jsx("br", {}), "The component function receives one parameter:", ' ', _jsx("b", { children: _jsx("u", { children: "props" }) }), ". This parameter is an object that will contain the values of the custom attributes you added. Let's modify together the previous ", _jsx("code", { children: "GreetingsComponent" }), " component. Suppose you want the component to accept a simple attribute called \"", _jsx("i", { children: "name" }), "\", and replace the old \"Hello World\" with \"Hello <name>\". Super easy:"] }), _jsx(Code, { code: `
+              export default function GreetingsComponent({name}) {
+                return html\`<div>Hello, \${name}!</div>\`;
+              }
+            `, lang: "jsx" }), _jsx(Code, { code: `
+							<greetings-component name="World"></greetings-component>
+							<!-- Will render: <div>Hello, World!</div> -->
+
+							<greetings-component name="Giovanni"></greetings-component>
+							<!-- Will render: <div>Hello, Giovanni!</div> -->
+
+							<greetings-component name="My beautiful love"></greetings-component>
+							<!-- Will render: <div>Hello, My beautiful love!</div> -->
+            `, lang: "html" }), _jsxs("p", { children: ["If you use your custom components in the HTML, you must know that HTML allows to only put strings in the attributes values, but if you are using it from a Javascript, you will ", _jsx("b", { children: "not" }), " have this restriction: you can put everything. The only thing you'll h"] }), _jsx(Code, { code: `
+              function App() {
+								const user = {
+									name: 'Tongi',
+									lastName: 'Patongi',
+								};
+                return html\`<\${GreetingsComponent} user=\${user} />\`;
+              }
+							function GreetingsComponent({user}) {
+                return html\`<div>Hello, \${user.name} \${user.lastname}!</div>\`;
+              }
+            `, lang: "jsx" })] })),
         },
     ],
 };

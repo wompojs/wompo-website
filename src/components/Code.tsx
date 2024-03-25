@@ -9,13 +9,18 @@ export default function Code({ code, lang, styles: s }: CodeProps) {
 	const codeRef = useRef<HTMLElement>();
 	useEffect(() => {
 		const firstLineSpaces = /^\n(\s+)/.exec(code);
-		const removeStart = new RegExp(`${firstLineSpaces[1]}`, 'g');
+		console.log(firstLineSpaces);
+		const spaces = firstLineSpaces[1];
+		let regex = ``;
+		for (let i = 0; i < spaces.length; i++) {
+			regex += '[\\s|\\t]';
+		}
+		const removeStart = new RegExp(regex, 'g');
 		const formatted = code
-			.replace(removeStart, '')
+			.replace(removeStart, '\n')
 			.replace(/^\n/, '')
-			.replace(/\n\s+$/, '');
+			.replace(/\n\s+$/g, '');
 		const highlighted = (window as any).hljs.highlight(formatted, { language: lang });
-		console.log(highlighted);
 		codeRef.current.innerHTML = highlighted.value;
 	}, []);
 	return (

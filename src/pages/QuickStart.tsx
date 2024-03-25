@@ -14,7 +14,7 @@ const content: Contents = {
 				<>
 					<p>
 						Let's start immediately by creating your first component. All you will need to do is
-						just create a function and "declare" the component with the function{' '}
+						just create a function and "declare" the component with the helper function{' '}
 						<code>defineWomp</code>. This function will have to return the result of the{' '}
 						<code>html</code> function, which is a template function that will contain your HTML
 						structure.
@@ -93,7 +93,7 @@ const content: Contents = {
 						lang="jsx"
 					/>
 					<p>
-						So to answer the initial question: "
+						So going back to the initial question: "
 						<i>Why did we decide to implement an automatic naming?</i>".
 						<br /> When using this kind of approach, it's not even important what the component name
 						is. You just know that you want to render a specific component in a specific place.
@@ -107,6 +107,69 @@ const content: Contents = {
 						have to worry about manually putting script tags into your files so that they work.
 						Developer friendly. Just like React.
 					</p>
+				</>
+			),
+		},
+		{
+			title: 'Props',
+			id: 'props',
+			content: (
+				<>
+					<p>
+						What's the purpose of a component if you cannot add parameters so that the component
+						renders dynamic content? No purpose. You can add custom attributes in your component and
+						modify your UI accordingly.
+						<br />
+						The component function receives one parameter:{' '}
+						<b>
+							<u>props</u>
+						</b>
+						. This parameter is an object that will contain the values of the custom attributes you
+						added. Let's modify together the previous <code>GreetingsComponent</code> component.
+						Suppose you want the component to accept a simple attribute called "<i>name</i>", and
+						replace the old "Hello World" with "Hello &lt;name&gt;". Super easy:
+					</p>
+					<Code
+						code={`
+              export default function GreetingsComponent({name}) {
+                return html\`<div>Hello, \${name}!</div>\`;
+              }
+            `}
+						lang="jsx"
+					/>
+					<Code
+						code={`
+							<greetings-component name="World"></greetings-component>
+							<!-- Will render: <div>Hello, World!</div> -->
+
+							<greetings-component name="Giovanni"></greetings-component>
+							<!-- Will render: <div>Hello, Giovanni!</div> -->
+
+							<greetings-component name="My beautiful love"></greetings-component>
+							<!-- Will render: <div>Hello, My beautiful love!</div> -->
+            `}
+						lang="html"
+					/>
+					<p>
+						If you use your custom components in the HTML, you must know that HTML allows to only
+						put strings in the attributes values, but if you are using it from a Javascript, you
+						will <b>not</b> have this restriction: you can put everything. The only thing you'll h
+					</p>
+					<Code
+						code={`
+              function App() {
+								const user = {
+									name: 'Tongi',
+									lastName: 'Patongi',
+								};
+                return html\`<\${GreetingsComponent} user=\${user} />\`;
+              }
+							function GreetingsComponent({user}) {
+                return html\`<div>Hello, \${user.name} \${user.lastname}!</div>\`;
+              }
+            `}
+						lang="jsx"
+					/>
 				</>
 			),
 		},
