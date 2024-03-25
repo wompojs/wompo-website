@@ -1,4 +1,5 @@
 import { type WompProps, defineWomp } from 'womp';
+import { Link } from 'womp-router';
 
 interface MenuItem {
 	title: string;
@@ -18,7 +19,7 @@ export default function SideMenu({ styles: s, menu, title }: SideMenuProps) {
 				<ul class={s.ul}>
 					{menu.map((item) => (
 						<li>
-							<a href={item.link}>{item.title}</a>
+							<Link to={item.link}>{item.title}</Link>
 						</li>
 					))}
 				</ul>
@@ -53,6 +54,9 @@ SideMenu.css = `
     display: flex;
     flex-direction: column;
   }
+	.ul womp-link {
+		width: 100%;
+	}
   .ul a {
     text-decoration: none;
     color: #573ef6;

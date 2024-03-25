@@ -6,15 +6,11 @@ import { ChildRoute } from 'womp-router';
 const mainMenu = [
 	{
 		title: 'Overview',
-		link: '/docs/overview',
+		link: 'overview',
 	},
 	{
-		title: 'Props',
-		link: '/docs/overview',
-	},
-	{
-		title: 'State',
-		link: '/docs/overview',
+		title: 'Quick start',
+		link: 'quick-start',
 	},
 	{
 		title: 'Hooks',

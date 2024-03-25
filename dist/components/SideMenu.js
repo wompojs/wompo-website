@@ -1,7 +1,8 @@
 import { jsx as _jsx, jsxs as _jsxs } from "womp/jsx-runtime";
 import { defineWomp } from 'womp';
+import { Link } from 'womp-router';
 export default function SideMenu({ styles: s, menu, title }) {
-    return (_jsx("aside", { class: s.menu, children: _jsxs("nav", { children: [title, _jsx("ul", { class: s.ul, children: menu.map((item) => (_jsx("li", { children: _jsx("a", { href: item.link, children: item.title }) }))) })] }) }));
+    return (_jsx("aside", { class: s.menu, children: _jsxs("nav", { children: [title, _jsx("ul", { class: s.ul, children: menu.map((item) => (_jsx("li", { children: _jsx(Link, { to: item.link, children: item.title }) }))) })] }) }));
 }
 SideMenu.css = `
 	:host {
@@ -29,6 +30,9 @@ SideMenu.css = `
     display: flex;
     flex-direction: column;
   }
+	.ul womp-link {
+		width: 100%;
+	}
   .ul a {
     text-decoration: none;
     color: #573ef6;

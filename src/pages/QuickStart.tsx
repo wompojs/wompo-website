@@ -2,6 +2,7 @@ import { defineWomp } from 'womp';
 import getPageLayout, { Contents } from '../utils/getPage';
 import Code from '../components/Code';
 import { Link } from 'womp-router';
+import Note from '../components/Note';
 
 const content: Contents = {
 	title: 'Quick Start',
@@ -29,7 +30,7 @@ const content: Contents = {
 
               defineWomp(GreetingsComponent);
             `}
-						lang="jsx"
+						lang='js'
 					/>
 					<p>
 						Nice, you created your first component! Now you just have to render it in the DOM.
@@ -45,7 +46,7 @@ const content: Contents = {
 						<br />
 						Of course, you can even define your own name by using the <u>name</u> option in the
 						second parameter of the <code>defineWomp</code> function. See documentation about{' '}
-						<Link to="/docs/functions/define-womp">
+						<Link to='/docs/functions/define-womp'>
 							<code>defineWomp</code>
 						</Link>{' '}
 						for more.
@@ -57,7 +58,7 @@ const content: Contents = {
               <greetings-component></greetings-component>
               <!-- Will render: <div>Hello, World!</div> -->
             `}
-						lang="html"
+						lang='html'
 					/>
 				</>
 			),
@@ -81,7 +82,7 @@ const content: Contents = {
                 return html\`<\${GreetingsComponent} />\`;
               }
             `}
-						lang="jsx"
+						lang='js'
 					/>
 					<p>Womp will automatically convert the dynamic tag into:</p>
 					<Code
@@ -90,7 +91,7 @@ const content: Contents = {
                 return html\`<greetings-component></greetings-component>\`;
               }
             `}
-						lang="jsx"
+						lang='js'
 					/>
 					<p>
 						So going back to the initial question: "
@@ -117,8 +118,8 @@ const content: Contents = {
 				<>
 					<p>
 						What's the purpose of a component if you cannot add parameters so that the component
-						renders dynamic content? No purpose. You can add custom attributes in your component and
-						modify your UI accordingly.
+						renders dynamic content? You can add custom attributes in your component and modify your
+						UI accordingly.
 						<br />
 						The component function receives one parameter:{' '}
 						<b>
@@ -135,7 +136,7 @@ const content: Contents = {
                 return html\`<div>Hello, \${name}!</div>\`;
               }
             `}
-						lang="jsx"
+						lang='js'
 					/>
 					<Code
 						code={`
@@ -148,28 +149,93 @@ const content: Contents = {
 							<greetings-component name="My beautiful love"></greetings-component>
 							<!-- Will render: <div>Hello, My beautiful love!</div> -->
             `}
-						lang="html"
+						lang='html'
 					/>
 					<p>
 						If you use your custom components in the HTML, you must know that HTML allows to only
 						put strings in the attributes values, but if you are using it from a Javascript, you
-						will <b>not</b> have this restriction: you can put everything. The only thing you'll h
+						will <b>not</b> have this restriction: you can put everything.
 					</p>
 					<Code
 						code={`
-              function App() {
+							function App() {
 								const user = {
 									name: 'Tongi',
 									lastName: 'Patongi',
 								};
                 return html\`<\${GreetingsComponent} user=\${user} />\`;
               }
+
 							function GreetingsComponent({user}) {
                 return html\`<div>Hello, \${user.name} \${user.lastname}!</div>\`;
               }
             `}
-						lang="jsx"
+						lang='js'
 					/>
+					<Note severity='info'>
+						If you use a variable as an attribute value, you must not add quotes around the value:
+						the attribute name must only be followed by an equal ("=") and the value.
+					</Note>
+				</>
+			),
+		},
+		{
+			title: 'Events',
+			id: 'events',
+			content: (
+				<>
+					<p>
+						Almost done. The next nice thing about Womp is that you can define events as if they are
+						attributes. The only difference is that you'll have to put a "@" as a prefix (e.g. the
+						click event will be <code>@click</code>, change will be <code>@change</code>, ans so
+						on).
+						<br />
+						You can attach an event on every element, even on your own custom elements, because they
+						are part of the DOM!
+					</p>
+					<Code
+						code={`
+							function Counter() {
+								const counter = 0;
+								const onClick = () => alert('Increment value!');
+                return html\`<button @click=\${onClick}>Current value: \${counter}</button>\`;
+              }
+            `}
+						lang='js'
+					/>
+				</>
+			),
+		},
+		{
+			title: 'State',
+			id: 'state',
+			content: (
+				<>
+					<p>
+						The last thing to learn is how to make a component <b>stateful</b>. A stateful component
+						is a component that listens for changes and re-renders whenever there is a change. The
+						easier way to make a stateful component is by using the{' '}
+						<Link to='/docs/hooks/useState'>useState</Link> hook. This hook is a function that will
+						return an array with 2 elements: the current value, and a function to set the new value.
+						The only parameter it accepts is the initial value.
+						<br />
+						So, to make the <code>Counter</code> component work, we just have to use this hook and
+						increment the counter variable every time the user clicks on the button.
+					</p>
+					<Code
+						code={`
+							function Counter() {
+								const [counter, setCounter] = useState(0);
+								const onClick = () => setCounter(counter + 1);
+                return html\`<button @click=\${onClick}>Current value: \${counter}</button>\`;
+              }
+            `}
+						lang='js'
+					/>
+					<p>
+						That's it. You now know already the 80% of the Womp library. Easy. Isn't it? <br />
+						If you already know <b>React</b>, you can easily see how similar it is.
+					</p>
 				</>
 			),
 		},

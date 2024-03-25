@@ -3,22 +3,18 @@ import { defineWomp, useEffect, useRef } from 'womp';
 export default function Code({ code, lang, styles: s }) {
     const codeRef = useRef();
     useEffect(() => {
-        const firstLineSpaces = /^\n(\s+)/.exec(code);
-        console.log(firstLineSpaces);
+        let formatted = code.replace(/\t/g, '  ');
+        const firstLineSpaces = /^\n(\s+)/.exec(formatted);
         const spaces = firstLineSpaces[1];
-        let regex = ``;
-        for (let i = 0; i < spaces.length; i++) {
-            regex += '[\\s|\\t]';
-        }
-        const removeStart = new RegExp(regex, 'g');
-        const formatted = code
-            .replace(removeStart, '\n')
+        const removeStart = new RegExp(`^${spaces}`, 'gm');
+        formatted = formatted
+            .replace(removeStart, '')
             .replace(/^\n/, '')
             .replace(/\n\s+$/g, '');
         const highlighted = window.hljs.highlight(formatted, { language: lang });
         codeRef.current.innerHTML = highlighted.value;
     }, []);
-    return (_jsxs(_Fragment, { children: [_jsx("link", { rel: "stylesheet", href: "https://unpkg.com/highlightjs@9.16.2/styles/xcode.css" }), _jsx("pre", { class: s.pre, children: _jsx("code", { ref: codeRef, children: code }) })] }));
+    return (_jsxs(_Fragment, { children: [_jsx("link", { rel: 'stylesheet', href: 'https://unpkg.com/highlightjs@9.16.2/styles/xcode.css' }), _jsx("pre", { class: s.pre, children: _jsx("code", { ref: codeRef }) })] }));
 }
 Code.css = `
   :host {
@@ -36,7 +32,7 @@ Code.css = `
     padding: 20px;
     width: 100%;
     box-sizing: border-box;
-    background-color: #fafafa;
+    background-color: #f6f6f6;
     border-radius: 10px;
   }
 `;
