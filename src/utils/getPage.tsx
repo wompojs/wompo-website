@@ -1,9 +1,7 @@
 import MainContent from '../components/MainContent';
 import ContentSection from '../components/ContentSection';
-import Counter from '../components/Counter';
 import SideMenu from '../components/SideMenu';
-import { type RenderHtml, defineWomp } from 'womp';
-import PageLayout from '../layout/PageLayout';
+import { type RenderHtml } from 'womp';
 
 interface Section {
 	title: string;
@@ -19,7 +17,7 @@ export interface Contents {
 
 export default function getPageLayout(contents: Contents) {
 	return (
-		<PageLayout>
+		<div style={{ display: 'flex' }}>
 			<MainContent title={contents.title} description={contents.description}>
 				{contents.sections.map((section) => (
 					<ContentSection title={section.title} id={section.id}>
@@ -34,6 +32,6 @@ export default function getPageLayout(contents: Contents) {
 				}))}
 				title={<h3 style={{ margin: '10px 0', textTransform: 'uppercase' }}>In this page</h3>}
 			/>
-		</PageLayout>
+		</div>
 	);
 }

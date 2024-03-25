@@ -6,14 +6,24 @@ export default function App() {
 	return (
 		<Routes>
 			<Route
-				path='/'
+				path="/"
 				element={
 					<i>
-						<Link to='/docs'>docs</Link>
+						<Link to="/docs">docs</Link>
 					</i>
 				}
 			/>
-			<Route path='/docs' element={<Layout />}>
+			<Route path="/docs" element={<Layout />}>
+				<Route
+					path="overview"
+					fallback={<i>Loading...</i>}
+					lazy={() => import('./pages/Introduction.js')}
+				/>
+				<Route
+					path="quick-start"
+					fallback={<i>Loading...</i>}
+					lazy={() => import('./pages/QuickStart.js')}
+				/>
 				<Route index fallback={<i>Loading...</i>} lazy={() => import('./pages/Introduction.js')} />
 			</Route>
 		</Routes>
