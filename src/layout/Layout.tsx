@@ -1,9 +1,9 @@
 import { WompProps, defineWomp } from 'womp';
 import Header from '../components/Header.js';
-import SideMenu from '../components/SideMenu.js';
+import SideMenu, { MenuItem } from '../components/SideMenu.js';
 import { ChildRoute } from 'womp-router';
 
-const mainMenu = [
+const mainMenu: MenuItem[] = [
 	{
 		title: 'Overview',
 		link: 'overview',
@@ -18,7 +18,13 @@ const mainMenu = [
 	},
 	{
 		title: 'Hooks',
-		link: '/docs/overview',
+		link: '/docs/hooks',
+		menu: [
+			{
+				title: 'useState',
+				link: '/docs/hooks/useState',
+			},
+		],
 	},
 ];
 

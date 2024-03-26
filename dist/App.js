@@ -31,7 +31,7 @@ export default function App() {
     ),
     /* @__PURE__ */ jsxs(Route, { path: "/docs", element: /* @__PURE__ */ jsx(Layout, {}), children: [
       docsRoutes.map((docPage) => /* @__PURE__ */ jsx(Route, { path: docPage.path, fallback: /* @__PURE__ */ jsx("i", {}), lazy: () => import(docPage.pagePath) })),
-      /* @__PURE__ */ jsx(Route, { index: true, fallback: /* @__PURE__ */ jsx("i", {}), lazy: () => import("./pages/docs/Introduction.js") })
+      /* @__PURE__ */ jsx(Route, { index: true, redirect: "overview" })
     ] })
   ] });
 }

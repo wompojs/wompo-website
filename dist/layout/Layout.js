@@ -18,7 +18,13 @@ const mainMenu = [
   },
   {
     title: "Hooks",
-    link: "/docs/overview"
+    link: "/docs/hooks",
+    menu: [
+      {
+        title: "useState",
+        link: "/docs/hooks/useState"
+      }
+    ]
   }
 ];
 export default function Layout({ styles: s }) {

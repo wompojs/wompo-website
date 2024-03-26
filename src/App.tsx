@@ -25,18 +25,18 @@ export default function App() {
 	return (
 		<Routes>
 			<Route
-				path="/"
+				path='/'
 				element={
 					<i>
-						<Link to="/docs">docs</Link>
+						<Link to='/docs'>docs</Link>
 					</i>
 				}
 			/>
-			<Route path="/docs" element={<Layout />}>
+			<Route path='/docs' element={<Layout />}>
 				{docsRoutes.map((docPage) => (
 					<Route path={docPage.path} fallback={<i></i>} lazy={() => import(docPage.pagePath)} />
 				))}
-				<Route index fallback={<i></i>} lazy={() => import('./pages/docs/Introduction.js')} />
+				<Route index redirect='overview' />
 			</Route>
 		</Routes>
 	);
