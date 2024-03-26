@@ -1,10 +1,40 @@
-import { jsx as _jsx, jsxs as _jsxs } from "womp/jsx-runtime";
-import { defineWomp } from 'womp';
-import { Link, Route, Routes } from 'womp-router';
-import Layout from './layout/Layout.js';
+import { jsx, jsxs } from "womp/jsx-runtime";
+import { defineWomp } from "womp";
+import { Link, Route, Routes } from "womp-router";
+import Layout from "./layout/Layout.js";
+const docsRoutes = [
+  {
+    path: "overview",
+    pagePath: "./pages/docs/Introduction.js"
+  },
+  {
+    path: "quick-start",
+    pagePath: "./pages/docs/QuickStart.js"
+  },
+  {
+    path: "complex-example",
+    pagePath: "./pages/docs/ComplexExample.js"
+  },
+  {
+    path: "hooks",
+    pagePath: "./pages/docs/Hooks.js"
+  }
+];
 export default function App() {
-    return (_jsxs(Routes, { children: [_jsx(Route, { path: "/", element: _jsx("i", { children: _jsx(Link, { to: "/docs", children: "docs" }) }) }), _jsxs(Route, { path: "/docs", element: _jsx(Layout, {}), children: [_jsx(Route, { path: "overview", fallback: _jsx("i", { children: "Loading..." }), lazy: () => import('./pages/Introduction.js') }), _jsx(Route, { path: "quick-start", fallback: _jsx("i", { children: "Loading..." }), lazy: () => import('./pages/QuickStart.js') }), _jsx(Route, { index: true, fallback: _jsx("i", { children: "Loading..." }), lazy: () => import('./pages/Introduction.js') })] })] }));
+  return /* @__PURE__ */ jsxs(Routes, { children: [
+    /* @__PURE__ */ jsx(
+      Route,
+      {
+        path: "/",
+        element: /* @__PURE__ */ jsx("i", { children: /* @__PURE__ */ jsx(Link, { to: "/docs", children: "docs" }) })
+      }
+    ),
+    /* @__PURE__ */ jsxs(Route, { path: "/docs", element: /* @__PURE__ */ jsx(Layout, {}), children: [
+      docsRoutes.map((docPage) => /* @__PURE__ */ jsx(Route, { path: docPage.path, fallback: /* @__PURE__ */ jsx("i", {}), lazy: () => import(docPage.pagePath) })),
+      /* @__PURE__ */ jsx(Route, { index: true, fallback: /* @__PURE__ */ jsx("i", {}), lazy: () => import("./pages/docs/Introduction.js") })
+    ] })
+  ] });
 }
 defineWomp(App, {
-    name: 'womp-app',
+  name: "womp-app"
 });

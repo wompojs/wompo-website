@@ -1,7 +1,11 @@
-import { jsx as _jsx, jsxs as _jsxs } from "womp/jsx-runtime";
-import { defineWomp } from 'womp';
+import { jsx, jsxs } from "womp/jsx-runtime";
+import { defineWomp } from "womp";
 export default function MainContent({ styles: s, title, description, children }) {
-    return (_jsx("main", { class: s.main, children: _jsxs("div", { class: s.container, children: [_jsx("h1", { children: title }), _jsx("h5", { children: description }), children] }) }));
+  return /* @__PURE__ */ jsx("main", { class: s.main, children: /* @__PURE__ */ jsxs("div", { class: s.container, children: [
+    /* @__PURE__ */ jsx("h1", { children: title }),
+    /* @__PURE__ */ jsx("h5", { children: description }),
+    children
+  ] }) });
 }
 MainContent.css = `
   :host {
@@ -82,5 +86,5 @@ MainContent.css = `
   }
 `;
 defineWomp(MainContent, {
-    shadow: true,
+  shadow: true
 });

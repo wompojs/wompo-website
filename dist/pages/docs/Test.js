@@ -1,6 +1,6 @@
 import { Fragment, jsx, jsxs } from "womp/jsx-runtime";
 import { defineWomp } from "womp";
-import getPage from "../utils/getPage.js";
+import getPage from "../../utils/getPage.js";
 const content = {
   title: "Introductionnnnn",
   description: /* @__PURE__ */ jsxs(Fragment, { children: [

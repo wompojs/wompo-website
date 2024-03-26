@@ -1,6 +1,25 @@
 import { defineWomp } from 'womp';
 import { Link, Route, Routes } from 'womp-router';
-import Layout from './layout/Layout';
+import Layout from './layout/Layout.js';
+
+const docsRoutes = [
+	{
+		path: 'overview',
+		pagePath: './pages/docs/Introduction.js',
+	},
+	{
+		path: 'quick-start',
+		pagePath: './pages/docs/QuickStart.js',
+	},
+	{
+		path: 'complex-example',
+		pagePath: './pages/docs/ComplexExample.js',
+	},
+	{
+		path: 'hooks',
+		pagePath: './pages/docs/Hooks.js',
+	},
+];
 
 export default function App() {
 	return (
@@ -14,17 +33,10 @@ export default function App() {
 				}
 			/>
 			<Route path="/docs" element={<Layout />}>
-				<Route
-					path="overview"
-					fallback={<i>Loading...</i>}
-					lazy={() => import('./pages/Introduction.js')}
-				/>
-				<Route
-					path="quick-start"
-					fallback={<i>Loading...</i>}
-					lazy={() => import('./pages/QuickStart.js')}
-				/>
-				<Route index fallback={<i>Loading...</i>} lazy={() => import('./pages/Introduction.js')} />
+				{docsRoutes.map((docPage) => (
+					<Route path={docPage.path} fallback={<i></i>} lazy={() => import(docPage.pagePath)} />
+				))}
+				<Route index fallback={<i></i>} lazy={() => import('./pages/docs/Introduction.js')} />
 			</Route>
 		</Routes>
 	);

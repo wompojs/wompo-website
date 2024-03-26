@@ -1,7 +1,7 @@
-import { jsx as _jsx } from "womp/jsx-runtime";
-import { defineWomp } from 'womp';
+import { jsx } from "womp/jsx-runtime";
+import { defineWomp } from "womp";
 export default function Note({ children, styles: s, severity }) {
-    return _jsx("div", { class: `${s.note} ${s[severity]}`, children: children });
+  return /* @__PURE__ */ jsx("div", { class: `${s.note} ${s[severity]}`, children });
 }
 Note.css = `
   .note {

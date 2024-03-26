@@ -1,6 +1,6 @@
 import { WompProps, defineWomp } from 'womp';
-import Header from '../components/Header';
-import SideMenu from '../components/SideMenu';
+import Header from '../components/Header.js';
+import SideMenu from '../components/SideMenu.js';
 import { ChildRoute } from 'womp-router';
 
 const mainMenu = [
@@ -11,6 +11,10 @@ const mainMenu = [
 	{
 		title: 'Quick start',
 		link: 'quick-start',
+	},
+	{
+		title: 'Complex Example',
+		link: 'complex-example',
 	},
 	{
 		title: 'Hooks',

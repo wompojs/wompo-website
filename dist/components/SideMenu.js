@@ -1,8 +1,11 @@
-import { jsx as _jsx, jsxs as _jsxs } from "womp/jsx-runtime";
-import { defineWomp } from 'womp';
-import { Link } from 'womp-router';
+import { jsx, jsxs } from "womp/jsx-runtime";
+import { defineWomp } from "womp";
+import { Link } from "womp-router";
 export default function SideMenu({ styles: s, menu, title }) {
-    return (_jsx("aside", { class: s.menu, children: _jsxs("nav", { children: [title, _jsx("ul", { class: s.ul, children: menu.map((item) => (_jsx("li", { children: _jsx(Link, { to: item.link, children: item.title }) }))) })] }) }));
+  return /* @__PURE__ */ jsx("aside", { class: s.menu, children: /* @__PURE__ */ jsxs("nav", { children: [
+    title,
+    /* @__PURE__ */ jsx("ul", { class: s.ul, children: menu.map((item) => /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(Link, { to: item.link, children: item.title }) })) })
+  ] }) });
 }
 SideMenu.css = `
 	:host {

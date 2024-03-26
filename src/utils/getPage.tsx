@@ -1,6 +1,6 @@
-import MainContent from '../components/MainContent';
-import ContentSection from '../components/ContentSection';
-import SideMenu from '../components/SideMenu';
+import MainContent from '../components/MainContent.js';
+import ContentSection from '../components/ContentSection.js';
+import SideMenu from '../components/SideMenu.js';
 import { type RenderHtml } from 'womp';
 
 interface Section {

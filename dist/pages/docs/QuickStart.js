@@ -1,9 +1,9 @@
 import { Fragment, jsx, jsxs } from "womp/jsx-runtime";
 import { defineWomp } from "womp";
-import getPageLayout from "../utils/getPage.js";
-import Code from "../components/Code.js";
+import getPageLayout from "../../utils/getPage.js";
+import Code from "../../components/Code.js";
 import { Link } from "womp-router";
-import Note from "../components/Note.js";
+import Note from "../../components/Note.js";
 const content = {
   title: "Quick Start",
   description: "Learn the basics of Womp in only 5 minutes.",
