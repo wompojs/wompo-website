@@ -22,6 +22,7 @@ const docsRoutes = [
 ];
 
 export default function App() {
+	throw new Error('Erroraccio');
 	return (
 		<Routes>
 			<Route
