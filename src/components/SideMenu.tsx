@@ -1,5 +1,6 @@
-import { type WompProps, defineWomp, useLayoutEffect, useRef, useState } from 'womp';
-import { Link, NavLink } from 'womp-router';
+import { type WompProps, defineWomp } from 'womp';
+import { NavLink } from 'womp-router';
+import SubMenu from './SubMenu.js';
 
 export interface MenuItem {
 	title: string;
@@ -13,19 +14,6 @@ interface SideMenuProps extends WompProps {
 }
 
 export default function SideMenu({ styles: s, menu, title }: SideMenuProps) {
-	const [active, setActive] = useState(true);
-	const maxHeight = useRef<number>(null);
-	const subMenuRef = useRef<HTMLElement>();
-	useLayoutEffect(() => {
-		if (subMenuRef.current) {
-			maxHeight.current = subMenuRef.current.clientHeight;
-			setActive(false);
-		}
-	}, []);
-	const subMenusStyle: Partial<CSSStyleDeclaration> = {
-		maxHeight: active ? `${maxHeight.current}px` : '0px',
-	};
-	if (maxHeight.current == null) delete subMenusStyle.maxHeight;
 	return (
 		<aside class={s.menu}>
 			<nav>
@@ -34,34 +22,9 @@ export default function SideMenu({ styles: s, menu, title }: SideMenuProps) {
 					{menu.map((item) => (
 						<li>
 							{item.menu ? (
-								<>
-									<NavLink to={item.link} class={`${s.link} ${s.hasMenu}`}>
-										<span>{item.title}</span>
-										<svg
-											xmlns='http://www.w3.org/2000/svg'
-											width='16'
-											height='16'
-											fill='currentColor'
-											viewBox='0 0 16 16'
-										>
-											<path
-												fill-rule='evenodd'
-												d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708'
-											/>
-										</svg>
-									</NavLink>
-									<ul ref={subMenuRef} class={s.subMenu} style={subMenusStyle}>
-										{item.menu.map((subMenuItem) => (
-											<li>
-												<NavLink class={s.link} to={subMenuItem.link}>
-													{subMenuItem.title}
-												</NavLink>
-											</li>
-										))}
-									</ul>
-								</>
+								<SubMenu item={item} />
 							) : (
-								<NavLink class={s.link} to={item.link}>
+								<NavLink class='link' to={item.link}>
 									{item.title}
 								</NavLink>
 							)}
@@ -99,29 +62,20 @@ SideMenu.css = `
     display: flex;
     flex-direction: column;
   }
-	.ul .link {
+	.ul [class*="link"] {
 		width: 100%;
 	}
   .ul a {
     text-decoration: none;
     color: #573ef6;
     padding: 10px 20px;
-    display: block;
+    display: flex;
     transition: all .1s;
     border-radius: 30px;
   }
   .ul a:hover, .ul a[class="active"] {
     background-color: #573ef640;
   }
-	.hasMenu a {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	.subMenu {
-		transition: all .3s ease-in-out;
-		overflow: hidden;
-	}
 `;
 
 defineWomp(SideMenu);

@@ -1,6 +1,6 @@
 import { Fragment, jsx, jsxs } from "womp/jsx-runtime";
 import { defineWomp } from "womp";
-import getPageLayout from "../../utils/getPage.js";
+import getPageLayout from "../../utils/getPageLayout.js";
 const content = {
   title: "Introduction",
   description: "Womp is a React-like Web-Component library for creating functional UIs in the Web.",

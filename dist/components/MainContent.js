@@ -85,6 +85,4 @@ MainContent.css = `
     padding: 0 2rem;
   }
 `;
-defineWomp(MainContent, {
-  shadow: true
-});
+defineWomp(MainContent);

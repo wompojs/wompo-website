@@ -1,6 +1,6 @@
 import { Fragment, jsx, jsxs } from "womp/jsx-runtime";
 import { defineWomp } from "womp";
-import getPageLayout from "../../utils/getPage.js";
+import getPageLayout from "../../utils/getPageLayout.js";
 import Code from "../../components/Code.js";
 import { Link } from "womp-router";
 import Note from "../../components/Note.js";

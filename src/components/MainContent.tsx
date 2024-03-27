@@ -96,6 +96,4 @@ MainContent.css = `
   }
 `;
 
-defineWomp(MainContent, {
-	shadow: true,
-});
+defineWomp(MainContent);

@@ -20,7 +20,7 @@ export default function getPageLayout(contents: Contents) {
 		<div style={{ display: 'flex' }}>
 			<MainContent title={contents.title} description={contents.description}>
 				{contents.sections.map((section) => (
-					<ContentSection title={section.title} id={section.id}>
+					<ContentSection title={section.title} sectionId={section.id}>
 						{section.content}
 					</ContentSection>
 				))}

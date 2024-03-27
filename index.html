@@ -6,16 +6,16 @@
 		<title>Womp Documentation</title>
 		<script>
 			/* Live reloading */
-			new EventSource('/esbuild').addEventListener('change', () => location.reload())
+			new EventSource('/esbuild').addEventListener('change', () => location.reload());
 		</script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
 		<script type="importmap">
 			{
 				"imports": {
-					"womp": "../node_modules/womp/dist/womp.js",
-					"womp/jsx-runtime": "../node_modules/womp/jsx-runtime.js",
-					"womp-router": "../node_modules/womp-router/dist/womp-router.js"
+					"womp": "/node_modules/womp/dist/womp.js",
+					"womp/jsx-runtime": "/node_modules/womp/jsx-runtime.js",
+					"womp-router": "/node_modules/womp-router/dist/womp-router.js"
 				}
 			}
 		</script>
@@ -37,7 +37,7 @@
 	</head>
 	<body>
 		<script type="module">
-			import App from '../dist/app.js';
+			import App from '/dist/app.js';
 		</script>
 		<womp-app></womp-app>
 	</body>

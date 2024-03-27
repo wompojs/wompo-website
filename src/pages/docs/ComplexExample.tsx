@@ -1,5 +1,5 @@
 import { defineWomp } from 'womp';
-import getPageLayout, { Contents } from '../../utils/getPage.js';
+import getPageLayout, { Contents } from '../../utils/getPageLayout.js';
 import Code from '../../components/Code.js';
 import { Link } from 'womp-router';
 import Note from '../../components/Note.js';
@@ -44,7 +44,7 @@ const content: Contents = {
               }
               defineWomp(TodoList);
             `}
-						lang="js"
+						lang='js'
 					/>
 					<p>
 						The next step can be render a list of fixed todo items inside the <code>ul</code>{' '}
@@ -78,7 +78,7 @@ const content: Contents = {
               }
               defineWomp(TodoList);
             `}
-						lang="js"
+						lang='js'
 					/>
 					<p>
 						Now it's time to add some interactivity. We should be able to:
@@ -87,7 +87,7 @@ const content: Contents = {
 							<li>Remove a todo when the user clicks the X button.</li>
 						</ol>
 						To do the first step we have to use a new hook:{' '}
-						<Link to="/docs/hooks/useRef">useRef</Link>. The useRef hook allows to the same value of
+						<Link to='/docs/hooks/useRef'>useRef</Link>. The useRef hook allows to the same value of
 						a variable during re-render, without resetting it every time. You are probably wondering
 						why it is relevant to the current case. The answer is that the useRef hook can also be
 						used to "mark" a node and use it as a reference. To do that you simply have to add the "
@@ -136,7 +136,7 @@ const content: Contents = {
               }
               // ...
             `}
-						lang="js"
+						lang='js'
 					/>
 					<p>
 						We are so close to finish!
@@ -145,7 +145,7 @@ const content: Contents = {
 						page they are not lost. To do that we have to somehow know when the component is first
 						rendered, get the todos from the localStorage, and render them. When then also have to
 						modify the saved todos whenever the user adds or deletes one of them. To implement this
-						functionality the <Link to="/docs/hooks/useEffect">useEffect</Link> hook comes to help
+						functionality the <Link to='/docs/hooks/useEffect'>useEffect</Link> hook comes to help
 						us. This hook will accept 2 parameters: a callback function, and an array of
 						dependencies. The callback function will be execeuted on the first render and whenever
 						one of the dependencies changes. Isn't it the perfect case? We can use 2 useEffect hooks
@@ -173,9 +173,9 @@ const content: Contents = {
                 return html\`...\`;
               }
             `}
-						lang="js"
+						lang='js'
 					/>
-					<Note severity="info">
+					<Note severity='info'>
 						If you use this component multiple times, it'll always render the same items, because
 						they are picked from the same localStorage key. You are free to further modify the
 						component so that the items will be picked from a unique localStorage key.

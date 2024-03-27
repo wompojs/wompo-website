@@ -1,5 +1,5 @@
 import { defineWomp } from 'womp';
-import getPageLayout, { Contents } from '../../utils/getPage.js';
+import getPageLayout, { Contents } from '../../utils/getPageLayout.js';
 import Code from '../../components/Code.js';
 import { Link } from 'womp-router';
 import Note from '../../components/Note.js';
@@ -30,7 +30,7 @@ const content: Contents = {
 
               defineWomp(GreetingsComponent);
             `}
-						lang="js"
+						lang='js'
 					/>
 					<p>
 						Nice, you created your first component! Now you just have to render it in the DOM.
@@ -46,7 +46,7 @@ const content: Contents = {
 						<br />
 						Of course, you can even define your own name by using the <u>name</u> option in the
 						second parameter of the <code>defineWomp</code> function. See documentation about{' '}
-						<Link to="/docs/functions/define-womp">
+						<Link to='/docs/functions/define-womp'>
 							<code>defineWomp</code>
 						</Link>{' '}
 						for more.
@@ -58,7 +58,7 @@ const content: Contents = {
               <greetings-component></greetings-component>
               <!-- Will render: <div>Hello, World!</div> -->
             `}
-						lang="html"
+						lang='html'
 					/>
 				</>
 			),
@@ -82,7 +82,7 @@ const content: Contents = {
                 return html\`<\${GreetingsComponent} />\`;
               }
             `}
-						lang="js"
+						lang='js'
 					/>
 					<p>Womp will automatically convert the dynamic tag into:</p>
 					<Code
@@ -91,7 +91,7 @@ const content: Contents = {
                 return html\`<greetings-component></greetings-component>\`;
               }
             `}
-						lang="js"
+						lang='js'
 					/>
 					<p>
 						So going back to the initial question: "
@@ -136,7 +136,7 @@ const content: Contents = {
                 return html\`<div>Hello, \${name}!</div>\`;
               }
             `}
-						lang="js"
+						lang='js'
 					/>
 					<Code
 						code={`
@@ -149,7 +149,7 @@ const content: Contents = {
 							<greetings-component name="My beautiful love"></greetings-component>
 							<!-- Will render: <div>Hello, My beautiful love!</div> -->
             `}
-						lang="html"
+						lang='html'
 					/>
 					<p>
 						If you use your custom components in the HTML, you must know that HTML allows to only
@@ -170,9 +170,9 @@ const content: Contents = {
                 return html\`<div>Hello, \${user.name} \${user.lastname}!</div>\`;
               }
             `}
-						lang="js"
+						lang='js'
 					/>
-					<Note severity="info">
+					<Note severity='info'>
 						If you use a variable as an attribute value, you must not add quotes around the value:
 						the attribute name must only be followed by an equal ("=") and the value.
 					</Note>
@@ -201,7 +201,7 @@ const content: Contents = {
                 return html\`<button @click=\${onClick}>Current value: \${counter}</button>\`;
               }
             `}
-						lang="js"
+						lang='js'
 					/>
 				</>
 			),
@@ -215,7 +215,7 @@ const content: Contents = {
 						The last thing to learn is how to make a component <b>stateful</b>. A stateful component
 						is a component that listens for changes and re-renders whenever there is a change. The
 						easier way to make a stateful component is by using the{' '}
-						<Link to="/docs/hooks/useState">useState</Link> hook. This hook is a function that will
+						<Link to='/docs/hooks/useState'>useState</Link> hook. This hook is a function that will
 						return an array with 2 elements: the current value, and a function to set the new value.
 						The only parameter it accepts is the initial value.
 						<br />
@@ -230,7 +230,7 @@ const content: Contents = {
                 return html\`<button @click=\${onClick}>Current value: \${counter}</button>\`;
               }
             `}
-						lang="js"
+						lang='js'
 					/>
 					<p>
 						That's it. You now know already the 80% of the Womp library. Easy. Isn't it? <br />

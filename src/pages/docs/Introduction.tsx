@@ -1,5 +1,5 @@
 import { defineWomp } from 'womp';
-import getPageLayout, { Contents } from '../../utils/getPage.js';
+import getPageLayout, { Contents } from '../../utils/getPageLayout.js';
 
 const content: Contents = {
 	title: 'Introduction',
@@ -66,7 +66,7 @@ const content: Contents = {
 					</p>
 					<p>
 						You can find everything in details about Web Components on the{' '}
-						<a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components">
+						<a href='https://developer.mozilla.org/en-US/docs/Web/API/Web_components'>
 							MDN Documentation
 						</a>
 						.

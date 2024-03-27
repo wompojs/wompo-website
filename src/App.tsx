@@ -22,22 +22,21 @@ const docsRoutes = [
 ];
 
 export default function App() {
-	throw new Error('Erroraccio');
 	return (
 		<Routes>
 			<Route
-				path="/"
+				path='/'
 				element={
 					<i>
-						<Link to="/docs">docs</Link>
+						<Link to='/docs'>docs</Link>
 					</i>
 				}
 			/>
-			<Route path="/docs" element={<Layout />}>
+			<Route path='/docs' element={<Layout />}>
 				{docsRoutes.map((docPage) => (
 					<Route path={docPage.path} fallback={<i></i>} lazy={() => import(docPage.pagePath)} />
 				))}
-				<Route index redirect="overview" />
+				<Route index redirect='overview' />
 			</Route>
 		</Routes>
 	);

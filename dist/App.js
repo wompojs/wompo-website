@@ -21,7 +21,6 @@ const docsRoutes = [
   }
 ];
 export default function App() {
-  throw new Error("Erroraccio");
   return /* @__PURE__ */ jsxs(Routes, { children: [
     /* @__PURE__ */ jsx(
       Route,
