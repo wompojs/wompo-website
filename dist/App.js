@@ -38,3 +38,6 @@ export default function App() {
 defineWomp(App, {
   name: "womp-app"
 });
+//! Rules: Always return same template.
+//! style=${object}
+//! cssModule

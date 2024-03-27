@@ -25,18 +25,18 @@ export default function App() {
 	return (
 		<Routes>
 			<Route
-				path='/'
+				path="/"
 				element={
 					<i>
-						<Link to='/docs'>docs</Link>
+						<Link to="/docs">docs</Link>
 					</i>
 				}
 			/>
-			<Route path='/docs' element={<Layout />}>
+			<Route path="/docs" element={<Layout />}>
 				{docsRoutes.map((docPage) => (
 					<Route path={docPage.path} fallback={<i></i>} lazy={() => import(docPage.pagePath)} />
 				))}
-				<Route index redirect='overview' />
+				<Route index redirect="overview" />
 			</Route>
 		</Routes>
 	);
@@ -44,3 +44,7 @@ export default function App() {
 defineWomp(App, {
 	name: 'womp-app',
 });
+
+//! Rules: Always return same template.
+//! style=${object}
+//! cssModule
