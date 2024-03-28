@@ -1,4 +1,4 @@
-import { jsx, jsxs } from "womp/jsx-runtime";
+import { Fragment, jsx, jsxs } from "womp/jsx-runtime";
 import { defineWomp } from "womp";
 import { Link, Route, Routes } from "womp-router";
 import Layout from "./layout/Layout.js";
@@ -17,7 +17,13 @@ const docsRoutes = [
   },
   {
     path: "hooks",
-    pagePath: "./pages/docs/Hooks.js"
+    pagePath: "./pages/docs/hooks/Hooks.js",
+    subRoutes: [
+      {
+        path: "useState",
+        pagePath: "./pages/docs/hooks/UseState.js"
+      }
+    ]
   }
 ];
 export default function App() {
@@ -30,7 +36,17 @@ export default function App() {
       }
     ),
     /* @__PURE__ */ jsxs(Route, { path: "/docs", element: /* @__PURE__ */ jsx(Layout, {}), children: [
-      docsRoutes.map((docPage) => /* @__PURE__ */ jsx(Route, { path: docPage.path, fallback: /* @__PURE__ */ jsx("i", {}), lazy: () => import(docPage.pagePath) })),
+      docsRoutes.map((docPage) => /* @__PURE__ */ jsxs(Fragment, { children: [
+        /* @__PURE__ */ jsx(Route, { path: docPage.path, fallback: /* @__PURE__ */ jsx("i", {}), lazy: () => import(docPage.pagePath) }),
+        docPage.subRoutes && docPage.subRoutes.map((subRoute) => /* @__PURE__ */ jsx(
+          Route,
+          {
+            path: `${docPage.path}/${subRoute.path}`,
+            fallback: /* @__PURE__ */ jsx("i", {}),
+            lazy: () => import(subRoute.pagePath)
+          }
+        ))
+      ] })),
       /* @__PURE__ */ jsx(Route, { index: true, redirect: "overview" })
     ] })
   ] });

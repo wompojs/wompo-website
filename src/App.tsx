@@ -2,7 +2,13 @@ import { defineWomp } from 'womp';
 import { Link, Route, Routes } from 'womp-router';
 import Layout from './layout/Layout.js';
 
-const docsRoutes = [
+interface DocRoute {
+	path: string;
+	pagePath: string;
+	subRoutes?: DocRoute[];
+}
+
+const docsRoutes: DocRoute[] = [
 	{
 		path: 'overview',
 		pagePath: './pages/docs/Introduction.js',
@@ -17,7 +23,13 @@ const docsRoutes = [
 	},
 	{
 		path: 'hooks',
-		pagePath: './pages/docs/Hooks.js',
+		pagePath: './pages/docs/hooks/Hooks.js',
+		subRoutes: [
+			{
+				path: 'useState',
+				pagePath: './pages/docs/hooks/UseState.js',
+			},
+		],
 	},
 ];
 
@@ -34,7 +46,17 @@ export default function App() {
 			/>
 			<Route path='/docs' element={<Layout />}>
 				{docsRoutes.map((docPage) => (
-					<Route path={docPage.path} fallback={<i></i>} lazy={() => import(docPage.pagePath)} />
+					<>
+						<Route path={docPage.path} fallback={<i></i>} lazy={() => import(docPage.pagePath)} />
+						{docPage.subRoutes &&
+							docPage.subRoutes.map((subRoute) => (
+								<Route
+									path={`${docPage.path}/${subRoute.path}`}
+									fallback={<i></i>}
+									lazy={() => import(subRoute.pagePath)}
+								/>
+							))}
+					</>
 				))}
 				<Route index redirect='overview' />
 			</Route>

@@ -42,6 +42,8 @@ SubMenu.css = `
   .subMenu {
 		transition: all .3s ease-in-out;
 		overflow: hidden;
+		list-style: none;
+		padding: 0;
 	}
   .hasMenu a {
 		align-items: center;
