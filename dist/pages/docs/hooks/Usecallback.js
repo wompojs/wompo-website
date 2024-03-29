@@ -4,7 +4,7 @@ import getPageLayout from "../../../utils/getPageLayout.js";
 import Code from "../../../components/Code.js";
 import Note from "../../../components/Note.js";
 const content = {
-  title: "UseCallback hook",
+  title: "useCallback hook",
   description: /* @__PURE__ */ jsxs(Fragment, { children: [
     "How to use the ",
     /* @__PURE__ */ jsx("code", { children: "useCallback" }),

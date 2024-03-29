@@ -33,7 +33,7 @@ const docsRoutes: DocRoute[] = [
 				path: 'useCallback',
 				pagePath: './pages/docs/hooks/UseCallback.js',
 			},
-			/* {
+			{
 				path: 'useContext',
 				pagePath: './pages/docs/hooks/UseContext.js',
 			},
@@ -41,6 +41,7 @@ const docsRoutes: DocRoute[] = [
 				path: 'useEffect',
 				pagePath: './pages/docs/hooks/UseEffect.js',
 			},
+			/*
 			{
 				path: 'useExposed',
 				pagePath: './pages/docs/hooks/UseExposed.js',

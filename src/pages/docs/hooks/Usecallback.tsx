@@ -4,7 +4,7 @@ import Code from '../../../components/Code.js';
 import Note from '../../../components/Note.js';
 
 const content: Contents = {
-	title: 'UseCallback hook',
+	title: 'useCallback hook',
 	description: (
 		<>
 			How to use the <code>useCallback</code> hook to cache functions and improve performance.

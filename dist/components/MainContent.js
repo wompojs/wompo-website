@@ -20,7 +20,8 @@ MainContent.css = `
 
   .main code {
     display: inline-block;
-    background-color: #efefef;
+    background-color: #efefefa5;
+    padding: 0 5px;
     border-radius: 5px;
     font-size: 1.6rem;
     font-family: Monospace;

@@ -27,14 +27,15 @@ const docsRoutes = [
         path: "useCallback",
         pagePath: "./pages/docs/hooks/UseCallback.js"
       },
-      /* {
-      	path: 'useContext',
-      	pagePath: './pages/docs/hooks/UseContext.js',
+      {
+        path: "useContext",
+        pagePath: "./pages/docs/hooks/UseContext.js"
       },
       {
-      	path: 'useEffect',
-      	pagePath: './pages/docs/hooks/UseEffect.js',
+        path: "useEffect",
+        pagePath: "./pages/docs/hooks/UseEffect.js"
       },
+      /*
       {
       	path: 'useExposed',
       	pagePath: './pages/docs/hooks/UseExposed.js',
