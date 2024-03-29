@@ -21,6 +21,46 @@ const mainMenu = [
     link: "/docs/hooks",
     menu: [
       {
+        title: "useAsync",
+        link: "/docs/hooks/useAsync"
+      },
+      {
+        title: "useCallback",
+        link: "/docs/hooks/useCallback"
+      },
+      {
+        title: "useContext",
+        link: "/docs/hooks/useContext"
+      },
+      {
+        title: "useEffect",
+        link: "/docs/hooks/useEffect"
+      },
+      {
+        title: "useExposed",
+        link: "/docs/hooks/useExposed"
+      },
+      {
+        title: "useId",
+        link: "/docs/hooks/useId"
+      },
+      {
+        title: "useLayoutEffect",
+        link: "/docs/hooks/useLayoutEffect"
+      },
+      {
+        title: "useMemo",
+        link: "/docs/hooks/useMemo"
+      },
+      {
+        title: "useReducer",
+        link: "/docs/hooks/useReducer"
+      },
+      {
+        title: "useRef",
+        link: "/docs/hooks/useRef"
+      },
+      {
         title: "useState",
         link: "/docs/hooks/useState"
       }

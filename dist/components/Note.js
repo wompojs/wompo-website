@@ -11,5 +11,10 @@ Note.css = `
     background-color: #d1f7ff;
     border-left: 4px solid #5ee3ff;
   }
+  .note.warning {
+    background-color: #ffd57f;
+    border-left: 4px solid #ee9b13;
+;
+  }
 `;
 defineWomp(Note);

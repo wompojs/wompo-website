@@ -24,9 +24,9 @@ Code.css = `
   .pre {
     width: 100%;
     margin: 4rem 0;
-    overflow: auto;
   }
   .pre > code {
+		overflow: auto;
     display: block;
     position: relative;
     padding: 20px;

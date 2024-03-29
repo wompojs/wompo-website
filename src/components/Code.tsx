@@ -21,7 +21,7 @@ export default function Code({ code, lang, styles: s }: CodeProps) {
 	}, []);
 	return (
 		<>
-			<link rel='stylesheet' href='https://unpkg.com/highlightjs@9.16.2/styles/xcode.css' />
+			<link rel="stylesheet" href="https://unpkg.com/highlightjs@9.16.2/styles/xcode.css" />
 			<pre class={s.pre}>
 				<code ref={codeRef}></code>
 			</pre>
@@ -37,9 +37,9 @@ Code.css = `
   .pre {
     width: 100%;
     margin: 4rem 0;
-    overflow: auto;
   }
   .pre > code {
+		overflow: auto;
     display: block;
     position: relative;
     padding: 20px;

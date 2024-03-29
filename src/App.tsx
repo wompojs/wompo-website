@@ -26,6 +26,46 @@ const docsRoutes: DocRoute[] = [
 		pagePath: './pages/docs/hooks/Hooks.js',
 		subRoutes: [
 			{
+				path: 'useAsync',
+				pagePath: './pages/docs/hooks/UseAsync.js',
+			},
+			{
+				path: 'useCallback',
+				pagePath: './pages/docs/hooks/UseCallback.js',
+			},
+			/* {
+				path: 'useContext',
+				pagePath: './pages/docs/hooks/UseContext.js',
+			},
+			{
+				path: 'useEffect',
+				pagePath: './pages/docs/hooks/UseEffect.js',
+			},
+			{
+				path: 'useExposed',
+				pagePath: './pages/docs/hooks/UseExposed.js',
+			},
+			{
+				path: 'useId',
+				pagePath: './pages/docs/hooks/UseId.js',
+			},
+			{
+				path: 'useLayoutEffect',
+				pagePath: './pages/docs/hooks/UseLayoutEffect.js',
+			},
+			{
+				path: 'useMemo',
+				pagePath: './pages/docs/hooks/UseMemo.js',
+			},
+			{
+				path: 'useReducer',
+				pagePath: './pages/docs/hooks/UseReducer.js',
+			},
+			{
+				path: 'useRef',
+				pagePath: './pages/docs/hooks/UseRef.js',
+			}, */
+			{
 				path: 'useState',
 				pagePath: './pages/docs/hooks/UseState.js',
 			},
@@ -37,14 +77,14 @@ export default function App() {
 	return (
 		<Routes>
 			<Route
-				path='/'
+				path="/"
 				element={
 					<i>
-						<Link to='/docs'>docs</Link>
+						<Link to="/docs">docs</Link>
 					</i>
 				}
 			/>
-			<Route path='/docs' element={<Layout />}>
+			<Route path="/docs" element={<Layout />}>
 				{docsRoutes.map((docPage) => (
 					<>
 						<Route path={docPage.path} fallback={<i></i>} lazy={() => import(docPage.pagePath)} />
@@ -58,7 +98,7 @@ export default function App() {
 							))}
 					</>
 				))}
-				<Route index redirect='overview' />
+				<Route index redirect="overview" />
 			</Route>
 		</Routes>
 	);
