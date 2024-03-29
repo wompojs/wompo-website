@@ -1,7 +1,6 @@
 import { defineWomp } from 'womp';
 import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
 import Code from '../../../components/Code.js';
-import Note from '../../../components/Note.js';
 import { Link } from 'womp-router';
 
 const content: Contents = {
