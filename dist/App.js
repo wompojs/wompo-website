@@ -35,19 +35,19 @@ const docsRoutes = [
         path: "useEffect",
         pagePath: "./pages/docs/hooks/UseEffect.js"
       },
+      {
+        path: "useExposed",
+        pagePath: "./pages/docs/hooks/UseExposed.js"
+      },
+      {
+        path: "useId",
+        pagePath: "./pages/docs/hooks/UseId.js"
+      },
+      {
+        path: "useLayoutEffect",
+        pagePath: "./pages/docs/hooks/UseLayoutEffect.js"
+      },
       /*
-      {
-      	path: 'useExposed',
-      	pagePath: './pages/docs/hooks/UseExposed.js',
-      },
-      {
-      	path: 'useId',
-      	pagePath: './pages/docs/hooks/UseId.js',
-      },
-      {
-      	path: 'useLayoutEffect',
-      	pagePath: './pages/docs/hooks/UseLayoutEffect.js',
-      },
       {
       	path: 'useMemo',
       	pagePath: './pages/docs/hooks/UseMemo.js',

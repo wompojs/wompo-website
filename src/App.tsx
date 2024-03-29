@@ -41,7 +41,6 @@ const docsRoutes: DocRoute[] = [
 				path: 'useEffect',
 				pagePath: './pages/docs/hooks/UseEffect.js',
 			},
-			/*
 			{
 				path: 'useExposed',
 				pagePath: './pages/docs/hooks/UseExposed.js',
@@ -54,6 +53,7 @@ const docsRoutes: DocRoute[] = [
 				path: 'useLayoutEffect',
 				pagePath: './pages/docs/hooks/UseLayoutEffect.js',
 			},
+			/*
 			{
 				path: 'useMemo',
 				pagePath: './pages/docs/hooks/UseMemo.js',
@@ -78,14 +78,14 @@ export default function App() {
 	return (
 		<Routes>
 			<Route
-				path="/"
+				path='/'
 				element={
 					<i>
-						<Link to="/docs">docs</Link>
+						<Link to='/docs'>docs</Link>
 					</i>
 				}
 			/>
-			<Route path="/docs" element={<Layout />}>
+			<Route path='/docs' element={<Layout />}>
 				{docsRoutes.map((docPage) => (
 					<>
 						<Route path={docPage.path} fallback={<i></i>} lazy={() => import(docPage.pagePath)} />
@@ -99,7 +99,7 @@ export default function App() {
 							))}
 					</>
 				))}
-				<Route index redirect="overview" />
+				<Route index redirect='overview' />
 			</Route>
 		</Routes>
 	);

@@ -2,7 +2,7 @@ import { defineWomp } from 'womp';
 import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
 import Code from '../../../components/Code.js';
 import { Link } from 'womp-router';
-import Note from '../../../components/Note.js';
+import InteractiveExposedExample from '../../../tutorials/InteractiveExposedExample.js';
 
 const content: Contents = {
 	title: 'useExposed hook',
@@ -21,11 +21,22 @@ const content: Contents = {
 						The <code>useExposed</code> hook will let you expose some data into the DOM so that it
 						can be accessed from other scripts or by selecting the HTML node through{' '}
 						<code>document.querySelector</code> or through the{' '}
-						<Link to="/docs/hooks/useRef">useRef</Link> hook.
+						<Link to='/docs/hooks/useRef'>useRef</Link> hook.
 					</p>
 					<p>
-						Unlike <b>React</b>, in Womp components are meant to be <u>completely</u> isolated,
-						meaning that their state should't dependend on props and
+						Unlike <b>React</b>, Womp components are meant to be <u>isolated</u>, meaning that their
+						state should't dependend on props, even though it is possible. This is becasue Womp
+						Components are actually DOM elements, meaning that they can be accessed by other scripts
+						and call methods or access data. This allows to <b>isolate</b> the state and make it
+						depend on the component itself (and that's it). A great example can be a <b>Modal</b>{' '}
+						component:
+						<br />
+						In React, you would create the component and make it accept an "open" prop to handle its
+						state. In Womp you can also do it, but it's <b>not recommended</b>. Instead, you want to
+						handle the state internally by creating the <code>open()</code> and <code>close()</code>{' '}
+						methods, and call them from outside. This allows <b>great code reduction</b> (you don't
+						have to re-create the same logic for opening and closing the modal wherever it is used)
+						and <b>isolation</b>.
 					</p>
 				</>
 			),
@@ -37,70 +48,144 @@ const content: Contents = {
 				<>
 					<Code
 						code={`
-							UseExposed(effectFn, dependencies);
+							useExposed(object);
 						`}
-						lang="js"
+						lang='js'
 					/>
 					<p>
-						The hook accepts two parameters: the <b>effect function</b> and the{' '}
-						<b>list of dependencies</b>. The effect function will be executed on first render and
-						any time one of the dependecies changes. This function can be a void function or can
-						return a second function (called cleaning function) that will be executed{' '}
-						<b>before the execution of the next same effect</b> or if the component <b>unmount</b>{' '}
-						(is removed from the DOM).
+						The hook accepts one single parameter, which is an object representing the keys you want
+						to expose and their corresponding values. For example:
 					</p>
-					<p>
-						If an empty array is given as a list of dependecies, the effect will be executed{' '}
-						<b>only</b> after the first render.
-					</p>
-					<p>If no dependencies are specified, the effect will be executed on every render.</p>
-					<Note severity="info">
-						<b>Note:</b> The effect will be executed <b>asynchronously</b> after the component has
-						been rendered.
-					</Note>
+					<Code
+						code={`
+							function ExampleComponent(){
+								useExposed({
+									jumpscare: () => alert('Bu!'),
+								})
+								return html\`\`;
+							}
+						`}
+						lang='js'
+					/>
+					This element exposes the <b>jumpscare</b> function, that you can call by selecting the
+					element:
+					<Code
+						code={`
+							<example-component></example-component>
+							<script>
+								document.querySelector('example-component').jumpscare();
+							</script>
+						`}
+						lang='html'
+					/>
 				</>
 			),
 		},
 		{
-			title: 'Example: timeout',
-			id: 'timeout-example',
+			title: 'Example: modal',
+			id: 'modal-example',
 			content: (
 				<>
 					<p>
-						Using the <code>window.setTimeout</code> function is a common use case for the{' '}
-						<code>UseExposed</code> hook. Here's an example:
+						To understand better how the <code>useExposed</code> hook works, we will create a Modal
+						component, and call its methods from an outer script.
 					</p>
 					<Code
 						code={`
-							import { UseExposed, defineWomp, html } from 'womp';
+							import { defineWomp, html, useExposed, useState } from 'womp';
 
-              function TimeoutComponent(){
-                UseExposed(() => {
-                  const timeoutId = setTimeout(() => {
-                    alert('I was first rendered 5 seconds ago!');
-                  }, 5000);
-                  return () => {
-                    clearTimeout(timeoutId);
-                  }
-                }, [])
-                return html\`Nothing to see here, boss.\`;
-              }
+							export default function ModalExample({ children, styles: s }) {
+								const [open, setOpen] = useState(false);
 
-              defineWomp(TimeoutComponent);
+								const openModal = () => {
+									// Block scroll
+									document.body.style.overflow = 'hidden';
+									setOpen(true);
+								};
+
+								const closeModal = () => {
+									// Enable scroll
+									document.body.style.overflow = 'auto';
+									setOpen(false);
+								};
+
+								useExposed({
+									open: openModal,
+									close: closeModal,
+								});
+
+								return html\`
+									<div class=\${\`\${s.backdrop} \${open && s.open}\`}>
+										<div class=\${s.modal}>
+											\${children}
+											<button @click=\${closeModal}>X</button>
+										</div>
+									</div>
+								\`;
+							}
+
+							defineWomp(ModalExample);
 						`}
-						lang="js"
+						lang='js'
 					/>
-					<Note severity="warning">
-						When using timeouts and intervals, remember to <b>always</b> cancel them using the{' '}
-						<b>cleaning function</b> (like in the example). Not doing so can lead to unexpected
-						behaviours.
-					</Note>
+					We can now add the styles of the Modal:
+					<Code
+						code={`
+							ModalExample.css = \`
+								.backdrop.open {
+									display: block;
+								}
+								.backdrop {
+									display: none;
+									position: fixed;
+									top: 0;
+									left: 0;
+									width: 100vw;
+									height: 100vh;
+									background-color: #00000040;
+									z-index: 1000;
+								}
+								.modal {
+									position: fixed;
+									left: 50%;
+									top: 50%;
+									width: 600px;
+									height: auto;
+									max-width: 90vw;
+									transform: translate(-50%, -50%);
+									border-radius: 10px;
+									background-color: #fff;
+									padding: 30px;
+								}
+							\`;
+						`}
+						lang='js'
+					/>
+					Job done!
+					<br />
+					Now to see it in action you have two options:
+					<InteractiveExposedExample />
+				</>
+			),
+		},
+		{
+			title: 'Why not using props',
+			id: 'why-no-props',
+			content: (
+				<>
 					<p>
-						<i>Why the UseExposed hook is needed for this case?</i>
+						As said before, implementing the modal in a "React approach" (using props) would work
+						perfectly fine. The only problem with that approach would be (other than being
+						conceptually wrong, because you move the state up) that you'd cause the re-render of two
+						components instead of only one. Why?
 						<br />
-						Because if you call the <code>setTimoeut</code> function directly inside the component,
-						it will be executed <b>every time</b> the component renders. This usually causes
-						unwanted loops when inside the timeout/interval callback a setState is called.
+						To do that, you'd have to create the "open" state on the parent component that handles
+						the
+						<code>Modal</code>, and set the new state accordingly to the user interactions. So, when
+						the user clicks a button, if you use the "props approach" you will cause the
+						re-rendering of the modal and of the parent component itself. If you implement the "
+						<b>exposed</b>" approach, you will only cause the re-render of the modal, so your
+						application will be more efficient.
 					</p>
 				</>
 			),

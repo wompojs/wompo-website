@@ -5,9 +5,11 @@ export default function Code({ code, lang, styles: s }) {
   useEffect(() => {
     let formatted = code.replace(/\t/g, "  ");
     const firstLineSpaces = /^\n(\s+)/.exec(formatted);
-    const spaces = firstLineSpaces[1];
-    const removeStart = new RegExp(`^${spaces}`, "gm");
-    formatted = formatted.replace(removeStart, "").replace(/^\n/, "").replace(/\n\s+$/g, "");
+    if (firstLineSpaces) {
+      const spaces = firstLineSpaces[1];
+      const removeStart = new RegExp(`^${spaces}`, "gm");
+      formatted = formatted.replace(removeStart, "").replace(/^\n/, "").replace(/\n\s+$/g, "");
+    }
     const highlighted = window.hljs.highlight(formatted, { language: lang });
     codeRef.current.innerHTML = highlighted.value;
   }, []);
