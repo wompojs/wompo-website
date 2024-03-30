@@ -3,7 +3,7 @@ import { defineWomp } from "womp";
 import getPageLayout from "../../../utils/getPageLayout.js";
 import Code from "../../../components/Code.js";
 import { Link } from "womp-router";
-import InteractiveExposedExample from "../../../tutorials/InteractiveExposedExample.js";
+import InteractiveExposedExample from "../../../examples/InteractiveExposedExample.js";
 const content = {
   title: "useExposed hook",
   description: /* @__PURE__ */ jsxs(Fragment, { children: [

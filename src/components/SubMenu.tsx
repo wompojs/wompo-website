@@ -4,11 +4,12 @@ import { NavLink, useCurrentRoute } from 'womp-router';
 
 interface SubMenuProps extends WompProps {
 	item: MenuItem;
+	prefix: string;
 }
 
-export default function SubMenu({ item, styles: s }: SubMenuProps) {
+export default function SubMenu({ item, prefix, styles: s }: SubMenuProps) {
 	const currentRoute = useCurrentRoute();
-	const active = currentRoute.startsWith('/docs/hooks');
+	const active = currentRoute.startsWith(prefix);
 	const maxHeight = useRef<number>(null);
 	const subMenuRef = useRef<HTMLElement>();
 
@@ -20,7 +21,7 @@ export default function SubMenu({ item, styles: s }: SubMenuProps) {
 
 	return (
 		<>
-			<NavLink to={item.link} class={`link ${s.hasMenu}`}>
+			<NavLink to={item.link} class={`link ${s.hasMenu} ${active && s.active}`}>
 				<span>{item.title}</span>
 				<svg
 					xmlns='http://www.w3.org/2000/svg'
@@ -54,6 +55,10 @@ SubMenu.css = `
 		list-style: none;
 		padding: 0;
 	}
+	.subMenu a {
+		font-size: 16px;
+		padding-left: 4rem !important;
+	}
   .hasMenu a {
 		align-items: center;
 		justify-content: space-between;
@@ -61,7 +66,7 @@ SubMenu.css = `
   .hasMenu svg {
     transition: all .3s ease-in-out;
   }
-  .hasMenu a[class="active"] svg {
+  .hasMenu.active svg {
     transform: rotate(90deg);
   }
 `;

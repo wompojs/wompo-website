@@ -41,6 +41,10 @@ const mainMenu = [
         link: "/docs/hooks/useExposed"
       },
       {
+        title: "useHook",
+        link: "/docs/hooks/useHook"
+      },
+      {
         title: "useId",
         link: "/docs/hooks/useId"
       },
@@ -63,6 +67,20 @@ const mainMenu = [
       {
         title: "useState",
         link: "/docs/hooks/useState"
+      }
+    ]
+  },
+  {
+    title: "Custom hooks",
+    link: "/docs/custom-hooks"
+  },
+  {
+    title: "APIs",
+    link: "/docs/api",
+    menu: [
+      {
+        title: "Womp Element",
+        link: "/docs/api/element"
       }
     ]
   }

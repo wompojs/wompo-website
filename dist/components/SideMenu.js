@@ -5,7 +5,7 @@ import SubMenu from "./SubMenu.js";
 export default function SideMenu({ styles: s, menu, title }) {
   return /* @__PURE__ */ jsx("aside", { class: s.menu, children: /* @__PURE__ */ jsxs("nav", { children: [
     title,
-    /* @__PURE__ */ jsx("ul", { class: s.ul, children: menu.map((item) => /* @__PURE__ */ jsx("li", { children: item.menu ? /* @__PURE__ */ jsx(SubMenu, { item }) : /* @__PURE__ */ jsx(NavLink, { class: "link", to: item.link, children: item.title }) })) })
+    /* @__PURE__ */ jsx("ul", { class: s.ul, children: menu.map((item) => /* @__PURE__ */ jsx("li", { children: item.menu ? /* @__PURE__ */ jsx(SubMenu, { item, prefix: item.link }) : /* @__PURE__ */ jsx(NavLink, { class: "link", to: item.link, children: item.title }) })) })
   ] }) });
 }
 SideMenu.css = `

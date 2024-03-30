@@ -2,7 +2,7 @@ import { defineWomp } from 'womp';
 import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
 import Code from '../../../components/Code.js';
 import { Link } from 'womp-router';
-import LoggedInUser from '../../../tutorials/LoggedInUser.js';
+import LoggedInUser from '../../../examples/LoggedInUser.js';
 import Note from '../../../components/Note.js';
 
 const content: Contents = {
@@ -36,11 +36,11 @@ const content: Contents = {
 						code={`
 							const context = useContext(Context);
 						`}
-						lang="js"
+						lang='js'
 					/>
 					<p>
 						The hook accepts only a parameter, which is the{' '}
-						<Link to="/docs/functions/createContext">Context</Link> on which the component should
+						<Link to='/docs/functions/createContext'>Context</Link> on which the component should
 						subscribe to. The hook will return the value provided by a parent{' '}
 						<code>Context.Provider</code>, or, if no matching providers are found above the
 						component, the <b>default value</b> of the given context.
@@ -109,7 +109,7 @@ const content: Contents = {
               defineWomp(App);
               defineWomp(UserInfo);
 						`}
-						lang="js"
+						lang='js'
 					/>
 					<p>
 						Result:
@@ -131,7 +131,7 @@ const content: Contents = {
 						information to alle the children components. It'd be hell. Using contexts will
 						drastically improve the state management of the whole application.
 					</p>
-					<Note severity="info">
+					<Note severity='info'>
 						<b>Note:</b> The useContext hook will get the value of the <b>closest</b> matched
 						provider. If multiple providers of the same context are above the component, they will
 						be ignored.

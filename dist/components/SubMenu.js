@@ -1,9 +1,9 @@
 import { Fragment, jsx, jsxs } from "womp/jsx-runtime";
 import { defineWomp, useLayoutEffect, useRef } from "womp";
 import { NavLink, useCurrentRoute } from "womp-router";
-export default function SubMenu({ item, styles: s }) {
+export default function SubMenu({ item, prefix, styles: s }) {
   const currentRoute = useCurrentRoute();
-  const active = currentRoute.startsWith("/docs/hooks");
+  const active = currentRoute.startsWith(prefix);
   const maxHeight = useRef(null);
   const subMenuRef = useRef();
   useLayoutEffect(() => {
@@ -15,7 +15,7 @@ export default function SubMenu({ item, styles: s }) {
       subMenuRef.current.style.maxHeight = `0px`;
   }, [currentRoute]);
   return /* @__PURE__ */ jsxs(Fragment, { children: [
-    /* @__PURE__ */ jsxs(NavLink, { to: item.link, class: `link ${s.hasMenu}`, children: [
+    /* @__PURE__ */ jsxs(NavLink, { to: item.link, class: `link ${s.hasMenu} ${active && s.active}`, children: [
       /* @__PURE__ */ jsx("span", { children: item.title }),
       /* @__PURE__ */ jsx(
         "svg",
@@ -45,6 +45,10 @@ SubMenu.css = `
 		list-style: none;
 		padding: 0;
 	}
+	.subMenu a {
+		font-size: 16px;
+		padding-left: 4rem !important;
+	}
   .hasMenu a {
 		align-items: center;
 		justify-content: space-between;
@@ -52,7 +56,7 @@ SubMenu.css = `
   .hasMenu svg {
     transition: all .3s ease-in-out;
   }
-  .hasMenu a[class="active"] svg {
+  .hasMenu.active svg {
     transform: rotate(90deg);
   }
 `;

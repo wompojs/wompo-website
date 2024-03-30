@@ -3,7 +3,7 @@ import { defineWomp } from "womp";
 import getPageLayout from "../../../utils/getPageLayout.js";
 import Code from "../../../components/Code.js";
 import { Link } from "womp-router";
-import LoggedInUser from "../../../tutorials/LoggedInUser.js";
+import LoggedInUser from "../../../examples/LoggedInUser.js";
 import Note from "../../../components/Note.js";
 const content = {
   title: "useContext hook",

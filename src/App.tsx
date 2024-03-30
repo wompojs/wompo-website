@@ -46,6 +46,10 @@ const docsRoutes: DocRoute[] = [
 				pagePath: './pages/docs/hooks/UseExposed.js',
 			},
 			{
+				path: 'useHook',
+				pagePath: './pages/docs/hooks/UseHook.js',
+			},
+			{
 				path: 'useId',
 				pagePath: './pages/docs/hooks/UseId.js',
 			},
@@ -53,7 +57,6 @@ const docsRoutes: DocRoute[] = [
 				path: 'useLayoutEffect',
 				pagePath: './pages/docs/hooks/UseLayoutEffect.js',
 			},
-			/*
 			{
 				path: 'useMemo',
 				pagePath: './pages/docs/hooks/UseMemo.js',
@@ -65,12 +68,16 @@ const docsRoutes: DocRoute[] = [
 			{
 				path: 'useRef',
 				pagePath: './pages/docs/hooks/UseRef.js',
-			}, */
+			},
 			{
 				path: 'useState',
 				pagePath: './pages/docs/hooks/UseState.js',
 			},
 		],
+	},
+	{
+		path: 'custom-hooks',
+		pagePath: './pages/docs/CustomHooks.js',
 	},
 ];
 

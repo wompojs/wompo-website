@@ -1,11 +1,11 @@
 import { defineWomp } from 'womp';
 import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
 import Code from '../../../components/Code.js';
-import Counter from '../../../tutorials/Counter.js';
-import Timer from '../../../tutorials/Timer.js';
+import Counter from '../../../examples/Counter.js';
+import Timer from '../../../examples/Timer.js';
 import Note from '../../../components/Note.js';
-import UserForm from '../../../tutorials/UserForm.js';
-import StateInitializerExample from '../../../tutorials/StateInitializer.js';
+import UserForm from '../../../examples/UserForm.js';
+import StateInitializerExample from '../../../examples/StateInitializer.js';
 
 const content: Contents = {
 	title: 'useState hook',
@@ -41,7 +41,7 @@ const content: Contents = {
 						code={`
 							const [state, setState] = useState(initialState);
 						`}
-						lang="js"
+						lang='js'
 					/>
 					<p>
 						The hook will return an array containing two values: <b>the current value</b> of the
@@ -68,7 +68,7 @@ const content: Contents = {
 						this function. A common use case for this can be using an initial state that requires a
 						computational operation.
 					</p>
-					<Note severity="warning">
+					<Note severity='warning'>
 						<b>Note:</b> Keep in mind that a component should alway be pure! This means that the
 						initializer function should also be pure.
 					</Note>
@@ -94,7 +94,7 @@ const content: Contents = {
 
 							defineWomp(UserForm);
 						`}
-						lang="js"
+						lang='js'
 					/>
 					<p>
 						Result:
@@ -131,7 +131,7 @@ const content: Contents = {
 
 							defineWomp(Counter);
 						`}
-						lang="js"
+						lang='js'
 					/>
 					<div style={{ textAlign: 'center' }}>
 						<Counter />
@@ -188,7 +188,7 @@ const content: Contents = {
 
 							defineWomp(Timer);
 						`}
-						lang="js"
+						lang='js'
 					/>
 					<div style={{ textAlign: 'center' }}>
 						<Timer />
@@ -204,7 +204,7 @@ const content: Contents = {
 						it's called but it keeps being 0 so it'll be set to 1, and so on.
 						<br />
 					</p>
-					<Note severity="info">
+					<Note severity='info'>
 						In general, you want to use the <b>setState callback function</b> whenever you need to
 						updated the state inside a callback that is not re-initialized on every render.
 					</Note>
@@ -316,7 +316,7 @@ const content: Contents = {
 
 							defineWomp(UserForm);
 						`}
-						lang="js"
+						lang='js'
 					/>
 					<div style={{ textAlign: 'center' }}>
 						<UserForm />

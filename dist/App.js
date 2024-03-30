@@ -40,6 +40,10 @@ const docsRoutes = [
         pagePath: "./pages/docs/hooks/UseExposed.js"
       },
       {
+        path: "useHook",
+        pagePath: "./pages/docs/hooks/UseHook.js"
+      },
+      {
         path: "useId",
         pagePath: "./pages/docs/hooks/UseId.js"
       },
@@ -47,24 +51,27 @@ const docsRoutes = [
         path: "useLayoutEffect",
         pagePath: "./pages/docs/hooks/UseLayoutEffect.js"
       },
-      /*
       {
-      	path: 'useMemo',
-      	pagePath: './pages/docs/hooks/UseMemo.js',
+        path: "useMemo",
+        pagePath: "./pages/docs/hooks/UseMemo.js"
       },
       {
-      	path: 'useReducer',
-      	pagePath: './pages/docs/hooks/UseReducer.js',
+        path: "useReducer",
+        pagePath: "./pages/docs/hooks/UseReducer.js"
       },
       {
-      	path: 'useRef',
-      	pagePath: './pages/docs/hooks/UseRef.js',
-      }, */
+        path: "useRef",
+        pagePath: "./pages/docs/hooks/UseRef.js"
+      },
       {
         path: "useState",
         pagePath: "./pages/docs/hooks/UseState.js"
       }
     ]
+  },
+  {
+    path: "custom-hooks",
+    pagePath: "./pages/docs/CustomHooks.js"
   }
 ];
 export default function App() {

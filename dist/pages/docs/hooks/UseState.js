@@ -2,11 +2,11 @@ import { Fragment, jsx, jsxs } from "womp/jsx-runtime";
 import { defineWomp } from "womp";
 import getPageLayout from "../../../utils/getPageLayout.js";
 import Code from "../../../components/Code.js";
-import Counter from "../../../tutorials/Counter.js";
-import Timer from "../../../tutorials/Timer.js";
+import Counter from "../../../examples/Counter.js";
+import Timer from "../../../examples/Timer.js";
 import Note from "../../../components/Note.js";
-import UserForm from "../../../tutorials/UserForm.js";
-import StateInitializerExample from "../../../tutorials/StateInitializer.js";
+import UserForm from "../../../examples/UserForm.js";
+import StateInitializerExample from "../../../examples/StateInitializer.js";
 const content = {
   title: "useState hook",
   description: /* @__PURE__ */ jsxs(Fragment, { children: [

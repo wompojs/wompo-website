@@ -22,7 +22,7 @@ export default function SideMenu({ styles: s, menu, title }: SideMenuProps) {
 					{menu.map((item) => (
 						<li>
 							{item.menu ? (
-								<SubMenu item={item} />
+								<SubMenu item={item} prefix={item.link} />
 							) : (
 								<NavLink class='link' to={item.link}>
 									{item.title}
