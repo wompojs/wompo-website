@@ -131,7 +131,7 @@ const content: Contents = {
 						Because with this hook you have access to the component's instance, you can call methods
 						on it or perform modifications. You can see the available methods and data accessible
 						through a component's instance in the{' '}
-						<Link to='/docs/api/element'>Womp Element API</Link>.
+						<Link to='/docs/apis/element'>Womp Element API</Link>.
 					</p>
 					<p>
 						Enough. Let's explore a nice example to see in practice how powerful this hook can be.
@@ -206,8 +206,8 @@ const content: Contents = {
 							<Link to='/docs/hooks/useEffect'>useEffect</Link>, or{' '}
 							<Link to='/docs/hooks/useRef'>useRef</Link>. This was just to demostrate how you can
 							implement your own hook and make the component stateful by requesting updates. If you
-							can, you should alway avoid using the <b>useHook</b> hook and use instead other native
-							Womp hooks to achieve the same result.
+							can, you should always avoid using the <b>useHook</b> hook and use instead other
+							native Womp hooks to achieve the same result.
 							<br />
 							To know how to make a custom hook combining the already existing ones, see the{' '}
 							<Link to='/docs/custom-hooks'>Custom hooks</Link> section.
@@ -218,6 +218,58 @@ const content: Contents = {
 							<b>Never</b> modify the value of another hook. Always modify the{' '}
 							<code>component.hooks[hookIndex]</code> hook. Modifying other hooks may break the
 							component and create unexpected behaviors.
+						</Note>
+					</p>
+				</>
+			),
+		},
+		{
+			title: 'Subscribers',
+			id: 'subscribers',
+			content: (
+				<>
+					<p>
+						At some point you may want to create a hook that has a <b>Set</b> of subscribers
+						components. What it means is that you may want this hook to register all the components
+						that use that hook and perform actions on them when something happens. A great example
+						can be implementing a <b>global stateful storage</b>. This kind of approach is currently
+						used in the <Link to='/docs/hooks/useContext'>useContext</Link> hook. If you do that,
+						you should also <b>remove</b> a subscriber when it is removed from the DOM. To do that,
+						you can override the component's (subscriber) <code>onDisconnected</code> callback, like
+						this:
+					</p>
+					<Code
+						code={`
+							const subscribers = new Set();
+
+							// ...
+
+							subscribers.forEach(component => {
+								// Get the old onDisconnected callback
+								const oldDisconnectedCallback = component.onDisconnected;
+								// Override it with a new function
+								component.onDisconnected = () => {
+									subscribers.delete(component);
+									// But still execute the old callback!!
+									oldDisconnectedCallback();
+								};
+							});
+						`}
+						lang='js'
+					/>
+					<p>
+						<Note severity='warning'>
+							It is <b>very</b> important to still execute the old <code>onDisconnected</code>{' '}
+							callback. If you don't, you may compromise the correct component's behavior and have
+							performance impacts on your application.
+						</Note>
+					</p>
+					<p>
+						<Note severity='warning'>
+							If you don't handle properly what happens when a subscriber is unmounted you can
+							pollute the memory with unused resources and perform re-renders of components that are
+							not even in the DOM and so that are not even visible to the user. You always want to
+							be careful when creating your own advanced hook, and handle your events appropriately.
 						</Note>
 					</p>
 				</>

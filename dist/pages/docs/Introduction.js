@@ -62,7 +62,14 @@ const content = {
         /* @__PURE__ */ jsxs("p", { children: [
           "You can find everything in details about Web Components on the",
           " ",
-          /* @__PURE__ */ jsx("a", { href: "https://developer.mozilla.org/en-US/docs/Web/API/Web_components", children: "MDN Documentation" }),
+          /* @__PURE__ */ jsx(
+            "a",
+            {
+              target: "_blank",
+              href: "https://developer.mozilla.org/en-US/docs/Web/API/Web_components",
+              children: "MDN Documentation"
+            }
+          ),
           "."
         ] })
       ] })

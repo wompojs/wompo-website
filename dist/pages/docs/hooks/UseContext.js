@@ -38,7 +38,7 @@ const content = {
         /* @__PURE__ */ jsxs("p", { children: [
           "The hook accepts only a parameter, which is the",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/docs/functions/createContext", children: "Context" }),
+          /* @__PURE__ */ jsx(Link, { to: "/docs/apis/createContext", children: "Context" }),
           " on which the component should subscribe to. The hook will return the value provided by a parent",
           " ",
           /* @__PURE__ */ jsx("code", { children: "Context.Provider" }),

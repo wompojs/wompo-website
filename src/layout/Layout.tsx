@@ -76,11 +76,35 @@ const mainMenu: MenuItem[] = [
 	},
 	{
 		title: 'APIs',
-		link: '/docs/api',
+		link: '/docs/apis',
 		menu: [
 			{
-				title: 'Womp Element',
-				link: '/docs/api/element',
+				title: 'createContext',
+				link: '/docs/apis/createContext',
+			},
+			{
+				title: 'defineWomp',
+				link: '/docs/apis/defineWomp',
+			},
+			{
+				title: 'Element API',
+				link: '/docs/apis/element',
+			},
+			{
+				title: 'html',
+				link: '/docs/apis/html',
+			},
+			{
+				title: 'lazy',
+				link: '/docs/apis/lazy',
+			},
+			{
+				title: 'registeredComponents',
+				link: '/docs/apis/registeredComponents',
+			},
+			{
+				title: 'wompDefaultOptions',
+				link: '/docs/apis/wompDefaultOptions',
 			},
 		],
 	},

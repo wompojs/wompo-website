@@ -4,6 +4,7 @@ import getPageLayout from "../../../utils/getPageLayout.js";
 import Code from "../../../components/Code.js";
 import { Link } from "womp-router";
 import InteractiveExposedExample from "../../../examples/InteractiveExposedExample.js";
+import Note from "../../../components/Note.js";
 const content = {
   title: "useExposed hook",
   description: /* @__PURE__ */ jsxs(Fragment, { children: [
@@ -51,6 +52,11 @@ const content = {
           " (you don't have to re-create the same logic for opening and closing the modal wherever it is used) and ",
           /* @__PURE__ */ jsx("b", { children: "isolation" }),
           "."
+        ] }),
+        /* @__PURE__ */ jsxs(Note, { severity: "info", children: [
+          "Unlike all the other hooks, the ",
+          /* @__PURE__ */ jsx("code", { children: "useExposed" }),
+          " hook can be used inside conditional statements."
         ] })
       ] })
     },

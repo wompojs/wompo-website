@@ -2,7 +2,7 @@ import { WompProps, defineWomp, useEffect, useRef } from 'womp';
 
 interface CodeProps extends WompProps {
 	code: string;
-	lang: 'js' | 'jsx' | 'html';
+	lang: 'js' | 'jsx' | 'html' | 'ts';
 }
 
 export default function Code({ code, lang, styles: s }: CodeProps) {

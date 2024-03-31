@@ -79,6 +79,40 @@ const docsRoutes: DocRoute[] = [
 		path: 'custom-hooks',
 		pagePath: './pages/docs/CustomHooks.js',
 	},
+	{
+		path: 'apis',
+		pagePath: './pages/docs/apis/Apis.js',
+		subRoutes: [
+			{
+				path: 'createContext',
+				pagePath: './pages/docs/apis/CreateContext.js',
+			},
+			{
+				path: 'defineWomp',
+				pagePath: './pages/docs/apis/DefineWomp.js',
+			},
+			{
+				path: 'element',
+				pagePath: './pages/docs/apis/ElementApi.js',
+			},
+			{
+				path: 'html',
+				pagePath: './pages/docs/apis/HtmlApi.js',
+			},
+			{
+				path: 'lazy',
+				pagePath: './pages/docs/apis/Lazy.js',
+			},
+			{
+				path: 'registeredComponents',
+				pagePath: './pages/docs/apis/registeredComponents.js',
+			},
+			{
+				path: 'wompDefaultOptions',
+				pagePath: './pages/docs/apis/WompDefaultOptions.js',
+			},
+		],
+	},
 ];
 
 export default function App() {

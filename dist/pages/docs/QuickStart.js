@@ -59,9 +59,8 @@ const content = {
           /* @__PURE__ */ jsx("code", { children: "defineWomp" }),
           " function. See documentation about",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/docs/functions/define-womp", children: /* @__PURE__ */ jsx("code", { children: "defineWomp" }) }),
-          " ",
-          "for more.",
+          /* @__PURE__ */ jsx(Link, { to: "/docs/apis/defineWomp", children: "defineWomp" }),
+          " for more.",
           /* @__PURE__ */ jsx("br", {}),
           "So, to go back in the example, you will have the following html structure:"
         ] }),

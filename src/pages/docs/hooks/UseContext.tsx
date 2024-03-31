@@ -40,7 +40,7 @@ const content: Contents = {
 					/>
 					<p>
 						The hook accepts only a parameter, which is the{' '}
-						<Link to='/docs/functions/createContext'>Context</Link> on which the component should
+						<Link to='/docs/apis/createContext'>Context</Link> on which the component should
 						subscribe to. The hook will return the value provided by a parent{' '}
 						<code>Context.Provider</code>, or, if no matching providers are found above the
 						component, the <b>default value</b> of the given context.

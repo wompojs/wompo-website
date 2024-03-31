@@ -3,6 +3,7 @@ import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
 import Code from '../../../components/Code.js';
 import { Link } from 'womp-router';
 import InteractiveExposedExample from '../../../examples/InteractiveExposedExample.js';
+import Note from '../../../components/Note.js';
 
 const content: Contents = {
 	title: 'useExposed hook',
@@ -38,6 +39,10 @@ const content: Contents = {
 						have to re-create the same logic for opening and closing the modal wherever it is used)
 						and <b>isolation</b>.
 					</p>
+					<Note severity='info'>
+						Unlike all the other hooks, the <code>useExposed</code> hook can be used inside
+						conditional statements.
+					</Note>
 				</>
 			),
 		},

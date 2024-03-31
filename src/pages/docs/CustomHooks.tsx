@@ -44,7 +44,7 @@ const content: Contents = {
 						course, this function is supposed to only be called inside a component (or eventually
 						another hook).
 						<br />
-						As said before, native hooks are the <b>base</b>: the have the main functionalities and
+						As said before, native hooks are the <b>base</b>: they have the main functionalities and
 						concepts that can be combined together to create more advanced and complex hooks.
 					</p>
 				</>
@@ -67,8 +67,8 @@ const content: Contents = {
                 const [value, setValue] = useState(null);
                 // Create a custom setter function to set the localStorage value
                 const setter = useCallback((newValue) => {
-                  localStorage.setItem(key, defaultValue);
-                  setValue(defaultValue);
+                  localStorage.setItem(key, newValue);
+                  setValue(newValue);
                 });
                 // We get the localStorage value only the first time
                 if(value === null){

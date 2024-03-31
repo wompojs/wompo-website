@@ -66,7 +66,10 @@ const content: Contents = {
 					</p>
 					<p>
 						You can find everything in details about Web Components on the{' '}
-						<a href='https://developer.mozilla.org/en-US/docs/Web/API/Web_components'>
+						<a
+							target='_blank'
+							href='https://developer.mozilla.org/en-US/docs/Web/API/Web_components'
+						>
 							MDN Documentation
 						</a>
 						.

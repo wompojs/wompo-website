@@ -40,7 +40,7 @@ const content = {
           /* @__PURE__ */ jsx("br", {}),
           "As said before, native hooks are the ",
           /* @__PURE__ */ jsx("b", { children: "base" }),
-          ": the have the main functionalities and concepts that can be combined together to create more advanced and complex hooks."
+          ": they have the main functionalities and concepts that can be combined together to create more advanced and complex hooks."
         ] })
       ] })
     },
@@ -60,8 +60,8 @@ const content = {
                 const [value, setValue] = useState(null);
                 // Create a custom setter function to set the localStorage value
                 const setter = useCallback((newValue) => {
-                  localStorage.setItem(key, defaultValue);
-                  setValue(defaultValue);
+                  localStorage.setItem(key, newValue);
+                  setValue(newValue);
                 });
                 // We get the localStorage value only the first time
                 if(value === null){

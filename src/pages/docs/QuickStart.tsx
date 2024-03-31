@@ -46,10 +46,7 @@ const content: Contents = {
 						<br />
 						Of course, you can even define your own name by using the <u>name</u> option in the
 						second parameter of the <code>defineWomp</code> function. See documentation about{' '}
-						<Link to='/docs/functions/define-womp'>
-							<code>defineWomp</code>
-						</Link>{' '}
-						for more.
+						<Link to='/docs/apis/defineWomp'>defineWomp</Link> for more.
 						<br />
 						So, to go back in the example, you will have the following html structure:
 					</p>
