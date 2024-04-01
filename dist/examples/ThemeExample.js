@@ -1,4 +1,17 @@
-import{createContext as l,html as i,useState as m,useContext as p,defineWomp as r}from"womp";const n=l("light");export default function a(){const[o,e]=m("light"),h=()=>{e(o==="light"?"dark":"light")};return i`
+import {
+	createContext as l,
+	html as i,
+	useState as m,
+	useContext as p,
+	defineWompo as r,
+} from 'wompo';
+const n = l('light');
+export default function a() {
+	const [o, e] = m('light'),
+		h = () => {
+			e(o === 'light' ? 'dark' : 'light');
+		};
+	return i`
     <${n.Provider} value=${o}>
       <${t}>
         <p>
@@ -16,4 +29,16 @@ import{createContext as l,html as i,useState as m,useContext as p,defineWomp as 
         </p>
       </${t}>
     </${n.Provider}>
-  `}r(a,{name:"theme-example"});function t({children:o}){const e=p(n);return i`<div style=${{backgroundColor:e==="light"?"#eee":"#333",color:e==="light"?"#333":"#eee",padding:"20px",marginTop:"10px"}}>${o}</div>`}r(t,{name:"theme-app-example"});
+  `;
+}
+r(a, { name: 'theme-example' });
+function t({ children: o }) {
+	const e = p(n);
+	return i`<div style=${{
+		backgroundColor: e === 'light' ? '#eee' : '#333',
+		color: e === 'light' ? '#333' : '#eee',
+		padding: '20px',
+		marginTop: '10px',
+	}}>${o}</div>`;
+}
+r(t, { name: 'theme-app-example' });

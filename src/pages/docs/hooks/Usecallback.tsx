@@ -1,4 +1,4 @@
-import { defineWomp } from 'womp';
+import { defineWompo } from 'wompo';
 import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
 import Code from '../../../components/Code.js';
 import Note from '../../../components/Note.js';
@@ -79,7 +79,7 @@ const content: Contents = {
 					</p>
 					<Code
 						code={`
-							import { useCallback, defineWomp, html } from 'womp';
+							import { useCallback, defineWompo, html } from 'wompo';
               import UserForm from './UserForm';
 
 							export default function User({ userId }) {
@@ -90,7 +90,7 @@ const content: Contents = {
 								return html\`<\${UserForm} onSubmit=\${submitData} />\`;
 							}
 
-							defineWomp(Component);
+							defineWompo(Component);
 						`}
 						language='js'
 					/>
@@ -108,6 +108,6 @@ export default function UseCallback() {
 	return getPageLayout(content);
 }
 
-defineWomp(UseCallback, {
+defineWompo(UseCallback, {
 	name: 'usecallback-hook-page',
 });

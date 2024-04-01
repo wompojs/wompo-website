@@ -1,11 +1,25 @@
-import{defineWomp as a,html as s,useExposed as i,useState as r}from"womp";export default function e({children:l,styles:o}){const[n,t]=r(!1),p=()=>{document.body.style.overflow="hidden",t(!0)},d=()=>{document.body.style.overflow="auto",t(!1)};return i({open:p,close:d}),s`
-		<div class=${`${o.backdrop} ${n&&o.open}`}>
+import { defineWompo as a, html as s, useExposed as i, useState as r } from 'wompo';
+export default function e({ children: l, styles: o }) {
+	const [n, t] = r(!1),
+		p = () => {
+			(document.body.style.overflow = 'hidden'), t(!0);
+		},
+		d = () => {
+			(document.body.style.overflow = 'auto'), t(!1);
+		};
+	return (
+		i({ open: p, close: d }),
+		s`
+		<div class=${`${o.backdrop} ${n && o.open}`}>
 			<div class=${o.modal}>
 				${l}
 				<button @click=${d}>X</button>
 			</div>
 		</div>
-	`}e.css=`
+	`
+	);
+}
+(e.css = `
   :host {
     display: inline-block;
   }
@@ -34,4 +48,5 @@ import{defineWomp as a,html as s,useExposed as i,useState as r}from"womp";export
     background-color: #fff;
     padding: 30px;
   }
-`,a(e,{name:"modal-example"});
+`),
+	a(e, { name: 'modal-example' });

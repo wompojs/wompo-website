@@ -1,4 +1,4 @@
-import { useRef, useEffect, html, defineWomp } from 'womp';
+import { useRef, useEffect, html, defineWompo } from 'wompo';
 
 function useTime() {
 	// Initialize the timer
@@ -28,6 +28,6 @@ export default function UseTime() {
 	`;
 }
 
-defineWomp(UseTime, {
+defineWompo(UseTime, {
 	name: 'use-time-hook-example',
 });

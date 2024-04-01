@@ -1,5 +1,5 @@
-import { defineWomp } from 'womp';
-import { Link, Route, Routes } from 'womp-router';
+import { defineWompo } from 'wompo';
+import { Link, Route, Routes } from 'wompo-router';
 import Layout from './layout/Layout.js';
 
 interface DocRoute {
@@ -102,8 +102,8 @@ const docsRoutes: DocRoute[] = [
 				pagePath: './pages/docs/apis/CreateContext.js',
 			},
 			{
-				path: 'defineWomp',
-				pagePath: './pages/docs/apis/DefineWomp.js',
+				path: 'defineWompo',
+				pagePath: './pages/docs/apis/DefineWompo.js',
 			},
 			{
 				path: 'element',
@@ -123,7 +123,7 @@ const docsRoutes: DocRoute[] = [
 			},
 			{
 				path: 'wompDefaultOptions',
-				pagePath: './pages/docs/apis/WompDefaultOptions.js',
+				pagePath: './pages/docs/apis/WompoDefaultOptions.js',
 			},
 		],
 	},
@@ -159,8 +159,8 @@ export default function App() {
 		</Routes>
 	);
 }
-defineWomp(App, {
-	name: 'womp-root',
+defineWompo(App, {
+	name: 'wompo-root',
 });
 
 //! Rules: Always return same template.

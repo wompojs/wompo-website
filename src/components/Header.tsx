@@ -1,4 +1,4 @@
-import { type WompProps, defineWomp } from 'womp';
+import { type WompoProps, defineWompo } from 'wompo';
 
 const menu = [
 	{
@@ -11,7 +11,7 @@ const menu = [
 	},
 ];
 
-export default function Header({ styles: s }: WompProps) {
+export default function Header({ styles: s }: WompoProps) {
 	return (
 		<header class={s.header}>
 			<ul>
@@ -51,6 +51,6 @@ Header.css = `
   }
 `;
 
-defineWomp(Header, {
-	name: 'womp-header',
+defineWompo(Header, {
+	name: 'wompo-header',
 });

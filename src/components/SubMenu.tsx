@@ -1,8 +1,8 @@
-import { WompProps, defineWomp, useEffect, useLayoutEffect, useRef, useState } from 'womp';
+import { WompoProps, defineWompo, useEffect, useLayoutEffect, useRef, useState } from 'wompo';
 import { MenuItem } from './SideMenu.js';
-import { NavLink, useCurrentRoute } from 'womp-router';
+import { NavLink, useCurrentRoute } from 'wompo-router';
 
-interface SubMenuProps extends WompProps {
+interface SubMenuProps extends WompoProps {
 	item: MenuItem;
 	prefix: string;
 }
@@ -71,6 +71,6 @@ SubMenu.css = `
   }
 `;
 
-defineWomp(SubMenu, {
+defineWompo(SubMenu, {
 	name: 'sub-menu',
 });

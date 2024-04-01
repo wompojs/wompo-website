@@ -1,4 +1,4 @@
-import { lazy, html, defineWomp, Suspense } from 'womp';
+import { lazy, html, defineWompo, Suspense } from 'wompo';
 
 function simulateBigComponent(promise: Promise<any>) {
 	return new Promise((resolve) => {
@@ -17,6 +17,6 @@ export default function LazySuspenseExample() {
   `;
 }
 
-defineWomp(LazySuspenseExample, {
+defineWompo(LazySuspenseExample, {
 	name: 'lazy-suspense-example',
 });

@@ -1,4 +1,4 @@
-import { defineWomp, html } from 'womp';
+import { defineWompo, html } from 'wompo';
 
 const staticTemplate = html`<i>I am static</i>`;
 
@@ -20,6 +20,6 @@ export default function HtmlExample() {
 	return dynamicTemplate;
 }
 
-defineWomp(HtmlExample, {
+defineWompo(HtmlExample, {
 	name: 'html-example',
 });

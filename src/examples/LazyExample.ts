@@ -1,4 +1,4 @@
-import { lazy, html, defineWomp } from 'womp';
+import { lazy, html, defineWompo } from 'wompo';
 
 function simulateBigComponent(promise: Promise<any>) {
 	return new Promise((resolve) => {
@@ -15,6 +15,6 @@ export default function LazyExample() {
   `;
 }
 
-defineWomp(LazyExample, {
+defineWompo(LazyExample, {
 	name: 'lazy-example',
 });

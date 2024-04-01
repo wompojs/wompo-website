@@ -1,7 +1,7 @@
-import { defineWomp } from 'womp';
+import { defineWompo } from 'wompo';
 import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
 import Code from '../../../components/Code.js';
-import { Link } from 'womp-router';
+import { Link } from 'wompo-router';
 import InteractiveExposedExample from '../../../examples/InteractiveExposedExample.js';
 import Note from '../../../components/Note.js';
 
@@ -25,19 +25,19 @@ const content: Contents = {
 						<Link to='/docs/hooks/useRef'>useRef</Link> hook.
 					</p>
 					<p>
-						Unlike <b>React</b>, Womp components are meant to be <u>isolated</u>, meaning that their
-						state should't dependend on props, even though it is possible. This is becasue Womp
-						Components are actually DOM elements, meaning that they can be accessed by other scripts
-						and call methods or access data. This allows to <b>isolate</b> the state and make it
-						depend on the component itself (and that's it). A great example can be a <b>Modal</b>{' '}
-						component:
+						Unlike <b>React</b>, Wompo components are meant to be <u>isolated</u>, meaning that
+						their state should't dependend on props, even though it is possible. This is becasue
+						Wompo Components are actually DOM elements, meaning that they can be accessed by other
+						scripts and call methods or access data. This allows to <b>isolate</b> the state and
+						make it depend on the component itself (and that's it). A great example can be a{' '}
+						<b>Modal</b> component:
 						<br />
 						In React, you would create the component and make it accept an "open" prop to handle its
-						state. In Womp you can also do it, but it's <b>not recommended</b>. Instead, you want to
-						handle the state internally by creating the <code>open()</code> and <code>close()</code>{' '}
-						methods, and call them from outside. This allows <b>great code reduction</b> (you don't
-						have to re-create the same logic for opening and closing the modal wherever it is used)
-						and <b>isolation</b>.
+						state. In Wompo you can also do it, but it's <b>not recommended</b>. Instead, you want
+						to handle the state internally by creating the <code>open()</code> and{' '}
+						<code>close()</code> methods, and call them from outside. This allows{' '}
+						<b>great code reduction</b> (you don't have to re-create the same logic for opening and
+						closing the modal wherever it is used) and <b>isolation</b>.
 					</p>
 					<Note severity='info'>
 						Unlike all the other hooks, the <code>useExposed</code> hook can be used inside
@@ -97,7 +97,7 @@ const content: Contents = {
 					</p>
 					<Code
 						code={`
-							import { defineWomp, html, useExposed, useState } from 'womp';
+							import { defineWompo, html, useExposed, useState } from 'wompo';
 
 							export default function ModalExample({ children, styles: s }) {
 								const [open, setOpen] = useState(false);
@@ -129,7 +129,7 @@ const content: Contents = {
 								\`;
 							}
 
-							defineWomp(ModalExample);
+							defineWompo(ModalExample);
 						`}
 						language='js'
 					/>
@@ -202,6 +202,6 @@ export default function UseExposed() {
 	return getPageLayout(content);
 }
 
-defineWomp(UseExposed, {
+defineWompo(UseExposed, {
 	name: 'useexposed-hook-page',
 });

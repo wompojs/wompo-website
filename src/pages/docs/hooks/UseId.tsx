@@ -1,7 +1,7 @@
-import { defineWomp } from 'womp';
+import { defineWompo } from 'wompo';
 import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
 import Code from '../../../components/Code.js';
-import { Link } from 'womp-router';
+import { Link } from 'wompo-router';
 import InteractiveExposedExample from '../../../examples/InteractiveExposedExample.js';
 
 const content: Contents = {
@@ -60,7 +60,7 @@ const content: Contents = {
 					</p>
 					<Code
 						code={`
-							import { defineWomp, html, useId } from 'womp';
+							import { defineWompo, html, useId } from 'wompo';
 
 							export default function InputExample() {
 								const hintId = useId(); // :w0:
@@ -73,7 +73,7 @@ const content: Contents = {
 								\`;
 							}
 
-							defineWomp(InputExample);
+							defineWompo(InputExample);
 						`}
 						language='js'
 					/>
@@ -91,6 +91,6 @@ export default function UseId() {
 	return getPageLayout(content);
 }
 
-defineWomp(UseId, {
+defineWompo(UseId, {
 	name: 'useid-hook-page',
 });

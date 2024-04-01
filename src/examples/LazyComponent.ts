@@ -1,11 +1,11 @@
-import { html, defineWomp, WompProps } from 'womp';
+import { html, defineWompo, WompoProps } from 'wompo';
 
-export default function LazyComponent({ children }: WompProps) {
+export default function LazyComponent({ children }: WompoProps) {
 	return html`
 		<div style="font-size: 20px; color: blue;">${children}<br />I was lazy loaded!</div>
 	`;
 }
 
-defineWomp(LazyComponent, {
+defineWompo(LazyComponent, {
 	name: 'lazy-component-example',
 });

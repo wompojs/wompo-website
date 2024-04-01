@@ -1,12 +1,12 @@
-import { defineWomp } from 'womp';
+import { defineWompo } from 'wompo';
 import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
-import { Link } from 'womp-router';
+import { Link } from 'wompo-router';
 
 const content: Contents = {
 	title: 'Built-in components',
 	description: (
 		<>
-			Womp exposes some specific built-in components that you can use to improve your application.
+			Wompo exposes some specific built-in components that you can use to improve your application.
 			You are then free to create your owns.
 		</>
 	),
@@ -17,7 +17,7 @@ const content: Contents = {
 			content: (
 				<>
 					<p>
-						The list of built-in Womp components are the following:
+						The list of built-in Wompo components are the following:
 						<ul>
 							<li>
 								<Link to='suspense'>Suspense</Link> - Will let you display a fallback UI while the
@@ -35,6 +35,6 @@ export default function ComponentsPage() {
 	return getPageLayout(content);
 }
 
-defineWomp(ComponentsPage, {
+defineWompo(ComponentsPage, {
 	name: 'components-page',
 });

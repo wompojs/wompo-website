@@ -12,8 +12,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 app.use(express.static('dist'));
 app.use(express.static('public'));
-app.use('/womp', express.static('node_modules/womp'));
-app.use('/womp-router', express.static('node_modules/womp-router/dist'));
+app.use('/wompo', express.static('node_modules/wompo'));
+app.use('/wompo-router', express.static('node_modules/wompo-router/dist'));
 app.use('/plugins', express.static('plugins'));
 
 app.get('*', (req, res) => {

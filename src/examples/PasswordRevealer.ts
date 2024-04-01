@@ -1,4 +1,4 @@
-import { defineWomp, html, useRef } from 'womp';
+import { defineWompo, html, useRef } from 'wompo';
 
 export default function PasswordRevealer() {
 	const inputRef = useRef(null);
@@ -16,6 +16,6 @@ export default function PasswordRevealer() {
 	</div>`;
 }
 
-defineWomp(PasswordRevealer, {
+defineWompo(PasswordRevealer, {
 	name: 'password-revealer-example',
 });

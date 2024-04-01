@@ -1,4 +1,4 @@
-import { defineWomp } from 'womp';
+import { defineWompo } from 'wompo';
 import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
 import Code from '../../../components/Code.js';
 import HtmlExample from '../../../examples/HtmlExample.js';
@@ -86,6 +86,6 @@ export default function HtmlApi() {
 	return getPageLayout(content);
 }
 
-defineWomp(HtmlApi, {
+defineWompo(HtmlApi, {
 	name: 'html-api-apis-page',
 });

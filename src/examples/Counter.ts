@@ -1,4 +1,4 @@
-import { useState, defineWomp, html } from 'womp';
+import { useState, defineWompo, html } from 'wompo';
 
 export default function Counter() {
 	const [count, setCount] = useState(0);
@@ -10,6 +10,6 @@ export default function Counter() {
 	return html`<button @click="${incrementCounter}">Pressed ${count} times</button>`;
 }
 
-defineWomp(Counter, {
+defineWompo(Counter, {
 	name: 'counter-example',
 });

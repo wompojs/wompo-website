@@ -1,7 +1,7 @@
-import { defineWomp } from 'womp';
+import { defineWompo } from 'wompo';
 import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
 import Code from '../../../components/Code.js';
-import { Link } from 'womp-router';
+import { Link } from 'wompo-router';
 import Note from '../../../components/Note.js';
 
 const content: Contents = {
@@ -31,7 +31,7 @@ const content: Contents = {
 							<li>Using timeouts and intervals</li>
 							<li>Performing animations</li>
 							<li>
-								Controlling a non-womp widget or node in conjuctions with the <code>useRef</code>{' '}
+								Controlling a non-wompo widget or node in conjuctions with the <code>useRef</code>{' '}
 								hook
 							</li>
 						</ul>
@@ -81,7 +81,7 @@ const content: Contents = {
 					</p>
 					<Code
 						code={`
-							import { useEffect, defineWomp, html } from 'womp';
+							import { useEffect, defineWompo, html } from 'wompo';
 
               function TimeoutComponent(){
                 useEffect(() => {
@@ -95,7 +95,7 @@ const content: Contents = {
                 return html\`Nothing to see here, boss.\`;
               }
 
-              defineWomp(TimeoutComponent);
+              defineWompo(TimeoutComponent);
 						`}
 						language='js'
 					/>
@@ -130,7 +130,7 @@ const content: Contents = {
 					</Note>
 					<Code
 						code={`
-							import { useEffect, useState, defineWomp, html } from 'womp';
+							import { useEffect, useState, defineWompo, html } from 'wompo';
 
               function User({ userId }){
                 const [user, setUser] = useState(null);
@@ -144,7 +144,7 @@ const content: Contents = {
                 return html\`...\`;
               }
 
-              defineWomp(User);
+              defineWompo(User);
 						`}
 						language='js'
 					/>
@@ -167,7 +167,7 @@ const content: Contents = {
 					</p>
 					<Code
 						code={`
-							import { useEffect, useState, defineWomp, html } from 'womp';
+							import { useEffect, useState, defineWompo, html } from 'wompo';
 
               function Theme({ userId }){
                 const [theme, setTheme] = useState('light');
@@ -189,7 +189,7 @@ const content: Contents = {
                 return html\`...\`;
               }
 
-              defineWomp(Theme);
+              defineWompo(Theme);
 						`}
 						language='js'
 					/>
@@ -219,7 +219,7 @@ const content: Contents = {
 					</p>
 					<Code
 						code={`
-							import { useEffect, useRef, defineWomp, html } from 'womp';
+							import { useEffect, useRef, defineWompo, html } from 'wompo';
 
               function Code({ code, lang }){
                 const codeRef = useRef();
@@ -236,7 +236,7 @@ const content: Contents = {
                 \`;
               }
 
-              defineWomp(Code);
+              defineWompo(Code);
 						`}
 						language='js'
 					/>
@@ -255,6 +255,6 @@ export default function UseEffect() {
 	return getPageLayout(content);
 }
 
-defineWomp(UseEffect, {
+defineWompo(UseEffect, {
 	name: 'useeffect-hook-page',
 });

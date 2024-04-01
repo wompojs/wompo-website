@@ -1,6 +1,6 @@
-import { defineWomp } from 'womp';
+import { defineWompo } from 'wompo';
 import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
-import { Link } from 'womp-router';
+import { Link } from 'wompo-router';
 
 const content: Contents = {
 	title: 'Hooks',
@@ -12,7 +12,7 @@ const content: Contents = {
 			content: (
 				<>
 					<p>
-						Hooks are helper functions that let you add specific functionalities in your Womp
+						Hooks are helper functions that let you add specific functionalities in your Wompo
 						components. This functions will "hook" into the component so that they have access to
 						the whole HTML instance and operate adding functionalities to it. More specifically,
 						they allow to:
@@ -36,8 +36,8 @@ const content: Contents = {
 						If these conditions are not respected, the component might have unexpected behaviors.
 					</p>
 					<p>
-						Womp offers a good variety of hooks, but you are also completely free to create your own
-						very easily.
+						Wompo offers a good variety of hooks, but you are also completely free to create your
+						own very easily.
 						<br />
 					</p>
 				</>
@@ -50,8 +50,8 @@ const content: Contents = {
 				<>
 					<p>
 						State hooks are what allow to make a component dynamic and cause a re-render of it, so
-						that you can see visual updates in your component. To do that, Womp offers the following
-						hooks:
+						that you can see visual updates in your component. To do that, Wompo offers the
+						following hooks:
 						<ul>
 							<li>
 								<Link to='useState'>useState</Link> - Probably the most common hook you will use:
@@ -190,6 +190,6 @@ export default function Hooks() {
 	return getPageLayout(content);
 }
 
-defineWomp(Hooks, {
+defineWompo(Hooks, {
 	name: 'hooks-page',
 });

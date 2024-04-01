@@ -1,7 +1,7 @@
-import { defineWomp } from 'womp';
+import { defineWompo } from 'wompo';
 import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
 import Code from '../../../components/Code.js';
-import { Link } from 'womp-router';
+import { Link } from 'wompo-router';
 import LazySuspenseExample from '../../../examples/LazySuspenseExample.js';
 
 const content: Contents = {
@@ -19,7 +19,7 @@ const content: Contents = {
 			content: (
 				<>
 					<p>
-						The <code>Suspense</code> component is a special Womp component that allows to show a
+						The <code>Suspense</code> component is a special Wompo component that allows to show a
 						<b>fallback</b> UI while one or more of the children are loading. This can be used for:
 						<ul>
 							<li>
@@ -67,7 +67,7 @@ const content: Contents = {
 					</p>
 					<Code
 						code={`
-              import { lazy, html, defineWomp, Suspense } from 'womp';
+              import { lazy, html, defineWompo, Suspense } from 'wompo';
 
               function simulateBigComponent(promise) {
                 return new Promise((resolve) => {
@@ -86,7 +86,7 @@ const content: Contents = {
                 \`;
               }
 
-              defineWomp(App);
+              defineWompo(App);
 						`}
 						language='js'
 					/>
@@ -94,7 +94,7 @@ const content: Contents = {
 					be the following:
 					<Code
 						code={`
-              import { html, defineWomp } from 'womp';
+              import { html, defineWompo } from 'wompo';
 
               export default function LazyComponent({ children }){
                 return html\`
@@ -105,7 +105,7 @@ const content: Contents = {
                 \`;
               }
 
-              defineWomp(LazyComponent);
+              defineWompo(LazyComponent);
 						`}
 						language='js'
 					/>
@@ -123,6 +123,6 @@ export default function SuspenseComponent() {
 	return getPageLayout(content);
 }
 
-defineWomp(SuspenseComponent, {
+defineWompo(SuspenseComponent, {
 	name: 'suspense-component-page',
 });

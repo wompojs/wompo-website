@@ -1,15 +1,15 @@
-import { defineWomp } from 'womp';
+import { defineWompo } from 'wompo';
 import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
 import Code from '../../../components/Code.js';
-import { Link } from 'womp-router';
+import { Link } from 'wompo-router';
 import Note from '../../../components/Note.js';
 import IsolatedComponent from '../../../examples/IsolatedComponent.js';
 
 const content: Contents = {
-	title: 'defineWomp API',
+	title: 'defineWompo API',
 	description: (
 		<>
-			How to use the <code>defineWomp</code> function to register your custom component in your
+			How to use the <code>defineWompo</code> function to register your custom component in your
 			application.
 		</>
 	),
@@ -20,7 +20,7 @@ const content: Contents = {
 			content: (
 				<>
 					<p>
-						The <code>defineWomp</code> function is the function that will register your component
+						The <code>defineWompo</code> function is the function that will register your component
 						in the browser's <code>CustomElementRegistry</code>. You always have to use this
 						function after writing your components. If you don't see your component in the screen,
 						don't panic: is probably because you only forgot to call this function.
@@ -35,7 +35,7 @@ const content: Contents = {
 				<>
 					<Code
 						code={`
-							defineWomp(Component, options?);
+							defineWompo(Component, options?);
 						`}
 						language='js'
 					/>
@@ -49,9 +49,10 @@ const content: Contents = {
 							<li>
 								<code>name</code> (string) - The name of the Web Component that will be registered.
 								If not defined, the component name will be the name of the function in hyphen-case.
-								If the component doesn't have an hyphen, a "womp" string will be placed as a suffix.
+								If the component doesn't have an hyphen, a "wompo" string will be placed as a
+								suffix.
 								<br />
-								E.g. TabPanel = tab-panel, Counter = counter-womp
+								E.g. TabPanel = tab-panel, Counter = counter-wompo
 							</li>
 							<li>
 								<code>shadow</code> (boolean) - By default is false, but if true, the component's
@@ -103,12 +104,12 @@ const content: Contents = {
 			content: (
 				<>
 					<p>
-						We can use the <code>defineWomp</code> function to define a component that is "isolated"
-						from the CSS and JS in your application.
+						We can use the <code>defineWompo</code> function to define a component that is
+						"isolated" from the CSS and JS in your application.
 					</p>
 					<Code
 						code={`
-							import { html, defineWomp } from 'womp';
+							import { html, defineWompo } from 'wompo';
 
               function IsolatedComponent(){
                 return html\`
@@ -130,7 +131,7 @@ const content: Contents = {
                 }
               \`;
 
-							defineWomp(IsolatedComponent, {
+							defineWompo(IsolatedComponent, {
                 // Using a custom name will let you have more control over the application
                 name: 'super-cool-isolated-component',
                 // The content will be placed inside a Shadow Root
@@ -162,10 +163,10 @@ const content: Contents = {
 	],
 };
 
-export default function DefineWomp() {
+export default function DefineWompo() {
 	return getPageLayout(content);
 }
 
-defineWomp(DefineWomp, {
+defineWompo(DefineWompo, {
 	name: 'definewomp-apis-page',
 });

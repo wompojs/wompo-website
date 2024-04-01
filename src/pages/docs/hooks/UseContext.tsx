@@ -1,7 +1,7 @@
-import { defineWomp } from 'womp';
+import { defineWompo } from 'wompo';
 import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
 import Code from '../../../components/Code.js';
-import { Link } from 'womp-router';
+import { Link } from 'wompo-router';
 import LoggedInUser from '../../../examples/LoggedInUser.js';
 import Note from '../../../components/Note.js';
 
@@ -67,7 +67,7 @@ const content: Contents = {
 					</p>
 					<Code
 						code={`
-							import { createContext, useContext, useState, defineWomp, html } from 'womp';
+							import { createContext, useContext, useState, defineWompo, html } from 'wompo';
 
               const UserContext = createContext(null);
 
@@ -106,8 +106,8 @@ const content: Contents = {
                 </div>\`;
 							}
 
-              defineWomp(App);
-              defineWomp(UserInfo);
+              defineWompo(App);
+              defineWompo(UserInfo);
 						`}
 						language='js'
 					/>
@@ -146,6 +146,6 @@ export default function UseContext() {
 	return getPageLayout(content);
 }
 
-defineWomp(UseContext, {
+defineWompo(UseContext, {
 	name: 'usecontext-hook-page',
 });

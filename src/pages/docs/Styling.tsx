@@ -1,8 +1,6 @@
-import { defineWomp } from 'womp';
+import { defineWompo } from 'wompo';
 import getPageLayout, { Contents } from '../../utils/getPageLayout.js';
 import Code from '../../components/Code.js';
-import { Link } from 'womp-router';
-import Note from '../../components/Note.js';
 
 const content: Contents = {
 	title: 'Style your components',
@@ -15,7 +13,7 @@ const content: Contents = {
 				<>
 					<p>
 						By definition components are reusable pieces of code. Most of times, when you create a
-						component you also have a CSS code to specifically style that component. With Womp, you
+						component you also have a CSS code to specifically style that component. With Wompo, you
 						have three different ways to style your components:
 						<ol>
 							<li>Classic CSS file</li>
@@ -33,10 +31,10 @@ const content: Contents = {
 				<>
 					<p>
 						Using a CSS file to style your components is the classic way that you can use to add
-						some creativity in your page. By default, Womp components are <b>not</b> inside a Shadow
-						DOM, so you don't have to worry about how to make your CSS go through the unbreakable
-						wall of Shadow DOM. With this approac, you simply create a CSS file and add the
-						respective classes in your component.
+						some creativity in your page. By default, Wompo components are <b>not</b> inside a
+						Shadow DOM, so you don't have to worry about how to make your CSS go through the
+						unbreakable wall of Shadow DOM. With this approac, you simply create a CSS file and add
+						the respective classes in your component.
 					</p>
 					<Code
 						code={`
@@ -84,7 +82,7 @@ const content: Contents = {
 									padding: 10px;
 								}
 							\`;
-							defineWomp(App, { cssModule: false, shadow: true });
+							defineWompo(App, { cssModule: false, shadow: true });
             `}
 						language='js'
 					/>
@@ -102,7 +100,7 @@ const content: Contents = {
 						enabled, so what you will have to do is simply add your CSS inside the <code>.css</code>{' '}
 						property of the functional Component.
 						<br />
-						Womp will automatically replace all the found class names with a more specific one
+						Wompo will automatically replace all the found class names with a more specific one
 						(based on the name of the component, which is unique) and will put the generated class
 						names in the <b>styles</b> prop of the component. This prop is an object having as keys
 						the original class names found in the CSS, and as values the corresponding unique
@@ -137,6 +135,6 @@ export default function Styles() {
 	return getPageLayout(content);
 }
 
-defineWomp(Styles, {
+defineWompo(Styles, {
 	name: 'styling-page',
 });

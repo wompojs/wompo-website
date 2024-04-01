@@ -1,7 +1,7 @@
-import { defineWomp } from 'womp';
+import { defineWompo } from 'wompo';
 import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
 import Code from '../../../components/Code.js';
-import { Link } from 'womp-router';
+import { Link } from 'wompo-router';
 import Note from '../../../components/Note.js';
 import LazyExample from '../../../examples/LazyExample.js';
 import LazySuspenseExample from '../../../examples/LazySuspenseExample.js';
@@ -9,7 +9,7 @@ import LazySuspenseExample from '../../../examples/LazySuspenseExample.js';
 const content: Contents = {
 	title: 'wompDefaultOptions',
 	description: (
-		<>How to customize the default options of Womp components to satisfy your exigencies.</>
+		<>How to customize the default options of Wompo components to satisfy your exigencies.</>
 	),
 	sections: [
 		{
@@ -18,9 +18,9 @@ const content: Contents = {
 			content: (
 				<>
 					<p>
-						Womp exposes a <code>wompDefaultOptions</code> object that is used to get the default
+						Wompo exposes a <code>wompDefaultOptions</code> object that is used to get the default
 						values to use as the second parameter of the{' '}
-						<Link to='/docs/apis/defineWomp'>defineWomp</Link> function.
+						<Link to='/docs/apis/defineWompo'>defineWompo</Link> function.
 						<br />
 						The options you can modify are:
 						<ul>
@@ -38,7 +38,7 @@ const content: Contents = {
 							</li>
 						</ul>
 						To know more about these options see the documentation about the{' '}
-						<Link to='/docs/apis/defineWomp#usage'>defineWomp</Link> function.
+						<Link to='/docs/apis/defineWompo#usage'>defineWompo</Link> function.
 					</p>
 				</>
 			),
@@ -56,7 +56,7 @@ const content: Contents = {
 					</p>
 					<Code
 						code={`
-							import { wompDefaultOptions } from 'womp';
+							import { wompDefaultOptions } from 'wompo';
 
 							wompDefaultOptions.shadow = true;
 						`}
@@ -68,10 +68,10 @@ const content: Contents = {
 	],
 };
 
-export default function WompDefaultOptions() {
+export default function WompoDefaultOptions() {
 	return getPageLayout(content);
 }
 
-defineWomp(WompDefaultOptions, {
-	name: 'womp-default-options-apis-page',
+defineWompo(WompoDefaultOptions, {
+	name: 'wompo-default-options-apis-page',
 });

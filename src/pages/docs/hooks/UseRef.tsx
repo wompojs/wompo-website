@@ -1,8 +1,8 @@
-import { defineWomp } from 'womp';
+import { defineWompo } from 'wompo';
 import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
 import Code from '../../../components/Code.js';
 import Note from '../../../components/Note.js';
-import { Link } from 'womp-router';
+import { Link } from 'wompo-router';
 import Timer from '../../../examples/Timer.js';
 import PasswordRevealer from '../../../examples/PasswordRevealer.js';
 
@@ -169,7 +169,7 @@ const content: Contents = {
 					</p>
 					<Code
 						code={`
-							import { useState, defineWomp, html, useRef } from 'womp';
+							import { useState, defineWompo, html, useRef } from 'wompo';
 
               export default function Timer() {
                 const [timer, setTimer] = useState(0);
@@ -198,7 +198,7 @@ const content: Contents = {
                 </div>\`;
               }
 
-              defineWomp(Timer);
+              defineWompo(Timer);
 						`}
 						language='js'
 					/>
@@ -220,7 +220,7 @@ const content: Contents = {
 					</p>
 					<Code
 						code={`
-							import { defineWomp, html, useRef } from 'womp';
+							import { defineWompo, html, useRef } from 'wompo';
 
               export default function PasswordRevealer() {
                 const inputRef = useRef(null);
@@ -238,7 +238,7 @@ const content: Contents = {
                 </div>\`;
               }
 
-              defineWomp(PasswordRevealer);
+              defineWompo(PasswordRevealer);
 
 						`}
 						language='js'
@@ -257,6 +257,6 @@ export default function UseRef() {
 	return getPageLayout(content);
 }
 
-defineWomp(UseRef, {
+defineWompo(UseRef, {
 	name: 'useref-hook-page',
 });

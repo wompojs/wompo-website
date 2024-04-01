@@ -1,4 +1,4 @@
-import { createContext, html, useState, useContext, defineWomp, WompProps } from 'womp';
+import { createContext, html, useState, useContext, defineWompo, WompoProps } from 'wompo';
 
 const ThemeContext = createContext('light');
 
@@ -27,11 +27,11 @@ export default function ThemeExample() {
     </${ThemeContext.Provider}>
   `;
 }
-defineWomp(ThemeExample, {
+defineWompo(ThemeExample, {
 	name: 'theme-example',
 });
 
-function AppContent({ children }: WompProps) {
+function AppContent({ children }: WompoProps) {
 	const theme = useContext(ThemeContext);
 	const styles = {
 		backgroundColor: theme === 'light' ? '#eee' : '#333',
@@ -41,6 +41,6 @@ function AppContent({ children }: WompProps) {
 	};
 	return html`<div style=${styles}>${children}</div>`;
 }
-defineWomp(AppContent, {
+defineWompo(AppContent, {
 	name: 'theme-app-example',
 });

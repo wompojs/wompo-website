@@ -1,1 +1,32 @@
-import{Fragment as t,jsx as e,jsxs as o}from"womp/jsx-runtime";import{defineWomp as r}from"womp";import s from"../../../utils/getPageLayout.js";import i from"../../../components/Note.js";const p={title:"registeredComponents",description:e(t,{children:"Hot to get the collection of the components registered in the browser."}),sections:[{title:"Description",id:"description",content:o(t,{children:[o("p",{children:["The ",e("code",{children:"registeredComponent"})," exported object is an object exported by the Womp library that has the names of the registered Web Components as keys, and their corresponding functional Component as a value (not the generated HTML class)."]}),e(i,{severity:"warning",children:"This object is supposed to be read-only."})]})}]};export default function n(){return s(p)}r(n,{name:"registered-components-apis-page"});
+import { Fragment as t, jsx as e, jsxs as o } from 'wompo/jsx-runtime';
+import { defineWompo as r } from 'wompo';
+import s from '../../../utils/getPageLayout.js';
+import i from '../../../components/Note.js';
+const p = {
+	title: 'registeredComponents',
+	description: e(t, {
+		children: 'Hot to get the collection of the components registered in the browser.',
+	}),
+	sections: [
+		{
+			title: 'Description',
+			id: 'description',
+			content: o(t, {
+				children: [
+					o('p', {
+						children: [
+							'The ',
+							e('code', { children: 'registeredComponent' }),
+							' exported object is an object exported by the Wompo library that has the names of the registered Web Components as keys, and their corresponding functional Component as a value (not the generated HTML class).',
+						],
+					}),
+					e(i, { severity: 'warning', children: 'This object is supposed to be read-only.' }),
+				],
+			}),
+		},
+	],
+};
+export default function n() {
+	return s(p);
+}
+r(n, { name: 'registered-components-apis-page' });

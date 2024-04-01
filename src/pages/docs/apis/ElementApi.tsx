@@ -1,7 +1,7 @@
-import { defineWomp } from 'womp';
+import { defineWompo } from 'wompo';
 import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
 import Code from '../../../components/Code.js';
-import { Link } from 'womp-router';
+import { Link } from 'wompo-router';
 import Note from '../../../components/Note.js';
 import IsolatedComponent from '../../../examples/IsolatedComponent.js';
 
@@ -20,7 +20,7 @@ const content: Contents = {
 			content: (
 				<>
 					<p>
-						Every Womp Component will be rendered in the DOM as a Web Component, so it'll be
+						Every Wompo Component will be rendered in the DOM as a Web Component, so it'll be
 						accessible by your scripts. In this guide we will explore what methods you can call and
 						which properties you can access.
 					</p>
@@ -105,6 +105,6 @@ export default function ElementApi() {
 	return getPageLayout(content);
 }
 
-defineWomp(ElementApi, {
+defineWompo(ElementApi, {
 	name: 'element-api-apis-page',
 });

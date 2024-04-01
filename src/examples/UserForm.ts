@@ -1,4 +1,4 @@
-import { useState, defineWomp, html } from 'womp';
+import { useState, defineWompo, html } from 'wompo';
 
 export default function UserForm() {
 	const [user, setUser] = useState({
@@ -90,6 +90,6 @@ export default function UserForm() {
 	`;
 }
 
-defineWomp(UserForm, {
+defineWompo(UserForm, {
 	name: 'user-form-example',
 });

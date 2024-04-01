@@ -1,7 +1,7 @@
-import { WompProps, defineWomp } from 'womp';
-import { useNavigate } from 'womp-router';
+import { WompoProps, defineWompo } from 'wompo';
+import { useNavigate } from 'wompo-router';
 
-export interface ContentSectionProps extends WompProps {
+export interface ContentSectionProps extends WompoProps {
 	title: string;
 	sectionId: string;
 }
@@ -50,6 +50,6 @@ ContentSection.css = `
 	}
 `;
 
-defineWomp(ContentSection, {
+defineWompo(ContentSection, {
 	name: 'content-section',
 });

@@ -1,12 +1,12 @@
-import { defineWomp } from 'womp';
+import { defineWompo } from 'wompo';
 import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
-import { Link } from 'womp-router';
+import { Link } from 'wompo-router';
 import Code from '../../../components/Code.js';
 
 const content: Contents = {
 	title: 'APIs',
 	description:
-		'A collection of resources that Womp exposes to add extra functionalities or simply to help the developer.',
+		'A collection of resources that Wompo exposes to add extra functionalities or simply to help the developer.',
 	sections: [
 		{
 			title: 'Functions',
@@ -14,15 +14,15 @@ const content: Contents = {
 			content: (
 				<>
 					<p>
-						Womp exposes a list of functions that you can use:
+						Wompo exposes a list of functions that you can use:
 						<ul>
 							<li>
 								<Link to='createContext'>createContext</Link> - Lets you create a Context that you
 								can use in your application.
 							</li>
 							<li>
-								<Link to='defineWomp'>defineWomp</Link> - The function that you will use to declare
-								your components.
+								<Link to='defineWompo'>defineWompo</Link> - The function that you will use to
+								declare your components.
 							</li>
 							<li>
 								<Link to='html'>html</Link> - The result of this function is what must be returned
@@ -42,11 +42,11 @@ const content: Contents = {
 			content: (
 				<>
 					<p>
-						Womp exposes also some constant variabled that you can use:
+						Wompo exposes also some constant variabled that you can use:
 						<ul>
 							<li>
 								<Link to='wompDefaultOptions'>wompDefaultOptions</Link> - The default options that
-								Womp will use when initializing a component for the first time. You are free to
+								Wompo will use when initializing a component for the first time. You are free to
 								customize them.
 							</li>
 							<li>
@@ -60,11 +60,11 @@ const content: Contents = {
 		},
 		{
 			title: 'Element API',
-			id: 'womp-element',
+			id: 'wompo-element',
 			content: (
 				<>
 					<p>
-						The <Link to='element'>Element API</Link> represents the type of a Womp Component DOM
+						The <Link to='element'>Element API</Link> represents the type of a Wompo Component DOM
 						instance. You can use it to call methods and further customize your components.
 					</p>
 				</>
@@ -76,7 +76,7 @@ const content: Contents = {
 			content: (
 				<>
 					<p>
-						For TypeScript users, Womp exposes the following types:
+						For TypeScript users, Wompo exposes the following types:
 						<ul>
 							<li>
 								<code>RenderHtml</code> - The type that the <Link to='html'>html</Link> function
@@ -93,13 +93,13 @@ const content: Contents = {
 								/>
 							</li>
 							<li>
-								<code>WompProps</code> - The props that any component has and allows. If you use JSX
-								they are also the attributes that the JSX element allows.
+								<code>WompoProps</code> - The props that any component has and allows. If you use
+								JSX they are also the attributes that the JSX element allows.
 								<Code
 									code={`
-                    interface WompProps {
+                    interface WompoProps {
                       /** The children of the component instance */
-                      children?: WompChildren;
+                      children?: WompoChildren;
                       /** The styles generated from the CSS provided */
                       styles?: { [key: string]: string };
                       /** In DEV_MODE, will write on the console performance informations. */
@@ -118,17 +118,17 @@ const content: Contents = {
 								/>
 							</li>
 							<li>
-								<code>WompComponentOptions</code> - The options that you can put as a second
-								parameter in the <Link to='defineWomp'>defineWomp</Link> function.
+								<code>WompoComponentOptions</code> - The options that you can put as a second
+								parameter in the <Link to='defineWompo'>defineWompo</Link> function.
 								<Code
 									code={`
-                    interface WompComponentOptions {
+                    interface WompoComponentOptions {
                       /**
                        * Default value: \`null\`.
                        * The component name. If not defined, the component name will be the name of the function in
-                       * hyphen-case. If the component doesn't have an hyphen, a "womp" string will be placed as a
+                       * hyphen-case. If the component doesn't have an hyphen, a "wompo" string will be placed as a
                        * suffix.
-                       * E.g. TabPanel = tab-panel, Counter = counter-womp
+                       * E.g. TabPanel = tab-panel, Counter = counter-wompo
                        */
                       name?: string;
                       /**
@@ -149,23 +149,23 @@ const content: Contents = {
 								/>
 							</li>
 							<li>
-								<code>WompComponent&lt;Props extends WompProps = WompProps&gt;</code> - It's the{' '}
+								<code>WompoComponent&lt;Props extends WompoProps = WompoProps&gt;</code> - It's the{' '}
 								<b>functional</b> component's type.
 								<Code
 									code={`
-                    interface WompComponent<Props extends WompProps = WompProps> {
+                    interface WompoComponent<Props extends WompoProps = WompoProps> {
                       /** The props of the component */
                       (props: Props): RenderHtml;
                       /**
                        * The specific styles of the component.
                        */
                       css?: string;
-                      /** The component name, elaborated in the defineWomp function */
+                      /** The component name, elaborated in the defineWompo function */
                       componentName?: string;
                       /** Identifies the component */
                       _$wompF?: true;
                       /** The generated class of the component */
-                      class?: WompElementClass<Props>;
+                      class?: WompoElementClass<Props>;
                       /** Options */
                       options?: {
                         generatedCSS: string;
@@ -178,15 +178,15 @@ const content: Contents = {
 								/>
 							</li>
 							<li>
-								<code>WompElement&lt;Props extends WompProps = WompProps, Exposed = {}&gt;</code> A
-								Womp Component <b>Instance</b>. A detailed description of it is present in the{' '}
+								<code>WompoElement&lt;Props extends WompoProps = WompoProps, Exposed = {}&gt;</code>{' '}
+								A Wompo Component <b>Instance</b>. A detailed description of it is present in the{' '}
 								<Link to='element'>Element API</Link>.
 							</li>
 							<li>
 								<code>LazyCallbackResult</code> - The result that the callback provided in the{' '}
 								<Link to='lazy'>lazy</Link> function must return.
 								<Code
-									code={`type LazyCallbackResult = Promise<{ default: WompComponent }>;`}
+									code={`type LazyCallbackResult = Promise<{ default: WompoComponent }>;`}
 									language='ts'
 								/>
 							</li>
@@ -196,7 +196,7 @@ const content: Contents = {
 								<Code
 									code={`
                     type LazyResult = {
-                      (): Promise<WompComponent<WompProps>>;
+                      (): Promise<WompoComponent<WompoProps>>;
                       _$wompLazy: boolean;
                     };
                   `}
@@ -215,6 +215,6 @@ export default function Apis() {
 	return getPageLayout(content);
 }
 
-defineWomp(Apis, {
+defineWompo(Apis, {
 	name: 'docs-apis-page',
 });

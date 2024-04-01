@@ -1,13 +1,13 @@
-import { defineWomp } from 'womp';
+import { defineWompo } from 'wompo';
 import getPageLayout, { Contents } from '../../utils/getPageLayout.js';
 import Code from '../../components/Code.js';
-import { Link } from 'womp-router';
+import { Link } from 'wompo-router';
 import Note from '../../components/Note.js';
 import TodoList from '../../tutorials/TodoList.js';
 
 const content: Contents = {
 	title: 'Complex Example',
-	description: "Let's create a TODO list app and explore more concepts of the Womp library.",
+	description: "Let's create a TODO list app and explore more concepts of the Wompo library.",
 	sections: [
 		{
 			title: 'Todo List app',
@@ -16,7 +16,7 @@ const content: Contents = {
 				<>
 					<p>
 						In this project we will build a simple Todo List app. By doing that you'll get more
-						comfortable using Womp.
+						comfortable using Wompo.
 						<br />
 						What we want is a component component that will render an input and a button to add a
 						todo item, with a list of already added todos below. We then also want that the Todos
@@ -27,7 +27,7 @@ const content: Contents = {
 					</p>
 					<Code
 						code={`
-              import { defineWomp, html } from 'womp';
+              import { defineWompo, html } from 'wompo';
 
               export default function TodoList(){
                 return html\`
@@ -42,7 +42,7 @@ const content: Contents = {
                   </div>
                 \`;
               }
-              defineWomp(TodoList);
+              defineWompo(TodoList);
             `}
 						language='js'
 					/>
@@ -76,7 +76,7 @@ const content: Contents = {
                   </div>
                 \`;
               }
-              defineWomp(TodoList);
+              defineWompo(TodoList);
             `}
 						language='js'
 					/>
@@ -197,6 +197,6 @@ export default function ComplexExample() {
 	return getPageLayout(content);
 }
 
-defineWomp(ComplexExample, {
+defineWompo(ComplexExample, {
 	name: 'complex-example-page',
 });

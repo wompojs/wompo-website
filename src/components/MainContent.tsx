@@ -1,6 +1,6 @@
-import { RenderHtml, WompProps, defineWomp } from 'womp';
+import { RenderHtml, WompoProps, defineWompo } from 'wompo';
 
-interface MainContentProps extends WompProps {
+interface MainContentProps extends WompoProps {
 	title: string;
 	description: RenderHtml | string;
 }
@@ -97,6 +97,6 @@ MainContent.css = `
   }
 `;
 
-defineWomp(MainContent, {
+defineWompo(MainContent, {
 	name: 'main-content',
 });

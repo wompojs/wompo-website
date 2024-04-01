@@ -1,7 +1,7 @@
-import { defineWomp } from 'womp';
+import { defineWompo } from 'wompo';
 import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
 import Code from '../../../components/Code.js';
-import { Link } from 'womp-router';
+import { Link } from 'wompo-router';
 import ThemeExample from '../../../examples/ThemeExample.js';
 
 const content: Contents = {
@@ -89,7 +89,7 @@ const content: Contents = {
 					<p>We can go further with the theme example and actually implement a small app:</p>
 					<Code
 						code={`
-							import { createContext, html, useState, useContext, defineWomp } from 'womp';
+							import { createContext, html, useState, useContext, defineWompo } from 'wompo';
 							
 							const ThemeContext = createContext('light');
 
@@ -118,7 +118,7 @@ const content: Contents = {
                   </\${ThemeContext.Provider}>
                 \`;
               }
-							defineWomp(App);
+							defineWompo(App);
 
 							function AppContent({ children }){
 								const theme = useContext(ThemeContext);
@@ -134,7 +134,7 @@ const content: Contents = {
 									</div>
 								\`;
 							}
-							defineWomp(AppContent);
+							defineWompo(AppContent);
 						`}
 						language='js'
 					/>
@@ -152,6 +152,6 @@ export default function CreateContext() {
 	return getPageLayout(content);
 }
 
-defineWomp(CreateContext, {
+defineWompo(CreateContext, {
 	name: 'create-context-apis-page',
 });

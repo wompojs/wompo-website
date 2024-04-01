@@ -1,7 +1,7 @@
-import { WompProps, defineWomp } from 'womp';
+import { WompoProps, defineWompo } from 'wompo';
 import Header from '../components/Header.js';
 import SideMenu, { MenuItem } from '../components/SideMenu.js';
-import { ChildRoute } from 'womp-router';
+import { ChildRoute } from 'wompo-router';
 
 const mainMenu: MenuItem[] = [
 	{
@@ -97,8 +97,8 @@ const mainMenu: MenuItem[] = [
 				link: '/docs/apis/createContext',
 			},
 			{
-				title: 'defineWomp',
-				link: '/docs/apis/defineWomp',
+				title: 'defineWompo',
+				link: '/docs/apis/defineWompo',
 			},
 			{
 				title: 'Element API',
@@ -124,14 +124,14 @@ const mainMenu: MenuItem[] = [
 	},
 ];
 
-export default function Layout({ styles: s }: WompProps) {
+export default function Layout({ styles: s }: WompoProps) {
 	return (
 		<div>
 			<Header />
 			<div style={{ display: 'flex', height: '100%' }} class={s.pageContent}>
 				<SideMenu
 					menu={mainMenu}
-					title={<div style={{ fontSize: 14, color: '#585858', padding: '2rem' }}>womp@1.0.0</div>}
+					title={<div style={{ fontSize: 14, color: '#585858', padding: '2rem' }}>wompo@1.0.0</div>}
 				/>
 				<div style={{ width: '100%' }}>
 					<ChildRoute />
@@ -154,6 +154,6 @@ Layout.css = `
   }
 `;
 
-defineWomp(Layout, {
+defineWompo(Layout, {
 	name: 'docs-layout',
 });

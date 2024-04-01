@@ -1,9 +1,13 @@
-import{html as o,defineWomp as t}from"womp";export default function e(){return o`
+import { html as o, defineWompo as t } from 'wompo';
+export default function e() {
+	return o`
 		<p>
 			Even though my styles are super generic, I will not affect external elements and I will not be
 			affected by external styles!
 		</p>
-	`}e.css=`
+	`;
+}
+(e.css = `
   :host {
     display: block;
   }
@@ -13,4 +17,5 @@ import{html as o,defineWomp as t}from"womp";export default function e(){return o
     background-color: #3489a6;
     color: #fff;
   }
-`,t(e,{name:"super-cool-isolated-component",shadow:!0,cssModule:!1});
+`),
+	t(e, { name: 'super-cool-isolated-component', shadow: !0, cssModule: !1 });

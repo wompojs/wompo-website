@@ -1,8 +1,8 @@
 {
 	"author": "Lorenzo Lannino",
 	"license": "ISC",
-	"name": "womp-docs",
-	"description": "Documentation for Womp",
+	"name": "wompo-docs",
+	"description": "Documentation for Wompo",
 	"version": "1.0.0",
 	"type": "module",
 	"main": "index.js",
@@ -15,8 +15,8 @@
 	"dependencies": {
 		"compression": "^1.7.4",
 		"express": "^4.19.2",
-		"womp": "../womp",
-		"womp-router": "../womp-router"
+		"wompo-router": "../wompo-router",
+		"wompo": "^1.0.0"
 	},
 	"devDependencies": {
 		"concurrently": "^8.2.2",

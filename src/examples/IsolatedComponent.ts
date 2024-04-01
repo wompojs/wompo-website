@@ -1,4 +1,4 @@
-import { html, defineWomp } from 'womp';
+import { html, defineWompo } from 'wompo';
 
 export default function IsolatedComponent() {
 	return html`
@@ -20,7 +20,7 @@ IsolatedComponent.css = `
   }
 `;
 
-defineWomp(IsolatedComponent, {
+defineWompo(IsolatedComponent, {
 	name: 'super-cool-isolated-component',
 	// The content will be placed inside a Shadow Root
 	shadow: true,

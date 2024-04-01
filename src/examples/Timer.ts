@@ -1,4 +1,4 @@
-import { useState, defineWomp, html, useRef } from 'womp';
+import { useState, defineWompo, html, useRef } from 'wompo';
 
 export default function Timer() {
 	const [timer, setTimer] = useState(0);
@@ -27,6 +27,6 @@ export default function Timer() {
 	</div>`;
 }
 
-defineWomp(Timer, {
+defineWompo(Timer, {
 	name: 'timer-example',
 });

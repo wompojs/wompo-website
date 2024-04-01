@@ -1,4 +1,4 @@
-import { useReducer, html, defineWomp } from 'womp';
+import { useReducer, html, defineWompo } from 'wompo';
 
 interface ZooState {
 	lions: number;
@@ -43,6 +43,6 @@ export default function Zoo() {
 	`;
 }
 
-defineWomp(Zoo, {
+defineWompo(Zoo, {
 	name: 'zoo-example',
 });

@@ -1,7 +1,7 @@
-import { defineWomp } from 'womp';
+import { defineWompo } from 'wompo';
 import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
 import Code from '../../../components/Code.js';
-import { Link } from 'womp-router';
+import { Link } from 'wompo-router';
 
 const content: Contents = {
 	title: 'useAsync hook',
@@ -64,7 +64,7 @@ const content: Contents = {
 					</p>
 					<Code
 						code={`
-							import { useAsync, defineWomp, html } from 'womp';
+							import { useAsync, defineWompo, html } from 'wompo';
 
 							export default function User({ userId }) {
 								const userData = useAsync(async () => {
@@ -84,7 +84,7 @@ const content: Contents = {
                 </div>\`;
 							}
 
-							defineWomp(Component);
+							defineWompo(Component);
 						`}
 						language='js'
 					/>
@@ -113,7 +113,7 @@ const content: Contents = {
 					</p>
 					<Code
 						code={`
-							import { useAsync, defineWomp, html, Suspense } from 'womp';
+							import { useAsync, defineWompo, html, Suspense } from 'wompo';
 
               function App(){
                 return html\`<div>
@@ -162,6 +162,6 @@ export default function UseAsync() {
 	return getPageLayout(content);
 }
 
-defineWomp(UseAsync, {
+defineWompo(UseAsync, {
 	name: 'useasync-hook-page',
 });

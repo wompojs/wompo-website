@@ -1,4 +1,4 @@
-import { useContext, defineWomp, html, createContext, useState } from 'womp';
+import { useContext, defineWompo, html, createContext, useState } from 'wompo';
 
 const UserContext = createContext(null);
 
@@ -36,9 +36,9 @@ function UserInfo() {
 	return html`<div>${content}</div>`;
 }
 
-defineWomp(LoggedInUser, {
+defineWompo(LoggedInUser, {
 	name: 'logged-in-user-example',
 });
-defineWomp(UserInfo, {
+defineWompo(UserInfo, {
 	name: 'user-info-example',
 });

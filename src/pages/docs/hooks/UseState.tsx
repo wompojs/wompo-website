@@ -1,4 +1,4 @@
-import { defineWomp } from 'womp';
+import { defineWompo } from 'wompo';
 import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
 import Code from '../../../components/Code.js';
 import Counter from '../../../examples/Counter.js';
@@ -74,7 +74,7 @@ const content: Contents = {
 					</Note>
 					<Code
 						code={`
-							import { useState, defineWomp, html } from 'womp';
+							import { useState, defineWompo, html } from 'wompo';
 
 							function getInitialState(){
 								const initialTodos = []
@@ -92,7 +92,7 @@ const content: Contents = {
 								</ul>\`;
 							}
 
-							defineWomp(UserForm);
+							defineWompo(UserForm);
 						`}
 						language='js'
 					/>
@@ -113,7 +113,7 @@ const content: Contents = {
 					</p>
 					<Code
 						code={`
-							import { useState, defineWomp, html } from 'womp';
+							import { useState, defineWompo, html } from 'wompo';
 
 							export default function Counter() {
 								const [count, setCount] = useState(0);
@@ -129,7 +129,7 @@ const content: Contents = {
 								\`;
 							}
 
-							defineWomp(Counter);
+							defineWompo(Counter);
 						`}
 						language='js'
 					/>
@@ -157,7 +157,7 @@ const content: Contents = {
 					</p>
 					<Code
 						code={`
-							import { useState, defineWomp, html, useRef } from 'womp';
+							import { useState, defineWompo, html, useRef } from 'wompo';
 							
 							export default function Timer() {
 								const [timer, setTimer] = useState(0);
@@ -186,7 +186,7 @@ const content: Contents = {
 								</div>\`;
 							}
 
-							defineWomp(Timer);
+							defineWompo(Timer);
 						`}
 						language='js'
 					/>
@@ -223,7 +223,7 @@ const content: Contents = {
 					</p>
 					<Code
 						code={`
-							import { useState, defineWomp, html } from 'womp';
+							import { useState, defineWompo, html } from 'wompo';
 
 							export default function UserForm() {
 								const [user, setUser] = useState({
@@ -314,7 +314,7 @@ const content: Contents = {
 								</div>\`;
 							}
 
-							defineWomp(UserForm);
+							defineWompo(UserForm);
 						`}
 						language='js'
 					/>
@@ -342,6 +342,6 @@ export default function UseState() {
 	return getPageLayout(content);
 }
 
-defineWomp(UseState, {
+defineWompo(UseState, {
 	name: 'usestate-hook-page',
 });

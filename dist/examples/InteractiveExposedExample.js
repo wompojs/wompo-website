@@ -1,4 +1,9 @@
-import{defineWomp as n,html as i,useRef as r}from"womp";import o from"./ModalExample.js";import t from"../components/Code.js";export default function l(){const e=r();return i`
+import { defineWompo as n, html as i, useRef as r } from 'wompo';
+import o from './ModalExample.js';
+import t from '../components/Code.js';
+export default function l() {
+	const e = r();
+	return i`
 		<ol>
 			<li>
 				Very cool option 😎
@@ -14,7 +19,11 @@ import{defineWomp as n,html as i,useRef as r}from"womp";import o from"./ModalExa
 			<li>
 				Boring option 😴
 				<br />
-				Just press this <button @click=${()=>{e.current.open()}}>button</button>. We will do it for you.
+				Just press this <button @click=${() => {
+					e.current.open();
+				}}>button</button>. We will do it for you.
 			</li>
 		</ol>
-	`}n(l,{name:"interactive-exposed-example"});
+	`;
+}
+n(l, { name: 'interactive-exposed-example' });

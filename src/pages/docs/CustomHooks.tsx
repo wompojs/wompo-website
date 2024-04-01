@@ -1,7 +1,7 @@
-import { defineWomp } from 'womp';
+import { defineWompo } from 'wompo';
 import getPageLayout, { Contents } from '../../utils/getPageLayout.js';
 import Code from '../../components/Code.js';
-import { Link } from 'womp-router';
+import { Link } from 'wompo-router';
 import Note from '../../components/Note.js';
 import UseTime from '../../examples/UseTime.js';
 
@@ -17,7 +17,7 @@ const content: Contents = {
 				<>
 					<p>
 						We know that the existing hooks will not satisfy <b>every</b> single exigency that a
-						developer can have while developing Womp Components, but they are the <b>base</b> that
+						developer can have while developing Wompo Components, but they are the <b>base</b> that
 						allows developers to satisfy those exigencies. You can create your own custom hooks that
 						can then be used across all components.
 					</p>
@@ -60,7 +60,7 @@ const content: Contents = {
 					</p>
 					<Code
 						code={`
-              import { useState, useCallback } from 'womp';
+              import { useState, useCallback } from 'wompo';
 
               function useLocalStorage(key, defaultValue) {
                 // Initialize state
@@ -115,7 +115,7 @@ const content: Contents = {
 					</p>
 					<Code
 						code={`
-              import { useRef, useEffect } from 'womp';
+              import { useRef, useEffect } from 'wompo';
 
               export default function useTime() {
                 // Initialize the timer
@@ -139,7 +139,7 @@ const content: Contents = {
 					<p>And then, in a component:</p>
 					<Code
 						code={`
-              import { defineWomp, html } from 'womp';
+              import { defineWompo, html } from 'wompo';
               import useTime from './useTime';
 
               function Component() {
@@ -153,7 +153,7 @@ const content: Contents = {
                   </button>
                 \`;
               }
-              defineWomp(Component);
+              defineWompo(Component);
             `}
 						language='js'
 					/>
@@ -183,6 +183,6 @@ export default function CustomHooks() {
 	return getPageLayout(content);
 }
 
-defineWomp(CustomHooks, {
+defineWompo(CustomHooks, {
 	name: 'custom-hooks-page',
 });

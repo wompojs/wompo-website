@@ -1,6 +1,6 @@
-import { WompProps, defineWomp } from 'womp';
+import { WompoProps, defineWompo } from 'wompo';
 
-interface NoteProps extends WompProps {
+interface NoteProps extends WompoProps {
 	severity: 'info' | 'success' | 'warning' | 'danger';
 }
 
@@ -21,6 +21,6 @@ Note.css = `
 ;
   }
 `;
-defineWomp(Note, {
+defineWompo(Note, {
 	name: 'note-alert',
 });

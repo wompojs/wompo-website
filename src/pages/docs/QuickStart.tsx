@@ -1,12 +1,12 @@
-import { defineWomp } from 'womp';
+import { defineWompo } from 'wompo';
 import getPageLayout, { Contents } from '../../utils/getPageLayout.js';
 import Code from '../../components/Code.js';
-import { Link } from 'womp-router';
+import { Link } from 'wompo-router';
 import Note from '../../components/Note.js';
 
 const content: Contents = {
 	title: 'Quick Start',
-	description: 'Learn the basics of Womp in only 5 minutes.',
+	description: 'Learn the basics of Wompo in only 5 minutes.',
 	sections: [
 		{
 			title: 'Creating a component',
@@ -16,19 +16,19 @@ const content: Contents = {
 					<p>
 						Let's start immediately by creating your first component. All you will need to do is
 						just create a function and "declare" the component with the helper function{' '}
-						<code>defineWomp</code>. This function will have to return the result of the{' '}
+						<code>defineWompo</code>. This function will have to return the result of the{' '}
 						<code>html</code> function, which is a template function that will contain your HTML
 						structure.
 					</p>
 					<Code
 						code={`
-              import { defineWomp, html } from 'womp';
+              import { defineWompo, html } from 'wompo';
 
               export default function GreetingsComponent() {
                 return html\`<div>Hello, World!</div>\`;
               }
 
-              defineWomp(GreetingsComponent);
+              defineWompo(GreetingsComponent);
             `}
 						language='js'
 					/>
@@ -37,16 +37,16 @@ const content: Contents = {
 						<br />
 						<br />
 						But, if you know how <b>Web Components</b> work you are probably wondering where you can
-						define the <u>name</u> of the component. In this case, Womp will simply create a
+						define the <u>name</u> of the component. In this case, Wompo will simply create a
 						dash-cased string based on the name of the function. So, the component{' '}
 						<code>GreetingsComponent</code> will have as a name <b>greetings-component</b>. If the
-						component cannot be transformed into a dash-cased string, a "-womp" suffix will be put
-						in the end (e.g. <b>Counter -&gt; counter-womp</b>). This is because all web components
+						component cannot be transformed into a dash-cased string, a "-wompo" suffix will be put
+						in the end (e.g. <b>Counter -&gt; counter-wompo</b>). This is because all web components
 						must have at least one dash ("-") in their name.
 						<br />
 						Of course, you can even define your own name by using the <u>name</u> option in the
-						second parameter of the <code>defineWomp</code> function. See documentation about{' '}
-						<Link to='/docs/apis/defineWomp'>defineWomp</Link> for more.
+						second parameter of the <code>defineWompo</code> function. See documentation about{' '}
+						<Link to='/docs/apis/defineWompo'>defineWompo</Link> for more.
 						<br />
 						So, to go back in the example, you will have the following html structure:
 					</p>
@@ -70,8 +70,8 @@ const content: Contents = {
 						We know that when building an application based on Web-Components, it's common to have
 						in the HTML file very few components, and the rest of them is rendered inside other
 						components. You can even have only one <b>App</b> component which will render the whole
-						page using other sub-components. With womp, rendering inner components is very easy. See
-						the following example:
+						page using other sub-components. With wompo, rendering inner components is very easy.
+						See the following example:
 					</p>
 					<Code
 						code={`
@@ -81,7 +81,7 @@ const content: Contents = {
             `}
 						language='js'
 					/>
-					<p>Womp will automatically convert the dynamic tag into:</p>
+					<p>Wompo will automatically convert the dynamic tag into:</p>
 					<Code
 						code={`
               function App() {
@@ -97,7 +97,7 @@ const content: Contents = {
 						is. You just know that you want to render a specific component in a specific place.
 						Also, what if, for some reason, you change the name of some components? If you simply
 						typed the names "statically", you'd have to change them in the whole application. Hell.
-						That's what happens with the majority of Web-Component libraries out there. With Womp,
+						That's what happens with the majority of Web-Component libraries out there. With Wompo,
 						the app will continue to normally work ✅ (except for components written directly in the
 						HTML file, of course).
 						<br></br>
@@ -182,9 +182,9 @@ const content: Contents = {
 			content: (
 				<>
 					<p>
-						Almost done. The next nice thing about Womp is that you can define events as if they are
-						attributes. The only difference is that you'll have to put a "@" as a prefix (e.g. the
-						click event will be <code>@click</code>, change will be <code>@change</code>, ans so
+						Almost done. The next nice thing about Wompo is that you can define events as if they
+						are attributes. The only difference is that you'll have to put a "@" as a prefix (e.g.
+						the click event will be <code>@click</code>, change will be <code>@change</code>, ans so
 						on).
 						<br />
 						You can attach an event on every element, even on your own custom elements, because they
@@ -230,7 +230,7 @@ const content: Contents = {
 						language='js'
 					/>
 					<p>
-						That's it. You now know already the 80% of the Womp library. Easy. Isn't it? <br />
+						That's it. You now know already the 80% of the Wompo library. Easy. Isn't it? <br />
 						If you already know <b>React</b>, you can easily see how similar it is.
 					</p>
 				</>
@@ -243,6 +243,6 @@ export default function QuickStart() {
 	return getPageLayout(content);
 }
 
-defineWomp(QuickStart, {
+defineWompo(QuickStart, {
 	name: 'quick-start-page',
 });

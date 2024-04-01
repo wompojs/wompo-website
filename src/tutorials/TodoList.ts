@@ -1,4 +1,4 @@
-import { defineWomp, html, useEffect, useRef, useState } from 'womp';
+import { defineWompo, html, useEffect, useRef, useState } from 'wompo';
 
 const initialTodos = ['Complete this tutorial', 'Buy groceries', 'Wash the car'];
 
@@ -44,6 +44,6 @@ export default function TodoList() {
 	`;
 }
 
-defineWomp(TodoList, {
+defineWompo(TodoList, {
 	name: 'todo-list-tutorial',
 });

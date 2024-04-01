@@ -1,7 +1,7 @@
-import { defineWomp } from 'womp';
+import { defineWompo } from 'wompo';
 import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
 import Code from '../../../components/Code.js';
-import { Link } from 'womp-router';
+import { Link } from 'wompo-router';
 import Note from '../../../components/Note.js';
 import Zoo from '../../../examples/Zoo.js';
 
@@ -92,7 +92,7 @@ const content: Contents = {
 					</p>
 					<Code
 						code={`
-              import { useReducer, html, defineWomp } from 'womp';
+              import { useReducer, html, defineWompo } from 'wompo';
 
               function reducer(state, action){
                 switch (action.type) {
@@ -138,7 +138,7 @@ const content: Contents = {
 						<Zoo />
 						<Note severity='info'>
 							Notice how in the reducer you only return a <b>portion</b> of the state, and not the
-							whole updated state. Under the hood, Womp will <b>merge</b> the returned value with
+							whole updated state. Under the hood, Wompo will <b>merge</b> the returned value with
 							the whole state. Of course, you can even return the whole state using the spread
 							operator.
 						</Note>
@@ -162,7 +162,7 @@ const content: Contents = {
 					</p>
 					<Code
 						code={`
-							import { useReducer, html, defineWomp } from 'womp';
+							import { useReducer, html, defineWompo } from 'wompo';
 
               function reducer(state, action){
                 switch(action.type){
@@ -216,7 +216,7 @@ const content: Contents = {
                 return html\`...\`;
               }
 
-              defineWomp(ShoppingCart);
+              defineWompo(ShoppingCart);
 						`}
 						language='js'
 					/>
@@ -242,6 +242,6 @@ export default function UseReducer() {
 	return getPageLayout(content);
 }
 
-defineWomp(UseReducer, {
+defineWompo(UseReducer, {
 	name: 'usereducer-hook-page',
 });

@@ -1,8 +1,8 @@
-import { defineWomp } from 'womp';
+import { defineWompo } from 'wompo';
 import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
 import Code from '../../../components/Code.js';
 import Note from '../../../components/Note.js';
-import { Link } from 'womp-router';
+import { Link } from 'wompo-router';
 
 const content: Contents = {
 	title: 'useHook hook',
@@ -18,16 +18,16 @@ const content: Contents = {
 			content: (
 				<>
 					<p>
-						At some point you may want to further customize how womp works, and maybe add a specific
-						functionality to your components that Womp doesn't actually support. The{' '}
+						At some point you may want to further customize how wompo works, and maybe add a
+						specific functionality to your components that Wompo doesn't actually support. The{' '}
 						<code>useHook</code>
 						hook will let you have access to the component's instance and the hook index.
 					</p>
 					<Note severity='warning'>
 						This hook should <b>only</b> be used to create <b>advanced</b> custom hooks. The already
-						present Womp's hooks cover 90% of the average cases, and you can create a custom hook by
-						simply combining them. See the <Link to='/docs/custom-hooks'>Custom hooks</Link> section
-						for more.
+						present Wompo's hooks cover 90% of the average cases, and you can create a custom hook
+						by simply combining them. See the <Link to='/docs/custom-hooks'>Custom hooks</Link>{' '}
+						section for more.
 					</Note>
 				</>
 			),
@@ -48,19 +48,19 @@ const content: Contents = {
 						two values: the instance of the currently rendering component, and the current hook
 						index of the component.
 					</p>
-					<p>But what is the hook index? Let's analyze how Womp hooks work in the next section.</p>
+					<p>But what is the hook index? Let's analyze how Wompo hooks work in the next section.</p>
 				</>
 			),
 		},
 		{
-			title: 'Deep dive into Womp hooks',
+			title: 'Deep dive into Wompo hooks',
 			id: 'deep-dive',
 			content: (
 				<>
 					<p>
-						Maybe you already wondered how can Womp return always the same values when you use hooks
-						if they have no reference about the current component. The answer is that hooks are{' '}
-						<b>not</b> pure functions. Every time a component renders, the value of an external
+						Maybe you already wondered how can Wompo return always the same values when you use
+						hooks if they have no reference about the current component. The answer is that hooks
+						are <b>not</b> pure functions. Every time a component renders, the value of an external
 						variable called <code>currentRenderingComponent</code> is set to the instance of the
 						current rendering component (big surprise huh?). This instance is the same returned by
 						the <code>useHook</code> hook. Then, another external variable called{' '}
@@ -70,7 +70,7 @@ const content: Contents = {
 						<b>
 							<code>hooks</code> array
 						</b>{' '}
-						that every component has (you can actually select a womp element in the console and
+						that every component has (you can actually select a wompo element in the console and
 						write <code>$0.hooks</code> to see it).
 						<br />
 						It's something like this (very approximatively):
@@ -97,7 +97,7 @@ const content: Contents = {
               }
 
               // This is the class that will be generated for your component
-              class Womp extends HTMLElement {
+              class Wompo extends HTMLElement {
 
                 render(){
                   // Setting the currentRenderingComponent to "this" instance
@@ -112,7 +112,8 @@ const content: Contents = {
 						language='js'
 					/>
 					<p>
-						The code above will not work, but can make you easily get how Womp works under the hood.
+						The code above will not work, but can make you easily get how Wompo works under the
+						hood.
 					</p>
 					<Note severity='info'>
 						If you understand this, you also understand why it is so important for your component's
@@ -131,7 +132,7 @@ const content: Contents = {
 						Because with this hook you have access to the component's instance, you can call methods
 						on it or perform modifications. You can see the available methods and data accessible
 						through a component's instance in the{' '}
-						<Link to='/docs/apis/element'>Womp Element API</Link>.
+						<Link to='/docs/apis/element'>Wompo Element API</Link>.
 					</p>
 					<p>
 						Enough. Let's explore a nice example to see in practice how powerful this hook can be.
@@ -156,7 +157,7 @@ const content: Contents = {
 					</p>
 					<Code
 						code={`
-							import { useHook } from 'womp';
+							import { useHook } from 'wompo';
 
 							export default function useBattery() {
                 const [component, hookIndex] = useHook();
@@ -201,13 +202,13 @@ const content: Contents = {
 					</p>
 					<p>
 						<Note severity='info'>
-							<b>Info:</b> you could have actually get the same result using native Womp hooks like{' '}
+							<b>Info:</b> you could have actually get the same result using native Wompo hooks like{' '}
 							<Link to='/docs/hooks/useState'>useState</Link>,{' '}
 							<Link to='/docs/hooks/useEffect'>useEffect</Link>, or{' '}
 							<Link to='/docs/hooks/useRef'>useRef</Link>. This was just to demostrate how you can
 							implement your own hook and make the component stateful by requesting updates. If you
 							can, you should always avoid using the <b>useHook</b> hook and use instead other
-							native Womp hooks to achieve the same result.
+							native Wompo hooks to achieve the same result.
 							<br />
 							To know how to make a custom hook combining the already existing ones, see the{' '}
 							<Link to='/docs/custom-hooks'>Custom hooks</Link> section.
@@ -282,6 +283,6 @@ export default function UseHook() {
 	return getPageLayout(content);
 }
 
-defineWomp(UseHook, {
+defineWompo(UseHook, {
 	name: 'usehook-hook-page',
 });

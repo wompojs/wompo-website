@@ -1,6 +1,6 @@
-import { WompProps, defineWomp, useEffect, useRef } from 'womp';
+import { WompoProps, defineWompo, useEffect, useRef } from 'wompo';
 
-interface CodeProps extends WompProps {
+interface CodeProps extends WompoProps {
 	code: string;
 	language: 'js' | 'jsx' | 'html' | 'ts' | 'css';
 }
@@ -52,7 +52,7 @@ Code.css = `
   }
 `;
 
-defineWomp(Code, {
-	name: 'womp-code',
+defineWompo(Code, {
+	name: 'wompo-code',
 	shadow: true,
 });

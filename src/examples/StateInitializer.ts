@@ -1,4 +1,4 @@
-import { useState, defineWomp, html } from 'womp';
+import { useState, defineWompo, html } from 'wompo';
 
 function getInitialState() {
 	const initialTodos = [];
@@ -16,6 +16,6 @@ export default function StateInitializerExample() {
 	</ul>`;
 }
 
-defineWomp(StateInitializerExample, {
+defineWompo(StateInitializerExample, {
 	name: 'state-initializer-example',
 });

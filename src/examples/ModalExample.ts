@@ -1,11 +1,11 @@
-import { WompElement, WompProps, defineWomp, html, useExposed, useState } from 'womp';
+import { WompoElement, WompoProps, defineWompo, html, useExposed, useState } from 'wompo';
 
-export interface ModalExampleElement extends WompElement {
+export interface ModalExampleElement extends WompoElement {
 	open: () => void;
 	close: () => void;
 }
 
-export default function ModalExample({ children, styles: s }: WompProps) {
+export default function ModalExample({ children, styles: s }: WompoProps) {
 	const [open, setOpen] = useState(false);
 
 	const openModal = () => {
@@ -65,6 +65,6 @@ ModalExample.css = `
   }
 `;
 
-defineWomp(ModalExample, {
+defineWompo(ModalExample, {
 	name: 'modal-example',
 });

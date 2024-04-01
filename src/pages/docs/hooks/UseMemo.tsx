@@ -1,4 +1,4 @@
-import { defineWomp } from 'womp';
+import { defineWompo } from 'wompo';
 import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
 import Code from '../../../components/Code.js';
 
@@ -81,7 +81,7 @@ const content: Contents = {
 					</p>
 					<Code
 						code={`
-							import { useState, useMemo, html, defineWomp } from 'womp';
+							import { useState, useMemo, html, defineWompo } from 'wompo';
 
               // Randomly create 50 initial users.
               const initialUsers = (() => {
@@ -129,6 +129,6 @@ export default function UseMemo() {
 	return getPageLayout(content);
 }
 
-defineWomp(UseMemo, {
+defineWompo(UseMemo, {
 	name: 'usememo-hook-page',
 });

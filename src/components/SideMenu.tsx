@@ -1,5 +1,5 @@
-import { type WompProps, defineWomp } from 'womp';
-import { NavLink } from 'womp-router';
+import { type WompoProps, defineWompo } from 'wompo';
+import { NavLink } from 'wompo-router';
 import SubMenu from './SubMenu.js';
 
 export interface MenuItem {
@@ -8,7 +8,7 @@ export interface MenuItem {
 	menu?: MenuItem[];
 }
 
-interface SideMenuProps extends WompProps {
+interface SideMenuProps extends WompoProps {
 	menu: MenuItem[];
 	title?: string;
 }
@@ -78,6 +78,6 @@ SideMenu.css = `
   }
 `;
 
-defineWomp(SideMenu, {
+defineWompo(SideMenu, {
 	name: 'side-menu',
 });

@@ -1,7 +1,7 @@
-import { defineWomp } from 'womp';
+import { defineWompo } from 'wompo';
 import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
 import Code from '../../../components/Code.js';
-import { Link } from 'womp-router';
+import { Link } from 'wompo-router';
 import Note from '../../../components/Note.js';
 
 const content: Contents = {
@@ -64,6 +64,6 @@ export default function UseLayoutEffect() {
 	return getPageLayout(content);
 }
 
-defineWomp(UseLayoutEffect, {
+defineWompo(UseLayoutEffect, {
 	name: 'uselayouteffect-hook-page',
 });

@@ -1,4 +1,4 @@
-import { defineWomp, html, useRef } from 'womp';
+import { defineWompo, html, useRef } from 'wompo';
 import ModalExample, { ModalExampleElement } from './ModalExample.js';
 import Code from '../components/Code.js';
 
@@ -29,6 +29,6 @@ export default function InteractiveExposedExample() {
 	`;
 }
 
-defineWomp(InteractiveExposedExample, {
+defineWompo(InteractiveExposedExample, {
 	name: 'interactive-exposed-example',
 });

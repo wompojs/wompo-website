@@ -1,4 +1,4 @@
-import { defineWomp } from 'womp';
+import { defineWompo } from 'wompo';
 import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
 import Note from '../../../components/Note.js';
 
@@ -12,7 +12,7 @@ const content: Contents = {
 			content: (
 				<>
 					<p>
-						The <code>registeredComponent</code> exported object is an object exported by the Womp
+						The <code>registeredComponent</code> exported object is an object exported by the Wompo
 						library that has the names of the registered Web Components as keys, and their
 						corresponding functional Component as a value (not the generated HTML class).
 					</p>
@@ -27,6 +27,6 @@ export default function RegisteredComponents() {
 	return getPageLayout(content);
 }
 
-defineWomp(RegisteredComponents, {
+defineWompo(RegisteredComponents, {
 	name: 'registered-components-apis-page',
 });
