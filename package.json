@@ -8,9 +8,9 @@
 	"main": "index.js",
 	"scripts": {
 		"old-dev": "./esbuild.config.mjs",
-		"dev": "esbuild `find ./src \\( -name '*.ts' -o -name '*.tsx' \\)` --outdir=dist --allow-overwrite --minify --watch",
+		"dev": "esbuild `find ./src \\( -name '*.ts' -o -name '*.tsx' \\)` --outdir=dist --allow-overwrite --minify & nodemon index.js",
 		"build": "esbuild `find ./src \\( -name '*.ts' -o -name '*.tsx' \\)` --outdir=dist --allow-overwrite --minify",
-		"start": "esbuild `find ./src \\( -name '*.ts' -o -name '*.tsx' \\)` --outdir=dist --allow-overwrite --minify & nodemon index.js"
+		"start": "node index.js"
 	},
 	"dependencies": {
 		"compression": "^1.7.4",
