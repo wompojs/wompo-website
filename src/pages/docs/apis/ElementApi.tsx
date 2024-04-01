@@ -105,4 +105,6 @@ export default function ElementApi() {
 	return getPageLayout(content);
 }
 
-defineWomp(ElementApi);
+defineWomp(ElementApi, {
+	name: 'element-api-apis-page',
+});

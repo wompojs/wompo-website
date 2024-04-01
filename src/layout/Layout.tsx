@@ -17,6 +17,10 @@ const mainMenu: MenuItem[] = [
 		link: 'complex-example',
 	},
 	{
+		title: 'Styling',
+		link: '/docs/styling',
+	},
+	{
 		title: 'Hooks',
 		link: '/docs/hooks',
 		menu: [
@@ -75,6 +79,16 @@ const mainMenu: MenuItem[] = [
 		link: '/docs/custom-hooks',
 	},
 	{
+		title: 'Components',
+		link: '/docs/components',
+		menu: [
+			{
+				title: 'Suspense',
+				link: '/docs/components/suspense',
+			},
+		],
+	},
+	{
 		title: 'APIs',
 		link: '/docs/apis',
 		menu: [
@@ -117,7 +131,7 @@ export default function Layout({ styles: s }: WompProps) {
 			<div style={{ display: 'flex', height: '100%' }} class={s.pageContent}>
 				<SideMenu
 					menu={mainMenu}
-					title={<div style={{ fontSize: 14, color: '#999', padding: '2rem' }}>womp@1.0.0</div>}
+					title={<div style={{ fontSize: 14, color: '#585858', padding: '2rem' }}>womp@1.0.0</div>}
 				/>
 				<div style={{ width: '100%' }}>
 					<ChildRoute />
@@ -140,4 +154,6 @@ Layout.css = `
   }
 `;
 
-defineWomp(Layout);
+defineWomp(Layout, {
+	name: 'docs-layout',
+});

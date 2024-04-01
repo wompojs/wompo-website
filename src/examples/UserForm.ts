@@ -90,4 +90,6 @@ export default function UserForm() {
 	`;
 }
 
-defineWomp(UserForm);
+defineWomp(UserForm, {
+	name: 'user-form-example',
+});

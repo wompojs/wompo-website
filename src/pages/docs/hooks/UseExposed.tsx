@@ -55,7 +55,7 @@ const content: Contents = {
 						code={`
 							useExposed(object);
 						`}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						The hook accepts one single parameter, which is an object representing the keys you want
@@ -70,7 +70,7 @@ const content: Contents = {
 								return html\`\`;
 							}
 						`}
-						lang='js'
+						language='js'
 					/>
 					This element exposes the <b>jumpscare</b> function, that you can call by selecting the
 					element:
@@ -81,7 +81,7 @@ const content: Contents = {
 								document.querySelector('example-component').jumpscare();
 							</script>
 						`}
-						lang='html'
+						language='html'
 					/>
 				</>
 			),
@@ -131,7 +131,7 @@ const content: Contents = {
 
 							defineWomp(ModalExample);
 						`}
-						lang='js'
+						language='js'
 					/>
 					We can now add the styles of the Modal:
 					<Code
@@ -164,7 +164,7 @@ const content: Contents = {
 								}
 							\`;
 						`}
-						lang='js'
+						language='js'
 					/>
 					Job done!
 					<br />
@@ -202,4 +202,6 @@ export default function UseExposed() {
 	return getPageLayout(content);
 }
 
-defineWomp(UseExposed);
+defineWomp(UseExposed, {
+	name: 'useexposed-hook-page',
+});

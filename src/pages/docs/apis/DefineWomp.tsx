@@ -37,7 +37,7 @@ const content: Contents = {
 						code={`
 							defineWomp(Component, options?);
 						`}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						The function accepts two parameters: your functional Component and the options for it.
@@ -84,7 +84,7 @@ const content: Contents = {
                       }
                     \`;
                   `}
-									lang='js'
+									language='js'
 								/>
 							</li>
 						</ul>
@@ -139,7 +139,7 @@ const content: Contents = {
                 cssModule: false
               });
 						`}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						Result:
@@ -148,7 +148,7 @@ const content: Contents = {
 					<Note severity='warning'>
 						<b>Note</b>: Other than generating more specific class names, what the cssModule option
 						will do is also provide a display block style for the element.
-						<Code code={`:host { display: block; }`} lang='js' />
+						<Code code={`:host { display: block; }`} language='js' />
 						This is because custom elements have NO default styles, and usually the first thing you
 						will do is set the display property. If you disabled the cssModule option, this will not
 						happen. Also, if in your CSS you write an <code>:host</code> style, the display block
@@ -166,4 +166,6 @@ export default function DefineWomp() {
 	return getPageLayout(content);
 }
 
-defineWomp(DefineWomp);
+defineWomp(DefineWomp, {
+	name: 'definewomp-apis-page',
+});

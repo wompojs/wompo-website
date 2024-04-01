@@ -27,4 +27,6 @@ export default function Timer() {
 	</div>`;
 }
 
-defineWomp(Timer);
+defineWomp(Timer, {
+	name: 'timer-example',
+});

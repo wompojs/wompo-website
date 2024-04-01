@@ -1,4 +1,4 @@
-import { useReducer, html, defineWomp, ReducerAction } from 'womp';
+import { useReducer, html, defineWomp } from 'womp';
 
 interface ZooState {
 	lions: number;
@@ -6,7 +6,7 @@ interface ZooState {
 	bears: number;
 }
 
-function reducer(state: ZooState, action: ReducerAction) {
+function reducer(state: ZooState, action: any) {
 	switch (action.type) {
 		case 'add_lion': {
 			return { lions: state.lions + 1 };
@@ -43,4 +43,6 @@ export default function Zoo() {
 	`;
 }
 
-defineWomp(Zoo);
+defineWomp(Zoo, {
+	name: 'zoo-example',
+});

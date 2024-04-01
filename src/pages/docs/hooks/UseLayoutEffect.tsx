@@ -47,7 +47,7 @@ const content: Contents = {
 						code={`
 							useLayoutEffect(effectFn, dependencies);
 						`}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						The <code>useLayoutEffect</code> hook accepts an effect callback function and a list of
@@ -64,4 +64,6 @@ export default function UseLayoutEffect() {
 	return getPageLayout(content);
 }
 
-defineWomp(UseLayoutEffect);
+defineWomp(UseLayoutEffect, {
+	name: 'uselayouteffect-hook-page',
+});

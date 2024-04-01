@@ -4,20 +4,13 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Womp Documentation</title>
-		<script>
-			/* Live reloading */
-			new EventSource('/esbuild').addEventListener('change', () => location.reload());
-		</script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/html.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/typescript.min.js"></script>
+		<meta name="description" content="Womp documentation" />
 		<script type="importmap">
 			{
 				"imports": {
-					"womp": "/node_modules/womp/dist/womp.js",
-					"womp/jsx-runtime": "/node_modules/womp/jsx-runtime.js",
-					"womp-router": "/node_modules/womp-router/dist/womp-router.js"
+					"womp": "/womp/dist/womp.js",
+					"womp/jsx-runtime": "/womp/jsx-runtime.js",
+					"womp-router": "/womp-router/womp-router.js"
 				}
 			}
 		</script>
@@ -39,8 +32,14 @@
 	</head>
 	<body>
 		<script type="module">
-			import App from '/dist/app.js';
+			import App from '/app.js';
 		</script>
-		<womp-app></womp-app>
+		<womp-root></womp-root>
+
+		<script src="/plugins/highlightjs/min.js"></script>
+		<script src="/plugins/highlightjs/javascript.min.js"></script>
+		<script src="/plugins/highlightjs/html.min.js"></script>
+		<script src="/plugins/highlightjs/css.min.js"></script>
+		<script src="/plugins/highlightjs/typescript.min.js"></script>
 	</body>
 </html>

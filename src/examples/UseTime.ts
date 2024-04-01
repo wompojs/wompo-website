@@ -28,4 +28,6 @@ export default function UseTime() {
 	`;
 }
 
-defineWomp(UseTime);
+defineWomp(UseTime, {
+	name: 'use-time-hook-example',
+});

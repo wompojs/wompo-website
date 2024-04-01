@@ -1,5 +1,6 @@
 import { defineWomp } from 'womp';
 import getPageLayout, { Contents } from '../../utils/getPageLayout.js';
+import Code from '../../components/Code.js';
 
 const content: Contents = {
 	title: 'Introduction',
@@ -12,8 +13,8 @@ const content: Contents = {
 				<>
 					<p>
 						The reason why Womp is born is to make Web development easier: by taking advantage of
-						native Javascript functionalities, Womp allows you to create a reusable, shareable, and
-						fast Web-Component.
+						native Javascript functionalities, Womp allows you to create reusable, shareable, and
+						fast Web-Components.
 						<br />
 						Womp was created by "merging" two main libraries: <b>React</b> and <b>Lit</b>. More
 						specifically, the <b>Core concepts</b> of React, and the <b>Blazing fast</b> rendering
@@ -21,21 +22,60 @@ const content: Contents = {
 						React, while still keeping an eye on performances.
 					</p>
 					<p>
-						Matter of fact: this documentation was built for completeness, but you can actually go
-						to check the React documentation and realize it's kind of the same thing. This allows
-						you to (super) easily migrate to Womp.
+						But there are already tons of libraries that serve the same purpose, like <b>Stencil</b>
+						, <b>Atomico</b>, and, of course <b>Lit</b> (plus others), so why Womp?
+						<br />
+						The reason is simple: we don't like to overcomplicate things. Womp is super-fast and has
+						a super-common way of building components (the React way), so is it worth it to learn
+						completely new concepts and libraries to just save a couple of milliseconds and write
+						more code to achieve the same result? Are months of studying and experimenting worth to
+						get the same result? We think not. There is no need to learn Javascript classses,
+						understaning the <b>this</b> keyword, learn <b>Typescript</b> (althought it is natively
+						supported, because Womp is built with it): the only thing you must know is basic HTML,
+						basic CSS, and basic JS. That's it. Womp is accessible by <b>completely begginers</b>{' '}
+						but also by <b>experts</b>.
 					</p>
 					<p>
-						But there are already tons of libraries that serve the same purpose, like <b>Stencil</b>
-						, <b>Atomico</b>, and, of course <b>Lit</b>, so why Womp?
-						<br />
-						The reason is simple: we don't like to overcomplicate things. Womp is already
-						super-fast, is it worth it to learn completely new concepts and libraries to just save 2
-						milliseconds? Are 2 milliseconds worth months of studying and experimenting? We think
-						not. There is no need to learn <b>Typescript</b> (althought it is natively supported,
-						because Womp is built with it), Javascript classses, and understaning the <b>this</b>{' '}
-						keyword: the only thing you must know is basic HTML, basic CSS, and basic JS. That's it.
-						Womp is accessible by <b>completely begginers</b> but also by experts.
+						Womp has the following benefits:
+						<ul>
+							<li>
+								<b>React-like</b> - no need to learn a completely new library. If you know React,
+								you already know also Womp. Or at least the 90% of it. If you don't, Womp has a
+								super fast learning curve. By simply reading the "Quick start" section, you will
+								already know how to build the 80% of your components.
+							</li>
+							<li>
+								<b>Performant</b> - Faster than React, Preact, and Atomico, and only slightly slower
+								than Lit.
+							</li>
+							<li>
+								<b>Built-in CSS modules</b> - With Womp there is no need to worry about style
+								collisions: your class names will be automatically replaced with a unique class
+								name.
+							</li>
+							<li>
+								<b>Automatic component naming</b> - Womp components will generate an automatic name
+								for your DOM elements. Your <code>TodoList</code> will simply become a "todo-list",
+								right?
+							</li>
+							<li>
+								<b>Re-Usable</b> - Unlike other libraries, you don't need a compiler or anything,
+								because Womp it's built with native Javascript functionalities. This means you can
+								use your components <b>everywhere</b>. Wheter you already use React, Angular, Vue,
+								or any other library (or none), you will not have to worry about anything, and your
+								Womp components will always work.
+							</li>
+							<li>
+								<b>JSX Support</b> - Yeah, exactly. If you really can't leave without JSX, we got it
+								for you: html check, props validation, and more. Of course, you will need a compiler
+								for that.
+							</li>
+							<li>
+								<b>Bundle free</b> - With most compiled libraries, you have to create a bundle with
+								all your components in order to make it work. With Womp you can even share a single
+								component, and it will run <b>everywhere</b> without problems.
+							</li>
+						</ul>
 					</p>
 				</>
 			),
@@ -57,15 +97,74 @@ const content: Contents = {
 						HTML element that can be re-used and "isolated" using <b>Shadow DOM</b>, so that it'll
 						not be able to alter and be altered by other elements in the page. Because it is native,
 						if you want to use a third party component you'll just have to include the component's
-						JS (and the Womp library if you didn't already import it, which only weights 5KB) and
+						JS (and the Womp library if you didn't already import it, which only weights 6KB) and
 						you're ready to go. No need to compile. This means that you can use third party
-						components even if you're not using a compiler or bundler, so even websites that are not
-						up-to-date with the latest technologies can easily integrate Womp. You can even use Womp
-						while still using other libraries like React, Angular, and so on, without needing to
-						worry about conflicts.
+						components even if you're not using a compiler or bundler, so{' '}
+						<b>
+							even websites that are not up-to-date with the latest technologies can easily
+							integrate Womp
+						</b>
+						. You can even use Womp while still using other libraries like React, Angular, and so
+						on, without needing to worry about conflicts.
 					</p>
 					<p>
-						You can find everything in details about Web Components on the{' '}
+						The main difference between <i>React components</i> and <i>Womp components</i> is that
+						Womp components are actually elements that you can see in the DOM: they are not virtual.
+						If you inspect this page, you can see elements like "content-section", "side-menu", and
+						so on. These are Womp components that are rendered in the DOM.
+						<br />
+						This means that when you write your application, you have to keep in mind that your
+						component will actually be an element with a <code>display: block</code> style. Consider
+						the following example, wrote in JSX:
+					</p>
+					<Code
+						code={`
+							function App(){
+								return (
+									<div style="display: flex;">
+										<p>I'm inline</p>
+										<p>I'm inline</p>
+										<CustomComponent />
+									</div>
+								);
+							}
+
+							function CustomComponent(){
+								return <>
+									<p>I'm not inline</p>
+									<p>I'm not inline</p>
+								</>
+							}
+						`}
+						language='js'
+					/>
+					<p>In React this will give a different result compared to Womp, more specifically:</p>
+					<Code
+						code={`
+							<!-- React will render this: -->
+							<div style="display: flex;">
+								<p>I'm inline</p>
+								<p>I'm inline</p>
+								<p>I'm not inline</p> <!--It will actually be inline here -->
+								<p>I'm not inline</p> <!--It will actually be inline here -->
+							</div>
+
+							<!-- Womp will render this: -->
+							<div style="display: flex;">
+								<p>I'm inline</p>
+								<p>I'm inline</p>
+								<custom-component>
+									<p>I'm not inline</p>
+									<p>I'm not inline</p>
+								</custom-component>
+							</div>
+						`}
+						language='html'
+					/>
+					<p>
+						That's the only main difference and the only thing you have to keep in mind while
+						developing your UI. For more about Web Components, you can find everything in details on
+						the{' '}
 						<a
 							target='_blank'
 							href='https://developer.mozilla.org/en-US/docs/Web/API/Web_components'
@@ -84,4 +183,6 @@ export default function Introduction() {
 	return getPageLayout(content);
 }
 
-defineWomp(Introduction);
+defineWomp(Introduction, {
+	name: 'introduction-page',
+});

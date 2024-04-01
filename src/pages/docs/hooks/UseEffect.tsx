@@ -48,7 +48,7 @@ const content: Contents = {
 						code={`
 							useEffect(effectFn, dependencies);
 						`}
-						lang="js"
+						language='js'
 					/>
 					<p>
 						The hook accepts two parameters: the <b>effect function</b> and the{' '}
@@ -63,7 +63,7 @@ const content: Contents = {
 						<b>only</b> after the first render.
 					</p>
 					<p>If no dependencies are specified, the effect will be executed on every render.</p>
-					<Note severity="info">
+					<Note severity='info'>
 						<b>Note:</b> The effect will be executed <b>asynchronously</b> after the component has
 						been rendered.
 					</Note>
@@ -97,9 +97,9 @@ const content: Contents = {
 
               defineWomp(TimeoutComponent);
 						`}
-						lang="js"
+						language='js'
 					/>
-					<Note severity="warning">
+					<Note severity='warning'>
 						When using timeouts and intervals, remember to <b>always</b> cancel them using the{' '}
 						<b>cleaning function</b> (like in the example). Not doing so can lead to unexpected
 						behaviours.
@@ -123,10 +123,10 @@ const content: Contents = {
 						The <code>useEffect</code> hook can also be used to fetch data when the component
 						renders.
 					</p>
-					<Note severity="info">
+					<Note severity='info'>
 						<b>Note:</b> This example is only made to understand better how the hook works and how
 						to do async operations inside of it. If you actually have to perform data fetching, use
-						the <Link to="/docs/hooks/useAsync">useAsync</Link> hook instead.
+						the <Link to='/docs/hooks/useAsync'>useAsync</Link> hook instead.
 					</Note>
 					<Code
 						code={`
@@ -146,9 +146,9 @@ const content: Contents = {
 
               defineWomp(User);
 						`}
-						lang="js"
+						language='js'
 					/>
-					<Note severity="warning">
+					<Note severity='warning'>
 						The effect callback <b>cannot return a promise</b>, so you cannot declare it as an async
 						function and you cannot use the <b>await</b> keyword. Use <code>.then</code> functions
 						or create an helper async function to call <b>inside</b> the effect.
@@ -191,14 +191,14 @@ const content: Contents = {
 
               defineWomp(Theme);
 						`}
-						lang="js"
+						language='js'
 					/>
 					<p>
 						In this example we used two effects: one to get the user's theme preference, executed
 						only once, and one to save the user's theme preference whenever the theme preference
 						changes.
 					</p>
-					<Note severity="info">
+					<Note severity='info'>
 						<b>Effects will be executed in the order they are declared</b>, so the order matters. In
 						this example, if you execute the second effect before the other it will not work,
 						because the theme in the localStorage will be always updated with the initial value of
@@ -213,7 +213,7 @@ const content: Contents = {
 			content: (
 				<>
 					<p>
-						In this example we will combine the <Link to="/docs/hooks/useRef">useRef</Link> hook
+						In this example we will combine the <Link to='/docs/hooks/useRef'>useRef</Link> hook
 						with the third party library <b>highlight.js</b> and the <code>useEffect</code> hook to
 						create an highlighted code component.
 					</p>
@@ -238,7 +238,7 @@ const content: Contents = {
 
               defineWomp(Code);
 						`}
-						lang="js"
+						language='js'
 					/>
 					<p>
 						In the above example the <code>Code</code> component accepts a <b>code</b> prop and a{' '}
@@ -255,4 +255,6 @@ export default function UseEffect() {
 	return getPageLayout(content);
 }
 
-defineWomp(UseEffect);
+defineWomp(UseEffect, {
+	name: 'useeffect-hook-page',
+});

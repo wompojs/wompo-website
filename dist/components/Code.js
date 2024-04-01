@@ -1,24 +1,4 @@
-import { Fragment, jsx, jsxs } from "womp/jsx-runtime";
-import { defineWomp, useEffect, useRef } from "womp";
-export default function Code({ code, lang, styles: s }) {
-  const codeRef = useRef();
-  useEffect(() => {
-    let formatted = code.replace(/\t/g, "  ");
-    const firstLineSpaces = /^\n(\s+)/.exec(formatted);
-    if (firstLineSpaces) {
-      const spaces = firstLineSpaces[1];
-      const removeStart = new RegExp(`^${spaces}`, "gm");
-      formatted = formatted.replace(removeStart, "").replace(/^\n/, "").replace(/\n\s+$/g, "");
-    }
-    const highlighted = window.hljs.highlight(formatted, { language: lang });
-    codeRef.current.innerHTML = highlighted.value;
-  }, []);
-  return /* @__PURE__ */ jsxs(Fragment, { children: [
-    /* @__PURE__ */ jsx("link", { rel: "stylesheet", href: "https://unpkg.com/highlightjs@9.16.2/styles/xcode.css" }),
-    /* @__PURE__ */ jsx("pre", { class: s.pre, children: /* @__PURE__ */ jsx("code", { ref: codeRef }) })
-  ] });
-}
-Code.css = `
+import{Fragment as f,jsx as o,jsxs as m}from"womp/jsx-runtime";import{defineWomp as l,useEffect as g,useRef as h}from"womp";export default function s({code:c,language:n,styles:i}){const r=h();return g(()=>{let e=c.replace(/\t/g,"  ");const t=/^\n(\s+)/.exec(e);if(t){const a=t[1],d=new RegExp(`^${a}`,"gm");e=e.replace(d,"").replace(/^\n/,"").replace(/\n\s+$/g,"")}const p=window.hljs.highlight(e,{language:n});r.current.innerHTML=p.value},[]),m(f,{children:[o("link",{rel:"stylesheet",href:"https://unpkg.com/highlightjs@9.16.2/styles/xcode.css"}),o("pre",{class:i.pre,children:o("code",{ref:r})})]})}s.css=`
   :host {
     display: block;
     width: 100%;
@@ -37,7 +17,4 @@ Code.css = `
     background-color: #f6f6f6;
     border-radius: 10px;
   }
-`;
-defineWomp(Code, {
-  shadow: true
-});
+`,l(s,{name:"womp-code",shadow:!0});

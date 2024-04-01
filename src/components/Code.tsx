@@ -2,10 +2,10 @@ import { WompProps, defineWomp, useEffect, useRef } from 'womp';
 
 interface CodeProps extends WompProps {
 	code: string;
-	lang: 'js' | 'jsx' | 'html' | 'ts';
+	language: 'js' | 'jsx' | 'html' | 'ts' | 'css';
 }
 
-export default function Code({ code, lang, styles: s }: CodeProps) {
+export default function Code({ code, language, styles: s }: CodeProps) {
 	const codeRef = useRef<HTMLElement>();
 	useEffect(() => {
 		let formatted = code.replace(/\t/g, '  ');
@@ -18,7 +18,7 @@ export default function Code({ code, lang, styles: s }: CodeProps) {
 				.replace(/^\n/, '')
 				.replace(/\n\s+$/g, '');
 		}
-		const highlighted = (window as any).hljs.highlight(formatted, { language: lang });
+		const highlighted = (window as any).hljs.highlight(formatted, { language: language });
 		codeRef.current.innerHTML = highlighted.value;
 	}, []);
 	return (
@@ -53,5 +53,6 @@ Code.css = `
 `;
 
 defineWomp(Code, {
+	name: 'womp-code',
 	shadow: true,
 });

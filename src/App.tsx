@@ -22,6 +22,10 @@ const docsRoutes: DocRoute[] = [
 		pagePath: './pages/docs/ComplexExample.js',
 	},
 	{
+		path: 'styling',
+		pagePath: './pages/docs/Styling.js',
+	},
+	{
 		path: 'hooks',
 		pagePath: './pages/docs/hooks/Hooks.js',
 		subRoutes: [
@@ -80,6 +84,16 @@ const docsRoutes: DocRoute[] = [
 		pagePath: './pages/docs/CustomHooks.js',
 	},
 	{
+		path: 'components',
+		pagePath: './pages/docs/components/Components.js',
+		subRoutes: [
+			{
+				path: 'suspense',
+				pagePath: './pages/docs/components/SuspenseComponent.js',
+			},
+		],
+	},
+	{
 		path: 'apis',
 		pagePath: './pages/docs/apis/Apis.js',
 		subRoutes: [
@@ -101,7 +115,7 @@ const docsRoutes: DocRoute[] = [
 			},
 			{
 				path: 'lazy',
-				pagePath: './pages/docs/apis/Lazy.js',
+				pagePath: './pages/docs/apis/LazyApi.js',
 			},
 			{
 				path: 'registeredComponents',
@@ -146,7 +160,7 @@ export default function App() {
 	);
 }
 defineWomp(App, {
-	name: 'womp-app',
+	name: 'womp-root',
 });
 
 //! Rules: Always return same template.

@@ -190,4 +190,6 @@ export default function Hooks() {
 	return getPageLayout(content);
 }
 
-defineWomp(Hooks);
+defineWomp(Hooks, {
+	name: 'hooks-page',
+});

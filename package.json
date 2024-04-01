@@ -4,18 +4,24 @@
 	"name": "womp-docs",
 	"description": "Documentation for Womp",
 	"version": "1.0.0",
+	"type": "module",
 	"main": "index.js",
 	"scripts": {
-		"dev": "./esbuild.config.mjs",
-		"tsc": "concurrently \"tsc -w\" \"tsc-alias -w\""
+		"old-dev": "./esbuild.config.mjs",
+		"dev": "esbuild `find ./src \\( -name '*.ts' -o -name '*.tsx' \\)` --outdir=dist --allow-overwrite --minify --watch",
+		"build": "esbuild `find ./src \\( -name '*.ts' -o -name '*.tsx' \\)` --outdir=dist --allow-overwrite --minify",
+		"start": "esbuild `find ./src \\( -name '*.ts' -o -name '*.tsx' \\)` --outdir=dist --allow-overwrite --minify & nodemon index.js"
 	},
 	"dependencies": {
+		"compression": "^1.7.4",
+		"express": "^4.19.2",
 		"womp": "../womp",
 		"womp-router": "../womp-router"
 	},
 	"devDependencies": {
 		"concurrently": "^8.2.2",
 		"esbuild": "^0.20.2",
+		"nodemon": "^3.1.0",
 		"ts-loader": "^9.5.1",
 		"tsc-alias": "^1.8.8"
 	}

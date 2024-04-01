@@ -1,15 +1,7 @@
-import { defineWomp, html, useRef } from "womp";
-export default function PasswordRevealer() {
-  const inputRef = useRef(null);
-  const revealPassword = () => {
-    alert(`Your password is: "${inputRef.current.value}" \u{1F608}`);
-  };
-  return html`<div>
+import{defineWomp as o,html as s,useRef as a}from"womp";export default function r(){const e=a(null);return s`<div>
 		<label>
 			Type your password here:
-			<input ref=${inputRef} type="password" autocomplete="off" />
-			<button @click=${revealPassword}>I'll show your password to everyone!</button>
+			<input ref=${e} type="password" autocomplete="off" />
+			<button @click=${()=>{alert(`Your password is: "${e.current.value}" \u{1F608}`)}}>I'll show your password to everyone!</button>
 		</label>
-	</div>`;
-}
-defineWomp(PasswordRevealer);
+	</div>`}o(r,{name:"password-revealer-example"});

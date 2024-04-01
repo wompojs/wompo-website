@@ -84,7 +84,7 @@ const content: Contents = {
                 return [value, setter];
               }
             `}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						Easy, isn't it? We combined the <Link to='/docs/hooks/useState'>useState</Link> hook and
@@ -134,7 +134,7 @@ const content: Contents = {
                 return timeRef;
               }
             `}
-						lang='js'
+						language='js'
 					/>
 					<p>And then, in a component:</p>
 					<Code
@@ -155,7 +155,7 @@ const content: Contents = {
               }
               defineWomp(Component);
             `}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						Result:
@@ -183,4 +183,6 @@ export default function CustomHooks() {
 	return getPageLayout(content);
 }
 
-defineWomp(CustomHooks);
+defineWomp(CustomHooks, {
+	name: 'custom-hooks-page',
+});

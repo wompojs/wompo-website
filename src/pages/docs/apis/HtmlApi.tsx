@@ -34,7 +34,7 @@ const content: Contents = {
 						code={`
 							const template = html\`structure\`;
 						`}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						The <code>html</code> function is a template function, meaning that should not be called
@@ -61,7 +61,7 @@ const content: Contents = {
                 \${null} \${undefined} \${false}.
               </div>\`;
 						`}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						Inside of your component you can use this templates:
@@ -71,7 +71,7 @@ const content: Contents = {
                   return dynamicTemplate;
                 }
               `}
-							lang='js'
+							language='js'
 						/>
 						Result:
 						<HtmlExample />
@@ -86,4 +86,6 @@ export default function HtmlApi() {
 	return getPageLayout(content);
 }
 
-defineWomp(HtmlApi);
+defineWomp(HtmlApi, {
+	name: 'html-api-apis-page',
+});

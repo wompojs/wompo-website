@@ -65,4 +65,6 @@ ModalExample.css = `
   }
 `;
 
-defineWomp(ModalExample);
+defineWomp(ModalExample, {
+	name: 'modal-example',
+});

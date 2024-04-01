@@ -1,95 +1,10 @@
-import { Fragment, jsx, jsxs } from "womp/jsx-runtime";
-import { defineWomp } from "womp";
-import getPageLayout from "../../../utils/getPageLayout.js";
-import { Link } from "womp-router";
-import Code from "../../../components/Code.js";
-const content = {
-  title: "APIs",
-  description: "A collection of resources that Womp exposes to add extra functionalities or simply to help the developer.",
-  sections: [
-    {
-      title: "Functions",
-      id: "functions",
-      content: /* @__PURE__ */ jsx(Fragment, { children: /* @__PURE__ */ jsxs("p", { children: [
-        "Womp exposes a list of functions that you can use:",
-        /* @__PURE__ */ jsxs("ul", { children: [
-          /* @__PURE__ */ jsxs("li", { children: [
-            /* @__PURE__ */ jsx(Link, { to: "createContext", children: "createContext" }),
-            " - Lets you create a Context that you can use in your application."
-          ] }),
-          /* @__PURE__ */ jsxs("li", { children: [
-            /* @__PURE__ */ jsx(Link, { to: "defineWomp", children: "defineWomp" }),
-            " - The function that you will use to declare your components."
-          ] }),
-          /* @__PURE__ */ jsxs("li", { children: [
-            /* @__PURE__ */ jsx(Link, { to: "html", children: "html" }),
-            " - The result of this function is what must be returned by every component."
-          ] }),
-          /* @__PURE__ */ jsxs("li", { children: [
-            /* @__PURE__ */ jsx(Link, { to: "lazy", children: "lazy" }),
-            " - For dynamically imported components."
-          ] })
-        ] })
-      ] }) })
-    },
-    {
-      title: "Constants",
-      id: "constants",
-      content: /* @__PURE__ */ jsx(Fragment, { children: /* @__PURE__ */ jsxs("p", { children: [
-        "Womp exposes also some constant variabled that you can use:",
-        /* @__PURE__ */ jsxs("ul", { children: [
-          /* @__PURE__ */ jsxs("li", { children: [
-            /* @__PURE__ */ jsx(Link, { to: "wompDefaultOptions", children: "wompDefaultOptions" }),
-            " - The default options that Womp will use when initializing a component for the first time. You are free to customize them."
-          ] }),
-          /* @__PURE__ */ jsxs("li", { children: [
-            /* @__PURE__ */ jsx(Link, { to: "registeredComponents", children: "registeredComponents" }),
-            " - An object containing the list of registered components."
-          ] })
-        ] })
-      ] }) })
-    },
-    {
-      title: "Element API",
-      id: "womp-element",
-      content: /* @__PURE__ */ jsx(Fragment, { children: /* @__PURE__ */ jsxs("p", { children: [
-        "The ",
-        /* @__PURE__ */ jsx(Link, { to: "element", children: "Element API" }),
-        " represents the type of a Womp Component DOM instance. You can use it to call methods and further customize your components."
-      ] }) })
-    },
-    {
-      title: "Types",
-      id: "types",
-      content: /* @__PURE__ */ jsx(Fragment, { children: /* @__PURE__ */ jsxs("p", { children: [
-        "For TypeScript users, Womp exposes the following types:",
-        /* @__PURE__ */ jsxs("ul", { children: [
-          /* @__PURE__ */ jsxs("li", { children: [
-            /* @__PURE__ */ jsx("code", { children: "RenderHtml" }),
-            " - The type that the ",
-            /* @__PURE__ */ jsx(Link, { to: "html", children: "html" }),
-            " function will return.",
-            /* @__PURE__ */ jsx(
-              Code,
-              {
-                code: `
+import{Fragment as s,jsx as e,jsxs as t}from"womp/jsx-runtime";import{defineWomp as l}from"womp";import a from"../../../utils/getPageLayout.js";import{Link as o}from"womp-router";import n from"../../../components/Code.js";const p={title:"APIs",description:"A collection of resources that Womp exposes to add extra functionalities or simply to help the developer.",sections:[{title:"Functions",id:"functions",content:e(s,{children:t("p",{children:["Womp exposes a list of functions that you can use:",t("ul",{children:[t("li",{children:[e(o,{to:"createContext",children:"createContext"})," - Lets you create a Context that you can use in your application."]}),t("li",{children:[e(o,{to:"defineWomp",children:"defineWomp"})," - The function that you will use to declare your components."]}),t("li",{children:[e(o,{to:"html",children:"html"})," - The result of this function is what must be returned by every component."]}),t("li",{children:[e(o,{to:"lazy",children:"lazy"})," - For dynamically imported components."]})]})]})})},{title:"Constants",id:"constants",content:e(s,{children:t("p",{children:["Womp exposes also some constant variabled that you can use:",t("ul",{children:[t("li",{children:[e(o,{to:"wompDefaultOptions",children:"wompDefaultOptions"})," - The default options that Womp will use when initializing a component for the first time. You are free to customize them."]}),t("li",{children:[e(o,{to:"registeredComponents",children:"registeredComponents"})," - An object containing the list of registered components."]})]})]})})},{title:"Element API",id:"womp-element",content:e(s,{children:t("p",{children:["The ",e(o,{to:"element",children:"Element API"})," represents the type of a Womp Component DOM instance. You can use it to call methods and further customize your components."]})})},{title:"Types",id:"types",content:e(s,{children:t("p",{children:["For TypeScript users, Womp exposes the following types:",t("ul",{children:[t("li",{children:[e("code",{children:"RenderHtml"})," - The type that the ",e(o,{to:"html",children:"html"})," function will return.",e(n,{code:`
                     interface RenderHtml {
                       parts: TemplateStringsArray;
                       values: any[];
                       _$wompHtml: true;
                     }
-                  `,
-                lang: "ts"
-              }
-            )
-          ] }),
-          /* @__PURE__ */ jsxs("li", { children: [
-            /* @__PURE__ */ jsx("code", { children: "WompProps" }),
-            " - The props that any component has and allows. If you use JSX they are also the attributes that the JSX element allows.",
-            /* @__PURE__ */ jsx(
-              Code,
-              {
-                code: `
+                  `,language:"ts"})]}),t("li",{children:[e("code",{children:"WompProps"})," - The props that any component has and allows. If you use JSX they are also the attributes that the JSX element allows.",e(n,{code:`
                     interface WompProps {
                       /** The children of the component instance */
                       children?: WompChildren;
@@ -106,20 +21,7 @@ const content = {
                       /** The classes of the element */
                       class?: string;
                     }
-                  `,
-                lang: "ts"
-              }
-            )
-          ] }),
-          /* @__PURE__ */ jsxs("li", { children: [
-            /* @__PURE__ */ jsx("code", { children: "WompComponentOptions" }),
-            " - The options that you can put as a second parameter in the ",
-            /* @__PURE__ */ jsx(Link, { to: "defineWomp", children: "defineWomp" }),
-            " function.",
-            /* @__PURE__ */ jsx(
-              Code,
-              {
-                code: `
+                  `,language:"ts"})]}),t("li",{children:[e("code",{children:"WompComponentOptions"})," - The options that you can put as a second parameter in the ",e(o,{to:"defineWomp",children:"defineWomp"})," function.",e(n,{code:`
                     interface WompComponentOptions {
                       /**
                        * Default value: \`null\`.
@@ -142,21 +44,7 @@ const content = {
                        */
                       cssModule?: boolean;
                     }
-                  `,
-                lang: "ts"
-              }
-            )
-          ] }),
-          /* @__PURE__ */ jsxs("li", { children: [
-            /* @__PURE__ */ jsx("code", { children: "WompComponent<Props extends WompProps = WompProps>" }),
-            " - It's the",
-            " ",
-            /* @__PURE__ */ jsx("b", { children: "functional" }),
-            " component's type.",
-            /* @__PURE__ */ jsx(
-              Code,
-              {
-                code: `
+                  `,language:"ts"})]}),t("li",{children:[e("code",{children:"WompComponent<Props extends WompProps = WompProps>"})," - It's the"," ",e("b",{children:"functional"})," component's type.",e(n,{code:`
                     interface WompComponent<Props extends WompProps = WompProps> {
                       /** The props of the component */
                       (props: Props): RenderHtml;
@@ -177,62 +65,9 @@ const content = {
                         shadow: boolean;
                       };
                     }
-                  `,
-                lang: "ts"
-              }
-            )
-          ] }),
-          /* @__PURE__ */ jsxs("li", { children: [
-            /* @__PURE__ */ jsxs("code", { children: [
-              "WompElement<Props extends WompProps = WompProps, Exposed = ",
-              ">"
-            ] }),
-            " A Womp Component ",
-            /* @__PURE__ */ jsx("b", { children: "Instance" }),
-            ". A detailed description of it is present in the",
-            " ",
-            /* @__PURE__ */ jsx(Link, { to: "element", children: "Element API" }),
-            "."
-          ] }),
-          /* @__PURE__ */ jsxs("li", { children: [
-            /* @__PURE__ */ jsx("code", { children: "LazyCallbackResult" }),
-            " - The result that the callback provided in the",
-            " ",
-            /* @__PURE__ */ jsx(Link, { to: "lazy", children: "lazy" }),
-            " function must return.",
-            /* @__PURE__ */ jsx(
-              Code,
-              {
-                code: `type LazyCallbackResult = Promise<{ default: WompComponent }>;`,
-                lang: "ts"
-              }
-            )
-          ] }),
-          /* @__PURE__ */ jsxs("li", { children: [
-            /* @__PURE__ */ jsx("code", { children: "LazyResult" }),
-            " - The result type of the ",
-            /* @__PURE__ */ jsx(Link, { to: "lazy", children: "lazy" }),
-            " ",
-            "function.",
-            /* @__PURE__ */ jsx(
-              Code,
-              {
-                code: `
+                  `,language:"ts"})]}),t("li",{children:[t("code",{children:["WompElement<Props extends WompProps = WompProps, Exposed = ",">"]})," A Womp Component ",e("b",{children:"Instance"}),". A detailed description of it is present in the"," ",e(o,{to:"element",children:"Element API"}),"."]}),t("li",{children:[e("code",{children:"LazyCallbackResult"})," - The result that the callback provided in the"," ",e(o,{to:"lazy",children:"lazy"})," function must return.",e(n,{code:"type LazyCallbackResult = Promise<{ default: WompComponent }>;",language:"ts"})]}),t("li",{children:[e("code",{children:"LazyResult"})," - The result type of the ",e(o,{to:"lazy",children:"lazy"})," ","function.",e(n,{code:`
                     type LazyResult = {
                       (): Promise<WompComponent<WompProps>>;
                       _$wompLazy: boolean;
                     };
-                  `,
-                lang: "ts"
-              }
-            )
-          ] })
-        ] })
-      ] }) })
-    }
-  ]
-};
-export default function Apis() {
-  return getPageLayout(content);
-}
-defineWomp(Apis);
+                  `,language:"ts"})]})]})]})})}]};export default function i(){return a(p)}l(i,{name:"docs-apis-page"});

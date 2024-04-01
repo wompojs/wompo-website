@@ -27,7 +27,9 @@ export default function ThemeExample() {
     </${ThemeContext.Provider}>
   `;
 }
-defineWomp(ThemeExample);
+defineWomp(ThemeExample, {
+	name: 'theme-example',
+});
 
 function AppContent({ children }: WompProps) {
 	const theme = useContext(ThemeContext);
@@ -39,4 +41,6 @@ function AppContent({ children }: WompProps) {
 	};
 	return html`<div style=${styles}>${children}</div>`;
 }
-defineWomp(AppContent);
+defineWomp(AppContent, {
+	name: 'theme-app-example',
+});

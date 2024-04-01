@@ -50,4 +50,6 @@ ContentSection.css = `
 	}
 `;
 
-defineWomp(ContentSection);
+defineWomp(ContentSection, {
+	name: 'content-section',
+});

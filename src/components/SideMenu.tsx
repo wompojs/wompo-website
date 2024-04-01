@@ -74,8 +74,10 @@ SideMenu.css = `
     border-radius: 30px;
   }
   .ul a:hover, .ul a[class="active"] {
-    background-color: #573ef640;
+    background-color: #573ef630;
   }
 `;
 
-defineWomp(SideMenu);
+defineWomp(SideMenu, {
+	name: 'side-menu',
+});

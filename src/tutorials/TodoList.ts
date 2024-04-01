@@ -44,4 +44,6 @@ export default function TodoList() {
 	`;
 }
 
-defineWomp(TodoList);
+defineWomp(TodoList, {
+	name: 'todo-list-tutorial',
+});

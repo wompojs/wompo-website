@@ -16,4 +16,6 @@ export default function StateInitializerExample() {
 	</ul>`;
 }
 
-defineWomp(StateInitializerExample);
+defineWomp(StateInitializerExample, {
+	name: 'state-initializer-example',
+});

@@ -23,7 +23,7 @@ const content: Contents = {
 						Why is it useful? Because in javascript two function declarations are not considered
 						equal:
 						<Code
-							lang="js"
+							language='js'
 							code={`
                 function(){} === function(){} // false
                 
@@ -36,7 +36,7 @@ const content: Contents = {
 						child component will re-render every time the parent component changes, because the two
 						functions will be considered different.
 					</p>
-					<Note severity="info">
+					<Note severity='info'>
 						<b>Note:</b> This consideration doesn't apply to events, because events are stored in a
 						simple variable and will not cause an add/removal of event listeners, so it's not
 						computationally expensive: it's more expensive to store the callback and get it back
@@ -54,7 +54,7 @@ const content: Contents = {
 						code={`
 							const callback = useCallback(callbackDefinition, dependencies);
 						`}
-						lang="js"
+						language='js'
 					/>
 					<p>
 						The hook will cache the <code>callbackDefinition</code> function and alway return the
@@ -92,7 +92,7 @@ const content: Contents = {
 
 							defineWomp(Component);
 						`}
-						lang="js"
+						language='js'
 					/>
 					<p>
 						In this example, the <code>UserForm</code> component will not re-render every time that
@@ -108,4 +108,6 @@ export default function UseCallback() {
 	return getPageLayout(content);
 }
 
-defineWomp(UseCallback);
+defineWomp(UseCallback, {
+	name: 'usecallback-hook-page',
+});

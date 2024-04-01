@@ -71,4 +71,6 @@ SubMenu.css = `
   }
 `;
 
-defineWomp(SubMenu);
+defineWomp(SubMenu, {
+	name: 'sub-menu',
+});

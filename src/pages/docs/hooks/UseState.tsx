@@ -41,7 +41,7 @@ const content: Contents = {
 						code={`
 							const [state, setState] = useState(initialState);
 						`}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						The hook will return an array containing two values: <b>the current value</b> of the
@@ -94,7 +94,7 @@ const content: Contents = {
 
 							defineWomp(UserForm);
 						`}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						Result:
@@ -131,7 +131,7 @@ const content: Contents = {
 
 							defineWomp(Counter);
 						`}
-						lang='js'
+						language='js'
 					/>
 					<div style={{ textAlign: 'center' }}>
 						<Counter />
@@ -188,7 +188,7 @@ const content: Contents = {
 
 							defineWomp(Timer);
 						`}
-						lang='js'
+						language='js'
 					/>
 					<div style={{ textAlign: 'center' }}>
 						<Timer />
@@ -316,7 +316,7 @@ const content: Contents = {
 
 							defineWomp(UserForm);
 						`}
-						lang='js'
+						language='js'
 					/>
 					<div style={{ textAlign: 'center' }}>
 						<UserForm />
@@ -342,4 +342,6 @@ export default function UseState() {
 	return getPageLayout(content);
 }
 
-defineWomp(UseState);
+defineWomp(UseState, {
+	name: 'usestate-hook-page',
+});

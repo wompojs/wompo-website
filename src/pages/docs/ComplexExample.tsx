@@ -44,7 +44,7 @@ const content: Contents = {
               }
               defineWomp(TodoList);
             `}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						The next step can be render a list of fixed todo items inside the <code>ul</code>{' '}
@@ -78,7 +78,7 @@ const content: Contents = {
               }
               defineWomp(TodoList);
             `}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						Now it's time to add some interactivity. We should be able to:
@@ -136,7 +136,7 @@ const content: Contents = {
               }
               // ...
             `}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						We are so close to finish!
@@ -173,7 +173,7 @@ const content: Contents = {
                 return html\`...\`;
               }
             `}
-						lang='js'
+						language='js'
 					/>
 					<Note severity='info'>
 						If you use this component multiple times, it'll always render the same items, because
@@ -197,4 +197,6 @@ export default function ComplexExample() {
 	return getPageLayout(content);
 }
 
-defineWomp(ComplexExample);
+defineWomp(ComplexExample, {
+	name: 'complex-example-page',
+});

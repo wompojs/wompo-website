@@ -1,32 +1,6 @@
-import { useContext, defineWomp, html, createContext, useState } from "womp";
-const UserContext = createContext(null);
-export default function LoggedInUser() {
-  const [loggedInUser, setLoggedInUser] = useState(null);
-  const login = () => {
-    setLoggedInUser({
-      name: "Tongi",
-      lastname: "Patongi"
-    });
-  };
-  const logout = () => {
-    setLoggedInUser(null);
-  };
-  return html`
-    <${UserContext.Provider} value=${loggedInUser}>
-      ${loggedInUser ? html`<button @click=${logout}>Log out</button>` : html`<button @click=${login}>Log in!</button>`}
-      <${UserInfo} />
-    </${UserContext.Provider}>
-  `;
-}
-function UserInfo() {
-  const loggedInUser = useContext(UserContext);
-  let content;
-  if (!loggedInUser) {
-    content = html`The user is not logged in!`;
-  } else {
-    content = html`The user is ${loggedInUser.name} ${loggedInUser.lastname}`;
-  }
-  return html`<div>${content}</div>`;
-}
-defineWomp(LoggedInUser);
-defineWomp(UserInfo);
+import{useContext as g,defineWomp as l,html as t,createContext as a,useState as c}from"womp";const o=a(null);export default function r(){const[e,n]=c(null),u=()=>{n({name:"Tongi",lastname:"Patongi"})},i=()=>{n(null)};return t`
+    <${o.Provider} value=${e}>
+      ${e?t`<button @click=${i}>Log out</button>`:t`<button @click=${u}>Log in!</button>`}
+      <${s} />
+    </${o.Provider}>
+  `}function s(){const e=g(o);let n;return e?n=t`The user is ${e.name} ${e.lastname}`:n=t`The user is not logged in!`,t`<div>${n}</div>`}l(r,{name:"logged-in-user-example"}),l(s,{name:"user-info-example"});

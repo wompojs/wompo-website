@@ -21,4 +21,6 @@ Note.css = `
 ;
   }
 `;
-defineWomp(Note);
+defineWomp(Note, {
+	name: 'note-alert',
+});

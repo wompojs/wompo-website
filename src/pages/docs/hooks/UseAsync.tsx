@@ -36,7 +36,7 @@ const content: Contents = {
 						code={`
 							const data = useAsync(promiseFn, dependencies);
 						`}
-						lang="js"
+						language='js'
 					/>
 					<p>
 						The hook accepts a callback and a list of dependencies as parameters. The callback must
@@ -86,7 +86,7 @@ const content: Contents = {
 
 							defineWomp(Component);
 						`}
-						lang="js"
+						language='js'
 					/>
 					<p>
 						In this example, when the component is initialized the async function will be executed
@@ -107,7 +107,7 @@ const content: Contents = {
 					<p>
 						The <code>Suspense</code> component can be used in conjunction with the{' '}
 						<code>useAsync</code> hook to handle automatically the loading state. The{' '}
-						<Link to="/docs/components/suspense">Suspense</Link> component will render it's children
+						<Link to='/docs/components/suspense'>Suspense</Link> component will render it's children
 						if everyone of them has completely rendered and fetched data, otherwise it will return a{' '}
 						<b>fallback</b> (usually a loading indicator).
 					</p>
@@ -143,7 +143,7 @@ const content: Contents = {
                 </div>\`;
 							}
 						`}
-						lang="js"
+						language='js'
 					/>
 					<p>
 						In the above example, the <code>App</code> component will render the{' '}
@@ -162,4 +162,6 @@ export default function UseAsync() {
 	return getPageLayout(content);
 }
 
-defineWomp(UseAsync);
+defineWomp(UseAsync, {
+	name: 'useasync-hook-page',
+});

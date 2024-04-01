@@ -1,19 +1,4 @@
-import { jsx } from "womp/jsx-runtime";
-import { defineWomp } from "womp";
-const menu = [
-  {
-    title: "Home",
-    link: "/"
-  },
-  {
-    title: "Docs",
-    link: "/docs"
-  }
-];
-export default function Header({ styles: s }) {
-  return /* @__PURE__ */ jsx("header", { class: s.header, children: /* @__PURE__ */ jsx("ul", { children: menu.map((item) => /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx("a", { href: item.link, children: item.title }) })) }) });
-}
-Header.css = `
+import{jsx as e}from"womp/jsx-runtime";import{defineWomp as t}from"womp";const d=[{title:"Home",link:"/"},{title:"Docs",link:"/docs"}];export default function o({styles:a}){return e("header",{class:a.header,children:e("ul",{children:d.map(l=>e("li",{children:e("a",{href:l.link,children:l.title})}))})})}o.css=`
 	:host {
 		display: block;
 		position: sticky;
@@ -38,5 +23,4 @@ Header.css = `
     color: #333;
     text-decoration: none;
   }
-`;
-defineWomp(Header);
+`,t(o,{name:"womp-header"});

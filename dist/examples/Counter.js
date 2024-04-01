@@ -1,9 +1,1 @@
-import { useState, defineWomp, html } from "womp";
-export default function Counter() {
-  const [count, setCount] = useState(0);
-  function incrementCounter() {
-    setCount(count + 1);
-  }
-  return html`<button @click="${incrementCounter}">Pressed ${count} times</button>`;
-}
-defineWomp(Counter);
+import{useState as u,defineWomp as r,html as c}from"womp";export default function e(){const[t,n]=u(0);function o(){n(t+1)}return c`<button @click="${o}">Pressed ${t} times</button>`}r(e,{name:"counter-example"});

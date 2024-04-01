@@ -41,7 +41,7 @@ const content: Contents = {
 						code={`
 							const [component, hookIndex] = useHook();
 						`}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						The <code>useHook</code> hook accepts no parameters and will return always an array with
@@ -109,7 +109,7 @@ const content: Contents = {
                 }
               }
             `}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						The code above will not work, but can make you easily get how Womp works under the hood.
@@ -193,7 +193,7 @@ const content: Contents = {
                 return component.hooks[hookIndex];
 							}
 						`}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						Did it! Now you can simply call the <code>useBattery()</code> hook inside of your
@@ -255,7 +255,7 @@ const content: Contents = {
 								};
 							});
 						`}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						<Note severity='warning'>
@@ -282,4 +282,6 @@ export default function UseHook() {
 	return getPageLayout(content);
 }
 
-defineWomp(UseHook);
+defineWomp(UseHook, {
+	name: 'usehook-hook-page',
+});

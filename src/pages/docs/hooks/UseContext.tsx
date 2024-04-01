@@ -36,7 +36,7 @@ const content: Contents = {
 						code={`
 							const context = useContext(Context);
 						`}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						The hook accepts only a parameter, which is the{' '}
@@ -109,7 +109,7 @@ const content: Contents = {
               defineWomp(App);
               defineWomp(UserInfo);
 						`}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						Result:
@@ -146,4 +146,6 @@ export default function UseContext() {
 	return getPageLayout(content);
 }
 
-defineWomp(UseContext);
+defineWomp(UseContext, {
+	name: 'usecontext-hook-page',
+});

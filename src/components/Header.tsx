@@ -51,4 +51,6 @@ Header.css = `
   }
 `;
 
-defineWomp(Header);
+defineWomp(Header, {
+	name: 'womp-header',
+});

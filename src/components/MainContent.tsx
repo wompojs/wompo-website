@@ -10,7 +10,7 @@ export default function MainContent({ styles: s, title, description, children }:
 		<main class={s.main}>
 			<div class={s.container}>
 				<h1>{title}</h1>
-				<h5>{description}</h5>
+				<p class={s.subtitle}>{description}</p>
 				{children}
 			</div>
 		</main>
@@ -70,7 +70,7 @@ MainContent.css = `
     font-size: 3rem;
     margin: 10px 0;
   }
-  .main h5 {
+  .main .subtitle {
     font-style: italic;
     font-weight: normal;
     font-size: 2rem;
@@ -97,4 +97,6 @@ MainContent.css = `
   }
 `;
 
-defineWomp(MainContent);
+defineWomp(MainContent, {
+	name: 'main-content',
+});

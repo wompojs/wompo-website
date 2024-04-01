@@ -38,7 +38,7 @@ const content: Contents = {
 						code={`
 							const Context = createContext(defaultValue);
 						`}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						The function accepts a single parameter which is the default value that the context will
@@ -64,7 +64,7 @@ const content: Contents = {
                 \`;
               }
 						`}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						In the above example, a <code>ThemeContext</code> is created and a{' '}
@@ -136,7 +136,7 @@ const content: Contents = {
 							}
 							defineWomp(AppContent);
 						`}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						Result:
@@ -152,4 +152,6 @@ export default function CreateContext() {
 	return getPageLayout(content);
 }
 
-defineWomp(CreateContext);
+defineWomp(CreateContext, {
+	name: 'create-context-apis-page',
+});

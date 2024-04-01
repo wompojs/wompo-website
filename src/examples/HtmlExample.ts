@@ -20,4 +20,6 @@ export default function HtmlExample() {
 	return dynamicTemplate;
 }
 
-defineWomp(HtmlExample);
+defineWomp(HtmlExample, {
+	name: 'html-example',
+});

@@ -40,7 +40,7 @@ const content: Contents = {
 						code={`
 							const id = useId();
 						`}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						The <code>useId</code> hook accepts no parameters and will return always the same value
@@ -75,7 +75,7 @@ const content: Contents = {
 
 							defineWomp(InputExample);
 						`}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						Even if the <code>InputExample</code> is rendered multiple times, it'll always keep
@@ -91,4 +91,6 @@ export default function UseId() {
 	return getPageLayout(content);
 }
 
-defineWomp(UseId);
+defineWomp(UseId, {
+	name: 'useid-hook-page',
+});

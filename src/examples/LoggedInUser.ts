@@ -36,5 +36,9 @@ function UserInfo() {
 	return html`<div>${content}</div>`;
 }
 
-defineWomp(LoggedInUser);
-defineWomp(UserInfo);
+defineWomp(LoggedInUser, {
+	name: 'logged-in-user-example',
+});
+defineWomp(UserInfo, {
+	name: 'user-info-example',
+});

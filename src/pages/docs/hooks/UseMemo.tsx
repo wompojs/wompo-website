@@ -41,7 +41,7 @@ const content: Contents = {
 						code={`
 							const result = useMemo(calculatorFn, dependencies);
 						`}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						The <code>useMemo</code> hook accepts two parameters: the <b>calculator</b> function and
@@ -58,14 +58,14 @@ const content: Contents = {
               // ❌ This will calculate the result on every render! Will make the CPU sad!
               const activeUsers = users.filter(user => user.active);
             `}
-						lang='js'
+						language='js'
 					/>
 					<Code
 						code={`
               // ✅ Will be executed only when the users array changes
               const activeUsers = useMemo(() => users.filter(user => user.active), [users]);
             `}
-						lang='js'
+						language='js'
 					/>
 				</>
 			),
@@ -108,7 +108,7 @@ const content: Contents = {
                 \`;
               }
 						`}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						In the above example we firstly genereated 50 random users, then in the{' '}
@@ -129,4 +129,6 @@ export default function UseMemo() {
 	return getPageLayout(content);
 }
 
-defineWomp(UseMemo);
+defineWomp(UseMemo, {
+	name: 'usememo-hook-page',
+});

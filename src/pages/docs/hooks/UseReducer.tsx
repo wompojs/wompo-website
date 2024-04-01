@@ -60,7 +60,7 @@ const content: Contents = {
 						code={`
 							const [currentState, dispatch] = useReducer(reducer, initialState);
 						`}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						The <code>useReducer</code> hook accepts two parameters: the <b>reducer</b> function and
@@ -131,7 +131,7 @@ const content: Contents = {
                 \`;
               }
             `}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						Result:
@@ -218,7 +218,7 @@ const content: Contents = {
 
               defineWomp(ShoppingCart);
 						`}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						Using a reducer in this example will ensure that only specific operations can be
@@ -242,4 +242,6 @@ export default function UseReducer() {
 	return getPageLayout(content);
 }
 
-defineWomp(UseReducer);
+defineWomp(UseReducer, {
+	name: 'usereducer-hook-page',
+});

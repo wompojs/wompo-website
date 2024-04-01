@@ -38,7 +38,7 @@ const content: Contents = {
                   \`;
                 }
               `}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						The above code will not work. But why?
@@ -116,7 +116,7 @@ const content: Contents = {
 						code={`
 							const ref = useRef(initialValue);
 						`}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						The <code>useRef</code> hook accepts a single parameter, the <b>initial value</b>, and
@@ -153,7 +153,7 @@ const content: Contents = {
                 \`;
               }
             `}
-						lang='js'
+						language='js'
 					/>
 				</>
 			),
@@ -200,7 +200,7 @@ const content: Contents = {
 
               defineWomp(Timer);
 						`}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						Result:
@@ -241,7 +241,7 @@ const content: Contents = {
               defineWomp(PasswordRevealer);
 
 						`}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						Result:
@@ -257,4 +257,6 @@ export default function UseRef() {
 	return getPageLayout(content);
 }
 
-defineWomp(UseRef);
+defineWomp(UseRef, {
+	name: 'useref-hook-page',
+});

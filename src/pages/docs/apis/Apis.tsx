@@ -89,7 +89,7 @@ const content: Contents = {
                       _$wompHtml: true;
                     }
                   `}
-									lang='ts'
+									language='ts'
 								/>
 							</li>
 							<li>
@@ -114,7 +114,7 @@ const content: Contents = {
                       class?: string;
                     }
                   `}
-									lang='ts'
+									language='ts'
 								/>
 							</li>
 							<li>
@@ -145,7 +145,7 @@ const content: Contents = {
                       cssModule?: boolean;
                     }
                   `}
-									lang='ts'
+									language='ts'
 								/>
 							</li>
 							<li>
@@ -174,7 +174,7 @@ const content: Contents = {
                       };
                     }
                   `}
-									lang='ts'
+									language='ts'
 								/>
 							</li>
 							<li>
@@ -187,7 +187,7 @@ const content: Contents = {
 								<Link to='lazy'>lazy</Link> function must return.
 								<Code
 									code={`type LazyCallbackResult = Promise<{ default: WompComponent }>;`}
-									lang='ts'
+									language='ts'
 								/>
 							</li>
 							<li>
@@ -200,7 +200,7 @@ const content: Contents = {
                       _$wompLazy: boolean;
                     };
                   `}
-									lang='ts'
+									language='ts'
 								/>
 							</li>
 						</ul>
@@ -215,4 +215,6 @@ export default function Apis() {
 	return getPageLayout(content);
 }
 
-defineWomp(Apis);
+defineWomp(Apis, {
+	name: 'docs-apis-page',
+});

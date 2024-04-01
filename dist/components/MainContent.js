@@ -1,13 +1,4 @@
-import { jsx, jsxs } from "womp/jsx-runtime";
-import { defineWomp } from "womp";
-export default function MainContent({ styles: s, title, description, children }) {
-  return /* @__PURE__ */ jsx("main", { class: s.main, children: /* @__PURE__ */ jsxs("div", { class: s.container, children: [
-    /* @__PURE__ */ jsx("h1", { children: title }),
-    /* @__PURE__ */ jsx("h5", { children: description }),
-    children
-  ] }) });
-}
-MainContent.css = `
+import{jsx as i,jsxs as m}from"womp/jsx-runtime";import{defineWomp as a}from"womp";export default function e({styles:n,title:t,description:o,children:r}){return i("main",{class:n.main,children:m("div",{class:n.container,children:[i("h1",{children:t}),i("p",{class:n.subtitle,children:o}),r]})})}e.css=`
   :host {
     display: flex;
     width: 100%;
@@ -60,7 +51,7 @@ MainContent.css = `
     font-size: 3rem;
     margin: 10px 0;
   }
-  .main h5 {
+  .main .subtitle {
     font-style: italic;
     font-weight: normal;
     font-size: 2rem;
@@ -85,5 +76,4 @@ MainContent.css = `
     margin-bottom: 10px;
     padding: 0 2rem;
   }
-`;
-defineWomp(MainContent);
+`,a(e,{name:"main-content"});

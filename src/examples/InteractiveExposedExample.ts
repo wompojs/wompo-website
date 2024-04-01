@@ -13,10 +13,10 @@ export default function InteractiveExposedExample() {
 				Very cool option 😎
 				<br>
 				Write this in the console and open it yourself!
-				<${Code} code="document.querySelector('modal-example').open()" lang="js" />
+				<${Code} code="document.querySelector('modal-example').open()" language="js" />
 				<${ModalExample} ref=${modalRef}>
 					Yoo good job!! Now i guess you can even close it by writing this in the console:
-					<${Code} code="document.querySelector('modal-example').close()" lang="js" />
+					<${Code} code="document.querySelector('modal-example').close()" language="js" />
 					Or simply click the "X" button... But we are sad if you do it.
 				</${ModalExample}>
 			</li>
@@ -29,4 +29,6 @@ export default function InteractiveExposedExample() {
 	`;
 }
 
-defineWomp(InteractiveExposedExample);
+defineWomp(InteractiveExposedExample, {
+	name: 'interactive-exposed-example',
+});

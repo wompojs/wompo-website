@@ -16,4 +16,6 @@ export default function PasswordRevealer() {
 	</div>`;
 }
 
-defineWomp(PasswordRevealer);
+defineWomp(PasswordRevealer, {
+	name: 'password-revealer-example',
+});

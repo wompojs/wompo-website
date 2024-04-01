@@ -10,4 +10,6 @@ export default function Counter() {
 	return html`<button @click="${incrementCounter}">Pressed ${count} times</button>`;
 }
 
-defineWomp(Counter);
+defineWomp(Counter, {
+	name: 'counter-example',
+});

@@ -30,7 +30,7 @@ const content: Contents = {
 
               defineWomp(GreetingsComponent);
             `}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						Nice, you created your first component! Now you just have to render it in the DOM.
@@ -55,7 +55,7 @@ const content: Contents = {
               <greetings-component></greetings-component>
               <!-- Will render: <div>Hello, World!</div> -->
             `}
-						lang='html'
+						language='html'
 					/>
 				</>
 			),
@@ -79,7 +79,7 @@ const content: Contents = {
                 return html\`<\${GreetingsComponent} />\`;
               }
             `}
-						lang='js'
+						language='js'
 					/>
 					<p>Womp will automatically convert the dynamic tag into:</p>
 					<Code
@@ -88,7 +88,7 @@ const content: Contents = {
                 return html\`<greetings-component></greetings-component>\`;
               }
             `}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						So going back to the initial question: "
@@ -133,7 +133,7 @@ const content: Contents = {
                 return html\`<div>Hello, \${name}!</div>\`;
               }
             `}
-						lang='js'
+						language='js'
 					/>
 					<Code
 						code={`
@@ -146,7 +146,7 @@ const content: Contents = {
 							<greetings-component name="My beautiful love"></greetings-component>
 							<!-- Will render: <div>Hello, My beautiful love!</div> -->
             `}
-						lang='html'
+						language='html'
 					/>
 					<p>
 						If you use your custom components in the HTML, you must know that HTML allows to only
@@ -167,7 +167,7 @@ const content: Contents = {
                 return html\`<div>Hello, \${user.name} \${user.lastname}!</div>\`;
               }
             `}
-						lang='js'
+						language='js'
 					/>
 					<Note severity='info'>
 						If you use a variable as an attribute value, you must not add quotes around the value:
@@ -198,7 +198,7 @@ const content: Contents = {
                 return html\`<button @click=\${onClick}>Current value: \${counter}</button>\`;
               }
             `}
-						lang='js'
+						language='js'
 					/>
 				</>
 			),
@@ -227,7 +227,7 @@ const content: Contents = {
                 return html\`<button @click=\${onClick}>Current value: \${counter}</button>\`;
               }
             `}
-						lang='js'
+						language='js'
 					/>
 					<p>
 						That's it. You now know already the 80% of the Womp library. Easy. Isn't it? <br />
@@ -243,4 +243,6 @@ export default function QuickStart() {
 	return getPageLayout(content);
 }
 
-defineWomp(QuickStart);
+defineWomp(QuickStart, {
+	name: 'quick-start-page',
+});
