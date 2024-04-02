@@ -1,18 +1,4 @@
-import { jsx as e } from 'wompo/jsx-runtime';
-import { defineWompo as t } from 'wompo';
-const d = [
-	{ title: 'Home', link: '/' },
-	{ title: 'Docs', link: '/docs' },
-];
-export default function o({ styles: a }) {
-	return e('header', {
-		class: a.header,
-		children: e('ul', {
-			children: d.map((l) => e('li', { children: e('a', { href: l.link, children: l.title }) })),
-		}),
-	});
-}
-(o.css = `
+import{jsx as e}from"wompo/jsx-runtime";import{defineWompo as t}from"wompo";const d=[{title:"Home",link:"/"},{title:"Docs",link:"/docs"}];export default function o({styles:a}){return e("header",{class:a.header,children:e("ul",{children:d.map(l=>e("li",{children:e("a",{href:l.link,children:l.title})}))})})}o.css=`
 	:host {
 		display: block;
 		position: sticky;
@@ -37,5 +23,4 @@ export default function o({ styles: a }) {
     color: #333;
     text-decoration: none;
   }
-`),
-	t(o, { name: 'wompo-header' });
+`,t(o,{name:"wompo-header"});
