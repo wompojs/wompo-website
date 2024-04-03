@@ -1,6 +1,6 @@
 {
 	"author": "Lorenzo Lannino",
-	"license": "ISC",
+	"license": "MIT",
 	"name": "wompo-docs",
 	"description": "Documentation for Wompo",
 	"version": "1.0.0",

@@ -1,7 +1,6 @@
 import { defineWompo } from 'wompo';
-import { Link, Route, Routes } from 'wompo-router';
+import { Route, Routes } from 'wompo-router';
 import Layout from './layout/Layout.js';
-import HomePage from './pages/HomePage.js';
 
 interface DocRoute {
 	path: string;
@@ -133,8 +132,8 @@ const docsRoutes: DocRoute[] = [
 export default function App() {
 	return (
 		<Routes>
-			<Route path='/' element={<HomePage />} />
-			<Route path='/docs' element={<Layout />}>
+			<Route path="/" lazy={() => import('./pages/HomePage.js')} />
+			<Route path="/docs" element={<Layout />}>
 				{docsRoutes.map((docPage) => (
 					<>
 						<Route path={docPage.path} fallback={<i></i>} lazy={() => import(docPage.pagePath)} />
@@ -148,7 +147,7 @@ export default function App() {
 							))}
 					</>
 				))}
-				<Route index redirect='overview' />
+				<Route index redirect="overview" />
 			</Route>
 		</Routes>
 	);
