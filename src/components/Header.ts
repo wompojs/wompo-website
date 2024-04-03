@@ -1,5 +1,8 @@
-import{defineWompo as o,html as r}from"wompo";export default function l({styles:e}){return r`
-		<header class=${e.header}>
+import { type WompoProps, defineWompo, html } from 'wompo';
+
+export default function Header({ styles: s }: WompoProps) {
+	return html`
+		<header class=${s.header}>
 			<a href="/">
 				<svg
 					width="40px"
@@ -22,7 +25,7 @@ import{defineWompo as o,html as r}from"wompo";export default function l({styles:
 					<a href="/docs/overview">Docs</a>
 				</li>
 				<li>
-					<a class=${e.link} href="https://opencollective.com/wompo" target="_blank">
+					<a class=${s.link} href="https://opencollective.com/wompo" target="_blank">
 						Donate
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +45,7 @@ import{defineWompo as o,html as r}from"wompo";export default function l({styles:
 					</a>
 				</li>
 				<li>
-					<a class="${e.link}" href="https://github.com/wompojs/wompo" target="_blank">
+					<a class="${s.link}" href="https://github.com/wompojs/wompo" target="_blank">
 						Github
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +62,9 @@ import{defineWompo as o,html as r}from"wompo";export default function l({styles:
 				</li>
 			</ul>
 		</header>
-	`}l.css=`
+	`;
+}
+Header.css = `
 	:host {
 		display: block;
 		position: sticky;
@@ -106,4 +111,8 @@ import{defineWompo as o,html as r}from"wompo";export default function l({styles:
 		align-items: center;
 		gap: 10px;
 	}
-`,o(l,{name:"wompo-header"});
+`;
+
+defineWompo(Header, {
+	name: 'wompo-header',
+});

@@ -132,8 +132,7 @@ const docsRoutes: DocRoute[] = [
 export default function App() {
 	return (
 		<Routes>
-			<Route path="/" lazy={() => import('./pages/HomePage.js')} />
-			<Route path="/docs" element={<Layout />}>
+			<Route path='/docs' element={<Layout />}>
 				{docsRoutes.map((docPage) => (
 					<>
 						<Route path={docPage.path} fallback={<i></i>} lazy={() => import(docPage.pagePath)} />
@@ -147,7 +146,7 @@ export default function App() {
 							))}
 					</>
 				))}
-				<Route index redirect="overview" />
+				<Route index redirect='overview' />
 			</Route>
 		</Routes>
 	);

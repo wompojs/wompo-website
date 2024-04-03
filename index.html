@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-W9N2P2NZQG"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+
+			gtag('config', 'G-W9N2P2NZQG');
+		</script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Wompo Documentation</title>
-		<meta name="description" content="Wompo documentation" />
+		<title>Wompo</title>
+		<meta
+			name="description"
+			content="Wompo is a React-like Javascript library for creating shareable, and reusable Web-Components in the whole Web."
+		/>
 		<script type="importmap">
 			{
 				"imports": {
@@ -14,32 +28,249 @@
 				}
 			}
 		</script>
-		<style>
-			html {
-				font-size: 10px;
-			}
-			body {
-				font-size: 1.8rem;
-				margin: 0;
-			}
-			* {
-				line-height: 1.5;
-				box-sizing: border-box;
-				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-					Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-			}
-		</style>
+		<link rel="stylesheet" href="/home.css" />
+		<script type="module">
+			import CSSModuleAndMore from '/components/Home/CSSModuleAndMore.js';
+			import WompoHeader from '/components/Header.js';
+
+			let prevScrollpos = window.pageYOffset;
+			window.onscroll = function () {
+				const currentScrollPos = window.pageYOffset;
+				if (currentScrollPos > 500 || currentScrollPos > window.innerHeight) {
+					document.querySelector('wompo-header').style.backgroundColor = '#fff';
+					document.querySelector('wompo-header').style.color = '#333';
+				} else {
+					document.querySelector('wompo-header').style.backgroundColor = '#573ef6';
+					document.querySelector('wompo-header').style.color = '#fff';
+				}
+				if (prevScrollpos > currentScrollPos) {
+					document.querySelector('wompo-header').style.top = '0';
+				} else {
+					document.querySelector('wompo-header').style.top = '-70px';
+				}
+				prevScrollpos = currentScrollPos;
+			};
+		</script>
 	</head>
 	<body>
-		<script type="module">
-			import App from '/app.js';
-		</script>
-		<wompo-root></wompo-root>
+		<main class="main">
+			<wompo-header style="background-color: #573ef6; color: #fff"></wompo-header>
+			<section class="hero">
+				<h1>Wompo</h1>
+				<p>The fast, lightweight, React-like, web-components library.</p>
+				<div class="buttons">
+					<a
+						href="https://www.npmjs.com/package/wompo"
+						target="_blank"
+						style="font-family: monospace"
+						class="btn btnPrimary"
+					>
+						&gt; npm i wompo
+					</a>
+					<a href="/docs/overview" class="btn btnSecondary">Documentation</a>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="whySection">
+					<h2 class="sticky">Why wompo?</h2>
+					<div>
+						<p class="whyParagraph">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="16"
+								height="16"
+								fill="currentColor"
+								viewBox="0 0 16 16"
+							>
+								<path
+									d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"
+								/>
+							</svg>
+							Wompo is built with native Javascript functionalities and Web-components, meaning that
+							it can <b>run everywhere</b>, wether you use a compiler or not. This also means that
+							you can use wompo and other libraries like React, Angular, Vue, etc. at the same time,
+							without having to worry about conflicts.
+						</p>
+						<p class="whyParagraph">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="16"
+								height="16"
+								fill="currentColor"
+								viewBox="0 0 16 16"
+							>
+								<path
+									d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641z"
+								/>
+							</svg>
+							Wompo is <b>super fast</b>, because there is no virtual DOM: only the dynamic parts of
+							your components are updated, and cache is used heavily to ensure better performances
+							when rendering the same component multiple times.
+						</p>
+						<p class="whyParagraph">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="16"
+								height="16"
+								fill="currentColor"
+								viewBox="0 0 16 16"
+							>
+								<path
+									d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"
+								/>
+							</svg>
+							No need to learn advanced Javascript features, classes, the <i>this</i> keyword, or
+							TypeScript (although it is natively supported, because Wompo is built with it): to use
+							the library you only need to know <u>basic Javascript, basic HTML, and basic CSS</u>.
+							Wompo is <b>usable for both beginners and experts</b>.
+						</p>
+						<p class="whyParagraph">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="16"
+								height="16"
+								fill="currentColor"
+								viewBox="0 0 16 16"
+							>
+								<path
+									d="M15.807.531c-.174-.177-.41-.289-.64-.363a3.8 3.8 0 0 0-.833-.15c-.62-.049-1.394 0-2.252.175C10.365.545 8.264 1.415 6.315 3.1S3.147 6.824 2.557 8.523c-.294.847-.44 1.634-.429 2.268.005.316.05.62.154.88q.025.061.056.122A68 68 0 0 0 .08 15.198a.53.53 0 0 0 .157.72.504.504 0 0 0 .705-.16 68 68 0 0 1 2.158-3.26c.285.141.616.195.958.182.513-.02 1.098-.188 1.723-.49 1.25-.605 2.744-1.787 4.303-3.642l1.518-1.55a.53.53 0 0 0 0-.739l-.729-.744 1.311.209a.5.5 0 0 0 .443-.15l.663-.684c.663-.68 1.292-1.325 1.763-1.892.314-.378.585-.752.754-1.107.163-.345.278-.773.112-1.188a.5.5 0 0 0-.112-.172M3.733 11.62C5.385 9.374 7.24 7.215 9.309 5.394l1.21 1.234-1.171 1.196-.027.03c-1.5 1.789-2.891 2.867-3.977 3.393-.544.263-.99.378-1.324.39a1.3 1.3 0 0 1-.287-.018Zm6.769-7.22c1.31-1.028 2.7-1.914 4.172-2.6a7 7 0 0 1-.4.523c-.442.533-1.028 1.134-1.681 1.804l-.51.524zm3.346-3.357C9.594 3.147 6.045 6.8 3.149 10.678c.007-.464.121-1.086.37-1.806.533-1.535 1.65-3.415 3.455-4.976 1.807-1.561 3.746-2.36 5.31-2.68a8 8 0 0 1 1.564-.173"
+								/>
+							</svg>
+							Wompo is <b>super ligth</b>: less then 6kb minfied and gzipped. It will probably be
+							the lighter part of your application, while still providing a lot of functionalities.
+							<br />
+							This will help keeping your loading time short if you care about your site's
+							performance.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="section shadowSection">
+				<h2>Shadow DOM?</h2>
+				<h3>Yes, but <span class="coloredSpan">NO</span></h3>
+				<p style="max-width: 60rem">
+					Unlike other Web-components libraries, <u>Shadow DOM is not enabled by default</u> when
+					building your components. Why?<br />
+					Shadow DOM is great, but it can make your life harder: no global CSSs, no possibility to
+					select elements through <code class="code">document.querySelector</code> (which a lot of
+					third party libraries rely on), and, first of all, the need to learn what
+					<b>Shadow DOM</b> is and what it does.<br />
+					Not really beginner friendly, huh?
+				</p>
+				<p class="instead">Instead...</p>
+			</section>
+
+			<css-modules-and-more></css-modules-and-more>
+
+			<section class="section helpSection">
+				<h2>Help Wompo to grow</h2>
+				<p>
+					Every kind of support on this project, even just a feedback on it, is highly appreciated!
+					<br />
+					You can further support the Wompo project by becoming a <b>contributor</b> or a
+					<b>sponsor</b>, and <u>be featured on this Website</u>. You can also email
+					<i>lanninolore@gmail.com</i> if you are actually using Wompo on your project and want to
+					appear on this website, by describing your use-case and how Wompo improved your code.
+					<br />
+					The purpose of Wompo is to create <b>easy-shareable</b> components that can be used on
+					every Web Environment, in cooperation with any library or framework, without needing to
+					worry about compatibility issues.
+				</p>
+				<h3>
+					<a href="https://github.com/Saderyal/wompo/graphs/contributors" target="_blank">
+						Become a contributor on GitHub
+					</a>
+				</h3>
+				<h3>
+					<a href="https://opencollective.com/wompo" target="_blank">
+						Become a Sponsor on OpenCollective
+					</a>
+				</h3>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<section class="section">
+				<nav>
+					<a href="/">
+						<svg
+							width="40px"
+							height="40px"
+							viewBox="-10.5 -9.45 21 18.9"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<circle cx="0" cy="0" r="2" fill="currentColor"></circle>
+							<g stroke="currentColor" stroke-width="1" fill="none">
+								<ellipse rx="10" ry="4.5"></ellipse>
+								<ellipse rx="10" ry="4.5" transform="rotate(60)"></ellipse>
+								<ellipse rx="10" ry="4.5" transform="rotate(120)"></ellipse>
+							</g>
+						</svg>
+						Wompo
+					</a>
+					<ul>
+						<li class="title">Learn</li>
+						<li><a href="/docs/overview">Overview</a></li>
+						<li><a href="/docs/quick-start">Quick Start</a></li>
+						<li><a href="/docs/complex-example">Complex Example</a></li>
+						<li><a href="/docs/hooks">Hooks</a></li>
+						<li><a href="/docs/apis">APIs</a></li>
+					</ul>
+					<ul>
+						<li class="title">Privacy</li>
+						<li><a href="/docs/overview">Overview</a></li>
+						<li><a href="/docs/quick-start">Quick Start</a></li>
+						<li><a href="/docs/complex-example">Complex Example</a></li>
+						<li><a href="/docs/hooks">Hooks</a></li>
+						<li><a href="/docs/apis">APIs</a></li>
+					</ul>
+					<ul>
+						<li class="title">Contribute</li>
+						<li>
+							<a href="https://opencollective.com/wompo" target="_blank">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="16"
+									height="16"
+									fill="currentColor"
+									viewBox="0 0 16 16"
+								>
+									<path
+										fill-opacity=".4"
+										d="M12.995 8.195c0 .937-.312 1.912-.78 2.693l1.99 1.99c.976-1.327 1.6-2.966 1.6-4.683 0-1.795-.624-3.434-1.561-4.76l-2.068 2.028c.468.781.78 1.679.78 2.732z"
+									/>
+									<path
+										d="M8 13.151a4.995 4.995 0 1 1 0-9.99c1.015 0 1.951.273 2.732.82l1.95-2.03a7.805 7.805 0 1 0 .04 12.449l-1.951-2.03a5.07 5.07 0 0 1-2.732.781z"
+									/>
+								</svg>
+								Donate
+							</a>
+						</li>
+						<li>
+							<a class="${s.link}" href="https://github.com/wompojs/wompo" target="_blank">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="16"
+									height="16"
+									fill="currentColor"
+									viewBox="0 0 16 16"
+								>
+									<path
+										d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+									/>
+								</svg>
+								Github
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</section>
+		</footer>
 
 		<script src="/plugins/highlightjs/min.js"></script>
 		<script src="/plugins/highlightjs/javascript.min.js"></script>
-		<script src="/plugins/highlightjs/html.min.js"></script>
-		<script src="/plugins/highlightjs/css.min.js"></script>
-		<script src="/plugins/highlightjs/typescript.min.js"></script>
 	</body>
 </html>

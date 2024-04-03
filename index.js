@@ -16,8 +16,12 @@ app.use('/wompo', express.static('node_modules/wompo'));
 app.use('/wompo-router', express.static('node_modules/wompo-router/dist'));
 app.use('/plugins', express.static('plugins'));
 
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+app.get('*', (req, res) => {
+	res.sendFile(path.join(__dirname, 'docs.html'));
 });
 
 app.listen(port, () => {
