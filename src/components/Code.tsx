@@ -3,9 +3,10 @@ import { WompoProps, defineWompo, useEffect, useRef } from 'wompo';
 interface CodeProps extends WompoProps {
 	code: string;
 	language: 'js' | 'jsx' | 'html' | 'ts' | 'css';
+	margin?: string;
 }
 
-export default function Code({ code, language, styles: s }: CodeProps) {
+export default function Code({ code, language, styles: s, margin = '4rem' }: CodeProps) {
 	const codeRef = useRef<HTMLElement>();
 	useEffect(() => {
 		let formatted = code.replace(/\t/g, '  ');
@@ -23,8 +24,8 @@ export default function Code({ code, language, styles: s }: CodeProps) {
 	}, []);
 	return (
 		<>
-			<link rel='stylesheet' href='https://unpkg.com/highlightjs@9.16.2/styles/xcode.css' />
-			<pre class={s.pre}>
+			<link rel="stylesheet" href="https://unpkg.com/highlightjs@9.16.2/styles/xcode.css" />
+			<pre class={s.pre} style={{ margin: `${margin} 0` }}>
 				<code ref={codeRef}></code>
 			</pre>
 		</>
@@ -35,10 +36,10 @@ Code.css = `
   :host {
     display: block;
     width: 100%;
+		border-radius: 10px;
   }
   .pre {
     width: 100%;
-    margin: 4rem 0;
   }
   .pre > code {
 		overflow: auto;

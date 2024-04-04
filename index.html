@@ -3,7 +3,7 @@
 	<head>
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-W9N2P2NZQG"></script>
-		<script>
+		<!-- <script>
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
 				dataLayer.push(arguments);
@@ -11,7 +11,7 @@
 			gtag('js', new Date());
 
 			gtag('config', 'G-W9N2P2NZQG');
-		</script>
+		</script> -->
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Wompo</title>
@@ -19,6 +19,7 @@
 			name="description"
 			content="Wompo is a React-like Javascript library for creating shareable, and reusable Web-Components in the whole Web."
 		/>
+		<link rel="stylesheet" href="/home.css" />
 		<script type="importmap">
 			{
 				"imports": {
@@ -28,10 +29,11 @@
 				}
 			}
 		</script>
-		<link rel="stylesheet" href="/home.css" />
+		
 		<script type="module">
-			import CSSModuleAndMore from '/components/Home/CSSModuleAndMore.js';
 			import WompoHeader from '/components/Header.js';
+			import CSSModuleAndMore from '/components/Home/CSSModuleAndMore.js';
+			import ExampleSection from '/components/Home/ExampleSection.js';
 			import WompoFooter from '/components/Footer.js';
 
 			let prevScrollpos = window.pageYOffset;
@@ -74,9 +76,11 @@
 				</div>
 			</section>
 
+			<example-section></example-section>
+
 			<section class="section">
 				<div class="whySection">
-					<h2 class="sticky">Why wompo?</h2>
+					<h2 class="sticky">Why Wompo?</h2>
 					<div>
 						<p class="whyParagraph">
 							<svg
@@ -177,7 +181,7 @@
 					<br />
 					The purpose of Wompo is to create <b>easy-shareable</b> components that can be used on
 					every Web Environment, in cooperation with any library or framework, without needing to
-					worry about compatibility issues.
+					worry about compatibility issues, setting up compilers, 
 				</p>
 				<h3>
 					<a href="https://github.com/Saderyal/wompo/graphs/contributors" target="_blank">
@@ -196,5 +200,6 @@
 
 		<script src="/plugins/highlightjs/min.js"></script>
 		<script src="/plugins/highlightjs/javascript.min.js"></script>
+		<script src="/plugins/highlightjs/html.min.js"></script>
 	</body>
 </html>
