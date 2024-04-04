@@ -36,8 +36,8 @@ export default function Footer({ styles: s }: WompoProps) {
 				</ul>
 				<ul>
 					<li class=${s.title}>Contribute</li>
-					<li>
-						<a href="https://opencollective.com/wompo" target="_blank">
+					${
+						/*<li><a href="https://opencollective.com/wompo" target="_blank">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								width="16"
@@ -54,8 +54,9 @@ export default function Footer({ styles: s }: WompoProps) {
 								/>
 							</svg>
 							Donate
-						</a>
-					</li>
+							</a>
+						</li>*/ ''
+					}
 					<li>
 						<a href="https://github.com/wompojs/wompo" target="_blank">
 							<svg

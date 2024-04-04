@@ -127,6 +127,14 @@ const docsRoutes: DocRoute[] = [
 			},
 		],
 	},
+	{
+		path: 'jsx',
+		pagePath: './pages/docs/Jsx.js',
+	},
+	{
+		path: 'typescript',
+		pagePath: './pages/docs/Typescript.js',
+	},
 ];
 
 export default function App() {

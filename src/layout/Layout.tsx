@@ -123,6 +123,14 @@ const mainMenu: MenuItem[] = [
 			},
 		],
 	},
+	{
+		title: 'JSX',
+		link: '/docs/jsx',
+	},
+	{
+		title: 'Typescript',
+		link: '/docs/typescript',
+	},
 ];
 
 export default function Layout({ styles: s }: WompoProps) {
@@ -132,7 +140,7 @@ export default function Layout({ styles: s }: WompoProps) {
 			<div class={s.pageContent}>
 				<SideMenu
 					menu={mainMenu}
-					title={<div style={{ fontSize: 14, color: '#585858', padding: '2rem' }}>wompo@1.0.0</div>}
+					title={<div style={{ fontSize: 14, color: '#585858', padding: '2rem' }}>wompo@1.0.1</div>}
 				/>
 				<div style={{ width: '100%' }}>
 					<ChildRoute />

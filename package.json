@@ -9,7 +9,7 @@
 	"scripts": {
 		"old-dev": "./esbuild.config.mjs",
 		"dev": "esbuild `find ./src \\( -name '*.ts' -o -name '*.tsx' \\)` --outdir=dist --allow-overwrite --minify & nodemon index.js",
-		"dev-build": "esbuild `find ./src \\( -name '*.ts' -o -name '*.tsx' \\)` --outdir=dist --allow-overwrite --minify --watch",
+		"dev-build": "esbuild `find ./src \\( -name '*.ts' -o -name '*.tsx' \\)` --outdir=dist --allow-overwrite --watch",
 		"build": "esbuild `find ./src \\( -name '*.ts' -o -name '*.tsx' \\)` --outdir=dist --allow-overwrite --minify",
 		"start": "node index.js"
 	},
@@ -17,13 +17,12 @@
 		"compression": "^1.7.4",
 		"express": "^4.19.2",
 		"wompo": "^1.0.1",
-		"wompo-router": "^1.0.0"
+		"wompo-router": "^1.0.2"
 	},
 	"devDependencies": {
 		"concurrently": "^8.2.2",
 		"esbuild": "^0.20.2",
 		"nodemon": "^3.1.0",
-		"ts-loader": "^9.5.1",
-		"tsc-alias": "^1.8.8"
+		"ts-loader": "^9.5.1"
 	}
 }

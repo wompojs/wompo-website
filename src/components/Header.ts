@@ -24,7 +24,8 @@ export default function Header({ styles: s }: WompoProps) {
 				<li>
 					<a href="/docs/overview">Docs</a>
 				</li>
-				<li>
+				${
+					/*<li>
 					<a class=${s.link} href="https://opencollective.com/wompo" target="_blank">
 						Donate
 						<svg
@@ -43,7 +44,8 @@ export default function Header({ styles: s }: WompoProps) {
 							/>
 						</svg>
 					</a>
-				</li>
+				</li>*/ ''
+				}
 				<li>
 					<a class="${s.link}" href="https://github.com/wompojs/wompo" target="_blank">
 						Github

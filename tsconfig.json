@@ -8,9 +8,5 @@
 		"jsx": "react-jsx",
 		"jsxImportSource": "wompo",
 		"moduleResolution": "node"
-	},
-	"tsc-alias": {
-		"resolveFullPaths": true,
-		"verbose": false
 	}
 }

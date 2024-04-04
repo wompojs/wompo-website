@@ -1,4 +1,14 @@
-import{jsx as n,jsxs as p}from"wompo/jsx-runtime";import{defineWompo as r}from"wompo";import{NavLink as a}from"wompo-router";import s from"./SubMenu.js";export default function i({styles:t,menu:o,title:l}){return n("aside",{class:t.menu,children:p("nav",{children:[l,n("ul",{class:t.ul,children:o.map(e=>n("li",{children:e.menu?n(s,{item:e,prefix:e.link}):n(a,{class:"link",to:e.link,children:e.title})}))})]})})}i.css=`
+import { jsx, jsxs } from "wompo/jsx-runtime";
+import { defineWompo } from "wompo";
+import { NavLink } from "wompo-router";
+import SubMenu from "./SubMenu.js";
+export default function SideMenu({ styles: s, menu, title }) {
+  return /* @__PURE__ */ jsx("aside", { class: s.menu, children: /* @__PURE__ */ jsxs("nav", { children: [
+    title,
+    /* @__PURE__ */ jsx("ul", { class: s.ul, children: menu.map((item) => /* @__PURE__ */ jsx("li", { children: item.menu ? /* @__PURE__ */ jsx(SubMenu, { item, prefix: item.link }) : /* @__PURE__ */ jsx(NavLink, { class: "link", to: item.link, children: item.title }) })) })
+  ] }) });
+}
+SideMenu.css = `
 	:host {
 		padding-top: 70px;
 		margin-top: -70px;
@@ -38,4 +48,7 @@ import{jsx as n,jsxs as p}from"wompo/jsx-runtime";import{defineWompo as r}from"w
   .ul a:hover, .ul a[class="active"] {
     background-color: #573ef630;
   }
-`,r(i,{name:"side-menu"});
+`;
+defineWompo(SideMenu, {
+  name: "side-menu"
+});

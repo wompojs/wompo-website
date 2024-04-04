@@ -1,29 +1,33 @@
-import{defineWompo as r,html as i}from"wompo";import n from"../Code.js";import o from"./CounterComponent.js";export default function e({styles:t}){return i`<section class="section">
-		<div class=${t.container}>
+import { defineWompo, html } from "wompo";
+import Code from "../Code.js";
+import CounterComponent from "./CounterComponent.js";
+export default function ExampleSection({ styles: s }) {
+  return html`<section class="section">
+		<div class=${s.container}>
 			<div style="position: relative;">
-				<${o}
+				<${CounterComponent}
 					initialCount=${5}
-					class=${t.counter}
-					style=${{transform:"rotate(45deg)",top:20,left:30}}
+					class=${s.counter}
+					style=${{ transform: "rotate(45deg)", top: 20, left: 30 }}
 				/>
-				<${o}
+				<${CounterComponent}
 					initialCount=${22}
-					class=${t.counter}
-					style=${{transform:"rotate(-20deg)",top:50,right:30}}
+					class=${s.counter}
+					style=${{ transform: "rotate(-20deg)", top: 50, right: 30 }}
 				/>
-				<${o}
+				<${CounterComponent}
 					initialCount=${1}
-					class=${t.counter}
-					style=${{transform:"rotate(10deg)",bottom:10,right:30}}
+					class=${s.counter}
+					style=${{ transform: "rotate(10deg)", bottom: 10, right: 30 }}
 				/>
-				<${o}
-					class=${t.counter}
-					style=${{transform:"translate(-50%, -50%)",top:"50%",left:"50%"}}
+				<${CounterComponent}
+					class=${s.counter}
+					style=${{ transform: "translate(-50%, -50%)", top: "50%", left: "50%" }}
 				/>
 			</div>
 			<div style="position: relative;">
-				<${n}
-					style=${{boxShadow:"0 5px 5px #0004"}}
+				<${Code}
+					style=${{ boxShadow: "0 5px 5px #0004" }}
 					code=${`
             // Create a Counter Component
             function CounterComponent({ start = 0 }){
@@ -37,8 +41,14 @@ import{defineWompo as r,html as i}from"wompo";import n from"../Code.js";import o
           `}
 					language="js"
 				/>
-				<${n}
-					style=${{position:"absolute",bottom:-80,right:-40,boxShadow:"0 5px 5px #0004",zIndex:"2"}}
+				<${Code}
+					style=${{
+    position: "absolute",
+    bottom: -80,
+    right: -40,
+    boxShadow: "0 5px 5px #0004",
+    zIndex: "2"
+  }}
 					margin="0"
 					code=${`
             <!-- Render it everywhere infinite times -->
@@ -51,7 +61,9 @@ import{defineWompo as r,html as i}from"wompo";import n from"../Code.js";import o
 				/>
 			</div>
 		</div>
-	</section>`}e.css=`
+	</section>`;
+}
+ExampleSection.css = `
   .container {
     display: flex;
     gap: 5rem;
@@ -63,4 +75,5 @@ import{defineWompo as r,html as i}from"wompo";import n from"../Code.js";import o
   .counter {
     position: absolute;
   }
-`,r(e,{name:"example-section"});
+`;
+defineWompo(ExampleSection, { name: "example-section" });
