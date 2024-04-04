@@ -74,7 +74,9 @@ Header.css = `
 		background-color: #fff;
 		z-index: 100;
 		box-shadow: 1px 1px 4px #00000040;
-		transition: all .5s ease-in-out;
+		transition-property: color, background-color, top;
+		transition-duration: .5s;
+		transition-timing-function: ease-in-out;
 		color: #333;
 	}
   .header {

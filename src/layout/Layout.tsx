@@ -2,6 +2,7 @@ import { WompoProps, defineWompo } from 'wompo';
 import Header from '../components/Header.js';
 import SideMenu, { MenuItem } from '../components/SideMenu.js';
 import { ChildRoute } from 'wompo-router';
+import Footer from '../components/Footer.js';
 
 const mainMenu: MenuItem[] = [
 	{
@@ -128,7 +129,7 @@ export default function Layout({ styles: s }: WompoProps) {
 	return (
 		<div>
 			<Header />
-			<div style={{ display: 'flex', height: '100%' }} class={s.pageContent}>
+			<div class={s.pageContent}>
 				<SideMenu
 					menu={mainMenu}
 					title={<div style={{ fontSize: 14, color: '#585858', padding: '2rem' }}>wompo@1.0.0</div>}
@@ -137,6 +138,7 @@ export default function Layout({ styles: s }: WompoProps) {
 					<ChildRoute />
 				</div>
 			</div>
+			<Footer class={s.footer} />
 		</div>
 	);
 }
@@ -144,14 +146,16 @@ Layout.css = `
 	:host {
     display: flex;
   }
-  :host .pageContent {
-    display: none;
-  }
-	@media (width > 1300px){
-    :host .pageContent {
-      display: block;
-    }
-  }
+	.pageContent {
+		display: flex;
+		height: 100%;
+		background-color: #fff;
+		z-index: 2;
+		position: relative;
+	}
+	.footer {
+		width: 100%;
+	}
 `;
 
 defineWompo(Layout, {

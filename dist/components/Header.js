@@ -1,4 +1,4 @@
-import{defineWompo as o,html as r}from"wompo";export default function l({styles:e}){return r`
+import{defineWompo as r,html as l}from"wompo";export default function o({styles:e}){return l`
 		<header class=${e.header}>
 			<a href="/">
 				<svg
@@ -59,7 +59,7 @@ import{defineWompo as o,html as r}from"wompo";export default function l({styles:
 				</li>
 			</ul>
 		</header>
-	`}l.css=`
+	`}o.css=`
 	:host {
 		display: block;
 		position: sticky;
@@ -69,7 +69,9 @@ import{defineWompo as o,html as r}from"wompo";export default function l({styles:
 		background-color: #fff;
 		z-index: 100;
 		box-shadow: 1px 1px 4px #00000040;
-		transition: all .5s ease-in-out;
+		transition-property: color, background-color, top;
+		transition-duration: .5s;
+		transition-timing-function: ease-in-out;
 		color: #333;
 	}
   .header {
@@ -106,4 +108,4 @@ import{defineWompo as o,html as r}from"wompo";export default function l({styles:
 		align-items: center;
 		gap: 10px;
 	}
-`,o(l,{name:"wompo-header"});
+`,r(o,{name:"wompo-header"});
