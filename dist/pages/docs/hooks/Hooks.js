@@ -164,6 +164,10 @@ const content = {
             /* @__PURE__ */ jsx("b", { children: /* @__PURE__ */ jsx("i", { children: "Suspense" }) }),
             " ",
             "component, allowing to easily handle the loading state of the component."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx(Link, { to: "useHook", children: "useHook" }),
+            " - The useHook is a special hook used to create your own advanced hooks. Should only be used if the current hooks are not enough to satisfy your needs."
           ] })
         ] })
       ] }) })
