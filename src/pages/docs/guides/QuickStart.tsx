@@ -1,8 +1,8 @@
 import { defineWompo } from 'wompo';
-import getPageLayout, { Contents } from '../../utils/getPageLayout.js';
-import Code from '../../components/Code.js';
+import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
+import Code from '../../../components/Code.js';
 import { Link } from 'wompo-router';
-import Note from '../../components/Note.js';
+import Note from '../../../components/Note.js';
 
 const content: Contents = {
 	title: 'Quick Start',

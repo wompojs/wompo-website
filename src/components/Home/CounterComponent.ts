@@ -1,6 +1,6 @@
 import { defineWompo, html, useState } from 'wompo';
 
-export default function CounterComponent({ initialCount = 0 }) {
+export default function CounterComponent({ initialCount = 0 }: any) {
 	const [counter, setCounter] = useState(initialCount);
 	const increment = () => setCounter(counter + 1);
 	return html`<button @click=${increment}>${counter}</button>`;

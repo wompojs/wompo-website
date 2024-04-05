@@ -1,9 +1,9 @@
-import { WompoProps, defineWompo, useEffect, useLayoutEffect, useRef, useState } from 'wompo';
-import { MenuItem } from './SideMenu.js';
+import { WompoProps, defineWompo, html, useLayoutEffect, useRef } from 'wompo';
 import { NavLink, useCurrentRoute } from 'wompo-router';
+import { DocRoute } from '../utils/routes';
 
 interface SubMenuProps extends WompoProps {
-	item: MenuItem;
+	item: DocRoute;
 	prefix: string;
 }
 
@@ -19,10 +19,9 @@ export default function SubMenu({ item, prefix, styles: s }: SubMenuProps) {
 		else subMenuRef.current.style.maxHeight = `0px`;
 	}, [currentRoute]);
 
-	return (
-		<>
-			<NavLink to={item.link} class={`link ${s.hasMenu} ${active && s.active}`}>
-				<span>{item.title}</span>
+	return html`
+			<${NavLink} to=${item.link} class=${`link ${s.hasMenu} ${active && s.active}`}>
+				<span>${item.title}</span>
 				<svg
 					xmlns='http://www.w3.org/2000/svg'
 					width='16'
@@ -35,18 +34,19 @@ export default function SubMenu({ item, prefix, styles: s }: SubMenuProps) {
 						d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708'
 					/>
 				</svg>
-			</NavLink>
-			<ul ref={subMenuRef} class={s.subMenu}>
-				{item.menu.map((subMenuItem) => (
+			</${NavLink}>
+			<ul ref=${subMenuRef} class=${s.subMenu}>
+				${item.subRoutes.map(
+					(subMenuItem) => html`
 					<li>
-						<NavLink class='link' to={subMenuItem.link}>
-							{subMenuItem.title}
-						</NavLink>
+						<${NavLink} class='link' to=${subMenuItem.link}>
+							${subMenuItem.title}
+						</${NavLink}>
 					</li>
-				))}
+				`
+				)}
 			</ul>
-		</>
-	);
+	`;
 }
 SubMenu.css = `
   .subMenu {

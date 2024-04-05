@@ -2,6 +2,7 @@ import MainContent from '../components/MainContent.js';
 import ContentSection from '../components/ContentSection.js';
 import SideMenu from '../components/SideMenu.js';
 import { type RenderHtml } from 'wompo';
+import { DocRoute } from './routes.js';
 
 interface Section {
 	title: string;
@@ -26,11 +27,13 @@ export default function getPageLayout(contents: Contents) {
 				))}
 			</MainContent>
 			<SideMenu
-				class="side-content"
-				menu={contents.sections.map((section) => ({
-					title: section.title,
-					link: `#${section.id}`,
-				}))}
+				class='side-content'
+				menu={
+					contents.sections.map((section) => ({
+						title: section.title,
+						link: `#${section.id}`,
+					})) as DocRoute[]
+				}
 				title={<h3 style={{ margin: '10px 0', textTransform: 'uppercase' }}>In this page</h3>}
 			/>
 		</div>

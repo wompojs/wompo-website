@@ -24,7 +24,7 @@ export default function Code({ code, language, styles: s, margin = '4rem' }: Cod
 	}, []);
 	return (
 		<>
-			<link rel="stylesheet" href="https://unpkg.com/highlightjs@9.16.2/styles/xcode.css" />
+			<link rel='stylesheet' href='https://unpkg.com/highlightjs@9.16.2/styles/xcode.css' />
 			<pre class={s.pre} style={{ margin: `${margin} 0` }}>
 				<code ref={codeRef}></code>
 			</pre>
@@ -55,5 +55,5 @@ Code.css = `
 
 defineWompo(Code, {
 	name: 'wompo-code',
-	shadow: false,
+	shadow: true,
 });

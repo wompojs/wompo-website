@@ -1,6 +1,6 @@
 import { defineWompo } from 'wompo';
-import getPageLayout, { Contents } from '../../utils/getPageLayout.js';
-import Code from '../../components/Code.js';
+import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
+import Code from '../../../components/Code.js';
 
 const content: Contents = {
 	title: 'Style your components',

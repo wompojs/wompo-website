@@ -16,8 +16,8 @@
 	"dependencies": {
 		"compression": "^1.7.4",
 		"express": "^4.19.2",
-		"wompo": "^1.0.1",
-		"wompo-router": "^1.0.2"
+		"wompo": "^1.0.4",
+		"wompo-router": "^1.1.0"
 	},
 	"devDependencies": {
 		"concurrently": "^8.2.2",

@@ -45,7 +45,7 @@ const content: Contents = {
 						Wompo exposes also some constant variabled that you can use:
 						<ul>
 							<li>
-								<Link to='wompDefaultOptions'>wompDefaultOptions</Link> - The default options that
+								<Link to='wompoDefaultOptions'>wompDefaultOptions</Link> - The default options that
 								Wompo will use when initializing a component for the first time. You are free to
 								customize them.
 							</li>

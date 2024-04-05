@@ -1,14 +1,10 @@
-import { defineWompo, html } from "wompo";
-export default function MoreWidget({ children, title, icon, styles: s }) {
-  return html`
-		<div class=${s.widget}>
-			<h3>${title}</h3>
-			<div>${icon}</div>
-			<div>${children}</div>
+import{defineWompo as d,html as n}from"wompo";export default function e({children:i,title:r,icon:t,styles:o}){return n`
+		<div class=${o.widget}>
+			<h3>${r}</h3>
+			<div>${t}</div>
+			<div>${i}</div>
 		</div>
-	`;
-}
-MoreWidget.css = `
+	`}e.css=`
   .widget {
     box-shadow: 0 3px 10px #0004;
     border-radius: 15px;
@@ -34,5 +30,4 @@ MoreWidget.css = `
     font-size: 2.5rem;
     margin: 0;
   }
-`;
-defineWompo(MoreWidget, { name: "more-widget" });
+`,d(e,{name:"more-widget"});

@@ -4,7 +4,7 @@ export default function Footer({ styles: s }: WompoProps) {
 	return html`<footer class=${s.footer}>
 		<section class=${s.section}>
 			<nav>
-				<a href="/">
+				<a href="/" title="Homepage">
 					<svg
 						width="40px"
 						height="40px"
@@ -23,9 +23,9 @@ export default function Footer({ styles: s }: WompoProps) {
 				</a>
 				<ul>
 					<li class=${s.title}>Learn</li>
-					<li><a href="/docs/overview">Overview</a></li>
-					<li><a href="/docs/quick-start">Quick Start</a></li>
-					<li><a href="/docs/complex-example">Complex Example</a></li>
+					<li><a href="/docs/introduction">Overview</a></li>
+					<li><a href="/docs/installation">Installation</a></li>
+					<li><a href="/docs/guides/quick-start">Quick Start</a></li>
 					<li><a href="/docs/hooks">Hooks</a></li>
 					<li><a href="/docs/apis">APIs</a></li>
 				</ul>
@@ -82,7 +82,7 @@ export default function Footer({ styles: s }: WompoProps) {
 Footer.css = `
   .footer {
     background-color: #573ef6;
-    color: #b4b4b4;
+    color: #dfdfdf;
     width: 100%;
     padding: 10rem 4rem;
   }

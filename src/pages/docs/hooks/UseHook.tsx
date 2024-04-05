@@ -26,8 +26,8 @@ const content: Contents = {
 					<Note severity='warning'>
 						This hook should <b>only</b> be used to create <b>advanced</b> custom hooks. The already
 						present Wompo's hooks cover 90% of the average cases, and you can create a custom hook
-						by simply combining them. See the <Link to='/docs/custom-hooks'>Custom hooks</Link>{' '}
-						section for more.
+						by simply combining them. See the{' '}
+						<Link to='/docs/guides/custom-hooks'>Custom hooks</Link> section for more.
 					</Note>
 				</>
 			),
@@ -211,7 +211,7 @@ const content: Contents = {
 							native Wompo hooks to achieve the same result.
 							<br />
 							To know how to make a custom hook combining the already existing ones, see the{' '}
-							<Link to='/docs/custom-hooks'>Custom hooks</Link> section.
+							<Link to='/docs/guides/custom-hooks'>Custom hooks</Link> section.
 						</Note>
 					</p>
 					<p>

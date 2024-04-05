@@ -1,44 +1,29 @@
-import { Fragment, jsx, jsxs } from "wompo/jsx-runtime";
-import { defineWompo, useLayoutEffect, useRef } from "wompo";
-import { NavLink, useCurrentRoute } from "wompo-router";
-export default function SubMenu({ item, prefix, styles: s }) {
-  const currentRoute = useCurrentRoute();
-  const active = currentRoute.startsWith(prefix);
-  const maxHeight = useRef(null);
-  const subMenuRef = useRef();
-  useLayoutEffect(() => {
-    if (!maxHeight.current)
-      maxHeight.current = subMenuRef.current.clientHeight;
-    if (active)
-      subMenuRef.current.style.maxHeight = `${maxHeight.current}px`;
-    else
-      subMenuRef.current.style.maxHeight = `0px`;
-  }, [currentRoute]);
-  return /* @__PURE__ */ jsxs(Fragment, { children: [
-    /* @__PURE__ */ jsxs(NavLink, { to: item.link, class: `link ${s.hasMenu} ${active && s.active}`, children: [
-      /* @__PURE__ */ jsx("span", { children: item.title }),
-      /* @__PURE__ */ jsx(
-        "svg",
-        {
-          xmlns: "http://www.w3.org/2000/svg",
-          width: "16",
-          height: "16",
-          fill: "currentColor",
-          viewBox: "0 0 16 16",
-          children: /* @__PURE__ */ jsx(
-            "path",
-            {
-              "fill-rule": "evenodd",
-              d: "M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
-            }
-          )
-        }
-      )
-    ] }),
-    /* @__PURE__ */ jsx("ul", { ref: subMenuRef, class: s.subMenu, children: item.menu.map((subMenuItem) => /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(NavLink, { class: "link", to: subMenuItem.link, children: subMenuItem.title }) })) })
-  ] });
-}
-SubMenu.css = `
+import{defineWompo as f,html as l,useLayoutEffect as m,useRef as c}from"wompo";import{NavLink as t,useCurrentRoute as g}from"wompo-router";export default function r({item:n,prefix:p,styles:s}){const u=g(),i=u.startsWith(p),o=c(null),e=c();return m(()=>{o.current||(o.current=e.current.clientHeight),i?e.current.style.maxHeight=`${o.current}px`:e.current.style.maxHeight="0px"},[u]),l`
+			<${t} to=${n.link} class=${`link ${s.hasMenu} ${i&&s.active}`}>
+				<span>${n.title}</span>
+				<svg
+					xmlns='http://www.w3.org/2000/svg'
+					width='16'
+					height='16'
+					fill='currentColor'
+					viewBox='0 0 16 16'
+				>
+					<path
+						fill-rule='evenodd'
+						d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708'
+					/>
+				</svg>
+			</${t}>
+			<ul ref=${e} class=${s.subMenu}>
+				${n.subRoutes.map(a=>l`
+					<li>
+						<${t} class='link' to=${a.link}>
+							${a.title}
+						</${t}>
+					</li>
+				`)}
+			</ul>
+	`}r.css=`
   .subMenu {
 		transition: all .3s ease-in-out;
 		overflow: hidden;
@@ -59,7 +44,4 @@ SubMenu.css = `
   .hasMenu.active svg {
     transform: rotate(90deg);
   }
-`;
-defineWompo(SubMenu, {
-  name: "sub-menu"
-});
+`,f(r,{name:"sub-menu"});

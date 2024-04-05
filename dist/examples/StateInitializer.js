@@ -1,17 +1,3 @@
-import { useState, defineWompo, html } from "wompo";
-function getInitialState() {
-  const initialTodos = [];
-  for (let i = 1; i <= 10; i++) {
-    initialTodos.push({ title: `Todo N.${i}`, id: i });
-  }
-  return initialTodos;
-}
-export default function StateInitializerExample() {
-  const [todos, setTodos] = useState(getInitialState);
-  return html`<ul>
-		${todos.map((todo) => html`<li>${todo.title}</li>`)}
-	</ul>`;
-}
-defineWompo(StateInitializerExample, {
-  name: "state-initializer-example"
-});
+import{useState as n,defineWompo as a,html as i}from"wompo";function r(){const e=[];for(let t=1;t<=10;t++)e.push({title:`Todo N.${t}`,id:t});return e}export default function o(){const[e,t]=n(r);return i`<ul>
+		${e.map(l=>i`<li>${l.title}</li>`)}
+	</ul>`}a(o,{name:"state-initializer-example"});

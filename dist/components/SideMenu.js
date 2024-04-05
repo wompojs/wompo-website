@@ -1,14 +1,17 @@
-import { jsx, jsxs } from "wompo/jsx-runtime";
-import { defineWompo } from "wompo";
-import { NavLink } from "wompo-router";
-import SubMenu from "./SubMenu.js";
-export default function SideMenu({ styles: s, menu, title }) {
-  return /* @__PURE__ */ jsx("aside", { class: s.menu, children: /* @__PURE__ */ jsxs("nav", { children: [
-    title,
-    /* @__PURE__ */ jsx("ul", { class: s.ul, children: menu.map((item) => /* @__PURE__ */ jsx("li", { children: item.menu ? /* @__PURE__ */ jsx(SubMenu, { item, prefix: item.link }) : /* @__PURE__ */ jsx(NavLink, { class: "link", to: item.link, children: item.title }) })) })
-  ] }) });
-}
-SideMenu.css = `
+import{defineWompo as r,html as e}from"wompo";import{NavLink as l}from"wompo-router";import a from"./SubMenu.js";export default function i({styles:t,menu:n,title:s}){return e`
+		<aside class=${t.menu}>
+			<nav>
+				${s}
+				<ul class=${t.ul}>
+					${n.map(o=>e`
+							<li>
+								${o.subRoutes?e`<${a} item=${o} prefix=${o.link} /> `:e`<${l} class="link" to=${o.link}>${o.title}</${l}>`}
+							</li>
+						`)}
+				</ul>
+			</nav>
+		</aside>
+	`}i.css=`
 	:host {
 		padding-top: 70px;
 		margin-top: -70px;
@@ -48,7 +51,4 @@ SideMenu.css = `
   .ul a:hover, .ul a[class="active"] {
     background-color: #573ef630;
   }
-`;
-defineWompo(SideMenu, {
-  name: "side-menu"
-});
+`,r(i,{name:"side-menu"});

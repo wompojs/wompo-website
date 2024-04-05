@@ -9,7 +9,7 @@ export default function Header({ styles: s, menuIcon }: HeaderProps) {
 		<header class=${s.header}>
 			<div class=${s.logo}>
 				${menuIcon && menuIcon}
-				<a href="/">
+				<a href="/" title="Homepage">
 					<svg
 						width="40px"
 						height="40px"
@@ -29,7 +29,7 @@ export default function Header({ styles: s, menuIcon }: HeaderProps) {
 
 			<ul>
 				<li>
-					<a href="/docs/overview">Docs</a>
+					<a href="/docs/introduction">Docs</a>
 				</li>
 				${
 					/*<li>

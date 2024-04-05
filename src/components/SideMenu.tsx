@@ -1,39 +1,32 @@
-import { type WompoProps, defineWompo } from 'wompo';
+import { type WompoProps, defineWompo, html } from 'wompo';
 import { NavLink } from 'wompo-router';
 import SubMenu from './SubMenu.js';
-
-export interface MenuItem {
-	title: string;
-	link: string;
-	menu?: MenuItem[];
-}
+import { DocRoute } from '../utils/routes.js';
 
 interface SideMenuProps extends WompoProps {
-	menu: MenuItem[];
+	menu: DocRoute[];
 	title?: string;
 }
 
 export default function SideMenu({ styles: s, menu, title }: SideMenuProps) {
-	return (
-		<aside class={s.menu}>
+	return html`
+		<aside class=${s.menu}>
 			<nav>
-				{title}
-				<ul class={s.ul}>
-					{menu.map((item) => (
-						<li>
-							{item.menu ? (
-								<SubMenu item={item} prefix={item.link} />
-							) : (
-								<NavLink class='link' to={item.link}>
-									{item.title}
-								</NavLink>
-							)}
-						</li>
-					))}
+				${title}
+				<ul class=${s.ul}>
+					${menu.map(
+						(item) => html`
+							<li>
+								${item.subRoutes
+									? html`<${SubMenu} item=${item} prefix=${item.link} /> `
+									: html`<${NavLink} class="link" to=${item.link}>${item.title}</${NavLink}>`}
+							</li>
+						`
+					)}
 				</ul>
 			</nav>
 		</aside>
-	);
+	`;
 }
 
 SideMenu.css = `

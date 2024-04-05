@@ -7,7 +7,7 @@ import LazyExample from '../../../examples/LazyExample.js';
 import LazySuspenseExample from '../../../examples/LazySuspenseExample.js';
 
 const content: Contents = {
-	title: 'wompDefaultOptions',
+	title: 'wompoDefaultOptions',
 	description: (
 		<>How to customize the default options of Wompo components to satisfy your exigencies.</>
 	),

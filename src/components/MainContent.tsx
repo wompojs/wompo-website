@@ -22,6 +22,7 @@ MainContent.css = `
     display: block;
     width: 100%;
     position: relative;
+    margin-bottom: 10rem;
   }
   .main {
     padding: 0 2rem;

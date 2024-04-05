@@ -1,24 +1,4 @@
-import { Fragment, jsx, jsxs } from "wompo/jsx-runtime";
-import { defineWompo, useEffect, useRef } from "wompo";
-export default function Code({ code, language, styles: s, margin = "4rem" }) {
-  const codeRef = useRef();
-  useEffect(() => {
-    let formatted = code.replace(/\t/g, "  ");
-    const firstLineSpaces = /^\n(\s+)/.exec(formatted);
-    if (firstLineSpaces) {
-      const spaces = firstLineSpaces[1];
-      const removeStart = new RegExp(`^${spaces}`, "gm");
-      formatted = formatted.replace(removeStart, "").replace(/^\n/, "").replace(/\n\s+$/g, "");
-    }
-    const highlighted = window.hljs.highlight(formatted, { language });
-    codeRef.current.innerHTML = highlighted.value;
-  }, []);
-  return /* @__PURE__ */ jsxs(Fragment, { children: [
-    /* @__PURE__ */ jsx("link", { rel: "stylesheet", href: "https://unpkg.com/highlightjs@9.16.2/styles/xcode.css" }),
-    /* @__PURE__ */ jsx("pre", { class: s.pre, style: { margin: `${margin} 0` }, children: /* @__PURE__ */ jsx("code", { ref: codeRef }) })
-  ] });
-}
-Code.css = `
+import{Fragment as m,jsx as o,jsxs as u}from"wompo/jsx-runtime";import{defineWompo as g,useEffect as h,useRef as f}from"wompo";export default function s({code:n,language:c,styles:i,margin:a="4rem"}){const r=f();return h(()=>{let e=n.replace(/\t/g,"  ");const t=/^\n(\s+)/.exec(e);if(t){const p=t[1],l=new RegExp(`^${p}`,"gm");e=e.replace(l,"").replace(/^\n/,"").replace(/\n\s+$/g,"")}const d=window.hljs.highlight(e,{language:c});r.current.innerHTML=d.value},[]),u(m,{children:[o("link",{rel:"stylesheet",href:"https://unpkg.com/highlightjs@9.16.2/styles/xcode.css"}),o("pre",{class:i.pre,style:{margin:`${a} 0`},children:o("code",{ref:r})})]})}s.css=`
   :host {
     display: block;
     width: 100%;
@@ -37,8 +17,4 @@ Code.css = `
     background-color: #f6f6f6;
     border-radius: 10px;
   }
-`;
-defineWompo(Code, {
-  name: "wompo-code",
-  shadow: false
-});
+`,g(s,{name:"wompo-code",shadow:!0});

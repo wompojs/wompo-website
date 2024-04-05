@@ -68,7 +68,7 @@ const content: Contents = {
 		},
 		{
 			title: 'Properties',
-			id: 'methods',
+			id: 'properties',
 			content: (
 				<>
 					<p>

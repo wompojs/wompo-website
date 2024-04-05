@@ -92,8 +92,8 @@ const content: Contents = {
 					</p>
 					<Note severity='info'>
 						You can customize the default values of the <b>options</b> object by overriding the
-						values present in the <Link to='/docs/apis/wompDefaultOptions'>wompDefaultOptions</Link>{' '}
-						object.
+						values present in the{' '}
+						<Link to='/docs/apis/wompoDefaultOptions'>wompDefaultOptions</Link> object.
 					</Note>
 				</>
 			),
