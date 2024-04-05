@@ -43,10 +43,9 @@ export default function ExampleSection({ styles: s }: WompoProps) {
 					language="js"
 				/>
 				<${Code}
+					class=${s.codeAbove}
 					style=${{
 						position: 'absolute',
-						bottom: -80,
-						right: -40,
 						boxShadow: '0 5px 5px #0004',
 						zIndex: '2',
 					}}
@@ -70,6 +69,8 @@ ExampleSection.css = `
     display: flex;
     gap: 5rem;
     margin-bottom: 50rem;
+		width: 100%;
+		max-width:
   }
   .container > * {
     width: 100%;
@@ -77,6 +78,29 @@ ExampleSection.css = `
   .counter {
     position: absolute;
   }
+	.codeAbove {
+		bottom: -80px;
+		right: -40px;
+	}
+
+	@media (width < 1200px) {
+		.container {
+			flex-direction: column;
+			align-items: center;
+			padding: 0 2rem;
+			margin: 0;
+		}
+		.codeAbove {
+			bottom: -100px;
+			right: -2rem;
+		}
+		.container > :nth-child(1) {
+			order: 1;
+			margin: 10rem auto 0 auto;
+			max-width: 40rem;
+			min-height: 40rem;
+		}
+	}
 `;
 
 defineWompo(ExampleSection, { name: 'example-section' });

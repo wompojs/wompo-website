@@ -18,6 +18,7 @@ CounterComponent.css = `
     justify-content: center;
     align-items: center;
     box-shadow: 3px 3px 3px #e2defd;
+    touch-action: manipulation;
   }
 `;
 defineWompo(CounterComponent, { shadow: true, cssModule: false, name: "home-counter" });

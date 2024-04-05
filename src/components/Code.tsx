@@ -55,5 +55,5 @@ Code.css = `
 
 defineWompo(Code, {
 	name: 'wompo-code',
-	shadow: true,
+	shadow: false,
 });

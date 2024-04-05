@@ -1,8 +1,10 @@
-import { WompoProps, defineWompo } from 'wompo';
+import { WompoProps, defineWompo, useState, html, useEffect } from 'wompo';
 import Header from '../components/Header.js';
 import SideMenu, { MenuItem } from '../components/SideMenu.js';
 import { ChildRoute } from 'wompo-router';
 import Footer from '../components/Footer.js';
+import MenuIcon from '../components/MenuIcon.js';
+import { useCurrentRoute } from 'wompo-router';
 
 const mainMenu: MenuItem[] = [
 	{
@@ -134,26 +136,43 @@ const mainMenu: MenuItem[] = [
 ];
 
 export default function Layout({ styles: s }: WompoProps) {
-	return (
+	const [open, setOpen] = useState(false);
+	const currentRoute = useCurrentRoute();
+	const toggleMenu = () => {
+		if (open) {
+			document.body.style.overflow = 'auto';
+			setOpen(false);
+		} else {
+			document.body.style.overflow = 'hidden';
+			setOpen(true);
+		}
+	};
+	useEffect(() => {
+		document.body.style.overflow = 'auto';
+		setOpen(false);
+	}, [currentRoute]);
+	return html`
 		<div>
-			<Header />
-			<div class={s.pageContent}>
-				<SideMenu
-					menu={mainMenu}
-					title={<div style={{ fontSize: 14, color: '#585858', padding: '2rem' }}>wompo@1.0.1</div>}
+			<${Header}
+				menuIcon=${html`<${MenuIcon} class=${s.icon} open=${open} @click=${toggleMenu} />`}
+			/>
+			<div class=${s.pageContent}>
+				<${SideMenu}
+					class=${`${s.menu} ${open && s.open}`}
+					menu=${mainMenu}
+					title=${html`<div style=${{ fontSize: 14, color: '#585858', padding: '2rem' }}>
+						wompo@1.0.1
+					</div>`}
 				/>
-				<div style={{ width: '100%' }}>
-					<ChildRoute />
+				<div style=${{ width: '100%' }}>
+					<${ChildRoute} />
 				</div>
 			</div>
-			<Footer class={s.footer} />
+			<${Footer} class=${s.footer} />
 		</div>
-	);
+	`;
 }
 Layout.css = `
-	:host {
-    display: flex;
-  }
 	.pageContent {
 		display: flex;
 		height: 100%;
@@ -163,6 +182,37 @@ Layout.css = `
 	}
 	.footer {
 		width: 100%;
+	}
+	.icon {
+		display: none;
+	}
+
+	@media (width < 1300px){
+		.pageContent [class="side-content"] {
+			display: none;
+		}
+	}
+
+	@media (width < 1050px){
+		.icon {
+			display: block;
+		}
+		.menu {
+			box-shadow: 0 0 10px #0004;
+			transition: transform .3s ease-in-out;
+			background-color: #fff;
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			z-index: 1000;
+			top: unset;
+			width: 100vw;
+			max-width: 50rem;
+			transform: translateX(-105%);
+		}
+		.menu.open {
+			transform: translateX(0);
+		}
 	}
 `;
 

@@ -121,6 +121,24 @@ Footer.css = `
     position: relative;
     display: block;
   }
+
+	@media (width < 650px){
+		.footer {
+			margin-top: 5rem;
+		}
+		.footer nav {
+			flex-direction: column;
+			text-align: center;
+			align-items: center;
+			gap: 4rem;
+		}
+		.footer nav li {
+			text-align: center;
+		}
+		.footer nav li a {
+			justify-content: center;
+		}
+	}
 `;
 
 defineWompo(Footer, { name: 'wompo-footer' });

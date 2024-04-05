@@ -8,6 +8,7 @@ export default function getPageLayout(contents) {
     /* @__PURE__ */ jsx(
       SideMenu,
       {
+        class: "side-content",
         menu: contents.sections.map((section) => ({
           title: section.title,
           link: `#${section.id}`

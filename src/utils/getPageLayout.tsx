@@ -26,6 +26,7 @@ export default function getPageLayout(contents: Contents) {
 				))}
 			</MainContent>
 			<SideMenu
+				class="side-content"
 				menu={contents.sections.map((section) => ({
 					title: section.title,
 					link: `#${section.id}`,

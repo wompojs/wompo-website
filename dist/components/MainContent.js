@@ -9,7 +9,7 @@ export default function MainContent({ styles: s, title, description, children })
 }
 MainContent.css = `
   :host {
-    display: flex;
+    display: block;
     width: 100%;
     position: relative;
   }
