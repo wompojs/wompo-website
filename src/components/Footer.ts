@@ -129,6 +129,9 @@ Footer.css = `
 		.footer {
 			margin-top: 5rem;
 		}
+		.footer ul .title {
+			text-align: center;
+		}
 		.footer nav {
 			flex-direction: column;
 			text-align: center;
