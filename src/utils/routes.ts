@@ -323,7 +323,7 @@ export const docsRoutes: DocRoute[] = [
 				title: 'registeredComponents',
 				link: '/docs/apis/registeredComponents',
 				path: 'registeredComponents',
-				pagePath: './pages/docs/apis/registeredComponents.js',
+				pagePath: './pages/docs/apis/RegisteredComponents.js',
 				meta: {
 					title: 'registeredComponents API - Wompo APIs',
 					description: 'Learn how you can get the Wompo registered components.',
