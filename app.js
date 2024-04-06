@@ -1,9 +1,25 @@
 import express from 'express';
+import helmet from 'helmet';
 import compression from 'compression';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
 const app = express();
+app.use(
+	helmet({
+		contentSecurityPolicy: {
+			directives: {
+				'script-src': [
+					"'self'",
+					/* '*.iubenda.com',
+					'*.googletagmanager.com', */
+					"'nonce-WMPnf03nceIJfn22wc3e9h3wwfg3'",
+				],
+				// 'connect-src': ['*.google-analytics.com', '*.iubenda.com'],
+			},
+		},
+	})
+);
 app.use(compression()); // gzip support
 
 const port = 3000;

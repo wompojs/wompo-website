@@ -35,7 +35,6 @@ const content: Contents = {
 					<p>
 						Nice, you created your first component! Now you just have to render it in the DOM.
 						<br />
-						<br />
 						But, if you know how <b>Web Components</b> work you are probably wondering where you can
 						define the <u>name</u> of the component. In this case, Wompo will simply create a
 						dash-cased string based on the name of the function. So, the component{' '}
@@ -232,6 +231,110 @@ const content: Contents = {
 					<p>
 						That's it. You now know already the 80% of the Wompo library. Easy. Isn't it? <br />
 						If you already know <b>React</b>, you can easily see how similar it is.
+					</p>
+				</>
+			),
+		},
+		{
+			title: 'Rules',
+			id: 'rules',
+			content: (
+				<>
+					<p>
+						When you build your component's UI, you have some rules to keep in mind. First,{' '}
+						<b>your components must always return the same static structure.</b> What it means is
+						that, for example, you cannot, based on a condition, first return a "p" tag and then
+						maybe a "div" tag. The reason is very simple: when a component is first rendered, its
+						static structure is cached so that Wompo doesn't have to rebuild it every time the same
+						component render, so that the performance will be super good even when rendering
+						thousands of components. This means that{' '}
+						<b>only the first rendered static structure will be put in the DOM</b> and if there is a
+						completely new static structure, the component will not be rebuilt.
+						<br />
+						This may sound like a big limitation, but there are some basic things you can do to get
+						around the problem:
+						<ul>
+							<li>Create the structure that you want to render in a variable</li>
+							<li>Create a variable holding the whole structure (only when strictly needed)</li>
+						</ul>
+						Examples:
+						<Code
+							code={`
+							// ❌ Don't do this
+							function Component({ userIsLoggedIn }) {
+								if(userIsLoggedIn)
+									return html\`<div>Logged in!</div>\`;
+								else
+									return html\`<div>Not logged in!</div>\`;
+              }
+
+							// ✅ Do this instead
+							function Component({ userIsLoggedIn }) {
+								const content = userIsLoggedIn ? 'Logged in!' : 'Not logged in!';
+								return html\`<div>\${content}</div>\`;
+              }
+            `}
+							language='js'
+						/>
+						<Code
+							code={`
+							// ❌ Don't do this
+							function Component({ authorized }) {
+								if(authorized) {
+									return html\`<div>
+										This User is authorized to perform this actions:
+										<button>Delete Object</button> <button>Modify Object</button>
+									</div>\`;
+								} else {
+									return html\`<h1>Not authorized</h1>\`;
+								}
+              }
+
+							// ✅ Do this instead
+							function Component({ userIsLoggedIn }) {
+								let content;
+								if(authorized) {
+									content = html\`<div>
+										This User is authorized to perform this actions:
+										<button>Delete Object</button> <button>Modify Object</button>
+									</div>\`;
+								} else {
+									content = html\`<h1>Not authorized</h1>\`;
+								}
+								// ❌ Don't return the content directly
+								// return content;
+								// ✅ Return a new html result
+								return html\`\${content}\`;
+              }
+            `}
+							language='js'
+						/>
+						<Note severity='warning'>
+							<b>Note</b>: The last example will make the whole component dynamic. When possible,
+							always avoid this kind of approach.
+						</Note>
+					</p>
+					<p>
+						<Note severity='info'>
+							<b>Note</b>: If <b>you know and you are sure</b> that your component will only render
+							once, you can avoid this runaround, although it's not recommended: always use the same
+							logic across components.
+						</Note>
+					</p>
+					<hr />
+					<p>
+						The second rule you must follow is about hooks. Wompo hooks have the following rules:
+						<ol>
+							<li>
+								Always use them in the first lines of the component. You must think of hooks like if
+								they were the <i>import statements</i> of your file.
+							</li>
+							<li>Don't use hooks conditionally, or inside loops.</li>
+						</ol>
+						If these criterias are not met, your components might not work as expected. If you want
+						to know more about it, check the{' '}
+						<Link to='/docs/hooks/useHook#deep-dive'>Deep Dive into Wompo hooks</Link> guide in the{' '}
+						<code>useHook</code> hook documentation.
 					</p>
 				</>
 			),

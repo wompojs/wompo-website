@@ -7,8 +7,8 @@ const content: Contents = {
 	description: 'Learn Wompo by following these easy tutorials and guides.',
 	sections: [
 		{
-			title: 'Coming soon',
-			id: 'coming-soon',
+			title: 'Guides',
+			id: 'guides',
 			content: (
 				<>
 					<p>

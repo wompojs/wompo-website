@@ -14,11 +14,12 @@ const content: Contents = {
 					<p>
 						By definition components are reusable pieces of code. Most of times, when you create a
 						component you also have a CSS code to specifically style that component. With Wompo, you
-						have three different ways to style your components:
+						have the following different ways to style your components:
 						<ol>
 							<li>Classic CSS file</li>
 							<li>Through the Component's css poperty (for shadow elements)</li>
 							<li>Built-in CSS "modules"</li>
+							<li>Inline styles</li>
 						</ol>
 					</p>
 				</>
@@ -122,6 +123,43 @@ const content: Contents = {
 									padding: 10px;
 								}
 							\`;
+            `}
+						language='js'
+					/>
+				</>
+			),
+		},
+		{
+			title: 'Inline styles',
+			id: 'inline-styles',
+			content: (
+				<>
+					<p>
+						Last but not least, you can style your elements with inline styles. You can do that in
+						two ways:
+						<ol>
+							<li>A string with the styles (default)</li>
+							<li>Using an object to describe the CSS Properties</li>
+						</ol>
+						If you choose the second option, the object will be a <code>CSSDeclaration</code>{' '}
+						object, so you should replace the name of the property you want to style in camelCase
+						(e.g. z-index = zIndex; background-color = backgroundColor). <br />
+						Example:
+					</p>
+					<Code
+						code={`
+							function Component({ styles: s }){
+								return html\`<div style="position:relative">
+									<span style=\${{
+										position: 'absolute',
+										top: -10,
+										left: -10,
+										width: 100,
+										height: 100,
+										backgroundColor: '#573EF6'
+									}}></span>
+								</div>\`;
+							}
             `}
 						language='js'
 					/>

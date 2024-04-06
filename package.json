@@ -8,16 +8,17 @@
 	"main": "index.js",
 	"scripts": {
 		"old-dev": "./esbuild.config.mjs",
-		"dev": "esbuild `find ./src \\( -name '*.ts' -o -name '*.tsx' \\)` --outdir=dist --allow-overwrite --minify & nodemon index.js",
+		"dev": "esbuild `find ./src \\( -name '*.ts' -o -name '*.tsx' \\)` --outdir=dist --allow-overwrite --minify & nodemon app.js",
 		"dev-build": "esbuild `find ./src \\( -name '*.ts' -o -name '*.tsx' \\)` --outdir=dist --allow-overwrite --watch",
 		"build": "esbuild `find ./src \\( -name '*.ts' -o -name '*.tsx' \\)` --outdir=dist --allow-overwrite --minify",
-		"start": "node index.js"
+		"start": "node app.js"
 	},
 	"dependencies": {
 		"compression": "^1.7.4",
 		"express": "^4.19.2",
+		"helmet": "^7.1.0",
 		"wompo": "^1.0.4",
-		"wompo-router": "^1.1.0"
+		"wompo-router": "^1.1.3"
 	},
 	"devDependencies": {
 		"concurrently": "^8.2.2",

@@ -2,6 +2,7 @@ import { defineWompo } from 'wompo';
 import { Route, Routes } from 'wompo-router';
 import Layout from './layout/Layout.js';
 import { docsRoutes } from './utils/routes.js';
+import LoadingPlaceholder from './components/LoadingPlaceholder.js';
 
 export default function App() {
 	return (
@@ -12,7 +13,7 @@ export default function App() {
 						<Route
 							path={docPage.path}
 							meta={docPage.meta}
-							fallback={<i></i>}
+							fallback={<LoadingPlaceholder />}
 							lazy={() => import(docPage.pagePath)}
 						/>
 						{docPage.subRoutes &&
@@ -20,7 +21,7 @@ export default function App() {
 								<Route
 									meta={subRoute.meta}
 									path={`${docPage.path}/${subRoute.path}`}
-									fallback={<i></i>}
+									fallback={<LoadingPlaceholder />}
 									lazy={() => import(subRoute.pagePath)}
 								/>
 							))}
@@ -28,6 +29,7 @@ export default function App() {
 				))}
 				<Route index redirect='overview' />
 			</Route>
+			<Route path='*' lazy={() => import('./pages/NotFound.js')} />
 		</Routes>
 	);
 }
@@ -36,5 +38,3 @@ defineWompo(App, {
 });
 
 //! Rules: Always return same template.
-//! style=${object}
-//! cssModule

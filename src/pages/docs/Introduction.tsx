@@ -5,7 +5,7 @@ import Code from '../../components/Code.js';
 const content: Contents = {
 	title: 'Introduction',
 	description:
-		'Wompo is a React-like Web-Component library for creating functional UIs in the Web.',
+		'Wompo is a fast and ligthweight React-like Web-Component library for creating functional UIs in the Web.',
 	sections: [
 		{
 			title: 'Why?',
@@ -14,8 +14,8 @@ const content: Contents = {
 				<>
 					<p>
 						The reason why Wompo is born is to make Web development easier: by taking advantage of
-						native Javascript functionalities, Wompo allows you to create reusable, shareable, and
-						fast Web-Components.
+						native Javascript functionalities, Wompo allows to create{' '}
+						<b>reusable, shareable, and fast Web-Components</b>.
 						<br />
 						Wompo was created by "merging" two main libraries: <b>React</b> and <b>Lit</b>. More
 						specifically, the <b>Core concepts</b> of React, and the <b>Blazing fast</b> rendering
@@ -23,21 +23,30 @@ const content: Contents = {
 						React, while still keeping an eye on performances.
 					</p>
 					<p>
-						But there are already tons of libraries that serve the same purpose, like <b>Stencil</b>
-						, <b>Atomico</b>, and, of course <b>Lit</b> (plus others), so why Wompo?
+						But there are already tons of libraries that serve the same purpose and use
+						Web-Components, like <b>Stencil</b>, <b>Atomico</b>, and, of course, <b>Lit</b> (plus
+						others), so why Wompo?
 						<br />
 						The reason is simple: we don't like to overcomplicate things. Wompo is super-fast and
-						has a super-common way of building components (the React way), so is it worth it to
-						learn completely new concepts and libraries to just save a couple of milliseconds and
-						write more code to achieve the same result? Are months of studying and experimenting
-						worth to get the same result? We think not. There is no need to learn Javascript
-						classses, understaning the <b>this</b> keyword, learn <b>Typescript</b> (althought it is
-						natively supported, because Wompo is built with it): the only thing you must know is
-						basic HTML, basic CSS, and basic JS. That's it. Wompo is accessible by{' '}
-						<b>completely begginers</b> but also by <b>experts</b>.
+						has a super-common way of building components (the React way), so is it worth to learn
+						completely new concepts and libraries to just save a couple of milliseconds and write
+						more code to achieve the same result? Are months of studying and experimenting worth to
+						get the same result? We think not. There is no need to learn Javascript classses,
+						understaning the <b>this</b> keyword, learn <b>Typescript</b> (althought it is natively
+						supported, because Wompo is built with it): the only thing you must know is basic HTML,
+						basic CSS, and basic JS. That's it. Wompo is accessible by <b>completely begginers</b>{' '}
+						but also by <b>experts</b>.
 					</p>
+				</>
+			),
+		},
+		{
+			title: 'Benefits',
+			id: 'benefits',
+			content: (
+				<>
 					<p>
-						Wompo has the following benefits:
+						Using Wompo has the following benefits:
 						<ul>
 							<li>
 								<b>React-like</b> - no need to learn a completely new library. If you know React,

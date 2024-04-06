@@ -25,14 +25,15 @@ export default function Footer({ styles: s }: WompoProps) {
 					<li class=${s.title}>Learn</li>
 					<li><a href="/docs/introduction">Overview</a></li>
 					<li><a href="/docs/installation">Installation</a></li>
-					<li><a href="/docs/guides/quick-start">Quick Start</a></li>
 					<li><a href="/docs/hooks">Hooks</a></li>
 					<li><a href="/docs/apis">APIs</a></li>
 				</ul>
 				<ul>
-					<li class=${s.title}>Privacy</li>
-					<li><a href="/privacy-policy">Privacy Policy</a></li>
-					<li><a href="/cookie-policy">Cookie Policy</a></li>
+					<li class=${s.title}>Guides</li>
+					<li><a href="/docs/guides/quick-start">Quick Start</a></li>
+					<li><a href="/docs/guides/complex-example">Complex example</a></li>
+					<li><a href="/docs/guides/styling">Styling</a></li>
+					<li><a href="/docs/guides/custom-hooks">Custom Hooks</a></li>
 				</ul>
 				<ul>
 					<li class=${s.title}>Contribute</li>
@@ -85,6 +86,7 @@ Footer.css = `
     color: #dfdfdf;
     width: 100%;
     padding: 10rem 4rem;
+		box-sizing: border-box;
   }
   .footer nav {
     display: flex;
@@ -99,6 +101,7 @@ Footer.css = `
   .footer ul .title {
     font-size: 2.5rem;
     color: #fff;
+		text-align: left;
   }
   .footer a {
     text-decoration: none;

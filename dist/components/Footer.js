@@ -1,5 +1,5 @@
-import{defineWompo as t,html as i}from"wompo";export default function e({styles:o}){return i`<footer class=${o.footer}>
-		<section class=${o.section}>
+import{defineWompo as t,html as i}from"wompo";export default function o({styles:e}){return i`<footer class=${e.footer}>
+		<section class=${e.section}>
 			<nav>
 				<a href="/" title="Homepage">
 					<svg
@@ -19,20 +19,21 @@ import{defineWompo as t,html as i}from"wompo";export default function e({styles:
 					Wompo
 				</a>
 				<ul>
-					<li class=${o.title}>Learn</li>
+					<li class=${e.title}>Learn</li>
 					<li><a href="/docs/introduction">Overview</a></li>
 					<li><a href="/docs/installation">Installation</a></li>
-					<li><a href="/docs/guides/quick-start">Quick Start</a></li>
 					<li><a href="/docs/hooks">Hooks</a></li>
 					<li><a href="/docs/apis">APIs</a></li>
 				</ul>
 				<ul>
-					<li class=${o.title}>Privacy</li>
-					<li><a href="/privacy-policy">Privacy Policy</a></li>
-					<li><a href="/cookie-policy">Cookie Policy</a></li>
+					<li class=${e.title}>Guides</li>
+					<li><a href="/docs/guides/quick-start">Quick Start</a></li>
+					<li><a href="/docs/guides/complex-example">Complex example</a></li>
+					<li><a href="/docs/guides/styling">Styling</a></li>
+					<li><a href="/docs/guides/custom-hooks">Custom Hooks</a></li>
 				</ul>
 				<ul>
-					<li class=${o.title}>Contribute</li>
+					<li class=${e.title}>Contribute</li>
 					${""}
 					<li>
 						<a href="https://github.com/wompojs/wompo" target="_blank">
@@ -53,12 +54,13 @@ import{defineWompo as t,html as i}from"wompo";export default function e({styles:
 				</ul>
 			</nav>
 		</section>
-	</footer>`}e.css=`
+	</footer>`}o.css=`
   .footer {
     background-color: #573ef6;
     color: #dfdfdf;
     width: 100%;
     padding: 10rem 4rem;
+		box-sizing: border-box;
   }
   .footer nav {
     display: flex;
@@ -73,6 +75,7 @@ import{defineWompo as t,html as i}from"wompo";export default function e({styles:
   .footer ul .title {
     font-size: 2.5rem;
     color: #fff;
+		text-align: left;
   }
   .footer a {
     text-decoration: none;
@@ -113,4 +116,4 @@ import{defineWompo as t,html as i}from"wompo";export default function e({styles:
 			justify-content: center;
 		}
 	}
-`,t(e,{name:"wompo-footer"});
+`,t(o,{name:"wompo-footer"});

@@ -68,7 +68,7 @@ const content: Contents = {
 					<Code
 						code={`
               <script type="module">
-                import * as wompo from 'https://cdn.jsdelivr.net/npm/wompo@1.0.1';
+                import * as wompo from 'https://cdn.jsdelivr.net/npm/wompo@1.0.4';
 
                 window.wompo = wompo; // Optional
               </script>
@@ -85,9 +85,9 @@ const content: Contents = {
               <script type="importmap">
                 {
                   "imports": {
-                    "wompo": "https://cdn.jsdelivr.net/npm/wompo@1.0.1",
+                    "wompo": "https://cdn.jsdelivr.net/npm/wompo@1.0.4",
                     // Add the following line only if using JSX
-                    "wompo/jsx-runtime": "https://cdn.jsdelivr.net/npm/wompo@1.0.1/jsx-runtime.js", 
+                    "wompo/jsx-runtime": "https://cdn.jsdelivr.net/npm/wompo@1.0.4/jsx-runtime.js", 
                   }
                 }
               </script>
@@ -137,8 +137,7 @@ const content: Contents = {
 					/>
 					<p>
 						If saving Wompo in the window object is not ideal, maybe you want to define an{' '}
-						<b>importmap</b> script (replace "[root]" with the path to reach your node_modules
-						folder through the html file):
+						<b>importmap</b> script (replace the path with your own path to reach your file):
 					</p>
 					<Code
 						code={`

@@ -33,7 +33,7 @@ export default function Layout({ styles: s }: WompoProps) {
 					class=${`${s.menu} ${open && s.open}`}
 					menu=${docsRoutes}
 					title=${html`<div style=${{ fontSize: 14, color: '#585858', padding: '2rem' }}>
-						wompo@1.0.1
+						wompo@1.0.4
 					</div>`}
 				/>
 				<div style=${{ width: '100%' }}>
@@ -75,12 +75,13 @@ Layout.css = `
 			background-color: #fff;
 			position: fixed;
 			left: 0;
-			bottom: 0;
 			z-index: 1000;
-			top: unset;
+			top: 60px;
+			bottom: 0;
 			width: 100vw;
 			max-width: 50rem;
 			transform: translateX(-105%);
+			height: unset;
 		}
 		.menu.open {
 			transform: translateX(0);

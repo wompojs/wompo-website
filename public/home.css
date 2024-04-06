@@ -292,3 +292,12 @@ body {
 		padding: 3rem;
 	}
 }
+
+.iub__us-widget {
+	background-color: #573ef6;
+}
+@media screen and (max-width: 480px) {
+	body .iub__us-widget {
+		justify-content: center;
+	}
+}

@@ -10,7 +10,7 @@ import{Fragment as i,jsx as o,jsxs as e}from"wompo/jsx-runtime";import{defineWom
               <\/script>
             `,language:"html"})]})},{title:"jsDeliver",id:"js-deliver",content:e(i,{children:[o("p",{children:"You can install wompo in your application by simply importing the file from jsDeliver:"}),o(t,{code:`
               <script type="module">
-                import * as wompo from 'https://cdn.jsdelivr.net/npm/wompo@1.0.1';
+                import * as wompo from 'https://cdn.jsdelivr.net/npm/wompo@1.0.4';
 
                 window.wompo = wompo; // Optional
               <\/script>
@@ -18,9 +18,9 @@ import{Fragment as i,jsx as o,jsxs as e}from"wompo/jsx-runtime";import{defineWom
               <script type="importmap">
                 {
                   "imports": {
-                    "wompo": "https://cdn.jsdelivr.net/npm/wompo@1.0.1",
+                    "wompo": "https://cdn.jsdelivr.net/npm/wompo@1.0.4",
                     // Add the following line only if using JSX
-                    "wompo/jsx-runtime": "https://cdn.jsdelivr.net/npm/wompo@1.0.1/jsx-runtime.js", 
+                    "wompo/jsx-runtime": "https://cdn.jsdelivr.net/npm/wompo@1.0.4/jsx-runtime.js", 
                   }
                 }
               <\/script>
@@ -30,7 +30,7 @@ import{Fragment as i,jsx as o,jsxs as e}from"wompo/jsx-runtime";import{defineWom
 
                 window.wompo = wompo; // Optional
               <\/script>
-            `,language:"html"}),e("p",{children:["If saving Wompo in the window object is not ideal, maybe you want to define an"," ",o("b",{children:"importmap"}),' script (replace "[root]" with the path to reach your node_modules folder through the html file):']}),o(t,{code:`
+            `,language:"html"}),e("p",{children:["If saving Wompo in the window object is not ideal, maybe you want to define an"," ",o("b",{children:"importmap"})," script (replace the path with your own path to reach your file):"]}),o(t,{code:`
               <script type="importmap">
                 {
                   "imports": {
