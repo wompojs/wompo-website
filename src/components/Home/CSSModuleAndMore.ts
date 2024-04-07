@@ -60,29 +60,8 @@ export default function CSSModuleAndMore({ styles: s }: WompoProps) {
       </p>
       <div class="codePreview">
         <${Code}
-          code=${`
-            function StyledComponent({ styles: s }){
-              return html\`<div class=\${s.container}>...</div>\`;
-            }
-            StyledComponent.css = \`
-              .container {
-                padding: 30px 60px;
-                border-radius: 100px 15px 100px 15px;
-                background-color: #573ef630;
-                position: relative;
-              }
-              .container::after {
-                content: "";
-                position: absolute;
-                width: 50px;
-                height: 50px;
-                background-color: #573ef6;
-                border-radius: 50%;
-                right: -20px;
-                top: -10px;
-              }
-            \`;
-          `}
+          code=${`<span class="hljs-keyword">function</span> <span class="hljs-title function_">StyledComponent</span>(<span class="hljs-params">{ styles: s }</span>){\n  <span class="hljs-keyword">return</span> html\`<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=</span></span><span class="hljs-subst">\${s.container}</span><span class="language-xml"><span class="hljs-tag">&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>\`</span>;\n}\n<span class="hljs-title class_">StyledComponent</span>.<span class="hljs-property">css</span> = <span class="hljs-string">\`\n  .container {\n    padding: 30px 60px;\n    border-radius: 100px 15px 100px 15px;\n    background-color: #573ef630;\n    position: relative;\n  }\n  .container::after {\n    content: "";\n    position: absolute;\n    width: 50px;\n    height: 50px;\n    background-color: #573ef6;\n    border-radius: 50%;\n    right: -20px;\n    top: -10px;\n  }\n\`</span>;`}
+          elaborate=${false}
           language="javascript"
         />
         <div>

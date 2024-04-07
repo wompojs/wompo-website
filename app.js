@@ -11,11 +11,13 @@ app.use(
 			directives: {
 				'script-src': [
 					"'self'",
-					/* '*.iubenda.com',
-					'*.googletagmanager.com', */
+					'*.iubenda.com',
+					'*.googletagmanager.com',
 					"'nonce-WMPnf03nceIJfn22wc3e9h3wwfg3'",
 				],
-				// 'connect-src': ['*.google-analytics.com', '*.iubenda.com'],
+				'connect-src': ['*.google-analytics.com', '*.iubenda.com'],
+				// 'img-src': ["'self'", '*.googletagmanager.com'],
+				'frame-src': ["'self'", '*.iubenda.com'],
 			},
 		},
 	})

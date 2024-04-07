@@ -29,17 +29,8 @@ export default function ExampleSection({ styles: s }: WompoProps) {
 			<div style="position: relative;">
 				<${Code}
 					style=${{ boxShadow: '0 5px 5px #0004' }}
-					code=${`
-            // Create a Counter Component
-            function CounterComponent({ start = 0 }){
-              const [counter, setCounter] = useState(start);
-              const increment = () => setCounter(counter + 1)
-              return html\`<button @click=\${increment}>
-                \${counter}
-              </button>\`;
-            }
-
-          `}
+					elaborate=${false}
+					code=${`<span class="hljs-comment">// Create a Counter Component</span>\n<span class="hljs-keyword">function</span> <span class="hljs-title function_">CounterComponent</span>(<span class="hljs-params">{ start = <span class="hljs-number">0</span> }</span>){\n  <span class="hljs-keyword">const</span> [counter, setCounter] = <span class="hljs-title function_">useState</span>(start);\n  <span class="hljs-keyword">const</span> <span class="hljs-title function_">increment</span> = (<span class="hljs-params"></span>) =&gt; <span class="hljs-title function_">setCounter</span>(counter + <span class="hljs-number">1</span>)\n  <span class="hljs-keyword">return</span> html\`<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=</span></span><span class="hljs-subst">\${increment}</span><span class="language-xml"><span class="hljs-tag">&gt;</span>\n    </span><span class="hljs-subst">\${counter}</span><span class="language-xml">\n  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>\`</span>;\n}`}
 					language="js"
 				/>
 				<${Code}
@@ -49,14 +40,9 @@ export default function ExampleSection({ styles: s }: WompoProps) {
 						boxShadow: '0 5px 5px #0004',
 						zIndex: '2',
 					}}
+					elaborate=${false}
 					margin="0"
-					code=${`
-            <!-- Render it everywhere infinite times -->
-            <counter-component start="5"><counter-component>
-            <counter-component start="22"><counter-component>
-            <counter-component start="1"><counter-component>
-            <counter-component><counter-component>
-          `}
+					code=${`<span class="hljs-comment">&lt;!-- Render it everywhere infinite times --&gt;</span>\n<span class="hljs-tag">&lt;<span class="hljs-name">counter-component</span> <span class="hljs-attr">start</span>=<span class="hljs-string">"5"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">counter-component</span>&gt;</span>\n<span class="hljs-tag">&lt;<span class="hljs-name">counter-component</span> <span class="hljs-attr">start</span>=<span class="hljs-string">"22"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">counter-component</span>&gt;</span>\n<span class="hljs-tag">&lt;<span class="hljs-name">counter-component</span> <span class="hljs-attr">start</span>=<span class="hljs-string">"1"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">counter-component</span>&gt;</span>\n<span class="hljs-tag">&lt;<span class="hljs-name">counter-component</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">counter-component</span>&gt;</span>`}
 					language="html"
 				/>
 			</div>

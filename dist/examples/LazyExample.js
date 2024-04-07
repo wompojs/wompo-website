@@ -1,4 +1,16 @@
-import{lazy as m,html as i,defineWompo as l}from"wompo";function a(n){return new Promise(o=>{setTimeout(o,5e3)}).then(()=>n)}const e=m(()=>a(import("./LazyComponent.js")));export default function t(){return i`
+import { lazy, html, defineWompo } from "wompo";
+function simulateBigComponent(promise) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, 5e3);
+  }).then(() => promise);
+}
+const LazyComponent = lazy(() => simulateBigComponent(import("./LazyComponent.js")));
+export default function LazyExample() {
+  return html`
     <p>This content is static. Below me the lazy component will be rendered!</p>
-    <${e}>I should be blue...</${e}>
-  `}l(t,{name:"lazy-example"});
+    <${LazyComponent}>I should be blue...</${LazyComponent}>
+  `;
+}
+defineWompo(LazyExample, {
+  name: "lazy-example"
+});

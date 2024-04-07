@@ -1,4 +1,4 @@
-import { type WompoProps, defineWompo, html, type RenderHtml } from 'wompo';
+import { type WompoProps, defineWompo, html, type RenderHtml, useRef } from 'wompo';
 
 interface HeaderProps extends WompoProps {
 	menuIcon?: RenderHtml;
@@ -31,28 +31,19 @@ export default function Header({ styles: s, menuIcon }: HeaderProps) {
 				<li>
 					<a href="/docs/introduction">Docs</a>
 				</li>
-				${
-					/*<li>
-					<a class=${s.link} href="https://opencollective.com/wompo" target="_blank">
+				<li>
+					<a class=${s.link} href="https://ko-fi.com/wompo" target="_blank">
 						Donate
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="16"
-							height="16"
-							fill="currentColor"
-							viewBox="0 0 16 16"
-						>
-							<path
-								fill-opacity=".4"
-								d="M12.995 8.195c0 .937-.312 1.912-.78 2.693l1.99 1.99c.976-1.327 1.6-2.966 1.6-4.683 0-1.795-.624-3.434-1.561-4.76l-2.068 2.028c.468.781.78 1.679.78 2.732z"
-							/>
-							<path
-								d="M8 13.151a4.995 4.995 0 1 1 0-9.99c1.015 0 1.951.273 2.732.82l1.95-2.03a7.805 7.805 0 1 0 .04 12.449l-1.951-2.03a5.07 5.07 0 0 1-2.732.781z"
-							/>
-						</svg>
+						<img
+							height="27"
+							width="27"
+							style="border:0px;height:27px;"
+							src="/kofi.png"
+							border="0"
+							alt="Support Wompo"
+						/>
 					</a>
-				</li>*/ ''
-				}
+				</li>
 				<li>
 					<a class="${s.link}" href="https://github.com/wompojs/wompo" target="_blank">
 						Github
@@ -121,6 +112,7 @@ Header.css = `
 		display: flex;
 		align-items: center;
 		gap: 10px;
+		cursor: pointer;
 	}
 `;
 

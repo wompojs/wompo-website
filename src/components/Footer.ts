@@ -23,7 +23,7 @@ export default function Footer({ styles: s }: WompoProps) {
 				</a>
 				<ul>
 					<li class=${s.title}>Learn</li>
-					<li><a href="/docs/introduction">Overview</a></li>
+					<li><a href="/docs/introduction">Introduction</a></li>
 					<li><a href="/docs/installation">Installation</a></li>
 					<li><a href="/docs/hooks">Hooks</a></li>
 					<li><a href="/docs/apis">APIs</a></li>
@@ -35,29 +35,63 @@ export default function Footer({ styles: s }: WompoProps) {
 					<li><a href="/docs/guides/styling">Styling</a></li>
 					<li><a href="/docs/guides/custom-hooks">Custom Hooks</a></li>
 				</ul>
+				${
+					/*<ul>
+					<li class=${s.title}>Privacy</li>
+					<li>
+						<a
+							href="https://www.iubenda.com/privacy-policy/24984791"
+							class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe "
+							title="Privacy Policy "
+							>Privacy Policy</a
+						>
+						<script type="text/javascript" nonce="WMPnf03nceIJfn22wc3e9h3wwfg3">
+							(function (w, d) {
+								var loader = function () {
+									var s = d.createElement('script'),
+										tag = d.getElementsByTagName('script')[0];
+									s.src = 'https://cdn.iubenda.com/iubenda.js';
+									tag.parentNode.insertBefore(s, tag);
+								};
+								if (w.addEventListener) {
+									w.addEventListener('load', loader, false);
+								} else if (w.attachEvent) {
+									w.attachEvent('onload', loader);
+								} else {
+									w.onload = loader;
+								}
+							})(window, document);
+						</script>
+					</li>
+					<li>
+						<a
+							href="https://www.iubenda.com/privacy-policy/24984791/cookie-policy"
+							class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe "
+							title="Cookie Policy"
+							>Cookie Policy</a
+						>
+						<script type="text/javascript" nonce="WMPnf03nceIJfn22wc3e9h3wwfg3">
+							(function (w, d) {
+								var loader = function () {
+									var s = d.createElement('script'),
+										tag = d.getElementsByTagName('script')[0];
+									s.src = 'https://cdn.iubenda.com/iubenda.js';
+									tag.parentNode.insertBefore(s, tag);
+								};
+								if (w.addEventListener) {
+									w.addEventListener('load', loader, false);
+								} else if (w.attachEvent) {
+									w.attachEvent('onload', loader);
+								} else {
+									w.onload = loader;
+								}
+							})(window, document);
+						</script>
+					</li>
+				</ul>*/ ''
+				}
 				<ul>
 					<li class=${s.title}>Contribute</li>
-					${
-						/*<li><a href="https://opencollective.com/wompo" target="_blank">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="16"
-								height="16"
-								fill="currentColor"
-								viewBox="0 0 16 16"
-							>
-								<path
-									fill-opacity=".4"
-									d="M12.995 8.195c0 .937-.312 1.912-.78 2.693l1.99 1.99c.976-1.327 1.6-2.966 1.6-4.683 0-1.795-.624-3.434-1.561-4.76l-2.068 2.028c.468.781.78 1.679.78 2.732z"
-								/>
-								<path
-									d="M8 13.151a4.995 4.995 0 1 1 0-9.99c1.015 0 1.951.273 2.732.82l1.95-2.03a7.805 7.805 0 1 0 .04 12.449l-1.951-2.03a5.07 5.07 0 0 1-2.732.781z"
-								/>
-							</svg>
-							Donate
-							</a>
-						</li>*/ ''
-					}
 					<li>
 						<a href="https://github.com/wompojs/wompo" target="_blank">
 							<svg
@@ -72,6 +106,19 @@ export default function Footer({ styles: s }: WompoProps) {
 								/>
 							</svg>
 							Github
+						</a>
+					</li>
+					<li>
+						<a href="https://ko-fi.com/wompo" target="_blank">
+							<img
+								height="27"
+								width="27"
+								style="border:0px;height:27px;width:27px"
+								src="/kofi.png"
+								border="0"
+								alt="Support Wompo"
+							/>
+							Donate
 						</a>
 					</li>
 				</ul>
@@ -140,6 +187,7 @@ Footer.css = `
 		}
 		.footer nav li {
 			text-align: center;
+			margin: 3px 0;
 		}
 		.footer nav li a {
 			justify-content: center;

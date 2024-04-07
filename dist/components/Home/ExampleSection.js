@@ -1,58 +1,65 @@
-import{defineWompo as r,html as i}from"wompo";import n from"../Code.js";import o from"./CounterComponent.js";export default function e({styles:t}){return i`<section class="section">
-		<div class=${t.container}>
+import { defineWompo, html } from "wompo";
+import Code from "../Code.js";
+import CounterComponent from "./CounterComponent.js";
+export default function ExampleSection({ styles: s }) {
+  return html`<section class="section">
+		<div class=${s.container}>
 			<div style="position: relative;">
-				<${o}
+				<${CounterComponent}
 					initialCount=${5}
-					class=${t.counter}
-					style=${{transform:"rotate(45deg)",top:20,left:30}}
+					class=${s.counter}
+					style=${{ transform: "rotate(45deg)", top: 20, left: 30 }}
 				/>
-				<${o}
+				<${CounterComponent}
 					initialCount=${22}
-					class=${t.counter}
-					style=${{transform:"rotate(-20deg)",top:50,right:30}}
+					class=${s.counter}
+					style=${{ transform: "rotate(-20deg)", top: 50, right: 30 }}
 				/>
-				<${o}
+				<${CounterComponent}
 					initialCount=${1}
-					class=${t.counter}
-					style=${{transform:"rotate(10deg)",bottom:10,right:30}}
+					class=${s.counter}
+					style=${{ transform: "rotate(10deg)", bottom: 10, right: 30 }}
 				/>
-				<${o}
-					class=${t.counter}
-					style=${{transform:"translate(-50%, -50%)",top:"50%",left:"50%"}}
+				<${CounterComponent}
+					class=${s.counter}
+					style=${{ transform: "translate(-50%, -50%)", top: "50%", left: "50%" }}
 				/>
 			</div>
 			<div style="position: relative;">
-				<${n}
-					style=${{boxShadow:"0 5px 5px #0004"}}
-					code=${`
-            // Create a Counter Component
-            function CounterComponent({ start = 0 }){
-              const [counter, setCounter] = useState(start);
-              const increment = () => setCounter(counter + 1)
-              return html\`<button @click=\${increment}>
-                \${counter}
-              </button>\`;
-            }
-
-          `}
+				<${Code}
+					style=${{ boxShadow: "0 5px 5px #0004" }}
+					elaborate=${false}
+					code=${`<span class="hljs-comment">// Create a Counter Component</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">CounterComponent</span>(<span class="hljs-params">{ start = <span class="hljs-number">0</span> }</span>){
+  <span class="hljs-keyword">const</span> [counter, setCounter] = <span class="hljs-title function_">useState</span>(start);
+  <span class="hljs-keyword">const</span> <span class="hljs-title function_">increment</span> = (<span class="hljs-params"></span>) =&gt; <span class="hljs-title function_">setCounter</span>(counter + <span class="hljs-number">1</span>)
+  <span class="hljs-keyword">return</span> html\`<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=</span></span><span class="hljs-subst">\${increment}</span><span class="language-xml"><span class="hljs-tag">&gt;</span>
+    </span><span class="hljs-subst">\${counter}</span><span class="language-xml">
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>\`</span>;
+}`}
 					language="js"
 				/>
-				<${n}
-					class=${t.codeAbove}
-					style=${{position:"absolute",boxShadow:"0 5px 5px #0004",zIndex:"2"}}
+				<${Code}
+					class=${s.codeAbove}
+					style=${{
+    position: "absolute",
+    boxShadow: "0 5px 5px #0004",
+    zIndex: "2"
+  }}
+					elaborate=${false}
 					margin="0"
-					code=${`
-            <!-- Render it everywhere infinite times -->
-            <counter-component start="5"><counter-component>
-            <counter-component start="22"><counter-component>
-            <counter-component start="1"><counter-component>
-            <counter-component><counter-component>
-          `}
+					code=${`<span class="hljs-comment">&lt;!-- Render it everywhere infinite times --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">counter-component</span> <span class="hljs-attr">start</span>=<span class="hljs-string">"5"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">counter-component</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">counter-component</span> <span class="hljs-attr">start</span>=<span class="hljs-string">"22"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">counter-component</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">counter-component</span> <span class="hljs-attr">start</span>=<span class="hljs-string">"1"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">counter-component</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">counter-component</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">counter-component</span>&gt;</span>`}
 					language="html"
 				/>
 			</div>
 		</div>
-	</section>`}e.css=`
+	</section>`;
+}
+ExampleSection.css = `
   .container {
     display: flex;
     gap: 5rem;
@@ -89,4 +96,5 @@ import{defineWompo as r,html as i}from"wompo";import n from"../Code.js";import o
 			min-height: 40rem;
 		}
 	}
-`,r(e,{name:"example-section"});
+`;
+defineWompo(ExampleSection, { name: "example-section" });

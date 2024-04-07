@@ -78,7 +78,7 @@ export const docsRoutes: DocRoute[] = [
 				title: 'Custom hooks',
 				link: '/docs/guides/custom-hooks',
 				path: 'custom-hooks',
-				pagePath: './pages/docs/CustomHooks.js',
+				pagePath: './pages/docs/guides/CustomHooks.js',
 				meta: {
 					title: 'Custom hooks',
 					description: 'Learn how to create your own custom hook with Wompo.',
