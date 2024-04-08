@@ -31,7 +31,7 @@ const content: Contents = {
 						has a super-common way of building components (the React way), so is it worth to learn
 						completely new concepts and libraries to just save a couple of milliseconds and write
 						more code to achieve the same result? Are months of studying and experimenting worth to
-						get the same result? We think not. There is no need to learn Javascript classses,
+						get the same result? We think not. There is no need to learn Javascript classes,
 						understaning the <b>this</b> keyword, learn <b>Typescript</b> (althought it is natively
 						supported, because Wompo is built with it): the only thing you must know is basic HTML,
 						basic CSS, and basic JS. That's it. Wompo is accessible by <b>completely begginers</b>{' '}
@@ -55,8 +55,7 @@ const content: Contents = {
 								already know how to build the 80% of your components.
 							</li>
 							<li>
-								<b>Performant</b> - Faster than React, Preact, and Atomico, and only slightly slower
-								than Lit.
+								<b>Performant</b> - Faster than React and Preact, and only slightly slower than Lit.
 							</li>
 							<li>
 								<b>Built-in CSS modules</b> - With Wompo there is no need to worry about style
@@ -146,7 +145,7 @@ const content: Contents = {
 								</>
 							}
 						`}
-						language='js'
+						language="js"
 					/>
 					<p>In React this will give a different result compared to Wompo, more specifically:</p>
 					<Code
@@ -169,15 +168,15 @@ const content: Contents = {
 								</custom-component>
 							</div>
 						`}
-						language='html'
+						language="html"
 					/>
 					<p>
 						That's the only main difference and the only thing you have to keep in mind while
 						developing your UI. For more about Web Components, you can find everything in details on
 						the{' '}
 						<a
-							target='_blank'
-							href='https://developer.mozilla.org/en-US/docs/Web/API/Web_components'
+							target="_blank"
+							href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components"
 						>
 							MDN Documentation
 						</a>

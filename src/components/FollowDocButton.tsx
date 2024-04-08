@@ -60,6 +60,7 @@ FollowDocButton.css = `
   :host {
     display: block;
     width: 100%;
+		cursor: pointer;
   }
   :host:hover .button {
     background-color: #E3DEFE;
