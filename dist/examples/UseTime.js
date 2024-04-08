@@ -1,27 +1,5 @@
-import { useRef, useEffect, html, defineWompo } from "wompo";
-function useTime() {
-  const timeRef = useRef(0);
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      timeRef.current += 1;
-    }, 1e3);
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, []);
-  return timeRef;
-}
-export default function UseTime() {
-  const timeSinceFirstRender = useTime();
-  const showTime = () => {
-    alert(`I was rendered ${timeSinceFirstRender.current} seconds ago`);
-  };
-  return html`
-		<button @click=${showTime}>
+import{useRef as o,useEffect as r,html as s,defineWompo as c}from"wompo";function i(){const e=o(0);return r(()=>{const t=setInterval(()=>{e.current+=1},1e3);return()=>{clearInterval(t)}},[]),e}export default function n(){const e=i();return s`
+		<button @click=${()=>{alert(`I was rendered ${e.current} seconds ago`)}}>
 			If you click me I'll show you how many seconds ago I was rendered!
 		</button>
-	`;
-}
-defineWompo(UseTime, {
-  name: "use-time-hook-example"
-});
+	`}c(n,{name:"use-time-hook-example"});

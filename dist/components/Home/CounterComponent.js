@@ -1,10 +1,4 @@
-import { defineWompo, html, useState } from "wompo";
-export default function CounterComponent({ initialCount = 0 }) {
-  const [counter, setCounter] = useState(initialCount);
-  const increment = () => setCounter(counter + 1);
-  return html`<button @click=${increment}>${counter}</button>`;
-}
-CounterComponent.css = `
+import{defineWompo as r,html as c,useState as u}from"wompo";export default function e({initialCount:o=0}){const[t,n]=u(o);return c`<button @click=${()=>n(t+1)}>${t}</button>`}e.css=`
   button {
     font-size: 5rem;
     border-radius: 10px;
@@ -20,5 +14,4 @@ CounterComponent.css = `
     box-shadow: 3px 3px 3px #e2defd;
     touch-action: manipulation;
   }
-`;
-defineWompo(CounterComponent, { shadow: true, cssModule: false, name: "home-counter" });
+`,r(e,{shadow:!0,cssModule:!1,name:"home-counter"});

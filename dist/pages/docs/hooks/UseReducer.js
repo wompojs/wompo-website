@@ -1,101 +1,6 @@
-import { Fragment, jsx, jsxs } from "wompo/jsx-runtime";
-import { defineWompo } from "wompo";
-import getPageLayout from "../../../utils/getPageLayout.js";
-import Code from "../../../components/Code.js";
-import { Link } from "wompo-router";
-import Note from "../../../components/Note.js";
-import Zoo from "../../../examples/Zoo.js";
-const content = {
-  title: "useReducer hook",
-  description: /* @__PURE__ */ jsxs(Fragment, { children: [
-    "How to use the ",
-    /* @__PURE__ */ jsx("code", { children: "useReducer" }),
-    " hook to better manage the state of your component."
-  ] }),
-  sections: [
-    {
-      title: "Description",
-      id: "description",
-      content: /* @__PURE__ */ jsxs(Fragment, { children: [
-        /* @__PURE__ */ jsxs("p", { children: [
-          "The ",
-          /* @__PURE__ */ jsx("code", { children: "useReducer" }),
-          " hook is an alternative approach to the",
-          " ",
-          /* @__PURE__ */ jsx(Link, { to: "/docs/hooks/useState", children: "useState" }),
-          " hook, but uses the redux-like state management. If you like and you're used to the ",
-          /* @__PURE__ */ jsx("b", { children: "Redux" }),
-          " state management system, you will surely like this hook."
-        ] }),
-        /* @__PURE__ */ jsxs("p", { children: [
-          "Common use cases for this hook are:",
-          /* @__PURE__ */ jsxs("ul", { children: [
-            /* @__PURE__ */ jsx("li", { children: "Complex state management" }),
-            /* @__PURE__ */ jsx("li", { children: "Handling a stateful variable that is an object" }),
-            /* @__PURE__ */ jsxs("li", { children: [
-              "Moving the state logic ",
-              /* @__PURE__ */ jsx("b", { children: "outside" }),
-              " of the component"
-            ] })
-          ] })
-        ] }),
-        /* @__PURE__ */ jsxs("p", { children: [
-          "By using a ",
-          /* @__PURE__ */ jsx("b", { children: "reducer" }),
-          " to handle all states modifications, you will be sure that you can only perform specific actions on the state, and not everything you want (like you can actually do with the useState hook)."
-        ] }),
-        /* @__PURE__ */ jsx("p", { children: "Like the useState hook, when the state is modified the component will be re-rendered." }),
-        /* @__PURE__ */ jsx(Note, { severity: "info", children: "Although the useReducer hook adds more control, more stability, and more predictability to the state, it also adds more complexity to your code. Try to use the useReducer hook only when the state is complex and you want another eventual developer (or the yourself of the future) to only perform specific actions on it." })
-      ] })
-    },
-    {
-      title: "Usage",
-      id: "usage",
-      content: /* @__PURE__ */ jsxs(Fragment, { children: [
-        /* @__PURE__ */ jsx(
-          Code,
-          {
-            code: `
+import{Fragment as o,jsx as e,jsxs as t}from"wompo/jsx-runtime";import{defineWompo as s}from"wompo";import u from"../../../utils/getPageLayout.js";import i from"../../../components/Code.js";import{Link as n}from"wompo-router";import a from"../../../components/Note.js";import c from"../../../examples/Zoo.js";const d={title:"useReducer hook",description:t(o,{children:["How to use the ",e("code",{children:"useReducer"})," hook to better manage the state of your component."]}),sections:[{title:"Description",id:"description",content:t(o,{children:[t("p",{children:["The ",e("code",{children:"useReducer"})," hook is an alternative approach to the"," ",e(n,{to:"/docs/hooks/useState",children:"useState"})," hook, but uses the redux-like state management. If you like and you're used to the ",e("b",{children:"Redux"})," state management system, you will surely like this hook."]}),t("p",{children:["Common use cases for this hook are:",t("ul",{children:[e("li",{children:"Complex state management"}),e("li",{children:"Handling a stateful variable that is an object"}),t("li",{children:["Moving the state logic ",e("b",{children:"outside"})," of the component"]})]})]}),t("p",{children:["By using a ",e("b",{children:"reducer"})," to handle all states modifications, you will be sure that you can only perform specific actions on the state, and not everything you want (like you can actually do with the useState hook)."]}),e("p",{children:"Like the useState hook, when the state is modified the component will be re-rendered."}),e(a,{severity:"info",children:"Although the useReducer hook adds more control, more stability, and more predictability to the state, it also adds more complexity to your code. Try to use the useReducer hook only when the state is complex and you want another eventual developer (or the yourself of the future) to only perform specific actions on it."})]})},{title:"Usage",id:"usage",content:t(o,{children:[e(i,{code:`
 							const [currentState, dispatch] = useReducer(reducer, initialState);
-						`,
-            language: "js"
-          }
-        ),
-        /* @__PURE__ */ jsxs("p", { children: [
-          "The ",
-          /* @__PURE__ */ jsx("code", { children: "useReducer" }),
-          " hook accepts two parameters: the ",
-          /* @__PURE__ */ jsx("b", { children: "reducer" }),
-          " function and the initial state (usually an object). The reducer function is a function that has two arguments: the current state, and the ",
-          /* @__PURE__ */ jsx("b", { children: "action" }),
-          ". The action is a simple object that",
-          " ",
-          `usually have the "type" key (it's a convention, but you're free to use whatever you want), which is a string corresponding to the action you want to perform to modify the state. The reducer must return the new state or a `,
-          /* @__PURE__ */ jsx("b", { children: "portion" }),
-          " of it.",
-          /* @__PURE__ */ jsx("br", {}),
-          "The action is what you will pass as the first argument when you call the ",
-          /* @__PURE__ */ jsx("b", { children: "dispatch" }),
-          " ",
-          "function.",
-          /* @__PURE__ */ jsx("br", {}),
-          "Right now everything will probably sound confusing, but i'll guarantee that everything will be clearer once you see an example, so let's go straight to it."
-        ] })
-      ] })
-    },
-    {
-      title: "Example: zoo population",
-      id: "zoo-population",
-      content: /* @__PURE__ */ jsxs(Fragment, { children: [
-        /* @__PURE__ */ jsxs("p", { children: [
-          "In this example we will keep track of a zoo population using the ",
-          /* @__PURE__ */ jsx("code", { children: "useReducer" }),
-          "hook."
-        ] }),
-        /* @__PURE__ */ jsx(
-          Code,
-          {
-            code: `
+						`,language:"js"}),t("p",{children:["The ",e("code",{children:"useReducer"})," hook accepts two parameters: the ",e("b",{children:"reducer"})," function and the initial state (usually an object). The reducer function is a function that has two arguments: the current state, and the ",e("b",{children:"action"}),". The action is a simple object that"," ",`usually have the "type" key (it's a convention, but you're free to use whatever you want), which is a string corresponding to the action you want to perform to modify the state. The reducer must return the new state or a `,e("b",{children:"portion"})," of it.",e("br",{}),"The action is what you will pass as the first argument when you call the ",e("b",{children:"dispatch"})," ","function.",e("br",{}),"Right now everything will probably sound confusing, but i'll guarantee that everything will be clearer once you see an example, so let's go straight to it."]})]})},{title:"Example: zoo population",id:"zoo-population",content:t(o,{children:[t("p",{children:["In this example we will keep track of a zoo population using the ",e("code",{children:"useReducer"}),"hook."]}),e(i,{code:`
               import { useReducer, html, defineWompo } from 'wompo';
 
               function reducer(state, action){
@@ -134,41 +39,7 @@ const content = {
                   <p>Bears: \${zoo.bears} <button @click=\${addBear}>Add</button></p>
                 \`;
               }
-            `,
-            language: "js"
-          }
-        ),
-        /* @__PURE__ */ jsxs("p", { children: [
-          "Result:",
-          /* @__PURE__ */ jsx(Zoo, {}),
-          /* @__PURE__ */ jsxs(Note, { severity: "info", children: [
-            "Notice how in the reducer you only return a ",
-            /* @__PURE__ */ jsx("b", { children: "portion" }),
-            " of the state, and not the whole updated state. Under the hood, Wompo will ",
-            /* @__PURE__ */ jsx("b", { children: "merge" }),
-            " the returned value with the whole state. Of course, you can even return the whole state using the spread operator."
-          ] })
-        ] }),
-        /* @__PURE__ */ jsx("p", { children: /* @__PURE__ */ jsxs(Note, { severity: "warning", children: [
-          "The possibility to return a portion of the state only applies to ",
-          /* @__PURE__ */ jsx("b", { children: "objects" }),
-          ", not arrays nor primitive values."
-        ] }) })
-      ] })
-    },
-    {
-      title: "Example: shopping cart",
-      id: "shopping-cart-example",
-      content: /* @__PURE__ */ jsxs(Fragment, { children: [
-        /* @__PURE__ */ jsxs("p", { children: [
-          "In this example we will use the ",
-          /* @__PURE__ */ jsx("code", { children: "useReducer" }),
-          " hook to handle a shopping cart."
-        ] }),
-        /* @__PURE__ */ jsx(
-          Code,
-          {
-            code: `
+            `,language:"js"}),t("p",{children:["Result:",e(c,{}),t(a,{severity:"info",children:["Notice how in the reducer you only return a ",e("b",{children:"portion"})," of the state, and not the whole updated state. Under the hood, Wompo will ",e("b",{children:"merge"})," the returned value with the whole state. Of course, you can even return the whole state using the spread operator."]})]}),e("p",{children:t(a,{severity:"warning",children:["The possibility to return a portion of the state only applies to ",e("b",{children:"objects"}),", not arrays nor primitive values."]})})]})},{title:"Example: shopping cart",id:"shopping-cart-example",content:t(o,{children:[t("p",{children:["In this example we will use the ",e("code",{children:"useReducer"})," hook to handle a shopping cart."]}),e(i,{code:`
 							import { useReducer, html, defineWompo } from 'wompo';
 
               function reducer(state, action){
@@ -224,24 +95,4 @@ const content = {
               }
 
               defineWompo(ShoppingCart);
-						`,
-            language: "js"
-          }
-        ),
-        /* @__PURE__ */ jsxs("p", { children: [
-          "Using a reducer in this example will ensure that only specific operations can be performed on the state. For example, the developer will not be able to completely empty the cart, like you could have done using the",
-          " ",
-          /* @__PURE__ */ jsx(Link, { to: "/docs/hooks/useState", children: "useState" }),
-          ' hook. If you want to implement this functionality, you only have to modify the reducer and maybe add the action "empty_cart".'
-        ] }),
-        /* @__PURE__ */ jsx(Note, { severity: "info", children: 'Notice how, using reducers, you "move" the state logic outside of the component. This allows to completely separate the state logic from the actual component.' })
-      ] })
-    }
-  ]
-};
-export default function UseReducer() {
-  return getPageLayout(content);
-}
-defineWompo(UseReducer, {
-  name: "usereducer-hook-page"
-});
+						`,language:"js"}),t("p",{children:["Using a reducer in this example will ensure that only specific operations can be performed on the state. For example, the developer will not be able to completely empty the cart, like you could have done using the"," ",e(n,{to:"/docs/hooks/useState",children:"useState"}),' hook. If you want to implement this functionality, you only have to modify the reducer and maybe add the action "empty_cart".']}),e(a,{severity:"info",children:'Notice how, using reducers, you "move" the state logic outside of the component. This allows to completely separate the state logic from the actual component.'})]})}]};export default function r(){return u(d)}s(r,{name:"usereducer-hook-page"});

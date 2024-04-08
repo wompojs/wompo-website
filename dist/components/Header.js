@@ -1,9 +1,7 @@
-import { defineWompo, html } from "wompo";
-export default function Header({ styles: s, menuIcon }) {
-  return html`
-		<header class=${s.header}>
-			<div class=${s.logo}>
-				${menuIcon && menuIcon}
+import{defineWompo as t,html as i}from"wompo";export default function o({styles:e,menuIcon:r}){return i`
+		<header class=${e.header}>
+			<div class=${e.logo}>
+				${r&&r}
 				<a href="/" title="Homepage">
 					<svg
 						width="40px"
@@ -27,7 +25,7 @@ export default function Header({ styles: s, menuIcon }) {
 					<a href="/docs/introduction">Docs</a>
 				</li>
 				<li>
-					<a class=${s.link} href="https://ko-fi.com/wompo" target="_blank">
+					<a class=${e.link} href="https://ko-fi.com/wompo" target="_blank">
 						Donate
 						<img
 							height="27"
@@ -40,7 +38,7 @@ export default function Header({ styles: s, menuIcon }) {
 					</a>
 				</li>
 				<li>
-					<a class="${s.link}" href="https://github.com/wompojs/wompo" target="_blank">
+					<a class="${e.link}" href="https://github.com/wompojs/wompo" target="_blank">
 						Github
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -57,9 +55,7 @@ export default function Header({ styles: s, menuIcon }) {
 				</li>
 			</ul>
 		</header>
-	`;
-}
-Header.css = `
+	`}o.css=`
 	:host {
 		display: block;
 		position: sticky;
@@ -114,7 +110,4 @@ Header.css = `
 			display: none;
 		}
 	}
-`;
-defineWompo(Header, {
-  name: "wompo-header"
-});
+`,t(o,{name:"wompo-header"});
