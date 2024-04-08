@@ -95,9 +95,10 @@ const content: Contents = {
 						The <code>useRef</code> hook will solve this problem.
 					</p>
 					<Note severity='warning'>
-						<b>Warning</b>: Seeing a "<b>let</b>" variable inside of your component should always
-						trigger some alarms. The only place you should use "<b>let</b>" variables instead of "
-						<b>const</b>" variables is (maybe) inside other functions (events, etc.).
+						<b>Warning</b>: Seeing a "<b>let</b>" or "<b>var</b>" variable declaration inside of
+						your component should always trigger some alarms. The only place you should use "
+						<b>let</b>" or "<b>var</b>" variables instead of "<b>const</b>" variables is (maybe)
+						inside other functions (events, etc.).
 					</Note>
 					<p>
 						The <code>useRef</code> hook has also a second use (which is usually the most common):

@@ -1,3 +1,68 @@
-import{Fragment as o,jsx as e,jsxs as t}from"wompo/jsx-runtime";import{defineWompo as c}from"wompo";import s from"../../../utils/getPageLayout.js";import a from"../../../components/Code.js";import{Link as f}from"wompo-router";import n from"../../../components/Note.js";const r={title:"useLayoutEffect hook",description:t(o,{children:["How to use the ",e("code",{children:"useLayoutEffect"})," hook to create layout effect."]}),sections:[{title:"Description",id:"description",content:t(o,{children:[t("p",{children:["The ",e("code",{children:"useLayoutEffect"})," hook works exactly like the"," ",e(f,{to:"/docs/hooks/useEffect",children:"useEffect"})," hook, with only one exceptions: unlike useEffect, it works ",e("b",{children:"synchronously"}),", meaning that the effect will be executed immediately after the render operations, and not when the browser's call stack is empty. This is quite useful when you want to see instant changes in your UI when something happens in your component."]}),t(n,{severity:"info",style:{margin:"2rem 0"},children:[e("b",{children:"Note:"}),` The fact that that the useLayoutEffect callback runs synchronously doesn't mean it will be executed "inline". The callback function will still be executed when the component already finished rendering a first time.`]}),e(n,{severity:"warning",children:"Using the useLayoutEffect hook will make your component take more time to render and will delay the moment where you can see visual changes in your component, especially with heavy operations. Use it only when strictly necessary and with caution."})]})},{title:"Usage",id:"usage",content:t(o,{children:[e(a,{code:`
+import { Fragment, jsx, jsxs } from "wompo/jsx-runtime";
+import { defineWompo } from "wompo";
+import getPageLayout from "../../../utils/getPageLayout.js";
+import Code from "../../../components/Code.js";
+import { Link } from "wompo-router";
+import Note from "../../../components/Note.js";
+const content = {
+  title: "useLayoutEffect hook",
+  description: /* @__PURE__ */ jsxs(Fragment, { children: [
+    "How to use the ",
+    /* @__PURE__ */ jsx("code", { children: "useLayoutEffect" }),
+    " hook to create layout effect."
+  ] }),
+  sections: [
+    {
+      title: "Description",
+      id: "description",
+      content: /* @__PURE__ */ jsxs(Fragment, { children: [
+        /* @__PURE__ */ jsxs("p", { children: [
+          "The ",
+          /* @__PURE__ */ jsx("code", { children: "useLayoutEffect" }),
+          " hook works exactly like the",
+          " ",
+          /* @__PURE__ */ jsx(Link, { to: "/docs/hooks/useEffect", children: "useEffect" }),
+          " hook, with only one exception: unlike useEffect, it works ",
+          /* @__PURE__ */ jsx("b", { children: "synchronously" }),
+          ", meaning that the effect will be executed immediately after the render operations, and not when the browser's call stack is empty. This is quite useful when you want to see instant changes in your UI when something happens in your component."
+        ] }),
+        /* @__PURE__ */ jsxs(Note, { severity: "info", style: { margin: "2rem 0" }, children: [
+          /* @__PURE__ */ jsx("b", { children: "Note:" }),
+          ` The fact that that the useLayoutEffect callback runs synchronously doesn't mean it will be executed "inline". The callback function will still be executed when the component already finished rendering a first time.`
+        ] }),
+        /* @__PURE__ */ jsx(Note, { severity: "warning", children: "Using the useLayoutEffect hook will make your component take more time to render and will delay the moment where you can see visual changes in your component, especially with heavy operations. Use it only when strictly necessary and with caution." })
+      ] })
+    },
+    {
+      title: "Usage",
+      id: "usage",
+      content: /* @__PURE__ */ jsxs(Fragment, { children: [
+        /* @__PURE__ */ jsx(
+          Code,
+          {
+            code: `
 							useLayoutEffect(effectFn, dependencies);
-						`,language:"js"}),t("p",{children:["The ",e("code",{children:"useLayoutEffect"})," hook accepts an effect callback function and a list of dependencies. The effect function will be executed after the first render and whenever one of the listed dependencies changes."]})]})}]};export default function i(){return s(r)}c(i,{name:"uselayouteffect-hook-page"});
+						`,
+            language: "js"
+          }
+        ),
+        /* @__PURE__ */ jsxs("p", { children: [
+          "The ",
+          /* @__PURE__ */ jsx("code", { children: "useLayoutEffect" }),
+          " hook accepts an effect callback function and a list of dependencies. The effect function will be executed after the first render and whenever one of the listed dependencies changes."
+        ] }),
+        /* @__PURE__ */ jsxs("p", { children: [
+          "For more, check the ",
+          /* @__PURE__ */ jsx(Link, { to: "/docs/hooks/useEffect", children: "useEffect" }),
+          " hook documentation."
+        ] })
+      ] })
+    }
+  ]
+};
+export default function UseLayoutEffect() {
+  return getPageLayout(content);
+}
+defineWompo(UseLayoutEffect, {
+  name: "uselayouteffect-hook-page"
+});

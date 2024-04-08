@@ -31,10 +31,10 @@ const content: Contents = {
                 a === a // true
               `}
 						/>
-						So, for example, a useful case in which to use it, is when a callback function is passed
-						through the props of another component: if you don't use the `useCallback` hook, the
-						child component will re-render every time the parent component changes, because the two
-						functions will be considered different.
+						So, for example, a useful case whre you can use it, is when a callback function is
+						passed through the props of another component: if you don't use the `useCallback` hook,
+						the child component will re-render every time the parent component changes, because the
+						two functions will be considered different.
 					</p>
 					<Note severity='info'>
 						<b>Note:</b> This consideration doesn't apply to events, because events are stored in a
@@ -58,10 +58,10 @@ const content: Contents = {
 					/>
 					<p>
 						The hook will cache the <code>callbackDefinition</code> function and alway return the
-						same value on every render, without re-initializing the function on every render.
+						same value on every render, without re-initializing the function every time.
 						<br />
-						The hook accepts a two parameters: a callback that can be any function declaration, and
-						a list of dependencies. The dependecies are optional, but if they are set, the hook will
+						The hook accepts two parameters: a callback that can be any function declaration, and a
+						list of dependencies. The dependecies are optional, but if they are set, the hook will
 						check if any of them changed, and if it happened, it will re-build the function and
 						return the new value.
 					</p>
@@ -83,7 +83,7 @@ const content: Contents = {
               import UserForm from './UserForm';
 
 							export default function User({ userId }) {
-								const submitData = useCallback(() => {
+								const submitData = useCallback((data) => {
                   fetch(\`/udpate/user/\${userId}\`, { method: 'POST', body: data })
                 }, [userId])
 

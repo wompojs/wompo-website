@@ -62,10 +62,12 @@ const content: Contents = {
 						If an empty array is given as a list of dependecies, the effect will be executed{' '}
 						<b>only</b> after the first render.
 					</p>
-					<p>If no dependencies are specified, the effect will be executed on every render.</p>
+					<p>
+						If no dependencies are specified, the effect will be executed on <b>every</b> render.
+					</p>
 					<Note severity='info'>
 						<b>Note:</b> The effect will be executed <b>asynchronously</b> after the component has
-						been rendered.
+						been rendered, not inline.
 					</Note>
 				</>
 			),
@@ -102,7 +104,7 @@ const content: Contents = {
 					<Note severity='warning'>
 						When using timeouts and intervals, remember to <b>always</b> cancel them using the{' '}
 						<b>cleaning function</b> (like in the example). Not doing so can lead to unexpected
-						behaviours.
+						behaviours, like the execution of code even if the element is no longer in the DOM.
 					</Note>
 					<p>
 						<i>Why the useEffect hook is needed for this case?</i>
@@ -227,10 +229,10 @@ const content: Contents = {
                 useEffect(() => {
                   const highlighted = hljs.highlight(code, { language: lang });
                   codeRef.current.innerHTML = highlighted.value;
-                }, []);
+                }, [code, lang]);
 
                 return html\`
-                  <pre class=\${s.pre}>
+                  <pre>
                     <code ref=\${codeRef}></code>
                   </pre>
                 \`;
@@ -243,7 +245,7 @@ const content: Contents = {
 					<p>
 						In the above example the <code>Code</code> component accepts a <b>code</b> prop and a{' '}
 						<b>lang</b> prop that will be used to create the highligted HTML that will be injected
-						in the <b>code</b> HTML element thanks to the <code>useRef</code> hook.
+						in the &lt;code&gt; HTML element thanks to the <code>useRef</code> hook.
 					</p>
 				</>
 			),

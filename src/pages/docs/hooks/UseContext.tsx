@@ -9,8 +9,8 @@ const content: Contents = {
 	title: 'useContext hook',
 	description: (
 		<>
-			How to use the <code>useContext</code> hook to let a component get a parent provided value and
-			listen to its changes.
+			How to use the <code>useContext</code> hook to get a specific value shared across a whole
+			portion of your application.
 		</>
 	),
 	sections: [
@@ -48,9 +48,9 @@ const content: Contents = {
 					<p>
 						Common use cases for this hook are:
 						<ul>
-							<li>Listen to theme changes</li>
-							<li>Listen to the current logged-in user changes</li>
-							<li>Listen to changes in the state of the whole application</li>
+							<li>Listening to theme changes</li>
+							<li>Listening to the current logged-in user changes</li>
+							<li>Listening to changes in the state of the whole application</li>
 						</ul>
 					</p>
 				</>
@@ -120,15 +120,16 @@ const content: Contents = {
 						<code>UserContext.Provider</code> in the App component. The provider will pass it's
 						value to all its children components. In fact, then we used the <code>useContext</code>
 						hook in the UserInfo component to obtain the informations about the current loggeed in
-						user. This will make the component subscribe to the provider, and will be automatically
-						reloaded if the informations about the logged in user changes. To test it, you can see
-						that you can log the user in and out, and the UserInfo component will display a
-						different message evert time.
+						user. This will make the component subscribe to the provider, so that it can be
+						automatically reloaded if the informations about the logged in user changes. To test it,
+						you can see that you can log the user in and out and the UserInfo component will display
+						a different message evert time, even thoug the component doesn't use a <b>state hook</b>
+						.
 						<br />
 						Note that we obtained this result without passing any prop to the component.
 						<br />
 						Image having a more deeply nested structure and pass the current logged in user
-						information to alle the children components. It'd be hell. Using contexts will
+						information to all the children components. It'd be hell. Using contexts will
 						drastically improve the state management of the whole application.
 					</p>
 					<Note severity='info'>

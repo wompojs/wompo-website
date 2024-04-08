@@ -104,6 +104,13 @@ const content: Contents = {
 						have to worry about manually putting script tags into your files so that they work.
 						Developer friendly. Just like React.
 					</p>
+					<Note severity='warning'>
+						<b>Note:</b> Be careful if you use a minifier! The function's name will be usually
+						replaced with a simple letter, so your component's name will not be able to be processed
+						correctly and multiple components with the same name can be generated, leading to
+						unexpected behaviours and bugs. In this case, you want to manually set your component's
+						name, just to be sure they are unique.
+					</Note>
 				</>
 			),
 		},
@@ -246,7 +253,7 @@ const content: Contents = {
 						that, for example, you cannot, based on a condition, first return a "p" tag and then
 						maybe a "div" tag. The reason is very simple: when a component is first rendered, its
 						static structure is cached so that Wompo doesn't have to rebuild it every time the same
-						component render, so that the performance will be super good even when rendering
+						component renders, so that the performance will be super good even when rendering
 						thousands of components. This means that{' '}
 						<b>only the first rendered static structure will be put in the DOM</b> and if there is a
 						completely new static structure, the component will not be rebuilt.
@@ -326,10 +333,12 @@ const content: Contents = {
 						The second rule you must follow is about hooks. Wompo hooks have the following rules:
 						<ol>
 							<li>
-								Always use them in the first lines of the component. You must think of hooks like if
-								they were the <i>import statements</i> of your file.
+								<b>Always use them in the first lines of the component.</b> You must think of hooks
+								like if they were the <i>import statements</i> of your file.
 							</li>
-							<li>Don't use hooks conditionally, or inside loops.</li>
+							<li>
+								<b>Don't use hooks conditionally, or inside loops.</b>
+							</li>
 						</ol>
 						If these criterias are not met, your components might not work as expected. If you want
 						to know more about it, check the{' '}

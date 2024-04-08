@@ -19,8 +19,8 @@ const content: Contents = {
 				<>
 					<p>
 						At some point you may want to further customize how wompo works, and maybe add a
-						specific functionality to your components that Wompo doesn't actually support. The{' '}
-						<code>useHook</code>
+						specific functionality to your components that Wompo doesn't actually support natively.
+						The <code>useHook</code>
 						hook will let you have access to the component's instance and the hook index.
 					</p>
 					<Note severity='warning'>
@@ -204,7 +204,7 @@ const content: Contents = {
 						<Note severity='info'>
 							<b>Info:</b> you could have actually get the same result using native Wompo hooks like{' '}
 							<Link to='/docs/hooks/useState'>useState</Link>,{' '}
-							<Link to='/docs/hooks/useEffect'>useEffect</Link>, or{' '}
+							<Link to='/docs/hooks/useEffect'>useEffect,</Link> or{' '}
 							<Link to='/docs/hooks/useRef'>useRef</Link>. This was just to demostrate how you can
 							implement your own hook and make the component stateful by requesting updates. If you
 							can, you should always avoid using the <b>useHook</b> hook and use instead other
@@ -273,6 +273,40 @@ const content: Contents = {
 							be careful when creating your own advanced hook, and handle your events appropriately.
 						</Note>
 					</p>
+				</>
+			),
+		},
+		{
+			title: 'Effects',
+			id: 'effect',
+			content: (
+				<>
+					<p>
+						Another thing you may want to do is create a custom "effect hook", or simply create a
+						"cleanup function" (like the <Link to='/docs/hooks/useEffect'>useEffect</Link> hook
+						does) to execute before the effect is applied or <b>when the component unmounts</b>.
+						Implementing this is very easy: all you have to do is save the hooks as an object, and
+						set a <b>cleanupFunction</b> property to it. This function must accept no parameters,
+						and will be automatically executed when the component unmounts.
+						<br />
+						Example:
+					</p>
+					<Code
+						code={`
+							function useInterval(callback, time){
+								const [component, hookIndex] = useHook();
+								if(!component.hooks.hasOwnProperty(hookIndex)){
+									const intervalId = setInterval(callback, time);
+									component.hooks[hookIndex] = {
+										value: 'anything you want',
+										cleanupFunction: () => { clearInterval(intervalId); }
+									}
+								}
+								return component.hooks[hookIndex].value;
+							}
+						`}
+						language='js'
+					/>
 				</>
 			),
 		},

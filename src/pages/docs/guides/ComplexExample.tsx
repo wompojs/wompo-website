@@ -87,13 +87,14 @@ const content: Contents = {
 							<li>Remove a todo when the user clicks the X button.</li>
 						</ol>
 						To do the first step we have to use a new hook:{' '}
-						<Link to='/docs/hooks/useRef'>useRef</Link>. The useRef hook allows to the same value of
-						a variable during re-render, without resetting it every time. You are probably wondering
-						why it is relevant to the current case. The answer is that the useRef hook can also be
-						used to "mark" a node and use it as a reference. To do that you simply have to add the "
-						<b>ref</b>" attribute in the target node, and put the value returned by the hook as the
-						attribute value. The value returned by the useRef hook will always be an object having
-						one single key: "current", that will contain the current value.
+						<Link to='/docs/hooks/useRef'>useRef</Link>. The useRef hook allows to keep the same
+						value of a variable during re-render, without resetting it every time. You are probably
+						wondering why it is relevant to the current case. The answer is that the useRef hook can
+						also be used to have a reference of a node included in your HTML structure. To do that
+						you simply have to add the "<b>ref</b>" attribute in the target node, and put the value
+						returned by the hook as the attribute value. The value returned by the useRef hook will
+						always be an object having one single key: "current", that will contain the current
+						value.
 						<br />
 						In our case, we need the reference to the input element, so that when we click the "+"
 						button, we can access the value property of the input element, and add a new todo only
@@ -143,15 +144,15 @@ const content: Contents = {
 						<br />
 						The only thing that is left is saving the todos so that when the user comes back to the
 						page they are not lost. To do that we have to somehow know when the component is first
-						rendered, get the todos from the localStorage, and render them. When then also have to
-						modify the saved todos whenever the user adds or deletes one of them. To implement this
+						rendered, get the todos from the localStorage, and render them. We also have to modify
+						the saved todos whenever the user adds or deletes one of them. To implement this
 						functionality the <Link to='/docs/hooks/useEffect'>useEffect</Link> hook comes to help
 						us. This hook will accept 2 parameters: a callback function, and an array of
 						dependencies. The callback function will be execeuted on the first render and whenever
-						one of the dependencies changes. Isn't it the perfect case? We can use 2 useEffect hooks
-						to accomplish our goals. If you give an empty array as list of dependencies, the effect
-						will only be executed once (on first render). If you don't put a list of dependencies,
-						the hook will be executed on every render.
+						one of the dependencies changes. Isn't it the perfect case? We can use two different
+						useEffect hooks to accomplish our goals. If you give an empty array as list of
+						dependencies, the effect will only be executed once (on first render). If you don't put
+						a list of dependencies, the hook will be executed on every render.
 					</p>
 					<Code
 						code={`

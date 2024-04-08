@@ -1,30 +1,34 @@
-import{defineWompo as l,html as e}from"wompo";import t from"../Code.js";import a from"./CounterComponent.js";export default function n({styles:s}){return e`<section class="section">
+import { defineWompo, html } from "wompo";
+import Code from "../Code.js";
+import CounterComponent from "./CounterComponent.js";
+export default function ExampleSection({ styles: s }) {
+  return html`<section class="section">
 		<div class=${s.container}>
 			<div style="position: relative;">
-				<${a}
+				<${CounterComponent}
 					initialCount=${5}
 					class=${s.counter}
-					style=${{transform:"rotate(45deg)",top:20,left:30}}
+					style=${{ transform: "rotate(45deg)", top: 20, left: 30 }}
 				/>
-				<${a}
+				<${CounterComponent}
 					initialCount=${22}
 					class=${s.counter}
-					style=${{transform:"rotate(-20deg)",top:50,right:30}}
+					style=${{ transform: "rotate(-20deg)", top: 50, right: 30 }}
 				/>
-				<${a}
+				<${CounterComponent}
 					initialCount=${1}
 					class=${s.counter}
-					style=${{transform:"rotate(10deg)",bottom:10,right:30}}
+					style=${{ transform: "rotate(10deg)", bottom: 10, right: 30 }}
 				/>
-				<${a}
+				<${CounterComponent}
 					class=${s.counter}
-					style=${{transform:"translate(-50%, -50%)",top:"50%",left:"50%"}}
+					style=${{ transform: "translate(-50%, -50%)", top: "50%", left: "50%" }}
 				/>
 			</div>
 			<div style="position: relative;">
-				<${t}
-					style=${{boxShadow:"0 5px 5px #0004"}}
-					elaborate=${!1}
+				<${Code}
+					style=${{ boxShadow: "0 5px 5px #0004" }}
+					elaborate=${false}
 					code=${`<span class="hljs-comment">// Create a Counter Component</span>
 <span class="hljs-keyword">function</span> <span class="hljs-title function_">CounterComponent</span>(<span class="hljs-params">{ start = <span class="hljs-number">0</span> }</span>){
   <span class="hljs-keyword">const</span> [counter, setCounter] = <span class="hljs-title function_">useState</span>(start);
@@ -35,10 +39,14 @@ import{defineWompo as l,html as e}from"wompo";import t from"../Code.js";import a
 }`}
 					language="js"
 				/>
-				<${t}
+				<${Code}
 					class=${s.codeAbove}
-					style=${{position:"absolute",boxShadow:"0 5px 5px #0004",zIndex:"2"}}
-					elaborate=${!1}
+					style=${{
+    position: "absolute",
+    boxShadow: "0 5px 5px #0004",
+    zIndex: "2"
+  }}
+					elaborate=${false}
 					margin="0"
 					code=${`<span class="hljs-comment">&lt;!-- Render it everywhere infinite times --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">counter-component</span> <span class="hljs-attr">start</span>=<span class="hljs-string">"5"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">counter-component</span>&gt;</span>
@@ -49,7 +57,9 @@ import{defineWompo as l,html as e}from"wompo";import t from"../Code.js";import a
 				/>
 			</div>
 		</div>
-	</section>`}n.css=`
+	</section>`;
+}
+ExampleSection.css = `
   .container {
     display: flex;
     gap: 5rem;
@@ -86,4 +96,5 @@ import{defineWompo as l,html as e}from"wompo";import t from"../Code.js";import a
 			min-height: 40rem;
 		}
 	}
-`,l(n,{name:"example-section"});
+`;
+defineWompo(ExampleSection, { name: "example-section" });

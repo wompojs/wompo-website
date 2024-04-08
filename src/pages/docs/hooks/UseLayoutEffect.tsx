@@ -19,7 +19,7 @@ const content: Contents = {
 				<>
 					<p>
 						The <code>useLayoutEffect</code> hook works exactly like the{' '}
-						<Link to='/docs/hooks/useEffect'>useEffect</Link> hook, with only one exceptions: unlike
+						<Link to='/docs/hooks/useEffect'>useEffect</Link> hook, with only one exception: unlike
 						useEffect, it works <b>synchronously</b>, meaning that the effect will be executed
 						immediately after the render operations, and not when the browser's call stack is empty.
 						This is quite useful when you want to see instant changes in your UI when something
@@ -53,6 +53,10 @@ const content: Contents = {
 						The <code>useLayoutEffect</code> hook accepts an effect callback function and a list of
 						dependencies. The effect function will be executed after the first render and whenever
 						one of the listed dependencies changes.
+					</p>
+					<p>
+						For more, check the <Link to='/docs/hooks/useEffect'>useEffect</Link> hook
+						documentation.
 					</p>
 				</>
 			),

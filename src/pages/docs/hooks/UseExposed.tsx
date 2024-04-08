@@ -25,12 +25,12 @@ const content: Contents = {
 						<Link to='/docs/hooks/useRef'>useRef</Link> hook.
 					</p>
 					<p>
-						Unlike <b>React</b>, Wompo components are meant to be <u>isolated</u>, meaning that
-						their state should't dependend on props, even though it is possible. This is becasue
-						Wompo Components are actually DOM elements, meaning that they can be accessed by other
-						scripts and call methods or access data. This allows to <b>isolate</b> the state and
-						make it depend on the component itself (and that's it). A great example can be a{' '}
-						<b>Modal</b> component:
+						Unlike <b>React</b>, Wompo components state is meant to be <u>isolated</u>, meaning that
+						it should't dependend on props, even though it is possible. This is becasue Wompo
+						Components are actually DOM elements, meaning that they can be accessed by other scripts
+						and call methods or access data. This allows to <b>isolate</b> the state and make it
+						depend on the component itself (and that's it). A great example can be a <b>Modal</b>{' '}
+						component:
 						<br />
 						In React, you would create the component and make it accept an "open" prop to handle its
 						state. In Wompo you can also do it, but it's <b>not recommended</b>. Instead, you want
@@ -186,8 +186,8 @@ const content: Contents = {
 						<br />
 						To do that, you'd have to create the "open" state on the parent component that handles
 						the
-						<code>Modal</code>, and set the new state accordingly to the user interactions. So, when
-						the user clicks a button, if you use the "props approach" you will cause the
+						<code>Modal</code>, and set the new state accordingly to the user's interactions. So,
+						when the user clicks a button, if you use the "props approach" you will cause the
 						re-rendering of the modal and of the parent component itself. If you implement the "
 						<b>exposed</b>" approach, you will only cause the re-render of the modal, so your
 						application will be more efficient.

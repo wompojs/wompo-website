@@ -43,7 +43,7 @@ const content: Contents = {
 						The function accepts two parameters: your functional Component and the options for it.
 						The first parameter must be a function that returns an{' '}
 						<Link to='/docs/apis/html'>html</Link> result or <code>null</code>. The second parameter
-						is <b>optional</b>, but if defined it must be an object with the following optional
+						is <b>optional</b>, but if defined, it must be an object with the following optional
 						keys:
 						<ul>
 							<li>
@@ -57,16 +57,16 @@ const content: Contents = {
 							<li>
 								<code>shadow</code> (boolean) - By default is false, but if true, the component's
 								content will be rendered inside a Shadow Root. You want to set it to true when
-								developing libraries and components that you want to be sure they won't affect or be
-								affected by external CSSs or Scripts.
+								developing libraries and components that you want to be sure won't affect or be
+								affected by external Styles or scripts.
 							</li>
 							<li>
 								<code>cssModule</code> (boolean) - By default is true, meaning that a CSS module
-								logic will be applied if you write your <code>component's CSS</code> inside the
-								Component.css key. The classes that are found in there will be replaced with a more
-								unique identifier and put in the <b>styles</b> prop of the component, which will be
-								an object having the found classes as keys and the more unique generated classes as
-								values. This is done to avoid style collisions.
+								logic will be applied if you write your component's CSS inside the
+								<code>Component.css</code> key. The classes that are found in there will be replaced
+								with a more unique identifier and put in the <b>styles</b> prop of the component,
+								which will be an object having the found classes as keys and the more unique
+								generated classes as values. This is done to avoid style collisions.
 								<br />
 								Example:
 								<Code
@@ -99,7 +99,7 @@ const content: Contents = {
 			),
 		},
 		{
-			title: 'Example: isoalted element',
+			title: 'Example: isolated element',
 			id: 'isolated-element-example',
 			content: (
 				<>

@@ -42,7 +42,7 @@ const content: Contents = {
 			content: (
 				<>
 					<p>
-						Wompo exposes also some constant variabled that you can use:
+						Wompo exposes also some constant variables that you can use:
 						<ul>
 							<li>
 								<Link to='wompoDefaultOptions'>wompDefaultOptions</Link> - The default options that

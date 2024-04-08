@@ -173,9 +173,6 @@ Footer.css = `
   }
 
 	@media (width < 650px){
-		.footer {
-			margin-top: 5rem;
-		}
 		.footer ul .title {
 			text-align: center;
 		}

@@ -1,4 +1,34 @@
-import{Fragment as m,jsx as r,jsxs as b}from"wompo/jsx-runtime";import{defineWompo as f,useEffect as h,useRef as u}from"wompo";export default function s({code:t,language:i,styles:a,elaborate:c=!0,margin:l="4rem"}){const o=u();return h(()=>{if(c){let e=t.replace(/\t/g,"  ");const n=/^\n(\s+)/.exec(e);if(n){const d=n[1],g=new RegExp(`^${d}`,"gm");e=e.replace(g,"").replace(/^\n/,"").replace(/\n\s+$/g,"")}const p=window.hljs.highlight(e,{language:i});o.current.innerHTML=p.value}else o.current.innerHTML=t},[]),b(m,{children:[r("link",{rel:"stylesheet",href:"https://unpkg.com/highlightjs@9.16.2/styles/xcode.css"}),r("pre",{class:a.pre,style:{margin:`${l} 0`},children:r("code",{ref:o})})]})}s.css=`
+import { Fragment, jsx, jsxs } from "wompo/jsx-runtime";
+import { defineWompo, useEffect, useRef } from "wompo";
+export default function Code({
+  code,
+  language,
+  styles: s,
+  elaborate = true,
+  margin = "4rem"
+}) {
+  const codeRef = useRef();
+  useEffect(() => {
+    if (elaborate) {
+      let formatted = code.replace(/\t/g, "  ");
+      const firstLineSpaces = /^\n(\s+)/.exec(formatted);
+      if (firstLineSpaces) {
+        const spaces = firstLineSpaces[1];
+        const removeStart = new RegExp(`^${spaces}`, "gm");
+        formatted = formatted.replace(removeStart, "").replace(/^\n/, "").replace(/\n\s+$/g, "");
+      }
+      const highlighted = window.hljs.highlight(formatted, { language });
+      codeRef.current.innerHTML = highlighted.value;
+    } else {
+      codeRef.current.innerHTML = code;
+    }
+  }, []);
+  return /* @__PURE__ */ jsxs(Fragment, { children: [
+    /* @__PURE__ */ jsx("link", { rel: "stylesheet", href: "https://unpkg.com/highlightjs@9.16.2/styles/xcode.css" }),
+    /* @__PURE__ */ jsx("pre", { class: s.pre, style: { margin: `${margin} 0` }, children: /* @__PURE__ */ jsx("code", { ref: codeRef }) })
+  ] });
+}
+Code.css = `
   :host {
     display: block;
     width: 100%;
@@ -17,4 +47,8 @@ import{Fragment as m,jsx as r,jsxs as b}from"wompo/jsx-runtime";import{defineWom
     background-color: #f6f6f6;
     border-radius: 10px;
   }
-`,f(s,{name:"wompo-code",shadow:!0});
+`;
+defineWompo(Code, {
+  name: "wompo-code",
+  shadow: true
+});

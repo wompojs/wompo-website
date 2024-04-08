@@ -68,7 +68,7 @@ const content: Contents = {
 					<Code
 						code={`
               <script type="module">
-                import * as wompo from 'https://cdn.jsdelivr.net/npm/wompo@1.0.4';
+                import * as wompo from 'https://cdn.jsdelivr.net/npm/wompo@1.0.6';
 
                 window.wompo = wompo; // Optional
               </script>
@@ -85,9 +85,9 @@ const content: Contents = {
               <script type="importmap">
                 {
                   "imports": {
-                    "wompo": "https://cdn.jsdelivr.net/npm/wompo@1.0.4",
+                    "wompo": "https://cdn.jsdelivr.net/npm/wompo@1.0.6",
                     // Add the following line only if using JSX
-                    "wompo/jsx-runtime": "https://cdn.jsdelivr.net/npm/wompo@1.0.4/jsx-runtime.js", 
+                    "wompo/jsx-runtime": "https://cdn.jsdelivr.net/npm/wompo@1.0.6/jsx-runtime.js", 
                   }
                 }
               </script>

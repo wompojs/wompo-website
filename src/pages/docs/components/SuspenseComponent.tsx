@@ -19,7 +19,7 @@ const content: Contents = {
 			content: (
 				<>
 					<p>
-						The <code>Suspense</code> component is a special Wompo component that allows to show a
+						The <code>Suspense</code> component is a special Wompo component that allows to show a{' '}
 						<b>fallback</b> UI while one or more of the children are loading. This can be used for:
 						<ul>
 							<li>
@@ -63,7 +63,8 @@ const content: Contents = {
 					<p>
 						This example is the same used in the <Link to='/docs/apis/lazy'>lazy</Link>{' '}
 						documentation: thanks to the lazy function we will render a component dynamically
-						imported and delayed to simulate super big file that is requested from the server.
+						imported and delayed to simulate a super big file that is requested from the server (or
+						simply a slow network).
 					</p>
 					<Code
 						code={`
@@ -110,7 +111,7 @@ const content: Contents = {
 						language='js'
 					/>
 					<p>
-						Result:
+						Result (you probably will have to reload the page and scroll here to see it):
 						<LazySuspenseExample />
 					</p>
 				</>

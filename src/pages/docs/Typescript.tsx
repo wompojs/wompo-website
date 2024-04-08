@@ -17,7 +17,7 @@ const content: Contents = {
 						using Wompo.
 						<br />
 						If you are a Typescript user, you probably want to add types to your component's props,
-						or export the interface of the Component's instance types (usually when you use the{' '}
+						or export the interface of the Component's instance (usually when you use the{' '}
 						<Link to='/docs/hooks/useExposed'>useExposed</Link> hook). This is very common and can
 						benefit a lot when used in combination with JSX. If you use typescript, you can enable
 						JSX by writing the following options in your <b>tsconfig.json</b> file:
@@ -91,7 +91,7 @@ const content: Contents = {
 						language='ts'
 					/>
 					<p>
-						If then you want to use the <code>UserCard</code> component inside another Component,
+						If you want to use the <code>UserCard</code> component inside another Component,
 						typescript will warn you saying that the <i>name, lastname, and age</i> props are
 						mandatory. The <i>additionalInfo</i> prop is optional.
 					</p>

@@ -1,4 +1,4 @@
-import { defineWompo, html, useRef } from 'wompo';
+import { defineWompo, html, useRef, useEffect, WompoComponent } from 'wompo';
 import ModalExample, { ModalExampleElement } from './ModalExample.js';
 import Code from '../components/Code.js';
 
@@ -7,18 +7,25 @@ export default function InteractiveExposedExample() {
 	const openModal = () => {
 		modalRef.current.open();
 	};
+	useEffect(() => {
+		const codeName = (Code as WompoComponent).componentName;
+
+		const modal = new (ModalExample as WompoComponent).class() as ModalExampleElement;
+		modal.innerHTML = `Yoo good job!! Now i guess you can even close it by writing this in the
+			console:
+			<${codeName} code="document.querySelector('modal-example').close()" language="js"></${codeName}>
+			Or simply click the "X" button... But we are sad if you do it.
+		`;
+		modalRef.current = modal;
+		document.body.appendChild(modal);
+	}, []);
 	return html`
 		<ol>
 			<li>
 				Very cool option 😎
-				<br>
+				<br />
 				Write this in the console and open it yourself!
 				<${Code} code="document.querySelector('modal-example').open()" language="js" />
-				<${ModalExample} ref=${modalRef}>
-					Yoo good job!! Now i guess you can even close it by writing this in the console:
-					<${Code} code="document.querySelector('modal-example').close()" language="js" />
-					Or simply click the "X" button... But we are sad if you do it.
-				</${ModalExample}>
 			</li>
 			<li>
 				Boring option 😴

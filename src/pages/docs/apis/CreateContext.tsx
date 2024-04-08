@@ -71,12 +71,12 @@ const content: Contents = {
 						<code>ThemeContext.Provider</code> instance is rendered so that the current theme is
 						shared across the whole application (assuming the <code>App</code> component is your
 						root). A custom theme state is used as a value for the provider. When the theme changes,
-						the provider will be re-rendered, and so all the children of it that uses that context.
-						To make a component listen to the changes of the provider, you have to use the{' '}
+						the provider will be re-rendered, and so all the children of it that use that context.
+						To make a component listen to the provider's changes, you have to use the{' '}
 						<Link to='/docs/hooks/useContext'>useContext</Link> hook and pass as the first argument
 						the <code>ThemeContext</code> (in this case). If a component doesn't use the{' '}
-						<code>useContext</code>
-						hook, it will not be automatically re-rendered when the parent provider changes.
+						<code>useContext</code> hook, it will not be automatically re-rendered when the parent
+						provider changes.
 					</p>
 				</>
 			),

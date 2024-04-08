@@ -52,7 +52,7 @@ const content: Contents = {
 						One common use case is to make your components use the Shadow DOM by default. To get
 						this result, you should modify the default option{' '}
 						<b>before you define any other component</b>. Components rendered <i>before</i> you
-						actually modify the default options will still have the old options applied.
+						actually modified the default options will still have the old options applied.
 					</p>
 					<Code
 						code={`

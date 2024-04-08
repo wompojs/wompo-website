@@ -5,7 +5,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const app = express();
-app.use(
+/* app.use(
 	helmet({
 		contentSecurityPolicy: {
 			directives: {
@@ -21,7 +21,7 @@ app.use(
 			},
 		},
 	})
-);
+); */
 app.use(compression()); // gzip support
 
 const port = 3000;

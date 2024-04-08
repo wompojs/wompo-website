@@ -14,9 +14,10 @@ const content: Contents = {
 				<>
 					<p>
 						<b>JSX</b> is an extension of JavaScript that allows to write Markup code into your JS
-						files. This make creating your components layout easier, because the editor can easily
-						help you. It will also check your component's props to find mistakes and type issues if
-						you also use Typescript. An example of a JSX component is the following:
+						files. This makes creating your layouts easier, because the editor can help you by
+						suggesting code and reporting errors in the markup. It will also check your component's
+						props to find mistakes and type incompatibilites if you also use Typescript. An example
+						of a JSX component is the following:
 					</p>
 					<Code
 						code={`
@@ -38,10 +39,10 @@ const content: Contents = {
 						language='js'
 					/>
 					<p>
-						As you can see, the <code>html</code> function is not used to build the layout. Insted,
+						As you can see, the <code>html</code> function is not used to build the layout. Instead,
 						you directly write your HTML into your component.
 					</p>
-					<Note severity='info'>
+					<Note severity='warning'>
 						<b>Note:</b> JSX files need a compiler. JSX is not natively supported by browsers.
 					</Note>
 					<p>The code in the example will be transformed by the compiler into the following:</p>
@@ -75,7 +76,7 @@ const content: Contents = {
 							<li>
 								By using this approach you cannot really know which parts are the dynamic ones:
 								basically everything is dynamic, and Wompo will re-render parts of your component
-								that normally is not necessary to update.
+								that normally are not necessary to be updated.
 							</li>
 						</ol>
 					</p>
@@ -127,7 +128,7 @@ const content: Contents = {
 						language='js'
 					/>
 					<Note severity='info'>
-						The main differences between JSX and the <code>html</code> approach are:
+						The main differences between the JSX approach and the <code>html</code> approach are:
 						<ul>
 							<li>Events are not prefixed by a "@" but by "on"</li>
 							<li>Dynamic values don't need a dollor sign ("$") before brackets</li>

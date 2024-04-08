@@ -35,12 +35,12 @@ const content: Contents = {
 						</ul>
 					</p>
 					<p>
-						By using a <b>reducer</b> to handle all states modifications, you will be sure that you
+						By using a <b>reducer</b> to handle all state's modifications, you will be sure that you
 						can only perform specific actions on the state, and not everything you want (like you
 						can actually do with the useState hook).
 					</p>
 					<p>
-						Like the useState hook, when the state is modified the component will be re-rendered.
+						<b>When the state is modified the component will be re-rendered.</b>
 					</p>
 					<Note severity='info'>
 						Although the useReducer hook adds more control, more stability, and more predictability

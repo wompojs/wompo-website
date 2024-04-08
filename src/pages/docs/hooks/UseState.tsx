@@ -147,7 +147,7 @@ const content: Contents = {
 			),
 		},
 		{
-			title: 'Example: Timer - Updating based on previous state',
+			title: 'Example: Timer - Update based on previous state',
 			id: 'timer-example',
 			content: (
 				<>

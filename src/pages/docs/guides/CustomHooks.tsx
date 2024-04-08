@@ -18,8 +18,8 @@ const content: Contents = {
 					<p>
 						We know that the existing hooks will not satisfy <b>every</b> single exigency that a
 						developer can have while developing Wompo Components, but they are the <b>base</b> that
-						allows developers to satisfy those exigencies. You can create your own custom hooks that
-						can then be used across all components.
+						allows developers to satisfy those needs. You can create your own custom hooks that can
+						then be used across all components.
 					</p>
 				</>
 			),
@@ -45,7 +45,8 @@ const content: Contents = {
 						another hook).
 						<br />
 						As said before, native hooks are the <b>base</b>: they have the main functionalities and
-						concepts that can be combined together to create more advanced and complex hooks.
+						concepts that can be combined together to create more advanced and complex hooks. Let's
+						see how.
 					</p>
 				</>
 			),
