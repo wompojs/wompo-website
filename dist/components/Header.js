@@ -82,7 +82,7 @@ Header.css = `
   }
   .header ul, .logo {
     display: flex;
-    gap: 20px;
+		gap: 5px;
     list-style: none;
 		align-items: center;
     padding: 0;
@@ -108,6 +108,11 @@ Header.css = `
 		align-items: center;
 		gap: 10px;
 		cursor: pointer;
+	}
+	@media (width < 700px){
+		.link svg, .link img {
+			display: none;
+		}
 	}
 `;
 defineWompo(Header, {

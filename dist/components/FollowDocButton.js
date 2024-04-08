@@ -73,5 +73,15 @@ FollowDocButton.css = `
   .button h5 {
     margin-bottom: 1rem;
   }
+	@media (width < 600px){
+		.button p {
+			text-overflow: ellipsis;
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-line-clamp: 5;
+			line-clamp: 2;
+			-webkit-box-orient: vertical;
+		}
+	}
 `;
 defineWompo(FollowDocButton, { name: "follow-doc-button" });
