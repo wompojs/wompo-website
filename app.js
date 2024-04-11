@@ -21,7 +21,7 @@ app.use(
 					'*.google-analytics.com',
 					'*.iubenda.com',
 				],
-				// 'img-src': ["'self'", '*.googletagmanager.com'],
+				'img-src': ["'self'", '*.googletagmanager.com'],
 				'frame-src': ["'self'", '*.iubenda.com'],
 			},
 		},
@@ -33,11 +33,11 @@ const port = 3000;
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-app.use(express.static('dist'));
-app.use(express.static('public'));
-app.use('/wompo', express.static('node_modules/wompo'));
-app.use('/wompo-router', express.static('node_modules/wompo-router/dist'));
-app.use('/plugins', express.static('plugins'));
+app.use(express.static(__dirname + '/dist'));
+app.use(express.static(__dirname + '/public'));
+app.use('/wompo', express.static(__dirname + '/node_modules/wompo'));
+app.use('/wompo-router', express.static(__dirname + '/node_modules/wompo-router/dist'));
+app.use('/plugins', express.static(__dirname + '/plugins'));
 
 app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname, 'index.html'));
