@@ -3,9 +3,23 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="robots" content="noindex" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#573EF6" />
+		<meta name="msapplication-TileColor" content="#573EF6" />
+		<meta name="theme-color" content="#ffffff" />
+		<link rel="icon" type="image/x-icon" href="/icons/favicon.ico" />
+		<link rel="manifest" href="/manifest.json" />
+		<script nonce="WMPnf03nceIJfn22wc3e9h3wwfg3">
+			if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js', { scope: '/' });
+		</script>
 
 		<!-- Google tag (gtag.js) -->
+		<meta
+			http-equiv="Content-Security-Policy"
+			content="default-src 'self' *.googletagmanager.com 'nonce-WMPnf03nceIJfn22wc3e9h3wwfg3'; connect-src 'self' *.googletagmanager.com *.google-analytics.com; style-src 'self' 'unsafe-inline'"
+		/>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-W9N2P2NZQG"></script>
 		<script nonce="WMPnf03nceIJfn22wc3e9h3wwfg3">
 			window.dataLayer = window.dataLayer || [];
@@ -67,7 +81,7 @@
 		></script> -->
 
 		<meta property="og:site_name" content="Wompo" />
-		<meta property="og:title" content="Wompo - Reusable, and Shareable Web-Components" />
+		<meta property="og:title" content="Wompo - Create Shareable Web-Components" />
 		<meta
 			property="og:description"
 			content="Wompo is the beginner-friendly Javascript library for creating reactive, shareable, and reusable Web-Components for the whole Web.
@@ -80,7 +94,7 @@
 			content="http://pollosweb.wesped.es/programa_pollos/play.png"
 		/>
 		<meta property="og:type" content="website" />
-		<title>Wompo - Reusable, and Shareable Web-Components</title>
+		<title>Wompo - Create Shareable Web-Components</title>
 		<meta
 			name="description"
 			content="Wompo is the beginner-friendly Javascript library for creating reactive, shareable, and reusable Web-Components for the whole Web.
@@ -88,7 +102,7 @@
 		/>
 		<meta
 			name="keywords"
-			content="JavaScript library, beginner-friendly, web-components, UI, components"
+			content="JavaScript library, beginner-friendly, web-components, UI, components, React-like, share, modern"
 		/>
 		<meta name="author" content="Lorenzo Lannino" />
 
@@ -134,6 +148,7 @@
 		<wompo-header style="background-color: #573ef6; color: #fff; position: fixed"></wompo-header>
 		<main class="main">
 			<section class="hero">
+				<wompo-logo size="40"></wompo-logo>
 				<h1>Wompo</h1>
 				<p>The fast, lightweight, React-like, web-components library.</p>
 				<div class="buttons">

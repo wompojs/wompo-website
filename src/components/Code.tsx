@@ -35,7 +35,7 @@ export default function Code({
 	}, []);
 	return (
 		<>
-			<link rel='stylesheet' href='https://unpkg.com/highlightjs@9.16.2/styles/xcode.css' />
+			<link rel='stylesheet' href='/xcodeStyles.css' />
 			<pre class={s.pre} style={{ margin: `${margin} 0` }}>
 				<code ref={codeRef}></code>
 			</pre>

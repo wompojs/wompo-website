@@ -3,7 +3,17 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="robots" content="noindex" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#573EF6" />
+		<meta name="msapplication-TileColor" content="#573EF6" />
+		<meta name="theme-color" content="#ffffff" />
+		<link rel="icon" type="image/x-icon" href="/icons/favicon.ico" />
+		<link rel="manifest" href="/manifest.json" />
+		<script nonce="WMPnf03nceIJfn22wc3e9h3wwfg3">
+			if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js', { scope: '/' });
+		</script>
 
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-W9N2P2NZQG"></script>
@@ -88,7 +98,7 @@
 		/>
 		<meta
 			name="keywords"
-			content="JavaScript library, beginner-friendly, web-components, UI, components"
+			content="JavaScript library, beginner-friendly, web-components, UI, components, documentation, performant"
 		/>
 		<meta name="author" content="Lorenzo Lannino" />
 
@@ -118,6 +128,10 @@
 				line-height: 1.5;
 				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
 					Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+			}
+			::selection {
+				background: #e0dbff !important;
+				color: #573ef6 !important;
 			}
 			@media (width < 1000px) {
 				html {

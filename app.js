@@ -5,7 +5,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const app = express();
-/* app.use(
+app.use(
 	helmet({
 		contentSecurityPolicy: {
 			directives: {
@@ -15,13 +15,18 @@ const app = express();
 					'*.googletagmanager.com',
 					"'nonce-WMPnf03nceIJfn22wc3e9h3wwfg3'",
 				],
-				'connect-src': ['*.google-analytics.com', '*.iubenda.com'],
+				'connect-src': [
+					"'self'",
+					'*.googletagmanager.com',
+					'*.google-analytics.com',
+					'*.iubenda.com',
+				],
 				// 'img-src': ["'self'", '*.googletagmanager.com'],
 				'frame-src': ["'self'", '*.iubenda.com'],
 			},
 		},
 	})
-); */
+);
 app.use(compression()); // gzip support
 
 const port = 3000;

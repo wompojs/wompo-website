@@ -1,95 +1,30 @@
-import { defineWompo, html } from "wompo";
-export default function Footer({ styles: s }) {
-  return html`<footer class=${s.footer}>
-		<section class=${s.section}>
+import{defineWompo as e,html as i}from"wompo";import l from"./Logo.js";export default function t({styles:o}){return i`<footer class=${o.footer}>
+		<section class=${o.section}>
 			<nav>
-				<a href="/" title="Homepage">
-					<svg
-						width="40px"
-						height="40px"
-						viewBox="-10.5 -9.45 21 18.9"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<circle cx="0" cy="0" r="2" fill="currentColor"></circle>
-						<g stroke="currentColor" stroke-width="1" fill="none">
-							<ellipse rx="10" ry="4.5"></ellipse>
-							<ellipse rx="10" ry="4.5" transform="rotate(60)"></ellipse>
-							<ellipse rx="10" ry="4.5" transform="rotate(120)"></ellipse>
-						</g>
-					</svg>
-					Wompo
-				</a>
+				<div style="display: flex; flex-direction:column;">
+					<a href="/" title="Homepage">
+						<${l} />
+						Wompo
+					</a>
+					<p style="font-size: 10px;">©2024</p>
+				</div>
 				<ul>
-					<li class=${s.title}>Learn</li>
+					<li class=${o.title}>Learn</li>
 					<li><a href="/docs/introduction">Introduction</a></li>
 					<li><a href="/docs/installation">Installation</a></li>
 					<li><a href="/docs/hooks">Hooks</a></li>
 					<li><a href="/docs/apis">APIs</a></li>
 				</ul>
 				<ul>
-					<li class=${s.title}>Guides</li>
+					<li class=${o.title}>Guides</li>
 					<li><a href="/docs/guides/quick-start">Quick Start</a></li>
 					<li><a href="/docs/guides/complex-example">Complex example</a></li>
 					<li><a href="/docs/guides/styling">Styling</a></li>
 					<li><a href="/docs/guides/custom-hooks">Custom Hooks</a></li>
 				</ul>
-				${/*<ul>
-  	<li class=${s.title}>Privacy</li>
-  	<li>
-  		<a
-  			href="https://www.iubenda.com/privacy-policy/24984791"
-  			class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe "
-  			title="Privacy Policy "
-  			>Privacy Policy</a
-  		>
-  		<script type="text/javascript" nonce="WMPnf03nceIJfn22wc3e9h3wwfg3">
-  			(function (w, d) {
-  				var loader = function () {
-  					var s = d.createElement('script'),
-  						tag = d.getElementsByTagName('script')[0];
-  					s.src = 'https://cdn.iubenda.com/iubenda.js';
-  					tag.parentNode.insertBefore(s, tag);
-  				};
-  				if (w.addEventListener) {
-  					w.addEventListener('load', loader, false);
-  				} else if (w.attachEvent) {
-  					w.attachEvent('onload', loader);
-  				} else {
-  					w.onload = loader;
-  				}
-  			})(window, document);
-  		<\/script>
-  	</li>
-  	<li>
-  		<a
-  			href="https://www.iubenda.com/privacy-policy/24984791/cookie-policy"
-  			class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe "
-  			title="Cookie Policy"
-  			>Cookie Policy</a
-  		>
-  		<script type="text/javascript" nonce="WMPnf03nceIJfn22wc3e9h3wwfg3">
-  			(function (w, d) {
-  				var loader = function () {
-  					var s = d.createElement('script'),
-  						tag = d.getElementsByTagName('script')[0];
-  					s.src = 'https://cdn.iubenda.com/iubenda.js';
-  					tag.parentNode.insertBefore(s, tag);
-  				};
-  				if (w.addEventListener) {
-  					w.addEventListener('load', loader, false);
-  				} else if (w.attachEvent) {
-  					w.attachEvent('onload', loader);
-  				} else {
-  					w.onload = loader;
-  				}
-  			})(window, document);
-  		<\/script>
-  	</li>
-  </ul>*/
-  ""}
+				${""}
 				<ul>
-					<li class=${s.title}>Contribute</li>
+					<li class=${o.title}>Contribute</li>
 					<li>
 						<a href="https://github.com/wompojs/wompo" target="_blank">
 							<svg
@@ -122,9 +57,7 @@ export default function Footer({ styles: s }) {
 				</ul>
 			</nav>
 		</section>
-	</footer>`;
-}
-Footer.css = `
+	</footer>`}t.css=`
   .footer {
     background-color: #573ef6;
     color: #dfdfdf;
@@ -187,5 +120,4 @@ Footer.css = `
 			justify-content: center;
 		}
 	}
-`;
-defineWompo(Footer, { name: "wompo-footer" });
+`,e(t,{name:"wompo-footer"});
