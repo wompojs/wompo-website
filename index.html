@@ -18,7 +18,12 @@
 		<!-- Google tag (gtag.js) -->
 		<meta
 			http-equiv="Content-Security-Policy"
-			content="default-src 'self' *.googletagmanager.com 'nonce-WMPnf03nceIJfn22wc3e9h3wwfg3'; connect-src 'self' *.googletagmanager.com *.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' *.googletagmanager.com;"
+			content="
+				default-src 'self' *.googletagmanager.com *.iubenda.com 'nonce-WMPnf03nceIJfn22wc3e9h3wwfg3';
+				connect-src 'self' *.googletagmanager.com *.iubenda.com *.google-analytics.com;
+				style-src 'self' 'unsafe-inline';
+				img-src 'self' data: *.googletagmanager.com;
+			"
 		/>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-W9N2P2NZQG"></script>
 		<script nonce="WMPnf03nceIJfn22wc3e9h3wwfg3">
@@ -30,7 +35,7 @@
 
 			gtag('config', 'G-W9N2P2NZQG');
 		</script>
-		<!-- <script type="text/javascript" nonce="WMPnf03nceIJfn22wc3e9h3wwfg3">
+		<script type="text/javascript" nonce="WMPnf03nceIJfn22wc3e9h3wwfg3">
 			var _iub = _iub || [];
 			_iub.csConfiguration = {
 				askConsentAtCookiePolicyUpdate: true,
@@ -48,7 +53,7 @@
 				cookiePolicyId: 24984791,
 				banner: {
 					acceptButtonCaptionColor: '#FFFFFF',
-					acceptButtonColor: '#0073CE',
+					acceptButtonColor: '#573EF6',
 					acceptButtonDisplay: true,
 					backgroundColor: '#FFFFFF',
 					closeButtonRejects: true,
@@ -59,7 +64,7 @@
 					listPurposes: true,
 					position: 'float-bottom-left',
 					rejectButtonCaptionColor: '#FFFFFF',
-					rejectButtonColor: '#0073CE',
+					rejectButtonColor: '#573EF6',
 					rejectButtonDisplay: true,
 					showPurposesToggles: true,
 					showTitle: false,
@@ -78,7 +83,7 @@
 			src="//cdn.iubenda.com/cs/iubenda_cs.js"
 			charset="UTF-8"
 			async
-		></script> -->
+		></script>
 
 		<meta property="og:site_name" content="Wompo" />
 		<meta property="og:title" content="Wompo - Create Shareable Web-Components" />

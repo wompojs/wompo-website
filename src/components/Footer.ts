@@ -26,8 +26,8 @@ export default function Footer({ styles: s }: WompoProps) {
 					<li><a href="/docs/guides/styling">Styling</a></li>
 					<li><a href="/docs/guides/custom-hooks">Custom Hooks</a></li>
 				</ul>
-				${
-					/*<ul>
+
+				<ul>
 					<li class=${s.title}>Privacy</li>
 					<li>
 						<a
@@ -79,8 +79,8 @@ export default function Footer({ styles: s }: WompoProps) {
 							})(window, document);
 						</script>
 					</li>
-				</ul>*/ ''
-				}
+				</ul>
+
 				<ul>
 					<li class=${s.title}>Contribute</li>
 					<li>
