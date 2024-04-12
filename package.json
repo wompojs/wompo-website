@@ -4,7 +4,7 @@
 	"name": "wompo-docs",
 	"description": "Documentation for Wompo",
 	"version": "1.0.0",
-	"type": "module",
+	"type": "commonjs",
 	"main": "index.js",
 	"scripts": {
 		"old-dev": "./esbuild.config.mjs",
