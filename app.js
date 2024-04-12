@@ -1,11 +1,10 @@
-const express = require('express');
-const helmet = require('helmet');
-const compression = require('compression');
-const path = require('path');
-const { fileURLToPath } = require('url');
+import express from 'express';
+import helmet from 'helmet';
+import compression from 'compression';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 const app = express();
-
 app.use(
 	helmet({
 		contentSecurityPolicy: {
@@ -30,9 +29,9 @@ app.use(
 );
 app.use(compression()); // gzip support
 
-const port = 8000;
+// const port = 8000;
 
-// const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 app.use(express.static(__dirname + '/dist'));
 app.use(express.static(__dirname + '/public'));
@@ -48,8 +47,8 @@ app.get('*', (req, res) => {
 	res.sendFile(path.join(__dirname, 'docs.html'));
 });
 
-app.listen(port, () => {
+/* app.listen(port, () => {
 	console.log(`Example app listening on port ${port}`);
-});
+}); */
 
-module.exports = app;
+export default app;

@@ -4,11 +4,11 @@
 	"name": "wompo-docs",
 	"description": "Documentation for Wompo",
 	"version": "1.0.0",
-	"type": "commonjs",
+	"type": "module",
 	"main": "index.js",
 	"scripts": {
 		"old-dev": "./esbuild.config.mjs",
-		"dev": "esbuild `find ./src \\( -name '*.ts' -o -name '*.tsx' \\)` --outdir=dist --allow-overwrite --minify & nodemon app.js",
+		"dev": "node app.js",
 		"dev-build": "esbuild `find ./src \\( -name '*.ts' -o -name '*.tsx' \\)` --outdir=dist --allow-overwrite --watch",
 		"build": "esbuild `find ./src \\( -name '*.ts' -o -name '*.tsx' \\)` --outdir=dist --allow-overwrite --minify",
 		"start": "node app.js"
