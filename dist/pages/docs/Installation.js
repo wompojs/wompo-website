@@ -10,7 +10,7 @@ import{Fragment as i,jsx as o,jsxs as e}from"wompo/jsx-runtime";import{defineWom
               <\/script>
             `,language:"html"})]})},{title:"jsDeliver",id:"js-deliver",content:e(i,{children:[o("p",{children:"You can install wompo in your application by simply importing the file from jsDeliver:"}),o(t,{code:`
               <script type="module">
-                import * as wompo from 'https://cdn.jsdelivr.net/npm/wompo@1.0.6';
+                import * as wompo from 'https://cdn.jsdelivr.net/npm/wompo@1.0.8';
 
                 window.wompo = wompo; // Optional
               <\/script>
@@ -18,9 +18,9 @@ import{Fragment as i,jsx as o,jsxs as e}from"wompo/jsx-runtime";import{defineWom
               <script type="importmap">
                 {
                   "imports": {
-                    "wompo": "https://cdn.jsdelivr.net/npm/wompo@1.0.6",
+                    "wompo": "https://cdn.jsdelivr.net/npm/wompo@1.0.8",
                     // Add the following line only if using JSX
-                    "wompo/jsx-runtime": "https://cdn.jsdelivr.net/npm/wompo@1.0.6/jsx-runtime.js", 
+                    "wompo/jsx-runtime": "https://cdn.jsdelivr.net/npm/wompo@1.0.8/jsx-runtime.js", 
                   }
                 }
               <\/script>

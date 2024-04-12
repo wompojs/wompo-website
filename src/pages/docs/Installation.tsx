@@ -31,9 +31,9 @@ const content: Contents = {
 					<p>
 						You can install wompo using npm by simply typing the following line in the terminal:
 					</p>
-					<Code code={`npm i wompo`} language='js' />
+					<Code code={`npm i wompo`} language="js" />
 					<p>And then import it whenever you use it:</p>
-					<Code code={`import { html, defineWompo } from 'wompo';`} language='js' />
+					<Code code={`import { html, defineWompo } from 'wompo';`} language="js" />
 					<p>
 						If you don't have or don't want a bundler, you can use an <b>importmap</b> script in
 						your html file and reference the "wompo" library in the node_modules folder, like so
@@ -52,7 +52,7 @@ const content: Contents = {
                 }
               </script>
             `}
-						language='html'
+						language="html"
 					/>
 				</>
 			),
@@ -68,12 +68,12 @@ const content: Contents = {
 					<Code
 						code={`
               <script type="module">
-                import * as wompo from 'https://cdn.jsdelivr.net/npm/wompo@1.0.6';
+                import * as wompo from 'https://cdn.jsdelivr.net/npm/wompo@1.0.8';
 
                 window.wompo = wompo; // Optional
               </script>
             `}
-						language='html'
+						language="html"
 					/>
 					<p>
 						If saving Wompo in the window object is not ideal, maybe you want to define an{' '}
@@ -85,17 +85,17 @@ const content: Contents = {
               <script type="importmap">
                 {
                   "imports": {
-                    "wompo": "https://cdn.jsdelivr.net/npm/wompo@1.0.6",
+                    "wompo": "https://cdn.jsdelivr.net/npm/wompo@1.0.8",
                     // Add the following line only if using JSX
-                    "wompo/jsx-runtime": "https://cdn.jsdelivr.net/npm/wompo@1.0.6/jsx-runtime.js", 
+                    "wompo/jsx-runtime": "https://cdn.jsdelivr.net/npm/wompo@1.0.8/jsx-runtime.js", 
                   }
                 }
               </script>
             `}
-						language='html'
+						language="html"
 					/>
 					<p>And then, use it like if it was installed in your node_modules:</p>
-					<Code code={`import { html, defineWompo } from 'wompo';`} language='js' />
+					<Code code={`import { html, defineWompo } from 'wompo';`} language="js" />
 				</>
 			),
 		},
@@ -108,7 +108,7 @@ const content: Contents = {
 						You can download Wompo and run it locally by clicking this button:
 						<br />
 						<a
-							href='/wompo.zip'
+							href="/wompo.zip"
 							style={{
 								border: 'none',
 								backgroundColor: '#573EF6',
@@ -133,7 +133,7 @@ const content: Contents = {
                 window.wompo = wompo; // Optional
               </script>
             `}
-						language='html'
+						language="html"
 					/>
 					<p>
 						If saving Wompo in the window object is not ideal, maybe you want to define an{' '}
@@ -151,10 +151,10 @@ const content: Contents = {
                 }
               </script>
             `}
-						language='html'
+						language="html"
 					/>
 					<p>And then, use it like if it was installed in your node_modules:</p>
-					<Code code={`import { html, defineWompo } from 'wompo';`} language='js' />
+					<Code code={`import { html, defineWompo } from 'wompo';`} language="js" />
 				</>
 			),
 		},
