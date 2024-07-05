@@ -1,16 +1,16 @@
-import{Fragment as i,jsx as o,jsxs as e}from"wompo/jsx-runtime";import{defineWompo as p}from"wompo";import l from"../../utils/getPageLayout.js";import t from"../../components/Code.js";const m={title:"Installation",description:"Learn how to install Wompo in your application.",sections:[{title:"Methods of installation",id:"methods",content:o(i,{children:e("p",{children:["You can install and use Wompo in any Web Environment. Right now you have the following options:",e("ol",{children:[o("li",{children:"Install it through npm"}),o("li",{children:"Import it through a script hosted by jsDeliver"}),o("li",{children:"Download it and use it locally"})]})]})})},{title:"npm",id:"npm",content:e(i,{children:[o("p",{children:"You can install wompo using npm by simply typing the following line in the terminal:"}),o(t,{code:"npm i wompo",language:"js"}),o("p",{children:"And then import it whenever you use it:"}),o(t,{code:"import { html, defineWompo } from 'wompo';",language:"js"}),e("p",{children:["If you don't have or don't want a bundler, you can use an ",o("b",{children:"importmap"}),' script in your html file and reference the "wompo" library in the node_modules folder, like so (replace "[root]" with the path to reach your node_modules folder through the html file):']}),o(t,{code:`
+import{Fragment as i,jsx as o,jsxs as e}from"wompo/jsx-runtime";import{defineWompo as p}from"wompo";import l from"../../utils/getPageLayout.js";import t from"../../components/Code.js";const a={title:"Installation",description:"Learn how to install Wompo in your application.",sections:[{title:"Methods of installation",id:"methods",content:o(i,{children:e("p",{children:["You can install and use Wompo in any Web Environment. Right now you have the following options:",e("ol",{children:[o("li",{children:"Install it through npm"}),o("li",{children:"Import it through a script hosted by jsDeliver"}),o("li",{children:"Download it and use it locally"})]})]})})},{title:"npm",id:"npm",content:e(i,{children:[o("p",{children:"You can install wompo using npm by simply typing the following line in the terminal:"}),o(t,{code:"npm i wompo",language:"js"}),o("p",{children:"And then import it whenever you use it:"}),o(t,{code:"import { html, defineWompo } from 'wompo';",language:"js"}),e("p",{children:["If you don't have or don't want a bundler, you can use an ",o("b",{children:"importmap"}),' script in your html file and reference the "wompo" library in the node_modules folder, like so (replace "[root]" with the path to reach your node_modules folder through the html file):']}),o(t,{code:`
               <script type="importmap">
                 {
                   "imports": {
-                    "wompo": "[root]/node_modules/wompo/dist/wompo.js",
-                    // Add the following line only if using JSX
-                    "wompo/jsx-runtime": "[root]/node_modules/wompo/jsx-runtime.js", 
+                    "wompo": "[root]/node_modules/wompo/dist/wompo.js"
                   }
                 }
               <\/script>
-            `,language:"html"})]})},{title:"jsDeliver",id:"js-deliver",content:e(i,{children:[o("p",{children:"You can install wompo in your application by simply importing the file from jsDeliver:"}),o(t,{code:`
+            `,language:"html"}),"If you use JSX add also this line below wompo:",o(t,{code:`
+              "wompo/jsx-runtime": "[root]/node_modules/wompo/jsx-runtime.js"
+						`,language:"html"})]})},{title:"jsDeliver",id:"js-deliver",content:e(i,{children:[o("p",{children:"You can install wompo in your application by simply importing the file from jsDeliver:"}),o(t,{code:`
               <script type="module">
-                import * as wompo from 'https://cdn.jsdelivr.net/npm/wompo@1.0.8';
+                import * as wompo from 'https://cdn.jsdelivr.net/npm/wompo@1.0.9';
 
                 window.wompo = wompo; // Optional
               <\/script>
@@ -18,9 +18,7 @@ import{Fragment as i,jsx as o,jsxs as e}from"wompo/jsx-runtime";import{defineWom
               <script type="importmap">
                 {
                   "imports": {
-                    "wompo": "https://cdn.jsdelivr.net/npm/wompo@1.0.8",
-                    // Add the following line only if using JSX
-                    "wompo/jsx-runtime": "https://cdn.jsdelivr.net/npm/wompo@1.0.8/jsx-runtime.js", 
+                    "wompo": "https://cdn.jsdelivr.net/npm/wompo@1.0.9"
                   }
                 }
               <\/script>
@@ -34,10 +32,8 @@ import{Fragment as i,jsx as o,jsxs as e}from"wompo/jsx-runtime";import{defineWom
               <script type="importmap">
                 {
                   "imports": {
-                    "wompo": "/path/to/wompo.js",
-                    // Add the following line only if using JSX
-                    "wompo/jsx-runtime": "/path/to/jsx-runtime.js", 
+                    "wompo": "/path/to/wompo.js"
                   }
                 }
               <\/script>
-            `,language:"html"}),o("p",{children:"And then, use it like if it was installed in your node_modules:"}),o(t,{code:"import { html, defineWompo } from 'wompo';",language:"js"})]})}]};export default function n(){return l(m)}p(n,{name:"installation-page"});
+            `,language:"html"}),o("p",{children:"And then, use it like if it was installed in your node_modules:"}),o(t,{code:"import { html, defineWompo } from 'wompo';",language:"js"})]})}]};export default function n(){return l(a)}p(n,{name:"installation-page"});
