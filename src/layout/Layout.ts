@@ -33,7 +33,7 @@ export default function Layout({ styles: s }: WompoProps) {
 					class=${`${s.menu} ${open && s.open}`}
 					menu=${docsRoutes}
 					title=${html`<div style=${{ fontSize: 14, color: '#585858', padding: '2rem' }}>
-						wompo@1.0.9
+						wompo@1.0.10
 					</div>`}
 				/>
 				<div style=${{ width: '100%' }}>

@@ -73,7 +73,7 @@ const content: Contents = {
 					<Code
 						code={`
               <script type="module">
-                import * as wompo from 'https://cdn.jsdelivr.net/npm/wompo@1.0.9';
+                import * as wompo from 'https://cdn.jsdelivr.net/npm/wompo@1.0.10';
 
                 window.wompo = wompo; // Optional
               </script>
@@ -90,7 +90,7 @@ const content: Contents = {
               <script type="importmap">
                 {
                   "imports": {
-                    "wompo": "https://cdn.jsdelivr.net/npm/wompo@1.0.9"
+                    "wompo": "https://cdn.jsdelivr.net/npm/wompo@1.0.10"
                   }
                 }
               </script>
