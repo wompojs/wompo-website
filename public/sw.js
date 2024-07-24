@@ -1,5 +1,9 @@
 const CACHE_NAME = `wompo-v1.0.11`;
 
+caches.keys().then(function (names) {
+	for (let name of names) caches.delete(name);
+});
+
 // Use the install event to pre-cache all initial resources.
 self.addEventListener('install', (event) => {
 	event.waitUntil(
@@ -52,14 +56,14 @@ self.addEventListener('fetch', (event) => {
 
 				// Get the resource from the cache.
 				const cachedResponse = await cache.match(event.request);
-				if (cachedResponse) {
+				if (cachedResponse && !event.request.includes('sw.js')) {
 					return cachedResponse;
 				} else {
 					try {
 						// If the resource was not in the cache, try the network.
 						const fetchResponse = await fetch(event.request);
 						// Save the resource in the cache and return it.
-						cache.put(event.request, fetchResponse.clone());
+						if (!event.request.includes('sw.js')) cache.put(event.request, fetchResponse.clone());
 						return fetchResponse;
 					} catch (e) {
 						// The network failed.
