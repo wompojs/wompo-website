@@ -1,4 +1,4 @@
-const CACHE_NAME = `wompo-v1.0.10`;
+const CACHE_NAME = `wompo-v1.0.11`;
 
 // Use the install event to pre-cache all initial resources.
 self.addEventListener('install', (event) => {
