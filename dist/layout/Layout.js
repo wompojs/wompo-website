@@ -8,7 +8,7 @@ import{defineWompo as d,useState as a,html as n,useEffect as m}from"wompo";impor
 					class=${`${o.menu} ${e&&o.open}`}
 					menu=${y}
 					title=${n`<div style=${{fontSize:14,color:"#585858",padding:"2rem"}}>
-						wompo@1.0.10
+						wompo@1.0.11
 					</div>`}
 				/>
 				<div style=${{width:"100%"}}>
