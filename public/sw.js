@@ -70,7 +70,7 @@ self.addEventListener('fetch', (event) => {
 
 				// Get the resource from the cache.
 				const cachedResponse = await cache.match(event.request);
-				if (cachedResponse && !event.request.includes('sw.js')) {
+				if (cachedResponse && !event.request.url?.includes('sw.js')) {
 					return cachedResponse;
 				} else {
 					try {
