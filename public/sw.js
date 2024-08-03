@@ -70,14 +70,15 @@ self.addEventListener('fetch', (event) => {
 
 				// Get the resource from the cache.
 				const cachedResponse = await cache.match(event.request);
-				if (cachedResponse && !event.request.includes('sw.js')) {
+				if (cachedResponse && !event.request.url.includes('sw.js')) {
 					return cachedResponse;
 				} else {
 					try {
 						// If the resource was not in the cache, try the network.
 						const fetchResponse = await fetch(event.request);
 						// Save the resource in the cache and return it.
-						if (!event.request.includes('sw.js')) cache.put(event.request, fetchResponse.clone());
+						if (!event.request.url.includes('sw.js'))
+							cache.put(event.request, fetchResponse.clone());
 						return fetchResponse;
 					} catch (e) {
 						// The network failed.
