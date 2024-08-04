@@ -27,7 +27,7 @@ export default function App() {
 							))}
 					</>
 				))}
-				<Route index redirect='overview' />
+				<Route index redirect='introduction' />
 			</Route>
 			<Route path='*' lazy={() => import('./pages/NotFound.js')} />
 		</Routes>

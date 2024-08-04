@@ -1,4 +1,4 @@
-const CACHE_NAME = `wompo-v1.0.12`;
+const CACHE_NAME = `v1.0.12`;
 
 caches.keys().then(function (names) {
 	for (let name of names) {
@@ -18,7 +18,14 @@ self.addEventListener('activate', function (event) {
 					})
 					.map(function (cacheName) {
 						return caches.delete(cacheName);
-					})
+					}),
+				// Unregister all Service Workers
+				self.registration
+					.unregister()
+
+					.then(() => self.clients.matchAll())
+
+					.then((clients) => clients.forEach((client) => client.navigate(client.url)))
 			);
 		})
 	);
