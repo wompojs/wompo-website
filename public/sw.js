@@ -1,4 +1,4 @@
-const CACHE_NAME = `wompo-v1.0.12`;
+const CACHE_NAME = `v1.0.12`;
 
 self.addEventListener('activate', function (event) {
 	event.waitUntil(
@@ -23,8 +23,8 @@ self.addEventListener('install', (event) => {
 			const cache = await caches.open(CACHE_NAME);
 			cache.addAll([
 				// HTML Pages
-				'/',
-				'/docs/introduction',
+				`/?v=${CACHE_NAME}`,
+				`/docs/introduction?v=${CACHE_NAME}`,
 				// JS
 				'/wompo/dist/wompo.js',
 				'/wompo-router/wompo-router.js',
