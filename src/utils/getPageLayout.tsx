@@ -33,7 +33,7 @@ export default function getPageLayout(contents: Contents) {
 					</ContentSection>
 				))}
 				<div style={{ display: 'flex', gap: 10, alignItems: 'stretch', margin: '7rem 0' }}>
-					{index !== 1 ? (
+					{index > 1 ? (
 						<FollowDocButton
 							to={prevRoute[0]}
 							title={prevRoute[1].meta.title}
