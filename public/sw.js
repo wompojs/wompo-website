@@ -1,10 +1,4 @@
-const CACHE_NAME = `v1.0.12`;
-
-caches.keys().then(function (names) {
-	for (let name of names) {
-		if (name !== CACHE_NAME) caches.delete(name);
-	}
-});
+const CACHE_NAME = `wompo-v1.0.12`;
 
 self.addEventListener('activate', function (event) {
 	event.waitUntil(
@@ -12,20 +6,11 @@ self.addEventListener('activate', function (event) {
 			return Promise.all(
 				cacheNames
 					.filter(function (cacheName) {
-						// Return true if you want to remove this cache,
-						// but remember that caches are shared across
-						// the whole origin
+						return cacheName !== CACHE_NAME;
 					})
 					.map(function (cacheName) {
 						return caches.delete(cacheName);
-					}),
-				// Unregister all Service Workers
-				self.registration
-					.unregister()
-
-					.then(() => self.clients.matchAll())
-
-					.then((clients) => clients.forEach((client) => client.navigate(client.url)))
+					})
 			);
 		})
 	);
