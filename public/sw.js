@@ -1,4 +1,4 @@
-const CACHE_NAME = `wompo-v1.0.11`;
+const CACHE_NAME = `wompo-v1.0.12`;
 
 self.addEventListener('activate', function (event) {
 	event.waitUntil(
