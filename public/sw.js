@@ -1,5 +1,11 @@
 const CACHE_NAME = `wompo-v1.0.12`;
 
+caches.keys().then(function (names) {
+	for (let name of names) {
+		if (name !== CACHE_NAME) caches.delete(name);
+	}
+});
+
 self.addEventListener('activate', function (event) {
 	event.waitUntil(
 		caches.keys().then(function (cacheNames) {
