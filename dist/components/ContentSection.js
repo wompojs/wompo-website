@@ -1,4 +1,11 @@
-import{Fragment as p,jsx as t,jsxs as n}from"wompo/jsx-runtime";import{defineWompo as a}from"wompo";import{useNavigate as c}from"wompo-router";export default function o({title:i,sectionId:e,children:l,styles:s}){const r=c();return n(p,{children:[t("hr",{}),n("h2",{id:e,class:s.title,onClick:()=>r(`#${e}`),children:[t("span",{children:i}),t("svg",{xmlns:"http://www.w3.org/2000/svg",width:"30",height:"30",fill:"currentColor",viewBox:"0 0 16 16",children:t("path",{d:"M8.39 12.648a1 1 0 0 0-.015.18c0 .305.21.508.5.508.266 0 .492-.172.555-.477l.554-2.703h1.204c.421 0 .617-.234.617-.547 0-.312-.188-.53-.617-.53h-.985l.516-2.524h1.265c.43 0 .618-.227.618-.547 0-.313-.188-.524-.618-.524h-1.046l.476-2.304a1 1 0 0 0 .016-.164.51.51 0 0 0-.516-.516.54.54 0 0 0-.539.43l-.523 2.554H7.617l.477-2.304c.008-.04.015-.118.015-.164a.51.51 0 0 0-.523-.516.54.54 0 0 0-.531.43L6.53 5.484H5.414c-.43 0-.617.22-.617.532s.187.539.617.539h.906l-.515 2.523H4.609c-.421 0-.609.219-.609.531s.188.547.61.547h.976l-.516 2.492c-.008.04-.015.125-.015.18 0 .305.21.508.5.508.265 0 .492-.172.554-.477l.555-2.703h2.242zm-1-6.109h2.266l-.515 2.563H6.859l.532-2.563z"})})]}),l]})}o.css=`
+import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "wompo/jsx-runtime";
+import { defineWompo } from 'wompo';
+import { useNavigate } from 'wompo-router';
+export default function ContentSection({ title, sectionId, children, styles: s, }) {
+    const navigate = useNavigate();
+    return (_jsxs(_Fragment, { children: [_jsx("hr", {}), _jsxs("h2", { id: sectionId, class: s.title, onClick: () => navigate(`#${sectionId}`), children: [_jsx("span", { children: title }), _jsx("svg", { xmlns: 'http://www.w3.org/2000/svg', width: '30', height: '30', fill: 'currentColor', viewBox: '0 0 16 16', children: _jsx("path", { d: 'M8.39 12.648a1 1 0 0 0-.015.18c0 .305.21.508.5.508.266 0 .492-.172.555-.477l.554-2.703h1.204c.421 0 .617-.234.617-.547 0-.312-.188-.53-.617-.53h-.985l.516-2.524h1.265c.43 0 .618-.227.618-.547 0-.313-.188-.524-.618-.524h-1.046l.476-2.304a1 1 0 0 0 .016-.164.51.51 0 0 0-.516-.516.54.54 0 0 0-.539.43l-.523 2.554H7.617l.477-2.304c.008-.04.015-.118.015-.164a.51.51 0 0 0-.523-.516.54.54 0 0 0-.531.43L6.53 5.484H5.414c-.43 0-.617.22-.617.532s.187.539.617.539h.906l-.515 2.523H4.609c-.421 0-.609.219-.609.531s.188.547.61.547h.976l-.516 2.492c-.008.04-.015.125-.015.18 0 .305.21.508.5.508.265 0 .492-.172.554-.477l.555-2.703h2.242zm-1-6.109h2.266l-.515 2.563H6.859l.532-2.563z' }) })] }), children] }));
+}
+ContentSection.css = `
 	.title {
 		scroll-margin-top: 6rem;
 		cursor: pointer;
@@ -14,4 +21,7 @@ import{Fragment as p,jsx as t,jsxs as n}from"wompo/jsx-runtime";import{defineWom
 	.title:hover svg {
 		opacity: 1;
 	}
-`,a(o,{name:"content-section"});
+`;
+defineWompo(ContentSection, {
+    name: 'content-section',
+});

@@ -1,23 +1,50 @@
-import{defineWompo as d,useState as a,html as n,useEffect as m}from"wompo";import l from"../components/Header.js";import f from"../components/SideMenu.js";import{ChildRoute as p}from"wompo-router";import u from"../components/Footer.js";import c from"../components/MenuIcon.js";import{useCurrentRoute as $}from"wompo-router";import{docsRoutes as y}from"../utils/routes.js";export default function i({styles:o}){const[e,t]=a(!1),r=$(),s=()=>{e?(document.body.style.overflow="auto",t(!1)):(document.body.style.overflow="hidden",t(!0))};return m(()=>{document.body.style.overflow="auto",t(!1)},[r]),n`
+import { defineWompo, useState, html, useEffect } from 'wompo';
+import Header from '../components/Header.js';
+import SideMenu from '../components/SideMenu.js';
+import { ChildRoute } from 'wompo-router';
+import Footer from '../components/Footer.js';
+import MenuIcon from '../components/MenuIcon.js';
+import { useCurrentRoute } from 'wompo-router';
+import { docsRoutes } from '../utils/routes.js';
+export default function Layout({ styles: s }) {
+    const [open, setOpen] = useState(false);
+    const currentRoute = useCurrentRoute();
+    const toggleMenu = () => {
+        if (open) {
+            document.body.style.overflow = 'auto';
+            setOpen(false);
+        }
+        else {
+            document.body.style.overflow = 'hidden';
+            setOpen(true);
+        }
+    };
+    useEffect(() => {
+        document.body.style.overflow = 'auto';
+        setOpen(false);
+    }, [currentRoute]);
+    return html `
 		<div>
-			<${l}
-				menuIcon=${n`<${c} class=${o.icon} open=${e} @click=${s} />`}
+			<${Header}
+				menuIcon=${html `<${MenuIcon} class=${s.icon} open=${open} @click=${toggleMenu} />`}
 			/>
-			<div class=${o.pageContent}>
-				<${f}
-					class=${`${o.menu} ${e&&o.open}`}
-					menu=${y}
-					title=${n`<div style=${{fontSize:14,color:"#585858",padding:"2rem"}}>
-						wompo@1.0.12
+			<div class=${s.pageContent}>
+				<${SideMenu}
+					class=${`${s.menu} ${open && s.open}`}
+					menu=${docsRoutes}
+					title=${html `<div style=${{ fontSize: 14, color: '#585858', padding: '2rem' }}>
+						wompo@1.0.13
 					</div>`}
 				/>
-				<div style=${{width:"100%"}}>
-					<${p} />
+				<div style=${{ width: '100%' }}>
+					<${ChildRoute} />
 				</div>
 			</div>
-			<${u} class=${o.footer} />
+			<${Footer} class=${s.footer} />
 		</div>
-	`}i.css=`
+	`;
+}
+Layout.css = `
 	.pageContent {
 		display: flex;
 		height: 100%;
@@ -60,4 +87,7 @@ import{defineWompo as d,useState as a,html as n,useEffect as m}from"wompo";impor
 			transform: translateX(0);
 		}
 	}
-`,d(i,{name:"docs-layout"});
+`;
+defineWompo(Layout, {
+    name: 'docs-layout',
+});

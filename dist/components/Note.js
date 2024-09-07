@@ -1,4 +1,9 @@
-import{jsx as f}from"wompo/jsx-runtime";import{defineWompo as t}from"wompo";export default function e({children:r,styles:o,severity:n}){return f("div",{class:`${o.note} ${o[n]}`,children:r})}e.css=`
+import { jsx as _jsx } from "wompo/jsx-runtime";
+import { defineWompo } from 'wompo';
+export default function Note({ children, styles: s, severity }) {
+    return _jsx("div", { class: `${s.note} ${s[severity]}`, children: children });
+}
+Note.css = `
   .note {
     padding: 2rem;
   }
@@ -11,4 +16,7 @@ import{jsx as f}from"wompo/jsx-runtime";import{defineWompo as t}from"wompo";expo
     border-left: 4px solid #ee9b13;
 ;
   }
-`,t(e,{name:"note-alert"});
+`;
+defineWompo(Note, {
+    name: 'note-alert',
+});

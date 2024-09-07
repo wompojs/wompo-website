@@ -1,8 +1,10 @@
-import{defineWompo as s,html as e}from"wompo";export default function r({size:o=4}){return e`<svg
+import { defineWompo, html } from 'wompo';
+export default function Logo({ size = 4 }) {
+    return html `<svg
 		id="Livello_1"
 		xmlns="http://www.w3.org/2000/svg"
 		viewBox="200 200 650 650"
-		style=${{width:o+"rem",height:o+"rem"}}
+		style=${{ width: size + 'rem', height: size + 'rem' }}
 	>
 		<path
 			fill="currentColor"
@@ -14,4 +16,6 @@ import{defineWompo as s,html as e}from"wompo";export default function r({size:o=
 			class="cls-1"
 			d="M512,220.82c160.81,0,291.18,130.36,291.18,291.18s-130.36,291.18-291.18,291.18-291.18-130.36-291.18-291.18,130.36-291.18,291.18-291.18M512,206.65c-41.22,0-81.21,8.08-118.86,24-36.36,15.38-69.02,37.4-97.05,65.43-28.04,28.04-50.05,60.69-65.43,97.05-15.93,37.65-24,77.64-24,118.86s8.08,81.21,24,118.86c15.38,36.36,37.4,69.02,65.43,97.05,28.04,28.04,60.69,50.05,97.05,65.43,37.65,15.93,77.64,24,118.86,24s81.21-8.08,118.86-24c36.36-15.38,69.02-37.4,97.05-65.43,28.04-28.04,50.05-60.69,65.43-97.05,15.93-37.65,24-77.64,24-118.86s-8.08-81.21-24-118.86c-15.38-36.36-37.4-69.02-65.43-97.05-28.04-28.04-60.69-50.05-97.05-65.43-37.65-15.93-77.64-24-118.86-24h0Z"
 		/>
-	</svg>`}s(r,{name:"wompo-logo"});
+	</svg>`;
+}
+defineWompo(Logo, { name: 'wompo-logo' });

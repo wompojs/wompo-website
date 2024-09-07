@@ -1,4 +1,8 @@
-import{defineWompo as a,html as s}from"wompo";import n from"../Code.js";import o from"./BuiltInCssModules.js";import t from"./MoreWidget.js";const l=s`
+import { defineWompo, html } from 'wompo';
+import Code from '../Code.js';
+import BuiltInCssModules from './BuiltInCssModules.js';
+import MoreWidget from './MoreWidget.js';
+const jsxIcon = html `
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width="16"
@@ -10,7 +14,8 @@ import{defineWompo as a,html as s}from"wompo";import n from"../Code.js";import o
 			d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"
 		/>
 	</svg>
-`,i=s`
+`;
+const automaticNamingIcon = html `
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width="16"
@@ -22,7 +27,8 @@ import{defineWompo as a,html as s}from"wompo";import n from"../Code.js";import o
 			d="M2.204 11.078c.767 0 1.201-.356 1.406-.737h.059V11h1.216V7.519c0-1.314-.947-1.783-2.11-1.783C1.355 5.736.75 6.42.69 7.27h1.216c.064-.323.313-.552.84-.552s.864.249.864.771v.464H2.346C1.145 7.953.5 8.568.5 9.496c0 .977.693 1.582 1.704 1.582m.42-.947c-.44 0-.845-.235-.845-.718 0-.395.269-.684.84-.684h.991v.538c0 .503-.444.864-.986.864m5.593.937c1.216 0 1.948-.869 1.948-2.31v-.702c0-1.44-.727-2.305-1.929-2.305-.742 0-1.328.347-1.499.889h-.063V3.983h-1.29V11h1.27v-.791h.064c.21.532.776.86 1.499.86Zm-.43-1.025c-.66 0-1.113-.518-1.113-1.28V8.12c0-.825.42-1.343 1.098-1.343.684 0 1.075.518 1.075 1.416v.45c0 .888-.386 1.401-1.06 1.401Zm2.834-1.328c0 1.47.87 2.378 2.305 2.378 1.416 0 2.139-.777 2.158-1.763h-1.186c-.06.425-.313.732-.933.732-.66 0-1.05-.512-1.05-1.352v-.625c0-.81.371-1.328 1.045-1.328.635 0 .879.425.918.776h1.187c-.02-.986-.787-1.806-2.14-1.806-1.41 0-2.304.918-2.304 2.338z"
 		/>
 	</svg>
-`,c=s`
+`;
+const tsIcon = html `
 	<svg width="16" height="16" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#000000">
 		<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
 		<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -34,7 +40,9 @@ import{defineWompo as a,html as s}from"wompo";import n from"../Code.js";import o
 			></path>
 		</g>
 	</svg>
-`;export default function e({styles:p}){return s`
+`;
+export default function CSSModuleAndMore({ styles: s }) {
+    return html `
 
     <section class="section cssModule">
       <h2>Built-in CSS Modules</h2>
@@ -46,33 +54,13 @@ import{defineWompo as a,html as s}from"wompo";import n from"../Code.js";import o
         then be put on the component's props.
       </p>
       <div class="codePreview">
-        <${n}
-          code=${`<span class="hljs-keyword">function</span> <span class="hljs-title function_">StyledComponent</span>(<span class="hljs-params">{ styles: s }</span>){
-  <span class="hljs-keyword">return</span> html\`<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=</span></span><span class="hljs-subst">\${s.container}</span><span class="language-xml"><span class="hljs-tag">&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>\`</span>;
-}
-<span class="hljs-title class_">StyledComponent</span>.<span class="hljs-property">css</span> = <span class="hljs-string">\`
-  .container {
-    padding: 30px 60px;
-    border-radius: 100px 15px 100px 15px;
-    background-color: #573ef630;
-    position: relative;
-  }
-  .container::after {
-    content: "";
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background-color: #573ef6;
-    border-radius: 50%;
-    right: -20px;
-    top: -10px;
-  }
-\`</span>;`}
-          elaborate=${!1}
+        <${Code}
+          code=${`<span class="hljs-keyword">function</span> <span class="hljs-title function_">StyledComponent</span>(<span class="hljs-params">{ styles: s }</span>){\n  <span class="hljs-keyword">return</span> html\`<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=</span></span><span class="hljs-subst">\${s.container}</span><span class="language-xml"><span class="hljs-tag">&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>\`</span>;\n}\n<span class="hljs-title class_">StyledComponent</span>.<span class="hljs-property">css</span> = <span class="hljs-string">\`\n  .container {\n    padding: 30px 60px;\n    border-radius: 100px 15px 100px 15px;\n    background-color: #573ef630;\n    position: relative;\n  }\n  .container::after {\n    content: "";\n    position: absolute;\n    width: 50px;\n    height: 50px;\n    background-color: #573ef6;\n    border-radius: 50%;\n    right: -20px;\n    top: -10px;\n  }\n\`</span>;`}
+          elaborate=${false}
           language="javascript"
         />
         <div>
-          <${o} />
+          <${BuiltInCssModules} />
           <div class="container">
             I also have the "container" class from another component, but I am not a
             "StyledComponent" and I'm not affected by its styles! I am completely independent and
@@ -85,19 +73,22 @@ import{defineWompo as a,html as s}from"wompo";import n from"../Code.js";import o
     <section class="section">
       <h2 style="text-align: center; margin: 4rem 0;">Want more?</h2>
       <div class="widgets">
-        <${t} title=${s`JSX<br />Support`} icon=${l}>
+        <${MoreWidget} title=${html `JSX<br />Support`} icon=${jsxIcon}>
           Wompo already comes out with JSX support! HTML check, props validation, and more.
           Of course, you will need a compiler for that.
-        </${t}>
-        <${t} title=${s`Typescript<br />Compatible`} icon=${c}>
+        </${MoreWidget}>
+        <${MoreWidget} title=${html `Typescript<br />Compatible`} icon=${tsIcon}>
           Wompo is built with TypeScript. This means that type checking is available by default.
-        </${t}>
-        <${t} title=${s`Automatic<br />Naming`} icon=${i}>
+        </${MoreWidget}>
+        <${MoreWidget} title=${html `Automatic<br />Naming`} icon=${automaticNamingIcon}>
           Your <i>TodoList</i> component will simply be a "todo-list" HTML element, right?<br/>
           We know it, so we do it for you!
-        </${t}>
+        </${MoreWidget}>
       </div>
     </section>
-	`}e.css=`
+	`;
+}
+CSSModuleAndMore.css = `
   
-`,a(e,{name:"css-modules-and-more"});
+`;
+defineWompo(CSSModuleAndMore, { name: 'css-modules-and-more' });

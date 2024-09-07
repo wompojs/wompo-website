@@ -1,4 +1,9 @@
-import{jsx as i,jsxs as m}from"wompo/jsx-runtime";import{defineWompo as a}from"wompo";export default function e({styles:n,title:o,description:t,children:r}){return i("main",{class:n.main,children:m("div",{class:n.container,children:[i("h1",{children:o}),i("p",{class:n.subtitle,children:t}),r]})})}e.css=`
+import { jsx as _jsx, jsxs as _jsxs } from "wompo/jsx-runtime";
+import { defineWompo } from 'wompo';
+export default function MainContent({ styles: s, title, description, children }) {
+    return (_jsx("main", { class: s.main, children: _jsxs("div", { class: s.container, children: [_jsx("h1", { children: title }), _jsx("p", { class: s.subtitle, children: description }), children] }) }));
+}
+MainContent.css = `
   :host {
     display: block;
     width: 100%;
@@ -76,4 +81,7 @@ import{jsx as i,jsxs as m}from"wompo/jsx-runtime";import{defineWompo as a}from"w
     margin-bottom: 10px;
     padding: 0 2rem;
   }
-`,a(e,{name:"main-content"});
+`;
+defineWompo(MainContent, {
+    name: 'main-content',
+});
