@@ -31,7 +31,7 @@ const content = {
             id: 'js-deliver',
             content: (_jsxs(_Fragment, { children: [_jsx("p", { children: "You can install wompo in your application by simply importing the file from jsDeliver:" }), _jsx(Code, { code: `
               <script type="module">
-                import * as wompo from 'https://cdn.jsdelivr.net/npm/wompo@1.0.13';
+                import * as wompo from 'https://cdn.jsdelivr.net/npm/wompo@1.0.14';
 
                 window.wompo = wompo; // Optional
               </script>
@@ -39,7 +39,7 @@ const content = {
               <script type="importmap">
                 {
                   "imports": {
-                    "wompo": "https://cdn.jsdelivr.net/npm/wompo@1.0.13"
+                    "wompo": "https://cdn.jsdelivr.net/npm/wompo@1.0.14"
                   }
                 }
               </script>
