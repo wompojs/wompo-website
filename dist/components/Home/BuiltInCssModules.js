@@ -1,14 +1,10 @@
-import { defineWompo, html } from 'wompo';
-export default function BuiltInCssModules({ styles: s }) {
-    return html `
-		<div class=${s.container}>
+import{defineWompo as t,html as n}from"wompo";export default function o({styles:e}){return n`
+		<div class=${e.container}>
 			Look how beautiful I am! And my beauty will not affect other components' own beauty. Every
 			component is unique on its own, even without having to live in the obscure world of
 			<b>Shadow DOM</b>.
 		</div>
-	`;
-}
-BuiltInCssModules.css = `
+	`}o.css=`
   .container {
     padding: 30px 60px;
     border-radius: 100px 15px 100px 15px;
@@ -25,5 +21,4 @@ BuiltInCssModules.css = `
     right: -20px;
     top: -10px;
   }
-`;
-defineWompo(BuiltInCssModules, { name: 'built-in-css-modules' });
+`,t(o,{name:"built-in-css-modules"});

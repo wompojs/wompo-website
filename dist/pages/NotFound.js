@@ -1,14 +1,4 @@
-import { jsx as _jsx, jsxs as _jsxs } from "wompo/jsx-runtime";
-import { defineWompo } from 'wompo';
-import Header from '../components/Header.js';
-import Footer from '../components/Footer.js';
-export default function NotFound({ styles: s }) {
-    const goBack = () => {
-        history.back();
-    };
-    return (_jsxs("main", { class: s.main, children: [_jsx(Header, {}), _jsxs("section", { children: [_jsx("h1", { children: "Not Found" }), _jsx("h2", { children: "404" }), _jsx("p", { children: "We didn't find the page you were looking for... \uD83E\uDD79" }), _jsx("button", { onClick: goBack, children: "Go Back" })] }), _jsx(Footer, {})] }));
-}
-NotFound.css = `
+import{jsx as o,jsxs as n}from"wompo/jsx-runtime";import{defineWompo as i}from"wompo";import m from"../components/Header.js";import a from"../components/Footer.js";export default function e({styles:t}){const r=()=>{history.back()};return n("main",{class:t.main,children:[o(m,{}),n("section",{children:[o("h1",{children:"Not Found"}),o("h2",{children:"404"}),o("p",{children:"We didn't find the page you were looking for... \u{1F979}"}),o("button",{onClick:r,children:"Go Back"})]}),o(a,{})]})}e.css=`
   .main section {
     text-align: center;
     display: flex;
@@ -41,5 +31,4 @@ NotFound.css = `
   .main button:hover {
     text-decoration: underline;
   }
-`;
-defineWompo(NotFound, { name: 'not-found' });
+`,i(e,{name:"not-found"});

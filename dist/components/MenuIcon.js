@@ -1,12 +1,8 @@
-import { html, defineWompo } from 'wompo';
-export default function MenuIcon({ styles: s, open }) {
-    return html `<div class="${s.icon} ${open && s.open}">
+import{html as e,defineWompo as i}from"wompo";export default function n({styles:o,open:t}){return e`<div class="${o.icon} ${t&&o.open}">
 		<span></span>
 		<span></span>
 		<span></span>
-	</div>`;
-}
-MenuIcon.css = `
+	</div>`}n.css=`
 	/* Icon 1 */
 	.icon {
 		width: 28px;
@@ -56,5 +52,4 @@ MenuIcon.css = `
 	.icon.open span:nth-child(3) {
 		transform: rotate(-45deg);
 	}
-`;
-defineWompo(MenuIcon);
+`,i(n);

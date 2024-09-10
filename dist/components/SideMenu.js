@@ -1,25 +1,17 @@
-import { defineWompo, html } from 'wompo';
-import { NavLink } from 'wompo-router';
-import SubMenu from './SubMenu.js';
-export default function SideMenu({ styles: s, menu, title }) {
-    return html `
-		<aside class=${s.menu}>
+import{defineWompo as r,html as e}from"wompo";import{NavLink as l}from"wompo-router";import a from"./SubMenu.js";export default function i({styles:t,menu:n,title:s}){return e`
+		<aside class=${t.menu}>
 			<nav>
-				${title}
-				<ul class=${s.ul}>
-					${menu.map((item) => html `
+				${s}
+				<ul class=${t.ul}>
+					${n.map(o=>e`
 							<li>
-								${item.subRoutes
-        ? html `<${SubMenu} item=${item} prefix=${item.link} /> `
-        : html `<${NavLink} class="link" to=${item.link}>${item.title}</${NavLink}>`}
+								${o.subRoutes?e`<${a} item=${o} prefix=${o.link} /> `:e`<${l} class="link" to=${o.link}>${o.title}</${l}>`}
 							</li>
 						`)}
 				</ul>
 			</nav>
 		</aside>
-	`;
-}
-SideMenu.css = `
+	`}i.css=`
 	:host {
 		padding-top: 70px;
 		margin-top: -70px;
@@ -59,7 +51,4 @@ SideMenu.css = `
   .ul a:hover, .ul a[class="active"] {
     background-color: #573ef630;
   }
-`;
-defineWompo(SideMenu, {
-    name: 'side-menu',
-});
+`,r(i,{name:"side-menu"});

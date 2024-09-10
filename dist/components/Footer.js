@@ -1,25 +1,22 @@
-import { defineWompo, html } from 'wompo';
-import Logo from './Logo.js';
-export default function Footer({ styles: s }) {
-    return html `<footer class=${s.footer}>
-		<section class=${s.section}>
+var o=Object.freeze,n=Object.defineProperty;var i=(e,l)=>o(n(e,"raw",{value:o(l||e.slice())}));var a;import{defineWompo as r,html as s}from"wompo";import c from"./Logo.js";export default function t({styles:e}){return s(a||(a=i(["<footer class=",`>
+		<section class=`,`>
 			<nav>
 				<div style="display: flex; flex-direction:column;">
 					<a href="/" title="Homepage">
-						<${Logo} />
+						<`,` />
 						Wompo
 					</a>
-					<p style="font-size: 10px;">©2024</p>
+					<p style="font-size: 10px;">\xA92024</p>
 				</div>
 				<ul>
-					<li class=${s.title}>Learn</li>
+					<li class=`,`>Learn</li>
 					<li><a href="/docs/introduction">Introduction</a></li>
 					<li><a href="/docs/installation">Installation</a></li>
 					<li><a href="/docs/hooks">Hooks</a></li>
 					<li><a href="/docs/apis">APIs</a></li>
 				</ul>
 				<ul>
-					<li class=${s.title}>Guides</li>
+					<li class=`,`>Guides</li>
 					<li><a href="/docs/guides/quick-start">Quick Start</a></li>
 					<li><a href="/docs/guides/complex-example">Complex example</a></li>
 					<li><a href="/docs/guides/styling">Styling</a></li>
@@ -27,7 +24,7 @@ export default function Footer({ styles: s }) {
 				</ul>
 
 				<ul>
-					<li class=${s.title}>Privacy</li>
+					<li class=`,`>Privacy</li>
 					<li>
 						<a
 							href="https://www.iubenda.com/privacy-policy/24984791"
@@ -51,7 +48,7 @@ export default function Footer({ styles: s }) {
 									w.onload = loader;
 								}
 							})(window, document);
-						</script>
+						<\/script>
 					</li>
 					<li>
 						<a
@@ -76,12 +73,12 @@ export default function Footer({ styles: s }) {
 									w.onload = loader;
 								}
 							})(window, document);
-						</script>
+						<\/script>
 					</li>
 				</ul>
 
 				<ul>
-					<li class=${s.title}>Contribute</li>
+					<li class=`,`>Contribute</li>
 					<li>
 						<a href="https://github.com/wompojs/wompo" target="_blank">
 							<svg
@@ -114,9 +111,7 @@ export default function Footer({ styles: s }) {
 				</ul>
 			</nav>
 		</section>
-	</footer>`;
-}
-Footer.css = `
+	</footer>`])),e.footer,e.section,c,e.title,e.title,e.title,e.title)}t.css=`
   .footer {
     background-color: #573ef6;
     color: #dfdfdf;
@@ -179,5 +174,4 @@ Footer.css = `
 			justify-content: center;
 		}
 	}
-`;
-defineWompo(Footer, { name: 'wompo-footer' });
+`,r(t,{name:"wompo-footer"});

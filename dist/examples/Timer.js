@@ -1,26 +1,6 @@
-import { useState, defineWompo, html, useRef } from 'wompo';
-export default function Timer() {
-    const [timer, setTimer] = useState(0);
-    const intervalId = useRef(null);
-    function startTimer() {
-        intervalId.current = setInterval(() => {
-            setTimer((oldTimer) => oldTimer + 1);
-        }, 10);
-    }
-    function stopTimer() {
-        clearInterval(intervalId.current);
-        intervalId.current = null;
-    }
-    function resetTimer() {
-        setTimer(0);
-    }
-    return html `<div>
-		<button @click=${startTimer} disabled=${intervalId.current !== null}>Start</button>
-		<button @click=${stopTimer} disabled=${intervalId.current === null}>Stop</button>
-		<button @click=${resetTimer} disabled=${timer === 0}>Reset</button>
-		<p>${(timer / 100).toFixed(2)}</p>
-	</div>`;
-}
-defineWompo(Timer, {
-    name: 'timer-example',
-});
+import{useState as c,defineWompo as a,html as m,useRef as s}from"wompo";export default function r(){const[e,n]=c(0),t=s(null);function i(){t.current=setInterval(()=>{n(o=>o+1)},10)}function u(){clearInterval(t.current),t.current=null}function l(){n(0)}return m`<div>
+		<button @click=${i} disabled=${t.current!==null}>Start</button>
+		<button @click=${u} disabled=${t.current===null}>Stop</button>
+		<button @click=${l} disabled=${e===0}>Reset</button>
+		<p>${(e/100).toFixed(2)}</p>
+	</div>`}a(r,{name:"timer-example"});

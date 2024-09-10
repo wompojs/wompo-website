@@ -1,17 +1,1 @@
-import { jsx as _jsx, jsxs as _jsxs } from "wompo/jsx-runtime";
-import MainContent from '../components/MainContent.js';
-import ContentSection from '../components/ContentSection.js';
-import SideMenu from '../components/SideMenu.js';
-import { useCurrentRoute, useRoutes } from 'wompo-router';
-import FollowDocButton from '../components/FollowDocButton.js';
-export default function getPageLayout(contents) {
-    const routes = useRoutes();
-    const currentRoute = useCurrentRoute();
-    const index = routes.findIndex((r) => r[0] === currentRoute);
-    const prevRoute = routes[index - 1];
-    const nextRoute = routes[index + 1];
-    return (_jsxs("div", { style: { display: 'flex' }, children: [_jsxs(MainContent, { title: contents.title, description: contents.description, children: [contents.sections.map((section) => (_jsx(ContentSection, { title: section.title, sectionId: section.id, children: section.content }))), _jsxs("div", { style: { display: 'flex', gap: 10, alignItems: 'stretch', margin: '7rem 0' }, children: [index > 1 ? (_jsx(FollowDocButton, { to: prevRoute[0], title: prevRoute[1].meta.title, description: prevRoute[1].meta.description, next: false })) : (_jsx("div", { style: { width: '100%' } })), index !== routes.length - 2 ? (_jsx(FollowDocButton, { to: nextRoute[0], title: nextRoute[1].meta?.title, description: nextRoute[1].meta?.description, next: true })) : (_jsx("div", { style: { width: '100%' } }))] })] }), _jsx(SideMenu, { class: 'side-content', menu: contents.sections.map((section) => ({
-                    title: section.title,
-                    link: `#${section.id}`,
-                })), title: _jsx("h3", { style: { margin: '10px 0', textTransform: 'uppercase' }, children: "In this page" }) })] }));
-}
+import{jsx as e,jsxs as l}from"wompo/jsx-runtime";import m from"../components/MainContent.js";import p from"../components/ContentSection.js";import a from"../components/SideMenu.js";import{useCurrentRoute as u,useRoutes as f}from"wompo-router";import d from"../components/FollowDocButton.js";export default function g(i){const n=f(),c=u(),o=n.findIndex(t=>t[0]===c),r=n[o-1],s=n[o+1];return l("div",{style:{display:"flex"},children:[l(m,{title:i.title,description:i.description,children:[i.sections.map(t=>e(p,{title:t.title,sectionId:t.id,children:t.content})),l("div",{style:{display:"flex",gap:10,alignItems:"stretch",margin:"7rem 0"},children:[o>1?e(d,{to:r[0],title:r[1].meta.title,description:r[1].meta.description,next:!1}):e("div",{style:{width:"100%"}}),o!==n.length-2?e(d,{to:s[0],title:s[1].meta?.title,description:s[1].meta?.description,next:!0}):e("div",{style:{width:"100%"}})]})]}),e(a,{class:"side-content",menu:i.sections.map(t=>({title:t.title,link:`#${t.id}`})),title:e("h3",{style:{margin:"10px 0",textTransform:"uppercase"},children:"In this page"})})]})}

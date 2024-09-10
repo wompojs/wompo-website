@@ -1,6 +1,4 @@
-import { defineWompo, html } from 'wompo';
-export default function LoadingPlaceholder() {
-    return html `
+import{defineWompo as o,html as i}from"wompo";export default function e(){return i`
 		<section>
 			<div class="skeleton title"></div>
 			<div class="skeleton desc"></div>
@@ -8,9 +6,7 @@ export default function LoadingPlaceholder() {
 			<div class="skeleton content"></div>
 		</section>
 		<nav class="skeleton"></nav>
-	`;
-}
-LoadingPlaceholder.css = `
+	`}e.css=`
   :host {
     display: flex;
     box-sizing: border-box;
@@ -64,5 +60,4 @@ LoadingPlaceholder.css = `
       background-color: #d9d9d9;
     }
   }
-`;
-defineWompo(LoadingPlaceholder, { name: 'loading-placeholder', shadow: true, cssModule: false });
+`,o(e,{name:"loading-placeholder",shadow:!0,cssModule:!1});

@@ -1,13 +1,9 @@
-import { html, defineWompo } from 'wompo';
-export default function IsolatedComponent() {
-    return html `
+import{html as o,defineWompo as t}from"wompo";export default function e(){return o`
 		<p>
 			Even though my styles are super generic, I will not affect external elements and I will not be
 			affected by external styles!
 		</p>
-	`;
-}
-IsolatedComponent.css = `
+	`}e.css=`
   :host {
     display: block;
   }
@@ -17,11 +13,4 @@ IsolatedComponent.css = `
     background-color: #3489a6;
     color: #fff;
   }
-`;
-defineWompo(IsolatedComponent, {
-    name: 'super-cool-isolated-component',
-    // The content will be placed inside a Shadow Root
-    shadow: true,
-    // Since it's already "isolated", it's not necessary to have the CSS Module
-    cssModule: false,
-});
+`,t(e,{name:"super-cool-isolated-component",shadow:!0,cssModule:!1});
