@@ -330,6 +330,16 @@ export const docsRoutes: DocRoute[] = [
 				},
 			},
 			{
+				title: 'unsafelyRenderString',
+				link: '/docs/apis/unsafelyRenderString',
+				path: 'unsafelyRenderString',
+				pagePath: './pages/docs/apis/UnsafelyRenderString.js',
+				meta: {
+					title: 'unsafelyRenderString API - Wompo APIs',
+					description: "Learn how you can avoid Wompo's automatic HTML escaping.",
+				},
+			},
+			{
 				title: 'wompDefaultOptions',
 				link: '/docs/apis/wompoDefaultOptions',
 				path: 'wompoDefaultOptions',

@@ -34,7 +34,7 @@ const content: Contents = {
 				<>
 					<Code
 						code={`
-							const data = useAsync(promiseFn, dependencies);
+							const data = useAsync(promiseFn, dependencies, triggerSuspense);
 						`}
 						language='js'
 					/>
@@ -49,6 +49,10 @@ const content: Contents = {
 					<p>
 						This hook can be used in conjunction with the <code>Suspense</code> component to show a
 						loading indicator while the promise is being resolved.
+					</p>
+					<p>
+						The third parameter of the function tells the hook wheather the hook should trigger the
+						parent <code>Suspense</code> component or not. By default, it is <code>true</code>.
 					</p>
 				</>
 			),
