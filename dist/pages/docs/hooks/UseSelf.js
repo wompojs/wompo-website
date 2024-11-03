@@ -23,4 +23,4 @@ import{Fragment as o,jsx as e,jsxs as t}from"wompo/jsx-runtime";import{defineWom
               \`;
 
 							defineWompo(InputExample);
-						`,language:"js"})]})}]};export default function n(){return l(a)}i(n,{name:"useSelf-hook-page"});
+						`,language:"js"})]})}]};export default function n(){return l(a)}i(n,{name:"use-self-hook-page"});

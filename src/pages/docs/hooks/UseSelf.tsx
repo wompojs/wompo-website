@@ -93,5 +93,5 @@ export default function UseSelf() {
 }
 
 defineWompo(UseSelf, {
-	name: 'useSelf-hook-page',
+	name: 'use-self-hook-page',
 });
