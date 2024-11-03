@@ -219,6 +219,16 @@ export const docsRoutes: DocRoute[] = [
 				},
 			},
 			{
+				title: 'useSelf',
+				link: '/docs/hooks/useSelf',
+				path: 'useSelf',
+				pagePath: './pages/docs/hooks/UseSelf.js',
+				meta: {
+					title: 'useSelf - Wompo hooks',
+					description: 'The useSelf hook will return the HTML instance of the custom component.',
+				},
+			},
+			{
 				title: 'useState',
 				link: '/docs/hooks/useState',
 				path: 'useState',
@@ -273,6 +283,17 @@ export const docsRoutes: DocRoute[] = [
 					title: 'createContext - Wompo APIs',
 					description:
 						'The createContext function allows to create a Context to share between a portion of your application.',
+				},
+			},
+			{
+				title: 'createPortal',
+				link: '/docs/apis/createPortal',
+				path: 'createPortal',
+				pagePath: './pages/docs/apis/CreatePortal.js',
+				meta: {
+					title: 'createPortal - Wompo APIs',
+					description:
+						'The createPortal function allows to render custom HTML in another area of the DOM.',
 				},
 			},
 			{

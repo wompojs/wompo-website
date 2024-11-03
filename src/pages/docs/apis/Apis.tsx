@@ -21,6 +21,10 @@ const content: Contents = {
 								can use in your application.
 							</li>
 							<li>
+								<Link to='createPortal'>createPortal</Link> - Lets you attach some html in another
+								DOM object.
+							</li>
+							<li>
 								<Link to='defineWompo'>defineWompo</Link> - The function that you will use to
 								declare your components.
 							</li>
@@ -30,6 +34,10 @@ const content: Contents = {
 							</li>
 							<li>
 								<Link to='lazy'>lazy</Link> - For dynamically imported components.
+							</li>
+							<li>
+								<Link to='unsafelyRenderString'>unsafelyRenderString</Link> - Renders a string
+								variable.
 							</li>
 						</ul>
 					</p>

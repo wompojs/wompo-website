@@ -161,6 +161,10 @@ const content: Contents = {
 						hooks are:
 						<ul>
 							<li>
+								<Link to='useSelf'>useSelf</Link> - Will return the HTML instance of the custom
+								component.
+							</li>
+							<li>
 								<Link to='useId'>useId</Link> - Will return a unique string in the format{' '}
 								<code>:w&lt;number&gt;:</code>. The ID will not change on every re-render. This is
 								useful when you want to use IDs for node elements inside of a component. Common use
