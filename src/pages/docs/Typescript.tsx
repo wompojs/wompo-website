@@ -18,27 +18,9 @@ const content: Contents = {
 						<br />
 						If you are a Typescript user, you probably want to add types to your component's props,
 						or export the interface of the Component's instance (usually when you use the{' '}
-						<Link to='/docs/hooks/useExposed'>useExposed</Link> hook). This is very common and can
-						benefit a lot when used in combination with JSX. If you use typescript, you can enable
-						JSX by writing the following options in your <b>tsconfig.json</b> file:
-					</p>
-					<Code
-						code={`
-              { 
-                "compilerOptions": {
-                  // ...
-                  "jsx": "react-jsx",
-                  "jsxImportSource": "wompo",
-                  // ...
-                } 
-              }
-            `}
-						language='js'
-					/>
-					<p>
-						You can see all the types that Wompo exposes on the{' '}
-						<Link to='/docs/apis#types'>APIs</Link> page. Here we are going to mainly analyze the{' '}
-						<b>WompoProps</b> and <b>WompoElement</b> interfaces.
+						<Link to='/docs/hooks/useExposed'>useExposed</Link> hook). You can see all the types
+						that Wompo exposes on the <Link to='/docs/apis#types'>APIs</Link> page. Here we are
+						going to mainly analyze the <b>WompoProps</b> and <b>WompoElement</b> interfaces.
 					</p>
 				</>
 			),
@@ -62,10 +44,12 @@ const content: Contents = {
 						These are defined by the <b>WompoProps</b> interface. If you want your component to
 						accept more props, you can define your own interface by extending <b>WompoProps</b>.
 						<br />
-						Let's create a <code>UserCard</code> component, using also JSX.
+						Let's create a <code>UserCard</code> component.
 					</p>
 					<Code
 						code={`
+              import { defineWompo, html, WompoProps } from 'wompo';
+
               interface UserCardProps extends WompoProps {
                 name: string;
                 lastName: string;
@@ -77,16 +61,18 @@ const content: Contents = {
               }
 
               export default function UserCard({ name, lastName, age, additionalInfo, styles: s }: UserCardProps) {
-                return (
-                  <div class={s.card}>
-                    <h3>{name} {lastName}, {age}yo</h3>
-                    {additionalInfo && <p>
-                      Hair color: {additionalInfo.hairColor}<br/>
-                      Height: {additionalInfo.height}
-                    </p>}
+                return html\`
+                  <div class=\${s.card}>
+                    <h3>\${name} \${lastName}, \${age}yo</h3>
+                    \${additionalInfo && html\`<p>
+                      Hair color: \${additionalInfo.hairColor}<br/>
+                      Height: \${additionalInfo.height}
+                    </p>\`}
                   </div>
-                )
+                \`;
               }
+
+              defineWompo<UserCardProps>(UserCard);
             `}
 						language='ts'
 					/>
@@ -109,6 +95,8 @@ const content: Contents = {
 					</p>
 					<Code
 						code={`
+              import { defineWompo, html, useExposed, useState, WompoElement } from 'wompo';
+
               export interface ModalElement extends WompoElement {
                 open: () => void;
                 close: () => void;
@@ -118,32 +106,33 @@ const content: Contents = {
                 const [open, setOpen] = useState(false);
                 useExposed({
                   open: () => setOpen(true),
-                  close: () => setOpen(false)
-                })
-                return ( 
-                  <div>...</div>
-                );
+                  close: () => setOpen(false),
+                });
+                return html\`<div>...</div>\`;
               }
+
+              defineWompo(Modal);
             `}
 						language='ts'
 					/>
 					<p>Then, inside your app:</p>
 					<Code
 						code={`
-              import Modal, { type ModalElement } from './Modal';
+              import { defineWompo, html, useRef } from 'wompo';
+              import Modal, { type ModalElement } from './Modal.js';
 
               export default function App() {
                 const modalRef = useRef<ModalElement>(null);
-                const openModal = () => {
-                  modalRef.current.open();
-                }
-                return ( 
+                const openModal = () => modalRef.current.open();
+                return html\`
                   <div>
-                    <button onClick={openModal}>Open modal</button>
-                    <Modal ref={modalRef} />
+                    <button @click=\${openModal}>Open modal</button>
+                    <\${Modal} ref=\${modalRef} />
                   </div>
-                );
+                \`;
               }
+
+              defineWompo(App);
             `}
 						language='ts'
 					/>

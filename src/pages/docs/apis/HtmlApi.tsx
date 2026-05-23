@@ -2,6 +2,7 @@ import { defineWompo } from 'wompo';
 import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
 import Code from '../../../components/Code.js';
 import HtmlExample from '../../../examples/HtmlExample.js';
+import { Link } from 'wompo-router';
 
 const content: Contents = {
 	title: 'html API',
@@ -75,6 +76,51 @@ const content: Contents = {
 						/>
 						Result:
 						<HtmlExample />
+					</p>
+				</>
+			),
+		},
+		{
+			title: 'Interpolation cheatsheet',
+			id: 'interpolation',
+			content: (
+				<>
+					<p>
+						The <code>html</code> tagged template understands a few special interpolation positions
+						beyond plain text and child nodes:
+						<ul>
+							<li>
+								<code>name=${'${value}'}</code> — attribute. When the value is{' '}
+								<code>false</code>, <code>null</code> or <code>undefined</code> the attribute is
+								removed. On custom elements, <code>camelCase</code> attribute names are
+								auto-converted to <code>kebab-case</code>.
+							</li>
+							<li>
+								<code>@event=${'${handler}'}</code> — event listener. The handler can be a plain
+								function or <code>{'{ fn, options }'}</code> if you need{' '}
+								<code>addEventListener</code> options.
+							</li>
+							<li>
+								<code>.prop=${'${value}'}</code> — assigns the value as a JS property on the
+								element instead of an attribute.
+							</li>
+							<li>
+								<code>ref=${'${aRef}'}</code> — fills <code>aRef.current</code> with the DOM
+								element (see the <Link to='/docs/hooks/useRef'>useRef hook</Link>).
+							</li>
+							<li>
+								<code>style=${'${styleObject}'}</code> — accepts an object of{' '}
+								<code>camelCase</code> properties; numeric values get <code>px</code> appended.
+							</li>
+							<li>
+								<code>{'<${tag}>...</${tag}>'}</code> — a{' '}
+								<Link to='dynamic-tags'>dynamic tag</Link> whose name is computed at render time.
+							</li>
+							<li>
+								<code>{'<el ${attrs({ ... })}>'}</code> — a spread of attributes, events, and
+								properties via the <Link to='attrs'>attrs</Link> function.
+							</li>
+						</ul>
 					</p>
 				</>
 			),

@@ -52,12 +52,21 @@ const content: Contents = {
             `}
 						language='html'
 					/>
-					If you use JSX add also this line below wompo:
+					<p>
+						Wompo also exposes the SSR engine and the client-side hydration runtime as separate
+						entry points. When you target them through an importmap, add the matching subpaths:
+					</p>
 					<Code
 						code={`
-              "wompo/jsx-runtime": "[root]/node_modules/wompo/jsx-runtime.js"
+              {
+                "imports": {
+                  "wompo": "[root]/node_modules/wompo/dist/wompo.js",
+                  "wompo/ssr": "[root]/node_modules/wompo/dist/ssr/index.js",
+                  "wompo/hydrate": "[root]/node_modules/wompo/dist/wompo/hydrate.js"
+                }
+              }
 						`}
-						language='html'
+						language='json'
 					/>
 				</>
 			),
@@ -73,7 +82,7 @@ const content: Contents = {
 					<Code
 						code={`
               <script type="module">
-                import * as wompo from 'https://cdn.jsdelivr.net/npm/wompo@1.3.0';
+                import * as wompo from 'https://cdn.jsdelivr.net/npm/wompo@2.0.0';
 
                 window.wompo = wompo; // Optional
               </script>
@@ -90,7 +99,7 @@ const content: Contents = {
               <script type="importmap">
                 {
                   "imports": {
-                    "wompo": "https://cdn.jsdelivr.net/npm/wompo@1.3.0"
+                    "wompo": "https://cdn.jsdelivr.net/npm/wompo@2.0.0"
                   }
                 }
               </script>
@@ -125,13 +134,15 @@ const content: Contents = {
 							Download
 						</a>
 						<br />
-						The js file is in the unzipped folder <i>/dist/wompo</i>. After you put it in your
-						project, import it:
+						The unzipped folder ships the full <i>/dist</i> tree: the main module is{' '}
+						<i>/dist/wompo.js</i>, the SSR engine lives at <i>/dist/ssr/index.js</i>, and the
+						client-side hydration runtime at <i>/dist/wompo/hydrate.js</i>. After you put it in
+						your project, import it:
 					</p>
 					<Code
 						code={`
               <script type="module">
-                import * as wompo from '/path/to/wompo.js';
+                import * as wompo from '/path/to/dist/wompo.js';
 
                 window.wompo = wompo; // Optional
               </script>
@@ -140,14 +151,17 @@ const content: Contents = {
 					/>
 					<p>
 						If saving Wompo in the window object is not ideal, maybe you want to define an{' '}
-						<b>importmap</b> script (replace the path with your own path to reach your file):
+						<b>importmap</b> script (replace the path with your own path to reach the unzipped
+						<i>/dist</i> folder):
 					</p>
 					<Code
 						code={`
               <script type="importmap">
                 {
                   "imports": {
-                    "wompo": "/path/to/wompo.js"
+                    "wompo": "/path/to/dist/wompo.js",
+                    "wompo/ssr": "/path/to/dist/ssr/index.js",
+                    "wompo/hydrate": "/path/to/dist/wompo/hydrate.js"
                   }
                 }
               </script>

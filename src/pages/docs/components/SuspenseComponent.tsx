@@ -41,16 +41,26 @@ const content: Contents = {
 				<>
 					<Code
 						code={`
-							<Suspense fallback={html\`\`}>
-								{children}
-							</Suspense>
-						`}
+              import { Suspense, html } from 'wompo';
+
+              html\`
+                <\${Suspense} fallback=\${html\`<i>Loading...</i>\`}>
+                  \${children}
+                </\${Suspense}>
+              \`;
+            `}
 						language='js'
 					/>
 					<p>
 						The <code>Suspense</code> component accepts a single prop: <b>fallback</b>. The fallback
 						prop must be the result of the <Link to='/docs/apis/html'>html</Link> template function.
 						This prop is <b>required</b>.
+					</p>
+					<p>
+						Suspense also participates in <Link to='/docs/ssr#render-to-stream'>streaming SSR</Link>:
+						when rendered through <code>renderToStream</code>, any boundary containing pending{' '}
+						<code>useAsync</code> work flushes its fallback first, then emits the resolved content
+						out-of-order as the promises settle.
 					</p>
 				</>
 			),

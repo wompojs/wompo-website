@@ -5,7 +5,7 @@ import Code from '../../components/Code.js';
 const content: Contents = {
 	title: 'Introduction',
 	description:
-		'Wompo is a fast and ligthweight React-like Web-Component library for creating functional UIs in the Web.',
+		'Wompo is a fast and lightweight React-like Web-Component library that runs in the browser and on the server, with built-in islands hydration and Server Actions.',
 	sections: [
 		{
 			title: 'Why?',
@@ -75,9 +75,9 @@ const content: Contents = {
 								Wompo components will always work.
 							</li>
 							<li>
-								<b>JSX Support</b> - Yeah, exactly. If you really can't leave without JSX, we got it
-								for you: html check, props validation, and more. Of course, you will need a compiler
-								for that.
+								<b>Server-Side Rendering</b> - Wompo ships a string and a streaming SSR renderer,
+								an islands-first hydration runtime, and Server Actions. Same components, server
+								and client.
 							</li>
 							<li>
 								<b>Bundle free</b> - With most compiled libraries, you have to create a bundle with
@@ -124,25 +124,25 @@ const content: Contents = {
 						<br />
 						This means that when you write your application, you have to keep in mind that your
 						component will actually be an element with a <code>display: block</code> style. Consider
-						the following example, wrote in JSX:
+						the following example:
 					</p>
 					<Code
 						code={`
-							function App(){
-								return (
+							function App() {
+								return html\`
 									<div style="display: flex;">
 										<p>I'm inline</p>
 										<p>I'm inline</p>
-										<CustomComponent />
+										<\${CustomComponent} />
 									</div>
-								);
+								\`;
 							}
 
-							function CustomComponent(){
-								return <>
+							function CustomComponent() {
+								return html\`
 									<p>I'm not inline</p>
 									<p>I'm not inline</p>
-								</>
+								\`;
 							}
 						`}
 						language="js"

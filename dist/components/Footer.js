@@ -1,30 +1,11 @@
-var o=Object.freeze,n=Object.defineProperty;var i=(e,l)=>o(n(e,"raw",{value:o(l||e.slice())}));var a;import{defineWompo as r,html as s}from"wompo";import c from"./Logo.js";export default function t({styles:e}){return s(a||(a=i(["<footer class=",`>
-		<section class=`,`>
-			<nav>
-				<div style="display: flex; flex-direction:column;">
-					<a href="/" title="Homepage">
-						<`,` />
-						Wompo
-					</a>
-					<p style="font-size: 10px;">\xA92024</p>
-				</div>
-				<ul>
-					<li class=`,`>Learn</li>
-					<li><a href="/docs/introduction">Introduction</a></li>
-					<li><a href="/docs/installation">Installation</a></li>
-					<li><a href="/docs/hooks">Hooks</a></li>
-					<li><a href="/docs/apis">APIs</a></li>
-				</ul>
-				<ul>
-					<li class=`,`>Guides</li>
-					<li><a href="/docs/guides/quick-start">Quick Start</a></li>
-					<li><a href="/docs/guides/complex-example">Complex example</a></li>
-					<li><a href="/docs/guides/styling">Styling</a></li>
-					<li><a href="/docs/guides/custom-hooks">Custom Hooks</a></li>
-				</ul>
-
-				<ul>
-					<li class=`,`>Privacy</li>
+var __freeze = Object.freeze;
+var __defProp = Object.defineProperty;
+var __template = (cooked, raw) => __freeze(__defProp(cooked, "raw", { value: __freeze(raw || cooked.slice()) }));
+var _a;
+import { defineWompo, html } from "wompo";
+import Logo from "./Logo.js";
+export default function Footer({ styles: s }) {
+  return html(_a || (_a = __template(["<footer class=", ">\n		<section class=", '>\n			<nav>\n				<div style="display: flex; flex-direction:column;">\n					<a href="/" title="Homepage">\n						<', ' />\n						Wompo\n					</a>\n					<p style="font-size: 10px;">\xA92024</p>\n				</div>\n				<ul>\n					<li class=', '>Learn</li>\n					<li><a href="/docs/introduction">Introduction</a></li>\n					<li><a href="/docs/installation">Installation</a></li>\n					<li><a href="/docs/hooks">Hooks</a></li>\n					<li><a href="/docs/apis">APIs</a></li>\n				</ul>\n				<ul>\n					<li class=', '>Guides</li>\n					<li><a href="/docs/guides/quick-start">Quick Start</a></li>\n					<li><a href="/docs/guides/complex-example">Complex example</a></li>\n					<li><a href="/docs/guides/styling">Styling</a></li>\n					<li><a href="/docs/guides/custom-hooks">Custom Hooks</a></li>\n				</ul>\n\n				<ul>\n					<li class=', `>Privacy</li>
 					<li>
 						<a
 							href="https://www.iubenda.com/privacy-policy/24984791"
@@ -78,40 +59,9 @@ var o=Object.freeze,n=Object.defineProperty;var i=(e,l)=>o(n(e,"raw",{value:o(l|
 				</ul>
 
 				<ul>
-					<li class=`,`>Contribute</li>
-					<li>
-						<a href="https://github.com/wompojs/wompo" target="_blank">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="16"
-								height="16"
-								fill="currentColor"
-								viewBox="0 0 16 16"
-							>
-								<path
-									d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
-								/>
-							</svg>
-							Github
-						</a>
-					</li>
-					<li>
-						<a href="https://ko-fi.com/wompo" target="_blank">
-							<img
-								height="27"
-								width="27"
-								style="border:0px;height:27px;width:27px"
-								src="/kofi.png"
-								border="0"
-								alt="Support Wompo"
-							/>
-							Donate
-						</a>
-					</li>
-				</ul>
-			</nav>
-		</section>
-	</footer>`])),e.footer,e.section,c,e.title,e.title,e.title,e.title)}t.css=`
+					<li class=`, '>Contribute</li>\n					<li>\n						<a href="https://github.com/wompojs/wompo" target="_blank">\n							<svg\n								xmlns="http://www.w3.org/2000/svg"\n								width="16"\n								height="16"\n								fill="currentColor"\n								viewBox="0 0 16 16"\n							>\n								<path\n									d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"\n								/>\n							</svg>\n							Github\n						</a>\n					</li>\n					<li>\n						<a href="https://ko-fi.com/wompo" target="_blank">\n							<img\n								height="27"\n								width="27"\n								style="border:0px;height:27px;width:27px"\n								src="/kofi.png"\n								border="0"\n								alt="Support Wompo"\n							/>\n							Donate\n						</a>\n					</li>\n				</ul>\n			</nav>\n		</section>\n	</footer>'])), s.footer, s.section, Logo, s.title, s.title, s.title, s.title);
+}
+Footer.css = `
   .footer {
     background-color: #573ef6;
     color: #dfdfdf;
@@ -174,4 +124,5 @@ var o=Object.freeze,n=Object.defineProperty;var i=(e,l)=>o(n(e,"raw",{value:o(l|
 			justify-content: center;
 		}
 	}
-`,r(t,{name:"wompo-footer"});
+`;
+defineWompo(Footer, { name: "wompo-footer" });

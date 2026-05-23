@@ -2,6 +2,7 @@ import { defineWompo } from 'wompo';
 import getPageLayout, { Contents } from '../../../utils/getPageLayout.js';
 import Code from '../../../components/Code.js';
 import { Link } from 'wompo-router';
+import Note from '../../../components/Note.js';
 
 const content: Contents = {
 	title: 'useAsync hook',
@@ -54,6 +55,14 @@ const content: Contents = {
 						The third parameter of the function tells the hook wheather the hook should trigger the
 						parent <code>Suspense</code> component or not. By default, it is <code>true</code>.
 					</p>
+					<Note severity='info'>
+						<b>SSR-ready:</b> on the server,{' '}
+						<Link to='/docs/ssr#render-to-string'>renderToString</Link> awaits every{' '}
+						<code>useAsync</code> in the tree before resolving. In streaming mode (
+						<Link to='/docs/ssr#render-to-stream'>renderToStream</Link>), an async call inside a{' '}
+						<Link to='/docs/components/suspense'>Suspense</Link> boundary defers that boundary
+						and flushes it out-of-order when the promise resolves.
+					</Note>
 				</>
 			),
 		},

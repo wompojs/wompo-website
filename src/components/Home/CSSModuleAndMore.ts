@@ -4,7 +4,7 @@ import Code from '../Code.js';
 import BuiltInCssModules from './BuiltInCssModules.js';
 import MoreWidget from './MoreWidget.js';
 
-const jsxIcon = html`
+const ssrIcon = html`
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width="16"
@@ -13,7 +13,7 @@ const jsxIcon = html`
 		viewBox="0 0 16 16"
 	>
 		<path
-			d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"
+			d="M4.318 2.687C5.234 2.231 6.536 2 8 2s2.766.231 3.682.687C12.644 3.167 13 3.65 13 4c0 .35-.356.833-1.318 1.313C10.766 5.769 9.464 6 8 6s-2.766-.231-3.682-.687C3.356 4.833 3 4.35 3 4c0-.35.356-.833 1.318-1.313M13 5.698V7c0 .27-.21.588-.749.917-.518.317-1.267.56-2.151.692.301-.911.3-1.785-.001-2.692C11.06 5.745 12.123 5.222 13 5.698M3 5.698c.877-.476 1.94.046 2.901.221-.301.907-.302 1.781-.001 2.692-.884-.132-1.633-.375-2.151-.692C3.21 7.588 3 7.27 3 7zm6 1.13C8.685 7.087 7.99 7.087 7.675 6.83l-.013-.01C7.387 6.604 7 6.295 7 6c0-.295.388-.604.662-.82.314-.249 1.012-.249 1.327 0 .274.216.662.525.662.82s-.388.604-.662.82l-.013.01C8.7 7.087 8.315 7.087 8 7.087zM5 8.755v1.244c0 .27-.21.588-.749.917-.6.367-1.482.62-2.519.726.31-1.054.31-2.122-.001-3.18.527-.071 1.135-.106 1.74-.106.605 0 1.214.035 1.741.106-.001.04-.012.078-.012.118zm6 0c0-.04-.011-.078-.012-.118.527-.071 1.135-.106 1.74-.106s1.214.035 1.74.106c-.31 1.057-.31 2.124 0 3.18-1.036-.106-1.918-.36-2.518-.726C11.21 10.587 11 10.269 11 10zm-3 5.247c-1.464 0-2.766-.231-3.682-.687C3.356 12.835 3 12.352 3 12s.356-.835 1.318-1.315C5.234 10.231 6.536 10 8 10s2.766.231 3.682.687C12.644 11.167 13 11.65 13 12s-.356.835-1.318 1.315C10.766 13.769 9.464 14 8 14z"
 		/>
 	</svg>
 `;
@@ -78,9 +78,9 @@ export default function CSSModuleAndMore({ styles: s }: WompoProps) {
     <section class="section">
       <h2 style="text-align: center; margin: 4rem 0;">Want more?</h2>
       <div class="widgets">
-        <${MoreWidget} title=${html`JSX<br />Support`} icon=${jsxIcon}>
-          Wompo already comes out with JSX support! HTML check, props validation, and more.
-          Of course, you will need a compiler for that.
+        <${MoreWidget} title=${html`Server-Side<br />Rendering`} icon=${ssrIcon}>
+          Render the same components on the server, stream them out with Suspense, and mark any
+          of them as an island to hydrate on load, on idle, or when it scrolls into view.
         </${MoreWidget}>
         <${MoreWidget} title=${html`Typescript<br />Compatible`} icon=${tsIcon}>
           Wompo is built with TypeScript. This means that type checking is available by default.

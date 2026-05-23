@@ -1,10 +1,117 @@
-import{Fragment as i,jsx as e,jsxs as t}from"wompo/jsx-runtime";import{defineWompo as l}from"wompo";import a from"../../../utils/getPageLayout.js";import{Link as o}from"wompo-router";import n from"../../../components/Code.js";const p={title:"APIs",description:"A collection of resources that Wompo exposes to add extra functionalities or simply to help the developer.",sections:[{title:"Functions",id:"functions",content:e(i,{children:t("p",{children:["Wompo exposes a list of functions that you can use:",t("ul",{children:[t("li",{children:[e(o,{to:"createContext",children:"createContext"})," - Lets you create a Context that you can use in your application."]}),t("li",{children:[e(o,{to:"createPortal",children:"createPortal"})," - Lets you attach some html in another DOM object."]}),t("li",{children:[e(o,{to:"defineWompo",children:"defineWompo"})," - The function that you will use to declare your components."]}),t("li",{children:[e(o,{to:"html",children:"html"})," - The result of this function is what must be returned by every component."]}),t("li",{children:[e(o,{to:"lazy",children:"lazy"})," - For dynamically imported components."]}),t("li",{children:[e(o,{to:"unsafelyRenderString",children:"unsafelyRenderString"})," - Renders a string variable."]})]})]})})},{title:"Constants",id:"constants",content:e(i,{children:t("p",{children:["Wompo exposes also some constant variables that you can use:",t("ul",{children:[t("li",{children:[e(o,{to:"wompoDefaultOptions",children:"wompDefaultOptions"})," - The default options that Wompo will use when initializing a component for the first time. You are free to customize them."]}),t("li",{children:[e(o,{to:"registeredComponents",children:"registeredComponents"})," - An object containing the list of registered components."]})]})]})})},{title:"Element API",id:"wompo-element",content:e(i,{children:t("p",{children:["The ",e(o,{to:"element",children:"Element API"})," represents the type of a Wompo Component DOM instance. You can use it to call methods and further customize your components."]})})},{title:"Types",id:"types",content:e(i,{children:t("p",{children:["For TypeScript users, Wompo exposes the following types:",t("ul",{children:[t("li",{children:[e("code",{children:"RenderHtml"})," - The type that the ",e(o,{to:"html",children:"html"})," function will return.",e(n,{code:`
+import { Fragment, jsx, jsxs } from "wompo/jsx-runtime";
+import { defineWompo } from "wompo";
+import getPageLayout from "../../../utils/getPageLayout.js";
+import { Link } from "wompo-router";
+import Code from "../../../components/Code.js";
+const content = {
+  title: "APIs",
+  description: "A collection of resources that Wompo exposes to add extra functionalities or simply to help the developer.",
+  sections: [
+    {
+      title: "Functions",
+      id: "functions",
+      content: /* @__PURE__ */ jsx(Fragment, { children: /* @__PURE__ */ jsxs("p", { children: [
+        "Wompo exposes a list of functions that you can use:",
+        /* @__PURE__ */ jsxs("ul", { children: [
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx(Link, { to: "attrs", children: "attrs" }),
+            " - Spreads a bag of attributes, events, and properties onto a single element."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx(Link, { to: "createContext", children: "createContext" }),
+            " - Lets you create a Context that you can use in your application."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx(Link, { to: "createPortal", children: "createPortal" }),
+            " - Lets you attach some html in another DOM object."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx(Link, { to: "defineWompo", children: "defineWompo" }),
+            " - The function that you will use to declare your components."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx(Link, { to: "dynamic-tags", children: "Dynamic Tags" }),
+            " - Use a runtime value as the tag name of an element inside a template."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx(Link, { to: "html", children: "html" }),
+            " - The result of this function is what must be returned by every component."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx(Link, { to: "lazy", children: "lazy" }),
+            " - For dynamically imported components."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx(Link, { to: "svg", children: "svg" }),
+            " - Variant of ",
+            /* @__PURE__ */ jsx("code", { children: "html" }),
+            " that produces SVG content."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx(Link, { to: "unsafelyRenderString", children: "unsafelyRenderString" }),
+            " - Renders a string variable."
+          ] })
+        ] })
+      ] }) })
+    },
+    {
+      title: "Constants",
+      id: "constants",
+      content: /* @__PURE__ */ jsx(Fragment, { children: /* @__PURE__ */ jsxs("p", { children: [
+        "Wompo exposes also some constant variables that you can use:",
+        /* @__PURE__ */ jsxs("ul", { children: [
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx(Link, { to: "wompoDefaultOptions", children: "wompDefaultOptions" }),
+            " - The default options that Wompo will use when initializing a component for the first time. You are free to customize them."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx(Link, { to: "registeredComponents", children: "registeredComponents" }),
+            " - An object containing the list of registered components."
+          ] })
+        ] })
+      ] }) })
+    },
+    {
+      title: "Element API",
+      id: "wompo-element",
+      content: /* @__PURE__ */ jsx(Fragment, { children: /* @__PURE__ */ jsxs("p", { children: [
+        "The ",
+        /* @__PURE__ */ jsx(Link, { to: "element", children: "Element API" }),
+        " represents the type of a Wompo Component DOM instance. You can use it to call methods and further customize your components."
+      ] }) })
+    },
+    {
+      title: "Types",
+      id: "types",
+      content: /* @__PURE__ */ jsx(Fragment, { children: /* @__PURE__ */ jsxs("p", { children: [
+        "For TypeScript users, Wompo exposes the following types:",
+        /* @__PURE__ */ jsxs("ul", { children: [
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("code", { children: "RenderHtml" }),
+            " - The type that the ",
+            /* @__PURE__ */ jsx(Link, { to: "html", children: "html" }),
+            " function will return.",
+            /* @__PURE__ */ jsx(
+              Code,
+              {
+                code: `
                     interface RenderHtml {
                       parts: TemplateStringsArray;
                       values: any[];
                       _$wompHtml: true;
                     }
-                  `,language:"ts"})]}),t("li",{children:[e("code",{children:"WompoProps"})," - The props that any component has and allows. If you use JSX they are also the attributes that the JSX element allows.",e(n,{code:`
+                  `,
+                language: "ts"
+              }
+            )
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("code", { children: "WompoProps" }),
+            " - The props that any component has and allows.",
+            /* @__PURE__ */ jsx(
+              Code,
+              {
+                code: `
                     interface WompoProps {
                       /** The children of the component instance */
                       children?: WompoChildren;
@@ -21,7 +128,20 @@ import{Fragment as i,jsx as e,jsxs as t}from"wompo/jsx-runtime";import{defineWom
                       /** The classes of the element */
                       class?: string;
                     }
-                  `,language:"ts"})]}),t("li",{children:[e("code",{children:"WompoComponentOptions"})," - The options that you can put as a second parameter in the ",e(o,{to:"defineWompo",children:"defineWompo"})," function.",e(n,{code:`
+                  `,
+                language: "ts"
+              }
+            )
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("code", { children: "WompoComponentOptions" }),
+            " - The options that you can put as a second parameter in the ",
+            /* @__PURE__ */ jsx(Link, { to: "defineWompo", children: "defineWompo" }),
+            " function.",
+            /* @__PURE__ */ jsx(
+              Code,
+              {
+                code: `
                     interface WompoComponentOptions {
                       /**
                        * Default value: \`null\`.
@@ -43,8 +163,35 @@ import{Fragment as i,jsx as e,jsxs as t}from"wompo/jsx-runtime";import{defineWom
                        * E.g. CounterComponent.css = \`.button\` => .counter-component__button
                        */
                       cssModule?: boolean;
+                      /**
+                       * When set, every instance of this component is treated as an SSR island and hydrated
+                       * on the client according to this trigger. Can be overridden per-call-site via the
+                       * \`client:load\`, \`client:idle\`, or \`client:visible\` attribute.
+                       */
+                      island?: 'load' | 'idle' | 'visible';
                     }
-                  `,language:"ts"})]}),t("li",{children:[e("code",{children:"WompoComponent<Props extends WompoProps = WompoProps>"})," - It's the"," ",e("b",{children:"functional"})," component's type.",e(n,{code:`
+                  `,
+                language: "ts"
+              }
+            )
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("code", { children: "AttrsBag" }),
+            " - The opaque object returned by the",
+            " ",
+            /* @__PURE__ */ jsx(Link, { to: "attrs", children: "attrs" }),
+            " function and consumed by Wompo's template parser when spread on a single element."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("code", { children: "WompoComponent<Props extends WompoProps = WompoProps>" }),
+            " - It's the",
+            " ",
+            /* @__PURE__ */ jsx("b", { children: "functional" }),
+            " component's type.",
+            /* @__PURE__ */ jsx(
+              Code,
+              {
+                code: `
                     interface WompoComponent<Props extends WompoProps = WompoProps> {
                       /** The props of the component */
                       (props: Props): RenderHtml;
@@ -65,9 +212,65 @@ import{Fragment as i,jsx as e,jsxs as t}from"wompo/jsx-runtime";import{defineWom
                         shadow: boolean;
                       };
                     }
-                  `,language:"ts"})]}),t("li",{children:[t("code",{children:["WompoElement<Props extends WompoProps = WompoProps, Exposed = ",">"]})," ","A Wompo Component ",e("b",{children:"Instance"}),". A detailed description of it is present in the"," ",e(o,{to:"element",children:"Element API"}),"."]}),t("li",{children:[e("code",{children:"LazyCallbackResult"})," - The result that the callback provided in the"," ",e(o,{to:"lazy",children:"lazy"})," function must return.",e(n,{code:"type LazyCallbackResult = Promise<{ default: WompoComponent }>;",language:"ts"})]}),t("li",{children:[e("code",{children:"LazyResult"})," - The result type of the ",e(o,{to:"lazy",children:"lazy"})," ","function.",e(n,{code:`
+                  `,
+                language: "ts"
+              }
+            )
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsxs("code", { children: [
+              "WompoElement<Props extends WompoProps = WompoProps, Exposed = ",
+              ">"
+            ] }),
+            " ",
+            "A Wompo Component ",
+            /* @__PURE__ */ jsx("b", { children: "Instance" }),
+            ". A detailed description of it is present in the",
+            " ",
+            /* @__PURE__ */ jsx(Link, { to: "element", children: "Element API" }),
+            "."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("code", { children: "LazyCallbackResult" }),
+            " - The result that the callback provided in the",
+            " ",
+            /* @__PURE__ */ jsx(Link, { to: "lazy", children: "lazy" }),
+            " function must return.",
+            /* @__PURE__ */ jsx(
+              Code,
+              {
+                code: `type LazyCallbackResult = Promise<{ default: WompoComponent }>;`,
+                language: "ts"
+              }
+            )
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("code", { children: "LazyResult" }),
+            " - The result type of the ",
+            /* @__PURE__ */ jsx(Link, { to: "lazy", children: "lazy" }),
+            " ",
+            "function.",
+            /* @__PURE__ */ jsx(
+              Code,
+              {
+                code: `
                     type LazyResult = {
                       (): Promise<WompoComponent<WompoProps>>;
                       _$wompLazy: boolean;
                     };
-                  `,language:"ts"})]})]})]})})}]};export default function s(){return a(p)}l(s,{name:"docs-apis-page"});
+                  `,
+                language: "ts"
+              }
+            )
+          ] })
+        ] })
+      ] }) })
+    }
+  ]
+};
+export default function Apis() {
+  return getPageLayout(content);
+}
+defineWompo(Apis, {
+  name: "docs-apis-page"
+});

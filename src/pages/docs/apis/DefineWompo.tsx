@@ -88,6 +88,14 @@ const content: Contents = {
 									language='js'
 								/>
 							</li>
+							<li>
+								<code>island</code> (<code>'load' | 'idle' | 'visible'</code>) - When set, every
+								instance of this component is treated as an SSR island and hydrated on the client
+								according to this trigger. Per call-site, you can override the default with the
+								<code>client:load</code>, <code>client:idle</code>, <code>client:visible</code>{' '}
+								attributes, or opt out with <code>client:none</code>. See the{' '}
+								<Link to='/docs/ssr#islands'>SSR islands</Link> section for details.
+							</li>
 						</ul>
 					</p>
 					<Note severity='info'>

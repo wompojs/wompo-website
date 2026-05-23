@@ -17,6 +17,10 @@ const content: Contents = {
 						Wompo exposes a list of functions that you can use:
 						<ul>
 							<li>
+								<Link to='attrs'>attrs</Link> - Spreads a bag of attributes, events, and
+								properties onto a single element.
+							</li>
+							<li>
 								<Link to='createContext'>createContext</Link> - Lets you create a Context that you
 								can use in your application.
 							</li>
@@ -29,11 +33,18 @@ const content: Contents = {
 								declare your components.
 							</li>
 							<li>
+								<Link to='dynamic-tags'>Dynamic Tags</Link> - Use a runtime value as the tag name
+								of an element inside a template.
+							</li>
+							<li>
 								<Link to='html'>html</Link> - The result of this function is what must be returned
 								by every component.
 							</li>
 							<li>
 								<Link to='lazy'>lazy</Link> - For dynamically imported components.
+							</li>
+							<li>
+								<Link to='svg'>svg</Link> - Variant of <code>html</code> that produces SVG content.
 							</li>
 							<li>
 								<Link to='unsafelyRenderString'>unsafelyRenderString</Link> - Renders a string
@@ -101,8 +112,7 @@ const content: Contents = {
 								/>
 							</li>
 							<li>
-								<code>WompoProps</code> - The props that any component has and allows. If you use
-								JSX they are also the attributes that the JSX element allows.
+								<code>WompoProps</code> - The props that any component has and allows.
 								<Code
 									code={`
                     interface WompoProps {
@@ -151,10 +161,21 @@ const content: Contents = {
                        * E.g. CounterComponent.css = \`.button\` => .counter-component__button
                        */
                       cssModule?: boolean;
+                      /**
+                       * When set, every instance of this component is treated as an SSR island and hydrated
+                       * on the client according to this trigger. Can be overridden per-call-site via the
+                       * \`client:load\`, \`client:idle\`, or \`client:visible\` attribute.
+                       */
+                      island?: 'load' | 'idle' | 'visible';
                     }
                   `}
 									language='ts'
 								/>
+							</li>
+							<li>
+								<code>AttrsBag</code> - The opaque object returned by the{' '}
+								<Link to='attrs'>attrs</Link> function and consumed by Wompo's template parser
+								when spread on a single element.
 							</li>
 							<li>
 								<code>WompoComponent&lt;Props extends WompoProps = WompoProps&gt;</code> - It's the{' '}

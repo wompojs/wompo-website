@@ -275,6 +275,17 @@ export const docsRoutes: DocRoute[] = [
 		},
 		subRoutes: [
 			{
+				title: 'attrs',
+				link: '/docs/apis/attrs',
+				path: 'attrs',
+				pagePath: './pages/docs/apis/Attrs.js',
+				meta: {
+					title: 'attrs - Wompo APIs',
+					description:
+						'The attrs function spreads a bag of attributes, events, and properties onto a single element inside an html template.',
+				},
+			},
+			{
 				title: 'createContext',
 				link: '/docs/apis/createContext',
 				path: 'createContext',
@@ -305,6 +316,17 @@ export const docsRoutes: DocRoute[] = [
 					title: 'defineWompo - Wompo APIs',
 					description:
 						'The defineWompo function will transform your functional Component into a Web Component, so that it can be used in your HTML.',
+				},
+			},
+			{
+				title: 'Dynamic Tags',
+				link: '/docs/apis/dynamic-tags',
+				path: 'dynamic-tags',
+				pagePath: './pages/docs/apis/DynamicTags.js',
+				meta: {
+					title: 'Dynamic Tags - Wompo APIs',
+					description:
+						'Use a runtime value as the tag name of an element inside an html template, including components, built-in tags, and conditional expressions.',
 				},
 			},
 			{
@@ -372,16 +394,6 @@ export const docsRoutes: DocRoute[] = [
 				},
 			},
 		],
-	},
-	{
-		title: 'JSX',
-		link: '/docs/jsx',
-		path: 'jsx',
-		pagePath: './pages/docs/Jsx.js',
-		meta: {
-			title: 'JSX - Wompo',
-			description: 'Learn how you can use JSX to build your components easier.',
-		},
 	},
 	{
 		title: 'Typescript',

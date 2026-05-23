@@ -1,88 +1,32 @@
-const CACHE_NAME = `cache-v1.3.0-patch-0`;
+/*
+ * KILL-SWITCH SERVICE WORKER
+ *
+ * Previous versions of the docs registered a fetch-intercepting SW under scope "/". We no
+ * longer want one. This file deliberately replaces the legacy script: any browser that still
+ * had the old SW registered will, on its next update check, fetch this version, install it,
+ * and on activate clear every cache and unregister itself.
+ *
+ * Deliberately NO call to `clients.navigate()` here. The page-side cleanup snippet handles
+ * the one-shot reload, guarded by sessionStorage. If we reloaded from inside the SW too, the
+ * page would re-register the SW on the next load, which would activate, reload, … forever.
+ */
 
-self.addEventListener('activate', function (event) {
-	event.waitUntil(
-		caches.keys().then(function (cacheNames) {
-			return Promise.all(
-				cacheNames
-					.filter(function (cacheName) {
-						return cacheName !== CACHE_NAME;
-					})
-					.map(function (cacheName) {
-						return caches.delete(cacheName);
-					})
-			);
-		})
-	);
+self.addEventListener('install', (event) => {
+	event.waitUntil(self.skipWaiting());
 });
 
-// Use the install event to pre-cache all initial resources.
-self.addEventListener('install', (event) => {
+self.addEventListener('activate', (event) => {
 	event.waitUntil(
 		(async () => {
-			const cache = await caches.open(CACHE_NAME);
-			cache.addAll([
-				// HTML Pages
-				`/?v=${CACHE_NAME}`,
-				`/docs/introduction?v=${CACHE_NAME}`,
-				// JS
-				'/wompo/dist/wompo.js',
-				'/wompo-router/wompo-router.js',
-				'/wompo/jsx-runtime.js',
-				'/components/Code.js',
-				'/components/Header.js',
-				'/components/Footer.js',
-				'/components/Home/BuiltInCssModules.js',
-				'/components/Home/CSSModuleNadMore.js',
-				'/components/Home/CounterComponent.js',
-				'/components/Home/ExampleSection.js',
-				'/components/Home/MoreWidget.js',
-				'/components/MainContent.js',
-				'/components/ContentSection.js',
-				'/components/FollowDocButton.js',
-				'/components/SideMenu.js',
-				'/components/SubMenu.js',
-				'/components/MenuIcon.js',
-				'/components/LoadingPlaceholder.js',
-				'/layout/Layout.js',
-				'/utils/routes.js',
-				'/utils/getPageLayout.js',
-				'/App.js',
-				// CSS
-				'/home.css',
-				// Assets
-				'/kofi.png',
-				// JS Pages
-				'/pages/NotFound.js',
-				'/pages/docs/Introduction.js',
-			]);
-		})()
+			await self.clients.claim();
+			const cacheNames = await caches.keys();
+			await Promise.all(cacheNames.map((name) => caches.delete(name)));
+			await self.registration.unregister();
+		})(),
 	);
 });
 
+// While this SW is briefly alive, never serve from cache: always pass through to the network.
 self.addEventListener('fetch', (event) => {
-	if (event.request.method === 'GET') {
-		event.respondWith(
-			(async () => {
-				const cache = await caches.open(CACHE_NAME);
-
-				// Get the resource from the cache.
-				const cachedResponse = await cache.match(event.request);
-				if (cachedResponse && !event.request.url?.includes('sw.js')) {
-					return cachedResponse;
-				} else {
-					try {
-						// If the resource was not in the cache, try the network.
-						const fetchResponse = await fetch(event.request);
-						// Save the resource in the cache and return it.
-						if (!event.request.url?.includes('sw.js'))
-							cache.put(event.request, fetchResponse.clone());
-						return fetchResponse;
-					} catch (e) {
-						// The network failed.
-					}
-				}
-			})()
-		);
-	}
+	event.respondWith(fetch(event.request));
 });

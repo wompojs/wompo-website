@@ -1,1 +1,38 @@
-import{Fragment as n,jsx as t,jsxs as m}from"wompo/jsx-runtime";import{defineWompo as i}from"wompo";import{Route as a,Routes as l}from"wompo-router";import f from"./layout/Layout.js";import{docsRoutes as h}from"./utils/routes.js";import r from"./components/LoadingPlaceholder.js";export default function e(){return m(l,{children:[m(a,{path:"/docs",element:t(f,{}),children:[h.map(o=>m(n,{children:[t(a,{path:o.path,meta:o.meta,fallback:t(r,{}),lazy:()=>import(o.pagePath)}),o.subRoutes&&o.subRoutes.map(p=>t(a,{meta:p.meta,path:`${o.path}/${p.path}`,fallback:t(r,{}),lazy:()=>import(p.pagePath)}))]})),t(a,{index:!0,redirect:"introduction"})]}),t(a,{path:"*",lazy:()=>import("./pages/NotFound.js")})]})}i(e,{name:"wompo-root"});//! Rules: Always return same template.
+import { Fragment, jsx, jsxs } from "wompo/jsx-runtime";
+import { defineWompo } from "wompo";
+import { Route, Routes } from "wompo-router";
+import Layout from "./layout/Layout.js";
+import { docsRoutes } from "./utils/routes.js";
+import LoadingPlaceholder from "./components/LoadingPlaceholder.js";
+export default function App() {
+  return /* @__PURE__ */ jsxs(Routes, { children: [
+    /* @__PURE__ */ jsxs(Route, { path: "/docs", element: /* @__PURE__ */ jsx(Layout, {}), children: [
+      docsRoutes.map((docPage) => /* @__PURE__ */ jsxs(Fragment, { children: [
+        /* @__PURE__ */ jsx(
+          Route,
+          {
+            path: docPage.path,
+            meta: docPage.meta,
+            fallback: /* @__PURE__ */ jsx(LoadingPlaceholder, {}),
+            lazy: () => import(docPage.pagePath)
+          }
+        ),
+        docPage.subRoutes && docPage.subRoutes.map((subRoute) => /* @__PURE__ */ jsx(
+          Route,
+          {
+            meta: subRoute.meta,
+            path: `${docPage.path}/${subRoute.path}`,
+            fallback: /* @__PURE__ */ jsx(LoadingPlaceholder, {}),
+            lazy: () => import(subRoute.pagePath)
+          }
+        ))
+      ] })),
+      /* @__PURE__ */ jsx(Route, { index: true, redirect: "introduction" })
+    ] }),
+    /* @__PURE__ */ jsx(Route, { path: "*", lazy: () => import("./pages/NotFound.js") })
+  ] });
+}
+defineWompo(App, {
+  name: "wompo-root"
+});
+//! Rules: Always return same template.

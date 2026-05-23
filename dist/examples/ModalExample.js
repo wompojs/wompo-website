@@ -1,11 +1,28 @@
-import{defineWompo as a,html as s,useExposed as i,useState as r}from"wompo";export default function e({children:l,styles:o}){const[n,t]=r(!1),p=()=>{document.body.style.overflow="hidden",t(!0)},d=()=>{document.body.style.overflow="auto",t(!1)};return i({open:p,close:d}),s`
-		<div class=${`${o.backdrop} ${n&&o.open}`}>
-			<div class=${o.modal}>
-				${l}
-				<button @click=${d}>X</button>
+import { defineWompo, html, useExposed, useState } from "wompo";
+export default function ModalExample({ children, styles: s }) {
+  const [open, setOpen] = useState(false);
+  const openModal = () => {
+    document.body.style.overflow = "hidden";
+    setOpen(true);
+  };
+  const closeModal = () => {
+    document.body.style.overflow = "auto";
+    setOpen(false);
+  };
+  useExposed({
+    open: openModal,
+    close: closeModal
+  });
+  return html`
+		<div class=${`${s.backdrop} ${open && s.open}`}>
+			<div class=${s.modal}>
+				${children}
+				<button @click=${closeModal}>X</button>
 			</div>
 		</div>
-	`}e.css=`
+	`;
+}
+ModalExample.css = `
   :host {
     display: inline-block;
   }
@@ -34,4 +51,7 @@ import{defineWompo as a,html as s,useExposed as i,useState as r}from"wompo";expo
     background-color: #fff;
     padding: 30px;
   }
-`,a(e,{name:"modal-example"});
+`;
+defineWompo(ModalExample, {
+  name: "modal-example"
+});

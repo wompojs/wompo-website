@@ -5,8 +5,25 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const app = express();
+
+// In dev we serve over plain HTTP, so any cached Strict-Transport-Security from a previous
+// visit (or from the production deployment) makes the browser refuse to load static assets
+// with a "TLS error". We disable HSTS in non-production AND actively clear any cached value
+// by sending `max-age=0`.
+const isProduction = process.env.NODE_ENV === 'production';
+
+if (!isProduction) {
+	app.use((req, res, next) => {
+		res.setHeader('Strict-Transport-Security', 'max-age=0');
+		next();
+	});
+}
+
 app.use(
 	helmet({
+		// Helmet's default HSTS (max-age 1 year, includeSubDomains) is fine on Vercel where
+		// every response is HTTPS, but it breaks the local HTTP dev server. Off in dev.
+		strictTransportSecurity: isProduction,
 		contentSecurityPolicy: {
 			directives: {
 				'script-src': [
@@ -25,7 +42,7 @@ app.use(
 				'frame-src': ["'self'", '*.iubenda.com'],
 			},
 		},
-	})
+	}),
 );
 app.use(compression()); // gzip support
 

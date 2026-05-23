@@ -11,10 +11,51 @@
 		<meta name="theme-color" content="#ffffff" />
 		<link rel="icon" type="image/x-icon" href="/icons/favicon.ico" />
 		<link rel="manifest" href="/manifest.json" />
-		<!-- <script nonce="WMPnf03nceIJfn22wc3e9h3wwfg3">
-			if ('serviceWorker' in navigator)
-				navigator.serviceWorker.register('/sw.js?v=1.3.0&patch=0', { scope: '/' });
-		</script> -->
+		<!--
+			Service-worker cleanup. Older versions of the docs registered a fetch-intercepting
+			SW under scope "/". We don't register one anymore: this block ONLY tears down
+			whatever is already there.
+
+			IMPORTANT: do NOT add a `register()` call here. Combined with the kill-switch SW
+			that auto-unregisters on activate, calling `register()` on every page load creates
+			a reload loop. Existing registrations are picked up by the browser's automatic
+			update check, which fetches /sw.js (the kill-switch) and tears them down.
+
+			The `sessionStorage` flag guarantees we reload at most once per tab, so even if
+			something goes wrong we never enter an infinite reload.
+		-->
+		<script nonce="WMPnf03nceIJfn22wc3e9h3wwfg3">
+			(function () {
+				if (!('serviceWorker' in navigator)) return;
+				navigator.serviceWorker
+					.getRegistrations()
+					.then(function (regs) {
+						if (!regs.length) return false;
+						return Promise.all(
+							regs.map(function (r) { return r.unregister(); }),
+						).then(function () { return true; });
+					})
+					.then(function (hadRegistrations) {
+						if (!hadRegistrations) return;
+						var clearCaches = window.caches
+							? caches.keys().then(function (keys) {
+								return Promise.all(keys.map(function (k) { return caches.delete(k); }));
+							  })
+							: Promise.resolve();
+						return clearCaches.then(function () {
+							// Reload once so the current document drops the (now-defunct) SW
+							// controller and starts fetching from the network directly.
+							try {
+								if (!sessionStorage.getItem('wompoSwCleanupDone')) {
+									sessionStorage.setItem('wompoSwCleanupDone', '1');
+									location.reload();
+								}
+							} catch (_) { /* sessionStorage blocked → skip the reload. */ }
+						});
+					})
+					.catch(function () { /* ignore */ });
+			})();
+		</script>
 
 		<!-- Google tag (gtag.js) -->
 		<meta
@@ -112,7 +153,9 @@
 			{
 				"imports": {
 					"wompo": "/wompo/dist/wompo.js",
-					"wompo/jsx-runtime": "/wompo/jsx-runtime.js",
+					"wompo/ssr": "/wompo/dist/ssr/index.js",
+					"wompo/hydrate": "/wompo/dist/wompo/hydrate.js",
+					"wompo/jsx-runtime": "/wompo-jsx-runtime.js",
 					"wompo-router": "/wompo-router/wompo-router.js"
 				}
 			}
