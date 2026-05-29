@@ -1,12 +1,15 @@
 {
 	"compilerOptions": {
-		"outDir": "./dist/",
 		"noImplicitAny": true,
-		"module": "ES2020",
-		"lib": ["es2020", "dom"],
+		"module": "ESNext",
+		"lib": ["es2022", "dom"],
 		"target": "ES2021",
-		"jsx": "react-jsx",
-		"jsxImportSource": "wompo",
-		"moduleResolution": "node"
-	}
+		"moduleResolution": "bundler",
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"types": ["bun-types", "node"],
+		"strictNullChecks": false
+	},
+	"include": ["app", "src", "seawomp.config.ts"]
 }

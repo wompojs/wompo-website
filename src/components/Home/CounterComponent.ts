@@ -11,14 +11,14 @@ CounterComponent.css = `
     border-radius: 10px;
     cursor: pointer;
     border: none;
-    background-color: #573ef6;
+    background-color: var(--site-primary);
     color: #fff;
     width: 10rem;
     height: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 3px 3px 3px #e2defd;
+    box-shadow: 3px 3px 3px var(--site-border);
     touch-action: manipulation;
   }
 `;

@@ -1,0 +1,96 @@
+{
+	"nav": {
+		"docs": "Docs",
+		"donate": "Sostieni"
+	},
+	"lang": {
+		"switch_to": "EN"
+	},
+	"home": {
+		"eyebrow": "Web Components senza lock-in di framework",
+		"tagline": "Crea custom element reattivi con un'API simile a React, primitive native del browser, SSR, hydration a isole e stili che non intralciano il lavoro.",
+		"cta_docs": "Leggi i docs",
+		"cta_quickstart": "Quick start",
+		"intro_kicker": "Cosa fa",
+		"intro_title": "Wompo trasforma piccole funzioni in primitive UI portabili.",
+		"intro_body": "Definisci un componente una volta sola, renderizzalo come vero custom element e riusalo in HTML statico, app Wompo, pagine SSR o accanto a React, Vue, Angular e JavaScript vanilla.",
+		"demo_kicker": "Workflow developer",
+		"demo_title": "Scrivi componenti come funzioni. Pubblicali come elementi HTML.",
+		"demo_body": "State, eventi, children, refs, context, CSS modules, componenti lazy, portal e SSR usano una API compatta pensata per lavorare velocemente sul front-end.",
+		"demo_link": "Vedi le opzioni di installazione",
+		"render_label": "Elemento renderizzato",
+		"render_button": "Likes: 12",
+		"features_kicker": "Perché usarlo",
+		"features_title": "Web Components moderni con meno parti da gestire.",
+		"features_body": "Wompo conserva il modello nativo degli elementi, ma aggiunge l'ergonomia che gli sviluppatori si aspettano da una libreria a componenti.",
+		"features": {
+			"native": {
+				"eyebrow": "Nativo",
+				"title": "Funziona in ogni stack",
+				"body": "Un componente Wompo resta un vero custom element, quindi puoi inserirlo in pagine esistenti e mescolarlo con altri framework."
+			},
+			"reactive": {
+				"eyebrow": "Reattivo",
+				"title": "Hooks e DOM dinamico",
+				"body": "Usa hook familiari come useState, useEffect, useMemo e context per mantenere lo stato della UI esplicito e locale."
+			},
+			"css": {
+				"eyebrow": "Stili",
+				"title": "CSS modules integrati",
+				"body": "I nomi delle classi possono essere isolati automaticamente, così i componenti restano prevedibili senza obbligare lo Shadow DOM di default."
+			},
+			"ssr": {
+				"eyebrow": "SSR",
+				"title": "Rendering server e isole",
+				"body": "Renderizza gli stessi componenti sul server e idrata solo le isole che hanno bisogno di comportamento client-side."
+			},
+			"portable": {
+				"eyebrow": "Portabile",
+				"title": "Bundler non obbligatorio",
+				"body": "Installa da npm, usa una import map, carica da CDN o distribuisci un singolo componente dove serve."
+			},
+			"typed": {
+				"eyebrow": "Types",
+				"title": "Pronto per TypeScript",
+				"body": "Il core è scritto in TypeScript ed espone tipi per componenti, props, elementi e helper di rendering."
+			}
+		},
+		"workflow_kicker": "Dall'installazione alla produzione",
+		"workflow_title": "Un workflow piccolo per UI reali.",
+		"workflow": {
+			"install_title": "Installa",
+			"install_body": "Aggiungi Wompo con npm o mappalo direttamente nel browser.",
+			"compose_title": "Componi",
+			"compose_body": "Crea componenti con funzioni, hooks, eventi, children e stili locali.",
+			"ship_title": "Rilascia",
+			"ship_body": "Renderizza come Web Components, idrata quando serve e riusa tra progetti."
+		},
+		"cta_title": "Parti da un componente, non da una migrazione di framework.",
+		"cta_body": "La documentazione include esempi rapidi, reference API, SSR, hooks e pattern pratici per costruire con Wompo."
+	},
+	"docs": {
+		"not_found": "Pagina di documentazione non trovata",
+		"back_to_docs": "Torna alla documentazione",
+		"in_this_page": "In questa pagina",
+		"version": "wompo@2.0.1"
+	},
+	"footer": {
+		"homepage": "Homepage",
+		"learn": "Impara",
+		"introduction": "Introduzione",
+		"installation": "Installazione",
+		"hooks": "Hooks",
+		"apis": "API",
+		"guides": "Guide",
+		"quick_start": "Quick start",
+		"complex_example": "Esempio complesso",
+		"styling": "Stili",
+		"custom_hooks": "Hooks personalizzati",
+		"privacy": "Privacy",
+		"privacy_policy": "Privacy Policy",
+		"cookie_policy": "Cookie Policy",
+		"contribute": "Contribuisci",
+		"github": "Github",
+		"donate": "Sostieni"
+	}
+}

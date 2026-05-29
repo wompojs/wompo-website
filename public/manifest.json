@@ -1,9 +1,11 @@
 {
-	"lang": "en-us",
+	"id": "/",
+	"lang": "en",
 	"name": "Wompo Documentation",
 	"short_name": "Wompo",
-	"description": "The Wompo JS documentation.",
+	"description": "Documentation for Wompo, a lightweight JavaScript library for reactive, reusable Web Components.",
 	"start_url": "/",
+	"scope": "/",
 	"background_color": "#573EF6",
 	"theme_color": "#573EF6",
 	"orientation": "any",

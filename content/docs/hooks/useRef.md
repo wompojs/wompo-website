@@ -1,0 +1,161 @@
+---
+title: 'useRef hook'
+description: 'How to use the useRef hook to keep a value of a variable stable across renders.'
+metaTitle: 'useRef - Wompo hooks'
+metaDescription: 'The useRef hook will save a value across renders and will always return the same.'
+navTitle: 'useRef'
+order: 40011
+---
+
+## Description {#description}
+
+<p>The <code>useRef</code> hook will save the value of a variable across renders. <br />Consider the following code:</p>
+
+```js
+function Component() {
+	const [changed, setChanged] = useState(false);
+	let isChanged = 'State did not change';
+	const performChange = () => {
+		isChanged = 'State changed!';
+		setChanged(true);
+	};
+	return html`
+		${isChanged}
+		<button @click=${performChange}>Change me!</button>
+	`;
+}
+```
+
+<p>The above code will not work. But why? <br />This will be the component's lifecycle:
+
+<ol>
+<li>The component is in the DOM, so it will try to perform its first render and the <code>Component()</code> function will be executed.</li>
+<li><code>isChanged</code> is set to "State did not change"</li>
+<li>The component is fully rendered</li>
+<li>The user clicks the button</li>
+<li><code>isChanged</code> is set to "State changed!" and the <code>changed</code> stateful variable is set to true.</li>
+<li>The new state differs from the previous state: the component is reloaded and the <code>Component()</code> function is executed.</li>
+<li>Again, <code>isChanged</code> is set to "State did not change"</li>
+<li>The component is fully rendered</li>
+</ol></p>
+
+<p>Usually, you never want to make "normal" variable declarations inside of your component if you plan to change the variable's value at some point of the component's lifecycle. <br />You may think: <i>"What if I move the variable declaration <b>outside</b> of the component?".</i><br />This approach would actually work, but you don't want to do it, for two reasons:
+
+<ol>
+<li><b>Every instance</b> of the component will have the same value: they are not independent.</li>
+<li>The previous reason implies that the component is NOT <b>Pure</b>, and this can lead to <b>unexpected behaviors</b>.</li>
+</ol>
+
+If you plan to use the component only once though, feel free do to it (but it'll make us sad).</p>
+
+<p>The <code>useRef</code> hook will solve this problem.</p>
+
+:::warning
+<b>Warning</b>: Seeing a "<b>let</b>" or "<b>var</b>" variable declaration inside of your component should always trigger some alarms. The only place you should use " <b>let</b>" or "<b>var</b>" variables instead of "<b>const</b>" variables is (maybe) inside other functions (events, etc.).
+:::
+
+<p>The <code>useRef</code> hook has also a second use (which is usually the most common): if you put the value returned by it in a "<b>ref</b>" attribute of <i>any</i> node, the value of the variable will become the actual node.</p>
+
+## Usage {#usage}
+
+```js
+const ref = useRef(initialValue);
+```
+
+<p>The <code>useRef</code> hook accepts a single parameter, the <b>initial value</b>, and will return an object having a "<b>current</b>" key, which will correspond to the current value of the variable. <br />To update the value of the variable, you have to update the value of the "current" key.</p>
+
+:::warning
+<b>Note</b>: unlike the <a href="/docs/hooks/useState">useState</a> hook, updating the value will <b>not</b> cause a re-render of the component.
+:::
+
+<p>As said in the <a href="#description">Description chapter</a>, you can also use the value returned by the hook as the value of a "ref" attribute of any node. The value will be assigned <b>after</b> the first render (not immediately). <br />Quick Example:</p>
+
+```js
+function Component() {
+	const nodeRef = useRef();
+
+	console.log(nodeRef.current); // ❌ On the first render it will be null!
+
+	useEffect(() => {
+		console.log(nodeRef.current); // ✅ It will already be valorized at this point!
+		console.log(nodeRef.current.textContent); // "Hey!"
+	}, []);
+
+	return html` <div ref=${nodeRef}>Hey!</div> `;
+}
+```
+
+## Example: timer {#timer-example}
+
+<p>In this example we will create a simple timer using the <code>useRef</code> hook to save the value of the intervalId once we start the timer.</p>
+
+```js
+import { useState, defineWompo, html, useRef } from 'wompo';
+
+export default function Timer() {
+	const [timer, setTimer] = useState(0);
+	const intervalId = useRef(null);
+
+	function startTimer() {
+		intervalId.current = setInterval(() => {
+			setTimer((oldTimer) => oldTimer + 1);
+		}, 10);
+	}
+
+	function stopTimer() {
+		clearInterval(intervalId.current);
+		intervalId.current = null;
+	}
+
+	function resetTimer() {
+		setTimer(0);
+	}
+
+	return html`
+		<div>
+			<button @click=${startTimer} disabled=${intervalId.current !== null}>Start</button>
+			<button @click=${stopTimer} disabled=${intervalId.current === null}>Stop</button>
+			<button @click=${resetTimer} disabled=${timer === 0}>Reset</button>
+			<p>${(timer / 100).toFixed(2)}</p>
+		</div>
+	`;
+}
+
+defineWompo(Timer);
+```
+
+<p>Result:
+
+<timer-example></timer-example></p>
+
+## Example: password revealer {#password-revealer-example}
+
+<p>In this example we will get the reference of an input node using the <code>useRef</code> hook and display an alert showing it's value.</p>
+
+```js
+import { defineWompo, html, useRef } from 'wompo';
+
+export default function PasswordRevealer() {
+	const inputRef = useRef(null);
+
+	const revealPassword = () => {
+		alert(`Your password is: "${inputRef.current.value}" 😈`);
+	};
+
+	return html`
+		<div>
+			<label>
+				Type your password here:
+				<input ref=${inputRef} type="password" />
+				<button @click=${revealPassword}>I'll show your password to everyone!</button>
+			</label>
+		</div>
+	`;
+}
+
+defineWompo(PasswordRevealer);
+```
+
+<p>Result:
+
+<password-revealer-example></password-revealer-example></p>

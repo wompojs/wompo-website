@@ -1,4 +1,4 @@
-import { WompoProps, defineWompo, html } from 'wompo';
+import { type WompoProps, defineWompo, html } from 'wompo';
 import Code from '../Code.js';
 import CounterComponent from './CounterComponent.js';
 

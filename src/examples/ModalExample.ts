@@ -1,4 +1,4 @@
-import { WompoElement, WompoProps, defineWompo, html, useExposed, useState } from 'wompo';
+import { type WompoElement, type WompoProps, defineWompo, html, useExposed, useState } from 'wompo';
 
 export interface ModalExampleElement extends WompoElement {
 	open: () => void;

@@ -1,4 +1,4 @@
-import { WompoProps, defineWompo, html } from 'wompo';
+import { type WompoProps, defineWompo, html } from 'wompo';
 
 export default function BuiltInCssModules({ styles: s }: WompoProps) {
 	return html`
@@ -13,7 +13,7 @@ BuiltInCssModules.css = `
   .container {
     padding: 30px 60px;
     border-radius: 100px 15px 100px 15px;
-    background-color: #573ef630;
+    background-color: var(--site-primary-soft-strong);
     position: relative;
   }
   .container::after {
@@ -21,7 +21,7 @@ BuiltInCssModules.css = `
     position: absolute;
     width: 50px;
     height: 50px;
-    background-color: #573ef6;
+    background-color: var(--site-primary);
     border-radius: 50%;
     right: -20px;
     top: -10px;

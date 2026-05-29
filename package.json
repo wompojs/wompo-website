@@ -7,23 +7,26 @@
 	"type": "module",
 	"main": "index.js",
 	"scripts": {
-		"old-dev": "./esbuild.config.mjs",
-		"dev": "node app.js",
-		"dev-build": "esbuild `find ./src \\( -name '*.ts' -o -name '*.tsx' \\)` --outdir=dist --allow-overwrite --watch",
-		"build": "esbuild `find ./src \\( -name '*.ts' -o -name '*.tsx' \\)` --outdir=dist --allow-overwrite --minify",
-		"start": "node app.js"
+		"dev": "bun --preserve-symlinks ./node_modules/seawomp/dist/cli.js dev",
+		"build": "bun --preserve-symlinks ./node_modules/seawomp/dist/cli.js build",
+		"build:vercel": "bun --preserve-symlinks ./node_modules/seawomp/dist/cli.js build --target vercel",
+		"docs:format-code": "bun scripts/format-docs-code.ts",
+		"docs:check-code": "bun scripts/check-docs-code.ts",
+		"serve:static": "bun --preserve-symlinks ./node_modules/seawomp/dist/cli.js start",
+		"start": "bun --preserve-symlinks ./node_modules/seawomp/dist/cli.js start"
 	},
 	"dependencies": {
-		"compression": "^1.7.4",
-		"express": "^4.19.2",
-		"helmet": "^7.1.0",
-		"wompo": "^2.0.0",
-		"wompo-router": "^1.3.3"
+		"gray-matter": "^4.0.3",
+		"gsap": "^3.15.0",
+		"marked": "^15.0.12",
+		"seawomp": "^1.2.1",
+		"wompo": "2.0.2"
 	},
 	"devDependencies": {
-		"concurrently": "^8.2.2",
-		"esbuild": "^0.20.2",
-		"nodemon": "^3.1.0",
-		"ts-loader": "^9.5.1"
+		"@types/bun": "^1.1.0",
+		"@types/node": "^22.0.0",
+		"lighthouse": "^13.3.0",
+		"sharp": "^0.34.5",
+		"typescript": "^5.6.0"
 	}
 }

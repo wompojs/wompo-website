@@ -1,4 +1,4 @@
-import { createContext, html, useState, useContext, defineWompo, WompoProps } from 'wompo';
+import { createContext, html, useState, useContext, defineWompo, type WompoProps } from 'wompo';
 
 const ThemeContext = createContext('light');
 

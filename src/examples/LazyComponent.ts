@@ -1,4 +1,4 @@
-import { html, defineWompo, WompoProps } from 'wompo';
+import { html, defineWompo, type WompoProps } from 'wompo';
 
 export default function LazyComponent({ children }: WompoProps) {
 	return html`

@@ -7,19 +7,19 @@ XCode style (c) Angel Garcia <angelgarcia.mail@gmail.com>
 .hljs {
 	display: block;
 	overflow-x: auto;
-	padding: 0.5em;
-	background: #fff;
-	color: black;
+	padding: 1.8rem;
+	background: #171322;
+	color: #f7f5ff;
 }
 
 /* Gray DOCTYPE selectors like WebKit */
 .xml .hljs-meta {
-	color: #c0c0c0;
+	color: #8b84a6;
 }
 
 .hljs-comment,
 .hljs-quote {
-	color: #007400;
+	color: #8b84a6;
 }
 
 .hljs-tag,
@@ -28,35 +28,35 @@ XCode style (c) Angel Garcia <angelgarcia.mail@gmail.com>
 .hljs-selector-tag,
 .hljs-literal,
 .hljs-name {
-	color: #aa0d91;
+	color: #c4b5fd;
 }
 
 .hljs-variable,
 .hljs-template-variable {
-	color: #3f6e74;
+	color: #93c5fd;
 }
 
 .hljs-code,
 .hljs-string,
 .hljs-meta-string {
-	color: #c41a16;
+	color: #86efac;
 }
 
 .hljs-regexp,
 .hljs-link {
-	color: #0e0eff;
+	color: #67e8f9;
 }
 
 .hljs-title,
 .hljs-symbol,
 .hljs-bullet,
 .hljs-number {
-	color: #1c00cf;
+	color: #fbbf24;
 }
 
 .hljs-section,
 .hljs-meta {
-	color: #643820;
+	color: #f0abfc;
 }
 
 .hljs-class .hljs-title,
@@ -64,33 +64,33 @@ XCode style (c) Angel Garcia <angelgarcia.mail@gmail.com>
 .hljs-built_in,
 .hljs-builtin-name,
 .hljs-params {
-	color: #5c2699;
+	color: #f9a8d4;
 }
 
 .hljs-attr {
-	color: #836c28;
+	color: #fde68a;
 }
 
 .hljs-subst {
-	color: #000;
+	color: #f7f5ff;
 }
 
 .hljs-formula {
-	background-color: #eee;
+	background-color: #2a2440;
 	font-style: italic;
 }
 
 .hljs-addition {
-	background-color: #baeeba;
+	background-color: #064e3b;
 }
 
 .hljs-deletion {
-	background-color: #ffc8bd;
+	background-color: #7f1d1d;
 }
 
 .hljs-selector-id,
 .hljs-selector-class {
-	color: #9b703f;
+	color: #fdba74;
 }
 
 .hljs-doctag,

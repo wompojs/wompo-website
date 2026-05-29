@@ -1,5 +1,5 @@
-import { defineWompo, html, useRef, useEffect, WompoComponent } from 'wompo';
-import ModalExample, { ModalExampleElement } from './ModalExample.js';
+import { defineWompo, html, useRef, useEffect, type WompoComponent } from 'wompo';
+import ModalExample, { type ModalExampleElement } from './ModalExample.js';
 import Code from '../components/Code.js';
 
 export default function InteractiveExposedExample() {

@@ -27,7 +27,7 @@ MenuIcon.css = `
 		position: absolute;
 		height: 3px;
 		width: 100%;
-		background: #573ef6;
+		background: var(--site-primary);
 		border-radius: 9px;
 		opacity: 1;
 		left: 0;

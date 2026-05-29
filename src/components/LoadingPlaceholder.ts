@@ -32,7 +32,7 @@ LoadingPlaceholder.css = `
   }
   hr {
     margin: 50px 0;
-    background-color: #573ef640;
+    background-color: var(--site-primary-soft-strong);
     border: 0;
     height: 1px;
   }
@@ -59,10 +59,10 @@ LoadingPlaceholder.css = `
 
   @keyframes skeleton-loading {
     0% {
-      background-color: #f2f2f2;
+      background-color: var(--site-surface-soft);
     }
     100% {
-      background-color: #d9d9d9;
+      background-color: var(--site-border);
     }
   }
 `;

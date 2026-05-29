@@ -1,0 +1,96 @@
+{
+	"nav": {
+		"docs": "Docs",
+		"donate": "Donate"
+	},
+	"lang": {
+		"switch_to": "IT"
+	},
+	"home": {
+		"eyebrow": "Web Components without framework lock-in",
+		"tagline": "Build reactive custom elements with a React-like API, native browser primitives, SSR, islands hydration, and styles that stay out of the way.",
+		"cta_docs": "Read the docs",
+		"cta_quickstart": "Quick start",
+		"intro_kicker": "What it does",
+		"intro_title": "Wompo turns small functions into portable UI primitives.",
+		"intro_body": "Define a component once, render it as a real custom element, and reuse it in static HTML, Wompo apps, SSR pages, or alongside React, Vue, Angular, and plain JavaScript.",
+		"demo_kicker": "Developer workflow",
+		"demo_title": "Write components as functions. Ship them as HTML elements.",
+		"demo_body": "State, events, children, refs, context, CSS modules, lazy components, portals, and SSR all use a compact API designed for productive front-end work.",
+		"demo_link": "See installation options",
+		"render_label": "Rendered element",
+		"render_button": "Likes: 12",
+		"features_kicker": "Why use it",
+		"features_title": "Modern Web Components with fewer moving parts.",
+		"features_body": "Wompo keeps the native element model, but gives developers the ergonomics they expect from component libraries.",
+		"features": {
+			"native": {
+				"eyebrow": "Native",
+				"title": "Works in any stack",
+				"body": "A Wompo component is still a real custom element, so it can be dropped into existing pages and mixed with other frameworks."
+			},
+			"reactive": {
+				"eyebrow": "Reactive",
+				"title": "Hooks and dynamic DOM",
+				"body": "Use familiar hooks such as useState, useEffect, useMemo, and context to keep UI state explicit and local."
+			},
+			"css": {
+				"eyebrow": "Styling",
+				"title": "CSS modules built in",
+				"body": "Class names can be scoped automatically, so components remain predictable without forcing Shadow DOM by default."
+			},
+			"ssr": {
+				"eyebrow": "SSR",
+				"title": "Server rendering and islands",
+				"body": "Render the same components on the server, then hydrate only the islands that need client-side behavior."
+			},
+			"portable": {
+				"eyebrow": "Portable",
+				"title": "No mandatory bundler",
+				"body": "Install from npm, use an import map, load from a CDN, or ship a single component where it is needed."
+			},
+			"typed": {
+				"eyebrow": "Types",
+				"title": "TypeScript friendly",
+				"body": "The core is written with TypeScript and exposes component, props, element, and render helper types."
+			}
+		},
+		"workflow_kicker": "From install to production",
+		"workflow_title": "A small workflow for real UI work.",
+		"workflow": {
+			"install_title": "Install",
+			"install_body": "Add Wompo with npm or map it directly in the browser.",
+			"compose_title": "Compose",
+			"compose_body": "Create components with functions, hooks, events, children, and local styles.",
+			"ship_title": "Ship",
+			"ship_body": "Render as Web Components, hydrate on demand, and reuse across projects."
+		},
+		"cta_title": "Start with a component, not a framework migration.",
+		"cta_body": "The docs include quick examples, API references, SSR guidance, hooks, and practical patterns for building with Wompo."
+	},
+	"docs": {
+		"not_found": "Documentation page not found",
+		"back_to_docs": "Back to documentation",
+		"in_this_page": "On this page",
+		"version": "wompo@2.0.1"
+	},
+	"footer": {
+		"homepage": "Homepage",
+		"learn": "Learn",
+		"introduction": "Introduction",
+		"installation": "Installation",
+		"hooks": "Hooks",
+		"apis": "APIs",
+		"guides": "Guides",
+		"quick_start": "Quick Start",
+		"complex_example": "Complex example",
+		"styling": "Styling",
+		"custom_hooks": "Custom Hooks",
+		"privacy": "Privacy",
+		"privacy_policy": "Privacy Policy",
+		"cookie_policy": "Cookie Policy",
+		"contribute": "Contribute",
+		"github": "Github",
+		"donate": "Donate"
+	}
+}

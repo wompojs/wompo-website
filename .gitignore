@@ -1,4 +1,8 @@
 node_modules
 .vercel
+.seawomp
 package-lock.json
 .DS_Store
+.gitignore
+.claude
+.todo

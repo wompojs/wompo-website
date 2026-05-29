@@ -1,15 +1,10 @@
 {
-	"version": 2,
-	"builds": [
-		{
-			"src": "app.js",
-			"use": "@vercel/node"
-		}
-	],
-	"routes": [
-		{
-			"src": "/(.*)",
-			"dest": "app.js"
-		}
+	"$schema": "https://openapi.vercel.sh/vercel.json",
+	"bunVersion": "1.x",
+	"buildCommand": "bun run build:vercel",
+	"outputDirectory": ".seawomp/static",
+	"redirects": [
+		{ "source": "/docs", "destination": "/docs/introduction", "permanent": true },
+		{ "source": "/it/docs", "destination": "/it/docs/introduction", "permanent": true }
 	]
 }

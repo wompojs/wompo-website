@@ -1,5 +1,4 @@
-import { WompoProps, defineWompo, html } from 'wompo';
-import { Link } from 'wompo-router';
+import { type WompoProps, defineWompo, html } from 'wompo';
 import Code from '../Code.js';
 import BuiltInCssModules from './BuiltInCssModules.js';
 import MoreWidget from './MoreWidget.js';

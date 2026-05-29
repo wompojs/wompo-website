@@ -1,4 +1,4 @@
-import { WompoProps, defineWompo, html } from 'wompo';
+import { type WompoProps, defineWompo, html } from 'wompo';
 
 interface LogoProps extends WompoProps {
 	size: number;
