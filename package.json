@@ -19,7 +19,7 @@
 		"gray-matter": "^4.0.3",
 		"gsap": "^3.15.0",
 		"marked": "^15.0.12",
-		"seawomp": "^1.2.1",
+		"seawomp": "^1.2.2",
 		"wompo": "2.0.2"
 	},
 	"devDependencies": {

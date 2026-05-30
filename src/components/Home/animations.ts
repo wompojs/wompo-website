@@ -17,6 +17,21 @@ gsap.registerPlugin(ScrollTrigger);
 
 type Teardown = () => void;
 
+/* The hero/reveal entrance is a first-impression flourish, and the elements it animates have no
+ * `opacity` in CSS — their resting state is fully visible, and GSAP is what hides them (opacity:0 +
+ * translate) before sliding them in. SPA navigation tears down and rebuilds the homepage element on
+ * every visit, so the per-element `homeMotionBooted` guard is always fresh; without the latch below
+ * the whole intro re-runs each time you return to "/", which reads as the page "resetting" and
+ * flickering/repositioning. Play it once per page load — the latch resets on a hard reload but
+ * survives SPA navigation — and on subsequent visits leave the content in its natural visible state,
+ * running only the ambient (non-opacity) background motion.
+ *
+ * The latch lives on `window`, not in module scope: code-splitting puts the homepage in its own
+ * route chunk, so the initial-load bundle and the chunk re-imported on a later SPA navigation are
+ * distinct module instances that would NOT share a module-level `let`. `window` is shared by both
+ * and persists across body swaps, resetting only on a real page reload. (It must be read inside the
+ * function, never at module scope — this module is imported during SSR/prerender where there is no
+ * `window`.) */
 export function setupHomeAnimations(root: HTMLElement | null): Teardown {
 	if (!root) return () => {};
 	const page = root.querySelector<HTMLElement>('.homePage');
@@ -24,16 +39,25 @@ export function setupHomeAnimations(root: HTMLElement | null): Teardown {
 	if (page.dataset.homeMotionBooted === 'true') return () => {};
 	page.dataset.homeMotionBooted = 'true';
 
+	const motionState = window as unknown as { __wompoHomeIntroPlayed?: boolean };
 	const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+	const firstVisit = !motionState.__wompoHomeIntroPlayed;
+	motionState.__wompoHomeIntroPlayed = true;
 	const teardowns: Teardown[] = [];
 
 	if (!reducedMotion) {
-		teardowns.push(splitAndRevealHeroTitle(page));
-		teardowns.push(animateHeroEntrance(page));
+		// Entrance + scroll reveals are the jarring, opacity-driven part — only play them the first
+		// time the homepage is shown this session. Replaying them on every SPA navigation is the
+		// "flicker / reposition" the user reported.
+		if (firstVisit) {
+			teardowns.push(splitAndRevealHeroTitle(page));
+			teardowns.push(animateHeroEntrance(page));
+			teardowns.push(scrollReveals(page));
+		}
+		// Ambient motion never touches opacity, so it's safe to run on every visit.
 		teardowns.push(floatCodeLines(page));
 		teardowns.push(pointerParallax(page));
 	}
-	teardowns.push(scrollReveals(page));
 	teardowns.push(buttonClickBump(page));
 
 	return () => {
