@@ -1,11 +1,12 @@
 ---
-title: "defineWompo API"
-description: "How to use the defineWompo function to register your custom component in your application."
-metaTitle: "defineWompo - Wompo APIs"
-metaDescription: "The defineWompo function will transform your functional Component into a Web Component, so that it can be used in your HTML."
-navTitle: "defineWompo"
+title: 'defineWompo API'
+description: 'How to use the defineWompo function to register your custom component in your application.'
+metaTitle: 'defineWompo - Wompo APIs'
+metaDescription: 'The defineWompo function will transform your functional Component into a Web Component, so that it can be used in your HTML.'
+navTitle: 'defineWompo'
 order: 60004
 ---
+
 ## Basic registration {#basic-registration}
 
 `defineWompo` registers a function component in the browser `CustomElementRegistry`. Call it once after declaring the component.
@@ -14,7 +15,7 @@ order: 60004
 import { defineWompo, html } from 'wompo';
 
 function UserCard({ name }) {
-  return html`<article>${name}</article>`;
+	return html`<article>${name}</article>`;
 }
 
 defineWompo(UserCard);
@@ -28,10 +29,10 @@ The second argument lets you control the generated element.
 
 ```js
 defineWompo(UserCard, {
-  name: 'app-user-card',
-  shadow: false,
-  cssModule: true,
-  island: 'visible',
+	name: 'app-user-card',
+	shadow: false,
+	cssModule: true,
+	island: 'visible',
 });
 ```
 
@@ -50,7 +51,7 @@ When `cssModule` is enabled, classes declared in `Component.css` are renamed and
 
 ```js
 function Badge({ styles: s, label }) {
-  return html`<span class=${s.badge}>${label}</span>`;
+	return html`<span class=${s.badge}>${label}</span>`;
 }
 
 Badge.css = `
@@ -65,7 +66,7 @@ Badge.css = `
 `;
 
 defineWompo(Badge, {
-  name: 'app-badge',
+	name: 'app-badge',
 });
 ```
 
@@ -77,11 +78,7 @@ Use `shadow: true` when a component must be isolated from the page CSS.
 import { defineWompo, html } from 'wompo';
 
 function IsolatedComponent() {
-  return html`
-    <p>
-      My styles are generic, but they stay inside this component.
-    </p>
-  `;
+	return html` <p>My styles are generic, but they stay inside this component.</p> `;
 }
 
 IsolatedComponent.css = `
@@ -99,9 +96,9 @@ IsolatedComponent.css = `
 `;
 
 defineWompo(IsolatedComponent, {
-  name: 'super-cool-isolated-component',
-  shadow: true,
-  cssModule: false,
+	name: 'super-cool-isolated-component',
+	shadow: true,
+	cssModule: false,
 });
 ```
 
@@ -113,8 +110,8 @@ With SSR, `island` defines the default hydration strategy for every instance of 
 
 ```js
 defineWompo(ProductFilters, {
-  name: 'product-filters',
-  island: 'visible',
+	name: 'product-filters',
+	island: 'visible',
 });
 ```
 
@@ -122,9 +119,9 @@ You can override the strategy at the call site.
 
 ```js
 function Page() {
-  return html`
-    <${ProductFilters} client:load />
-    <${ProductFilters} client:none />
-  `;
+	return html`
+		<${ProductFilters} client:load />
+		<${ProductFilters} client:none />
+	`;
 }
 ```

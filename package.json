@@ -13,13 +13,14 @@
 		"docs:format-code": "bun scripts/format-docs-code.ts",
 		"docs:check-code": "bun scripts/check-docs-code.ts",
 		"serve:static": "bun --preserve-symlinks ./node_modules/seawomp/dist/cli.js start",
+		"serve:vercel-like": "bun scripts/vercel-like-server.ts",
 		"start": "bun --preserve-symlinks ./node_modules/seawomp/dist/cli.js start"
 	},
 	"dependencies": {
 		"gray-matter": "^4.0.3",
 		"gsap": "^3.15.0",
 		"marked": "^15.0.12",
-		"seawomp": "^1.2.2",
+		"seawomp": "^1.2.3",
 		"wompo": "2.0.2"
 	},
 	"devDependencies": {
