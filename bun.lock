@@ -8,8 +8,8 @@
         "gray-matter": "^4.0.3",
         "gsap": "^3.15.0",
         "marked": "^15.0.12",
-        "seawomp": "^1.2.3",
-        "wompo": "2.0.2",
+        "seawomp": "^1.2.4",
+        "wompo": "^2.0.3",
       },
       "devDependencies": {
         "@types/bun": "^1.1.0",
@@ -435,7 +435,7 @@
 
     "robots-parser": ["robots-parser@3.0.1", "", {}, "sha512-s+pyvQeIKIZ0dx5iJiQk1tPLJAWln39+MI5jtM8wnyws+G5azk+dMnMX0qfbqNetKKNgcWWOdi0sfm+FbQbgdQ=="],
 
-    "seawomp": ["seawomp@1.2.3", "", { "dependencies": { "hono": "^4.12.22", "lightningcss": "^1.27.0" }, "peerDependencies": { "sharp": ">=0.33.0", "wompo": ">=2.0.1" }, "optionalPeers": ["sharp"], "bin": { "seawomp": "dist/cli.js" } }, "sha512-ddG5oeLjshujnV5mLZeYEWoxPqqt//3QGy6wzUEo0fDtdgO9jXiSZ0ZSzcB0SrNzSBOvLpqCmZY7MLcsrmt4tg=="],
+    "seawomp": ["seawomp@1.2.4", "", { "dependencies": { "hono": "^4.12.22", "lightningcss": "^1.27.0" }, "peerDependencies": { "sharp": ">=0.33.0", "wompo": ">=2.0.1" }, "optionalPeers": ["sharp"], "bin": { "seawomp": "dist/cli.js" } }, "sha512-zOK2IEL0Kp1oXXqdFQhys3uw3i6ctussHaPrb4kIajYIUxDXelNmyJ4ajPJYeJV0H9lkxAkkunD8RziOwolthw=="],
 
     "section-matter": ["section-matter@1.0.0", "", { "dependencies": { "extend-shallow": "^2.0.1", "kind-of": "^6.0.0" } }, "sha512-vfD3pmTzGpufjScBh50YHKzEu2lxBWhVEHsNGoEXmCmn2hKGfeNLYMzCJpe8cD7gqX7TJluOVpBkAequ6dgMmA=="],
 
@@ -501,7 +501,7 @@
 
     "when-exit": ["when-exit@2.1.5", "", {}, "sha512-VGkKJ564kzt6Ms1dbgPP/yuIoQCrsFAnRbptpC5wOEsDaNsbCB2bnfnaA8i/vRs5tjUSEOtIuvl9/MyVsvQZCg=="],
 
-    "wompo": ["wompo@2.0.2", "", {}, "sha512-AaOQs43J4nMWHmJ5r77k2ilcupvw4AUmiREqEmVldWpaWVfySoDb993sT+GayfuGaoSxk8WCYGIwQytVkQ4tEw=="],
+    "wompo": ["wompo@2.0.3", "", {}, "sha512-jNO7OuOqlJeYehmBzzdgTYlzy6DktWpZigDKyJS4TVXyap22baPLlWHxF+xBG16fuPALcZvJM5js8wU95/qaoQ=="],
 
     "wrap-ansi": ["wrap-ansi@7.0.0", "", { "dependencies": { "ansi-styles": "^4.0.0", "string-width": "^4.1.0", "strip-ansi": "^6.0.0" } }, "sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q=="],
 
