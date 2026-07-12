@@ -122,7 +122,7 @@ For prototypes and demos, use jsDelivr with a pinned version.
 
 ```html
 <script type="module">
-	import { defineWompo, html } from 'https://cdn.jsdelivr.net/npm/wompo@2.0.3';
+	import { defineWompo, html } from 'https://cdn.jsdelivr.net/npm/wompo@2.0.4';
 
 	function DemoBadge() {
 		return html`<span>Powered by Wompo</span>`;
@@ -138,7 +138,7 @@ You can also map the CDN URL to `wompo`.
 <script type="importmap">
 	{
 		"imports": {
-			"wompo": "https://cdn.jsdelivr.net/npm/wompo@2.0.3"
+			"wompo": "https://cdn.jsdelivr.net/npm/wompo@2.0.4"
 		}
 	}
 </script>
